@@ -1,0 +1,16 @@
+{
+  "business": {
+    "PriceInUSD": 0,
+    "ThirdPartyShortName": "brokeneggs",
+    "AccountSellerId": "TBD",
+    "UseFirstAvailableReleaseDate": true
+  },
+  "marketplace": {
+    "sections": [
+      {
+        "category": "Airports",
+        "section": "Airports"
+      }
+    ]
+  }
+}

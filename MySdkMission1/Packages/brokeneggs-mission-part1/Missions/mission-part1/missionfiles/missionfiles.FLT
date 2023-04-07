@@ -1,0 +1,869 @@
+
+[Main]
+MissionType=Tutorial
+MissionLocation=Clearwater Airpark
+Title=Clearwater Discovery Flight
+Description=Clearwater Airpark Training Area
+AppVersion=10.0.282174
+FlightVersion=1
+
+[Options]
+Sound=True
+Pause=True
+Moonlight=True
+Save=True
+TextDisplayPage=0
+SlewDisplayPage=1
+AxisIndicator=Off
+Titles=False
+
+[Sim.0]
+Sim=Icon A5 Asobo
+
+[Sim.25]
+Sim=Cessna Skyhawk Asobo
+
+[Sim.26]
+Sim=Cessna Skyhawk Asobo
+
+[ResourcePath]
+Path=missionfiles
+
+[ObjectFile]
+File=missionfiles
+
+[Atc_Menu]
+Visible=False
+
+[Weather]
+WeatherType=0
+DynamicWeatherOverride=0
+
+[Departure]
+ICAO=KCLW
+RunwayNumber=34
+RunwayDesignator=NONE
+
+[Arrival]
+ICAO=KCLW
+
+[Loading]
+ImageName=LOADING_FREEFLIGHT
+Tips0=TT:LOADING.TIPS.C172_002
+
+[DateTimeSeason]
+Season=Summer
+Year=2023
+Day=89
+Hours=18
+Minutes=8
+Seconds=6.8911299705505371094
+UseZuluTime=False
+
+[Panels]
+Panel.On=True
+HUD.On=False
+
+[Window.1]
+Order=255
+Active=True
+Undocked=False
+Maximized=True
+ScreenUniCoords=0, 0, 8192, 4000
+UndocCoords=0, 0, 0, 0
+CurrentCamera={BCA3FDD1-FB83-4BBA-8407-4922A7F0D00C}
+
+[Camera.1.1]
+Guid={B1386D92-4782-4682-A137-738E25D1BAB5}
+Zoom=1
+Translation=0, 0, 0
+Rotation=8, 0, 0
+
+[Camera.1.2]
+Guid={C95EAB58-9E4A-4E2A-A34C-D8D9D948F078}
+Zoom=0.69999998807907104492
+Translation=0, 0, 0
+Rotation=8, 0, 0
+
+[Camera.1.3]
+Guid={195EAB58-9E4A-1E2A-A34C-A8D9D948F078}
+Zoom=0.56999999284744262695
+Translation=0, 0, 0
+Rotation=0, 0, 0
+
+[Camera.1.4]
+Guid={A1FF1FC6-4902-46D4-AFFD-22F64B240235}
+Zoom=0.56999999284744262695
+Translation=0, 0, 0
+Rotation=0, 0, 0
+
+[Camera.1.5]
+Guid={E9FF00BD-8D7B-4934-8855-364A432149A6}
+Zoom=0.31000000238418579102
+Translation=0, 0, 0
+Rotation=0, 0, 0
+
+[Camera.1.6]
+Guid={64D6C8BC-406A-4B73-8441-7393A4A335B4}
+Zoom=0.31000000238418579102
+Translation=0, 0, 0
+Rotation=0, 0, 0
+
+[Camera.1.7]
+Guid={A31C5FA5-4508-4C1A-84A7-6F46C68FBB4A}
+Zoom=0.31000000238418579102
+Translation=0, 0, 0
+Rotation=0, 0, 0
+
+[Camera.1.8]
+Guid={3707B27E-DC9F-44A3-8E82-422191F16B72}
+Zoom=0.33000001311302185059
+Translation=0, 0, 0
+Rotation=0, 0, 0
+
+[Camera.1.9]
+Guid={7B23189D-3554-4F63-99E2-F56DC287BD76}
+Zoom=0.33000001311302185059
+Translation=0, 0, 0
+Rotation=0, 0, 0
+
+[Camera.1.10]
+Guid={BCA3FDD1-FB83-4BBA-8407-4922A7F0D00C}
+Zoom=1
+Translation=0, 0, 0
+ChaseDirection=90
+ChaseDistance=28.041599273681640625
+ChaseAltitude=0.91439998149871826172
+
+[Camera.1.11]
+Guid={BCA3FDD1-FB83-4BBA-8407-4922A7F0D00D}
+Zoom=1
+Translation=0, 0, 0
+ChaseDirection=-135
+ChaseDistance=37.5
+ChaseAltitude=0.80000001192092895508
+
+[Camera.1.12]
+Guid={6B79DD49-9B4A-439D-BF40-ACBF157B0BA0}
+Zoom=10
+Translation=0, 0, 0
+Rotation=0, 0, 0
+
+[Camera.1.13]
+Guid={A2849229-938A-448F-8AC6-01EF2291C171}
+Zoom=80.3000030517578125
+Translation=0, 0, 0
+Rotation=0, 0, 0
+
+[Camera.1.14]
+Guid={60BC0819-BD04-4AF6-8954-8FC8AA3545FF}
+Zoom=8
+Translation=0, 0, 0
+Rotation=0, 0, 0
+
+[Camera.1.15]
+Guid={C690EAFD-223A-42D0-99E0-681ADF93BB59}
+Zoom=1
+Translation=0, 0, 0
+Rotation=0, 0, 0
+
+[Camera.1.16]
+Guid={3A09FD6C-D406-4D8F-A5CD-FA4F5E0C12ED}
+Zoom=1
+Translation=0, 0, 0
+Rotation=0, 0, 0
+
+[Camera.1.17]
+Guid={D8D67955-2E9B-4E75-9D8B-8EFFBBFAC64A}
+Zoom=0.75
+Translation=0, 0, 0
+Rotation=0, 0, 0
+
+[Camera.1.18]
+Guid={41F9C308-7FFA-4BE1-8CC1-43336D945791}
+Zoom=1.2999999523162841797
+Translation=0, 0, 0
+Rotation=0, 0, 0
+
+[Camera.1.19]
+Guid={4B06E947-0AC1-465C-B1C7-D7548A5FACE9}
+Zoom=1.2999999523162841797
+Translation=0, 0, 0
+Rotation=0, 0, 0
+
+[Camera.1.20]
+Guid={C46C9BC7-ABD4-401C-A273-087BAAA0922A}
+Zoom=1.2999999523162841797
+Translation=0, 0, 0
+Rotation=0, 0, 0
+
+[Camera.1.21]
+Guid={1C03E395-7B86-4F79-8684-E3154A9EDDA6}
+Zoom=1.2999999523162841797
+Translation=0, 0, 0
+Rotation=0, 0, 0
+
+[Camera.1.22]
+Guid={14AA6A13-7FCC-4F0F-9137-ABEF10DFCBB9}
+Zoom=0.56999999284744262695
+Translation=0, 0, 0
+Rotation=0, 0, 0
+
+[Camera.1.23]
+Guid={EBABF59F-3730-4F2E-A245-74901E9F8ED6}
+Zoom=0.40000000596046447754
+Translation=0, 0, 0
+Rotation=0, 0, 0
+
+[Camera.1.24]
+Guid={08E673AF-9D5D-449A-86CB-84A55649A650}
+Zoom=0.56999999284744262695
+Translation=0, 0, 0
+Rotation=0, 0, 0
+
+[Camera.1.25]
+Guid={182C26E7-0D2D-4995-B776-53A96D125521}
+Zoom=0.31083399057388305664
+Translation=0, 0, 0
+Rotation=0, 0, 0
+
+[Camera.1.26]
+Guid={A32BC57C-6208-4FA7-98D0-09F3425F5F0E}
+Zoom=0.56999999284744262695
+Translation=0, 0, 0
+Rotation=0, 0, 0
+
+[ATC_AgentManager]
+NumberofAgents=0
+
+[ATC_Aircraft.0]
+ActiveFlightPlan=True
+RequestedFlightPlan=False
+AcState=ACSTATE_REQUEST_TAXI_CLEARANCE_OUT_VFR_ATIS
+Waypoint.0=, KCLW, , Clearwater Air Park, A, N27° 58.55', W82° 45.46', +000068.27, , , , , 34, NONE, 0, 0, -1, 0, 0,
+Waypoint.1=, , , Custom, U, N28° 0.55', W82° 45.45', +000950.00, , , , , , NONE, 0, 0, 100, 0, 0,
+Waypoint.2=, , , Custom, U, N28° 4.90', W82° 50.11', +001800.00, , , , , , NONE, 0, 0, 100, 0, 0,
+Waypoint.3=, , , Custom, U, N27° 58.26', W82° 50.31', +000900.00, , , , , , NONE, 0, 0, 120, 0, 0,
+Waypoint.4=, KCLW, , Clearwater Air Park, A, N27° 58.55', W82° 45.46', +000050.00, , , , , , NONE, 0, 0, -1, 0, 0,
+NumberofWaypoints=5
+ClearanceFlags=82
+CtCur=CLEARANCE_NONE
+WaypointNext=1
+AltCleared=-1
+HdgAssigned=-1
+SquawkAssigned=4608
+LandingSequence=LANDING_NONE
+DepartureRequest=DEPARTURE_VFR_REQUEST_NONE
+ParkingRequest=PARKING_NAME_NONE
+ParkingTypeRequest=PARKING_TYPE_NONE
+PatternLeg=PATTERN_LEG_NONE
+ApproachIndex=-1
+ApproachTransitionIndex=-1
+ApproachRequestIndex=-1
+ApproachTransitionRequestIndex=-1
+RunwayIndex=-1
+RunwayRequestIndex=-1
+ParkingIndex=-1
+FlightFollowing=FLIGHT_FOLLOWING_NO
+AirspaceTransition=AIRSPACE_TRANSITION_NONE
+BVAirspaceTransition=BV_TYPE_NONE
+BVAirspaceTransitionReq=BV_TYPE_NONE
+TakeoffSequence=TAKEOFF_SEQUENCE_NONE
+LandingSequenceNumber=-1
+TaxiRouteCurrent=-1
+CruisingAltitude=5000
+RequestedCruisingAltitude=-1
+ExpectedAltitude=-1
+AircraftSignature=1,0
+
+[ATC_ActiveFlightPlan.0]
+title=Clearwater Air Park to Clearwater Air Park
+description=Clearwater Air Park to Clearwater Air Park
+type=VFR
+routetype=0
+cruising_altitude=1800
+departure_id=KCLW, N27° 58.55', W82° 45.46', +000050.00
+departure_position=34
+destination_id=KCLW, N27° 58.55', W82° 45.46', +000050.00
+departure_name=Clearwater Air Park
+destination_name=Clearwater Air Park
+alternate_name=AlternateName
+waypoint.0=, KCLW, , Clearwater Air Park, A, N27° 58.55', W82° 45.46', +000068.27, , , , , 34, NONE, 0, 0, -1, 0, 0,
+waypoint.1=, , , Custom, U, N28° 0.55', W82° 45.45', +000950.00, , , , , , NONE, 0, 0, 100, 0, 0,
+waypoint.2=, , , Custom, U, N28° 4.90', W82° 50.11', +001800.00, , , , , , NONE, 0, 0, 100, 0, 0,
+waypoint.3=, , , Custom, U, N27° 58.26', W82° 50.31', +000900.00, , , , , , NONE, 0, 0, 120, 0, 0,
+waypoint.4=, KCLW, , Clearwater Air Park, A, N27° 58.55', W82° 45.46', +000050.00, , , , , , NONE, 0, 0, -1, 0, 0,
+
+[ATC_AircraftManager]
+NumberofAircraft=1
+
+[ATC_MessageSystem]
+FrequencyNodes=0
+
+[GPS_Engine]
+Filename=BushTrip
+position=N0° 0.02', E0° 0.84', +000003.84
+Time=-1
+TimeWP=50481
+ArriveTime=944
+CountWP=5
+NextWP=1
+WpInfo0=58, 0, 20, 0, 0, 28.0, 0.0, 0.0
+WpInfo1=52, 0, 289, 0, 0, 0.0, 0.3, 0.0
+WpInfo2=100, 0, 548, 0, 0, 0.0, 0.6, 0.0
+WpInfo3=120, 0, 274, 0, 0, 0.0, 0.4, 0.0
+WpInfo4=55, 0, 15, 0, 0, 0.0, 0.8, 0.0
+CountFP=0
+
+[Panel.1]
+ScreenUniCoords=0, 0, 0, 0
+UndocCoords=0, 0, 0, 0
+Visible=False
+Undocked=False
+HiddenOn=False
+ID=0
+ViewsOn=1
+
+[Panel.2]
+ScreenUniCoords=0, 0, 0, 0
+UndocCoords=0, 0, 0, 0
+Visible=False
+Undocked=False
+HiddenOn=False
+ID=50
+ViewsOn=0
+
+[Panel.3]
+ScreenUniCoords=0, 0, 0, 0
+UndocCoords=0, 0, 0, 0
+Visible=False
+Undocked=False
+HiddenOn=False
+ID=225
+ViewsOn=0
+
+[Panel.4]
+ScreenUniCoords=0, 0, 0, 0
+UndocCoords=0, 0, 0, 0
+Visible=False
+Undocked=False
+HiddenOn=False
+ID=1
+ViewsOn=0
+
+[Panel.5]
+ScreenUniCoords=0, 0, 0, 0
+UndocCoords=0, 0, 0, 0
+Visible=False
+Undocked=False
+HiddenOn=False
+ID=2
+ViewsOn=0
+
+[Panel.6]
+ScreenUniCoords=0, 0, 0, 0
+UndocCoords=0, 0, 0, 0
+Visible=False
+Undocked=False
+HiddenOn=False
+ID=20000
+ViewsOn=1
+
+[SimVars.0]
+Latitude=N27° 58' 27.69"
+Longitude=W82° 45' 27.00"
+Altitude=+000072.73
+Pitch=0
+Bank=0
+Heading=-26.000000126659877253
+PVelBodyAxis=0
+BVelBodyAxis=0
+HVelBodyAxis=0
+XVelBodyAxis=0
+YVelBodyAxis=0
+ZVelBodyAxis=0
+SimOnGround=True
+OnPlatformHeight=-9999999999
+
+[Avionics.0]
+Comm1Active=123.000
+Comm1Standby=128.250
+Comm2Active=127.800
+Comm2Standby=127.900
+Comm3Active=124.850
+Comm3Standby=124.850
+Nav1Active=113.70
+Nav1Standby=117.20
+OBS1=340
+Nav2Active=110.60
+Nav2Standby=116.80
+OBS2=315
+Transponder=1200
+ADFActive=890
+ADF2Active=240
+DMESelected=1
+ComTransmit=1
+ComReceiveBoth=False
+Com1Receive=True
+Com2Receive=False
+Com3Receive=False
+AudioNav1Listen=False
+AudioNav2Listen=False
+AudioMarkerListen=False
+AudioDmeListen=False
+AudioAdfListen=False
+AudioAdf2Listen=False
+AvionicsSwitch=True
+
+[Slew.0]
+Active=False
+
+[Freeze.0]
+Location=False
+Altitude=False
+Attitude=False
+
+[Engine Parameters.1.0]
+ThrottleLeverPct=0
+PropellerLeverPct=1
+MixtureLeverPct=1
+Pct Engine RPM=0.25925925925925924487
+MaxReachedEngineRPM=0
+LeftMagneto=True
+RightMagneto=True
+GeneratorSwitch=True
+CowlFlapPct=0
+FuelPumpSwitch=False
+CarbHeat/DeiceSwitch=False
+
+[Fuel.0]
+TankSelector=All
+TankSelector1=All
+Center=100
+LeftMain=90
+RightMain=90
+LeftAux=100
+RightAux=100
+LeftTip=100
+RightTip=100
+Center 2=100
+Center 3=100
+External 1=100
+External 2=100
+
+[Systems.0]
+BatterySwitch=True
+StructuralDeiceSwitch=False
+PropDeiceSwitch=False
+Autobrakes=0
+StandbyVacuum=False
+PropSync=False
+AutoFeatherSwitch=False
+FlightDirector=False
+PanelLights=False
+LaunchBarSwitch=False
+LaunchBarState=0
+TailhookHandle=False
+TailhookState=0
+FoldingWingsHandle=False
+FoldingWingsState=0, 0
+
+[Gauges.0]
+KollsmanSetting=29.921339035034179688
+
+[Switches.0]
+PitotHeat=False
+BeaconLights=True
+LandingLights=False
+LogoLights=False
+NavLights=False
+PanelLights=False
+RecognitionLights=False
+StrobeLights=False
+TaxiLights=False
+WingLights=False
+CabinLights=False
+
+[AutoPilot.0]
+MasterSwitch=False
+WingLeveler=False
+Nav1Lock=False
+HeadingLock=False
+HeadingValue=0
+AltitudeLock=False
+AltitudeValue=0
+AttitudeHold=False
+AirspeedHold=False
+AirspeedValue=0
+MachHold=False
+MachValue=0
+VerticalSpeedHold=False
+VerticalSpeedValue=0
+RPMHold=False
+RPMValue=0
+GlideslopeHold=False
+ApproachHold=False
+BackCourseHold=False
+YawDamper=False
+ToGa=False
+AutoThrottleArm=False
+GPSdrivesNAV1=False
+IsUsedForLesson=False
+ForceDisplayUI=False
+
+[Payload.0]
+PayloadList=  85.0,  85.0,   0.0,   0.0,   0.0
+
+[Controls.0]
+SpoilersHandle=000.00
+FlapsHandle=000.00
+LeftFlap=000.00
+RightFlap=000.00
+GearsHandle=000.00
+Gear1=100.00
+Gear2=100.00
+Gear3=100.00
+YokeY=050.00
+YokeX=050.00
+Rudder=050.00
+LeftBrake=000.00
+RightBrake=000.00
+ParkingBrake=000.00
+ElevatorTrim=050.00
+RudderTrimPct=0
+AileronTrimPct=0
+
+
+
+[SimVars.25]
+Latitude=N35°19'45.6
+Longitude=W118°59'47.5"
+Altitude=+000378.00
+Pitch=0
+Bank=0
+Heading=174.59220880642533302
+PVelBodyAxis=0
+BVelBodyAxis=0
+HVelBodyAxis=0
+XVelBodyAxis=0
+YVelBodyAxis=0
+ZVelBodyAxis=0
+SimOnGround=True
+OnPlatformHeight=-9999999999
+
+[Avionics.25]
+Comm1Active=128.300
+Comm1Standby=128.250
+Comm2Active=127.800
+Comm2Standby=127.900
+Comm3Active=124.850
+Comm3Standby=124.850
+Nav1Active=113.70
+Nav1Standby=117.20
+OBS1=340
+Nav2Active=110.60
+Nav2Standby=116.80
+OBS2=315
+Transponder=1200
+ADFActive=890
+ADF2Active=240
+DMESelected=1
+ComTransmit=1
+ComReceiveBoth=False
+Com1Receive=True
+Com2Receive=False
+Com3Receive=False
+AudioNav1Listen=False
+AudioNav2Listen=False
+AudioMarkerListen=False
+AudioDmeListen=False
+AudioAdfListen=False
+AudioAdf2Listen=False
+AvionicsSwitch=True
+
+[Slew.25]
+Active=False
+
+[Freeze.25]
+Location=False
+Altitude=False
+Attitude=False
+
+[Engine Parameters.1.25]
+ThrottleLeverPct=0
+PropellerLeverPct=1
+MixtureLeverPct=1
+Pct Engine RPM=0.25925925925925924487
+MaxReachedEngineRPM=0
+LeftMagneto=True
+RightMagneto=True
+GeneratorSwitch=True
+CowlFlapPct=0
+FuelPumpSwitch=False
+CarbHeat/DeiceSwitch=False
+
+[Fuel.25]
+TankSelector=All
+TankSelector1=All
+Center=100
+LeftMain=90
+RightMain=90
+LeftAux=100
+RightAux=100
+LeftTip=100
+RightTip=100
+Center 2=100
+Center 3=100
+External 1=100
+External 2=100
+
+[Systems.25]
+BatterySwitch=True
+StructuralDeiceSwitch=False
+PropDeiceSwitch=False
+Autobrakes=0
+StandbyVacuum=False
+PropSync=False
+AutoFeatherSwitch=False
+FlightDirector=False
+PanelLights=False
+LaunchBarSwitch=False
+LaunchBarState=0
+TailhookHandle=False
+TailhookState=0
+FoldingWingsHandle=False
+FoldingWingsState=0, 0
+
+[Gauges.25]
+KollsmanSetting=29.921339035034179688
+
+[Switches.25]
+PitotHeat=False
+BeaconLights=True
+LandingLights=False
+LogoLights=False
+NavLights=False
+PanelLights=False
+RecognitionLights=False
+StrobeLights=False
+TaxiLights=False
+WingLights=False
+CabinLights=False
+
+[AutoPilot.25]
+MasterSwitch=False
+WingLeveler=False
+Nav1Lock=False
+HeadingLock=False
+HeadingValue=0
+AltitudeLock=False
+AltitudeValue=0
+AttitudeHold=False
+AirspeedHold=False
+AirspeedValue=0
+MachHold=False
+MachValue=0
+VerticalSpeedHold=False
+VerticalSpeedValue=0
+RPMHold=False
+RPMValue=0
+GlideslopeHold=False
+ApproachHold=False
+BackCourseHold=False
+YawDamper=False
+ToGa=False
+AutoThrottleArm=False
+GPSdrivesNAV1=False
+IsUsedForLesson=False
+ForceDisplayUI=False
+
+[Payload.25]
+PayloadList=  85.0,  85.0,   0.0,   0.0,   0.0
+
+[Controls.25]
+SpoilersHandle=000.00
+FlapsHandle=000.00
+LeftFlap=000.00
+RightFlap=000.00
+GearsHandle=000.00
+Gear1=100.00
+Gear2=100.00
+Gear3=100.00
+YokeY=050.00
+YokeX=050.00
+Rudder=050.00
+LeftBrake=000.00
+RightBrake=000.00
+ParkingBrake=000.00
+ElevatorTrim=050.00
+RudderTrimPct=0
+AileronTrimPct=0
+
+
+[SimVars.26]
+Latitude=N35°19'49.0"
+Longitude=W118°59'48.0"
+Altitude=+000378.00
+Pitch=0
+Bank=0
+Heading=174.59220880642533302
+PVelBodyAxis=0
+BVelBodyAxis=0
+HVelBodyAxis=0
+XVelBodyAxis=0
+YVelBodyAxis=0
+ZVelBodyAxis=0
+SimOnGround=True
+OnPlatformHeight=-9999999999
+
+[Avionics.26]
+Comm1Active=128.300
+Comm1Standby=128.250
+Comm2Active=127.800
+Comm2Standby=127.900
+Comm3Active=124.850
+Comm3Standby=124.850
+Nav1Active=113.70
+Nav1Standby=117.20
+OBS1=340
+Nav2Active=110.60
+Nav2Standby=116.80
+OBS2=315
+Transponder=1200
+ADFActive=890
+ADF2Active=240
+DMESelected=1
+ComTransmit=1
+ComReceiveBoth=False
+Com1Receive=True
+Com2Receive=False
+Com3Receive=False
+AudioNav1Listen=False
+AudioNav2Listen=False
+AudioMarkerListen=False
+AudioDmeListen=False
+AudioAdfListen=False
+AudioAdf2Listen=False
+AvionicsSwitch=True
+
+[Slew.26]
+Active=False
+
+[Freeze.26]
+Location=False
+Altitude=False
+Attitude=False
+
+[Engine Parameters.1.26]
+ThrottleLeverPct=0
+PropellerLeverPct=1
+MixtureLeverPct=1
+Pct Engine RPM=0.25925925925925924487
+MaxReachedEngineRPM=0
+LeftMagneto=True
+RightMagneto=True
+GeneratorSwitch=True
+CowlFlapPct=0
+FuelPumpSwitch=False
+CarbHeat/DeiceSwitch=False
+
+[Fuel.26]
+TankSelector=All
+TankSelector1=All
+Center=100
+LeftMain=90
+RightMain=90
+LeftAux=100
+RightAux=100
+LeftTip=100
+RightTip=100
+Center 2=100
+Center 3=100
+External 1=100
+External 2=100
+
+[Systems.26]
+BatterySwitch=True
+StructuralDeiceSwitch=False
+PropDeiceSwitch=False
+Autobrakes=0
+StandbyVacuum=False
+PropSync=False
+AutoFeatherSwitch=False
+FlightDirector=False
+PanelLights=False
+LaunchBarSwitch=False
+LaunchBarState=0
+TailhookHandle=False
+TailhookState=0
+FoldingWingsHandle=False
+FoldingWingsState=0, 0
+
+[Gauges.26]
+KollsmanSetting=29.921339035034179688
+
+[Switches.26]
+PitotHeat=False
+BeaconLights=True
+LandingLights=False
+LogoLights=False
+NavLights=False
+PanelLights=False
+RecognitionLights=False
+StrobeLights=False
+TaxiLights=False
+WingLights=False
+CabinLights=False
+
+[AutoPilot.26]
+MasterSwitch=False
+WingLeveler=False
+Nav1Lock=False
+HeadingLock=False
+HeadingValue=0
+AltitudeLock=False
+AltitudeValue=0
+AttitudeHold=False
+AirspeedHold=False
+AirspeedValue=0
+MachHold=False
+MachValue=0
+VerticalSpeedHold=False
+VerticalSpeedValue=0
+RPMHold=False
+RPMValue=0
+GlideslopeHold=False
+ApproachHold=False
+BackCourseHold=False
+YawDamper=False
+ToGa=False
+AutoThrottleArm=False
+GPSdrivesNAV1=False
+IsUsedForLesson=False
+ForceDisplayUI=False
+
+[Payload.26]
+PayloadList=  85.0,  85.0,   0.0,   0.0,   0.0
+
+[Controls.26]
+SpoilersHandle=000.00
+FlapsHandle=000.00
+LeftFlap=000.00
+RightFlap=000.00
+GearsHandle=000.00
+Gear1=100.00
+Gear2=100.00
+Gear3=100.00
+YokeY=050.00
+YokeX=050.00
+Rudder=050.00
+LeftBrake=000.00
+RightBrake=000.00
+ParkingBrake=000.00
+ElevatorTrim=050.00
+RudderTrimPct=0
+AileronTrimPct=0
+
+[SimScheduler]
+SimSpeed=001.00
+SimTime=596.82995962224549658

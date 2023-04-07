@@ -1,0 +1,49 @@
+{
+  "content": [
+    {
+      "path": "ContentInfo/brokeneggs-mission-part1/ContentHistory.json",
+      "size": 161,
+      "date": 133252828435351295
+    },
+    {
+      "path": "ContentInfo/brokeneggs-mission-part1/Thumbnail.jpg",
+      "size": 2709,
+      "date": 133252628285144770
+    },
+    {
+      "path": "Missions/mission-part1/missionfiles/images/1920-1080.jpg",
+      "size": 24858,
+      "date": 133252651140305241
+    },
+    {
+      "path": "Missions/mission-part1/missionfiles/missionfiles.FLT",
+      "size": 16838,
+      "date": 133252777997774252
+    },
+    {
+      "path": "Missions/mission-part1/missionfiles/missionfiles.PLN",
+      "size": 2652,
+      "date": 133246746171028248
+    },
+    {
+      "path": "Missions/mission-part1/missionfiles/missionfiles.spb",
+      "size": 2251,
+      "date": 133253615312582728
+    },
+    {
+      "path": "Missions/mission-part1/missionfiles/missionfiles_edition.spb",
+      "size": 765,
+      "date": 133253615312552725
+    },
+    {
+      "path": "Missions/mission-part1/missionfiles/sounds/dialogue1.wav",
+      "size": 305230,
+      "date": 133252566836009276
+    },
+    {
+      "path": "Missions/mission-part1/missionfiles/Weather.WPR",
+      "size": 1654,
+      "date": 133252554030045172
+    }
+  ]
+}

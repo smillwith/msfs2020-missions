@@ -1,0 +1,29 @@
+{
+  "content": [
+    {
+      "path": "ContentInfo/brokeneggs-airport-kspg-st-petersburg/ContentHistory.json",
+      "size": 161,
+      "date": 133214234223642840
+    },
+    {
+      "path": "ContentInfo/brokeneggs-airport-kspg-st-petersburg/Thumbnail.jpg",
+      "size": 5446,
+      "date": 133178539269610625
+    },
+    {
+      "path": "Scenery/airport-kspg-st-petersburg/mymodellib/texture/Test_Checker.png.DDS",
+      "size": 312,
+      "date": 133047020660000000
+    },
+    {
+      "path": "Scenery/airport-kspg-st-petersburg/mymodellib/texture/Test_Checker.png.DDS.json",
+      "size": 102,
+      "date": 133047020660000000
+    },
+    {
+      "path": "Scenery/airport-kspg-st-petersburg/scenery/KSPG.bgl",
+      "size": 54399,
+      "date": 133214234223593327
+    }
+  ]
+}

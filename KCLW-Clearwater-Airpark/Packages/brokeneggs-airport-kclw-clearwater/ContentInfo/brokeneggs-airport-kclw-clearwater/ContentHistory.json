@@ -1,0 +1,10 @@
+{
+  "package-name": "brokeneggs-airport-kclw-clearwater",
+  "items": [
+    {
+      "type": "Airport",
+      "content": "KCLW",
+      "revision": 1
+    }
+  ]
+}

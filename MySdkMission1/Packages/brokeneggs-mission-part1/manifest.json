@@ -1,0 +1,15 @@
+{
+  "dependencies": [],
+  "content_type": "MISSION",
+  "title": "My SDK Mission 1",
+  "manufacturer": "",
+  "creator": "William Smith",
+  "package_version": "0.1.1",
+  "minimum_game_version": "1.31.22",
+  "release_notes": {
+    "neutral": {
+      "LastUpdate": "",
+      "OlderHistory": ""
+    }
+  }
+}

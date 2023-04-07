@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<SimBase.Document Type="MissionFile" version="1,0">
+    <Title>My SDK Mission</Title>
+    <WorldBase.Flight>
+        <SimMission.TimerTrigger InstanceId="{50B730D9-18C0-41F6-8B7D-8FD0A17BDD57}" id="timer1">
+            <Descr>TimerPlayDialog1</Descr>
+            <StaysVisible>False</StaysVisible>
+            <DefaultActivated>True</DefaultActivated>
+            <StopTime>3.000</StopTime>
+            <SimMission.Actions>
+                <WorldBase.ObjectReference InstanceId="{B6C708EB-A5DE-4ADC-A589-A4413A6BD6F0}" id="playDiag1"/>
+                <WorldBase.ObjectReference InstanceId="{FC24DDC7-045C-4F53-A486-E404A25B0A30}" id="SubGoalResolutionAction"/>
+            </SimMission.Actions>
+        </SimMission.TimerTrigger>
+        <SimMission.InstructorDialogAction InstanceId="{B6C708EB-A5DE-4ADC-A589-A4413A6BD6F0}" id="PlayDialog1Action">
+            <Descr>playDiag1</Descr>
+            <Text>This is the dialogue text!</Text>
+            <SoundFileName>dialogue1.wav</SoundFileName>
+            <Priority>NORMAL</Priority>
+        </SimMission.InstructorDialogAction>
+        <SimMission.Goal InstanceId="{DD67ABA3-B657-4453-8FE4-FEC21D93B4E1}" id="Goal1">
+            <Text>You Completed the mission</Text>
+            <Descr>End Goal</Descr>
+        </SimMission.Goal>
+        <SimMission.GoalResolutionAction InstanceId="{3FC55E76-3A12-4B31-BC99-16D419EB83E8}" id="GoalCompletedAction">
+            <Descr>CompleteGoal</Descr>
+            <Goals>
+                <ObjectReference InstanceId="{DD67ABA3-B657-4453-8FE4-FEC21D93B4E1}" id="Goal1"/>
+            </Goals>
+        </SimMission.GoalResolutionAction>
+        <SimMission.TimerTrigger InstanceId="{55558FAB-A535-4866-98A1-2355A2E2EDC6}" id="timer2">
+            <StopTime>30.000</StopTime>
+            <Descr>TimerEndMission</Descr>
+            <DefaultActivated>True</DefaultActivated>
+            <StaysVisible>False</StaysVisible>
+            <OneShot>False</OneShot>
+            <Actions>
+                <ObjectReference InstanceId="{3FC55E76-3A12-4B31-BC99-16D419EB83E8}" id="GoalCompletedAction"/>
+            </Actions>
+        </SimMission.TimerTrigger>
+        <SimMission.GoalResolutionAction InstanceId="{C367830D-65D3-4E1D-8C41-2FA9013AD71A}" id="crashResolution">
+            <GoalResolution>failed</GoalResolution>
+            <Descr>Resolution_Crash</Descr>
+            <Goals>
+                <ObjectReference InstanceId="{DD67ABA3-B657-4453-8FE4-FEC21D93B4E1}" id="Goal1"/>
+            </Goals>
+        </SimMission.GoalResolutionAction>
+        <SimMission.Tutorial InstanceId="{69A54FA2-C7D9-4005-9E0F-72BF79D473BB}" id="sdkTutorial1">
+            <SuccessText>Success here</SuccessText>
+            <FailureText>Failure here</FailureText>
+            <Descr>This is a discovery flight. Enjoy!</Descr>
+            <CrashActions>
+                <ObjectReference InstanceId="{C367830D-65D3-4E1D-8C41-2FA9013AD71A}" id="crashResolution"/>
+            </CrashActions>
+            <Objectives>
+                <Objective UniqueRefId="{DD67ABA3-B657-4453-8FE4-FEC21D93B4E1}" id="objective1">
+                    <Descr>The first objective here</Descr>
+                    <SuccessText>Objective Success here</SuccessText>
+                    <FailureText>Objective Failure here</FailureText>
+                    <Steps>
+                        <Step UniqueRefId="{FC24DDC7-045C-4F53-A486-E404A25B0A30}" id="stepWait1">
+                            <Descr>Hang loose and enjoy the ride</Descr>
+                        </Step>
+                    </Steps>
+                </Objective>
+            </Objectives>
+        </SimMission.Tutorial>
+        <SimMission.SubGoalResolutionAction InstanceId="{FC24DDC7-045C-4F53-A486-E404A25B0A30}"/>
+    </WorldBase.Flight>
+</SimBase.Document>

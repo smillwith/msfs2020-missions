@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<SimBase.Document Type="AceXML" version="1,0">
+    <Descr>AceXML Document</Descr>
+    <FlightPlan.FlightPlan>
+        <Title>Clearwater Air Park to Clearwater Air Park</Title>
+        <FPType>VFR</FPType>
+        <CruisingAlt>1800.000</CruisingAlt>
+        <DepartureID>KCLW</DepartureID>
+        <DepartureLLA>N27° 58' 33.29",W82° 45' 27.52",+000050.00</DepartureLLA>
+        <DestinationID>KCLW</DestinationID>
+        <DestinationLLA>N27° 58' 33.29",W82° 45' 27.52",+000050.00</DestinationLLA>
+        <Descr>Clearwater Air Park to Clearwater Air Park</Descr>
+        <DeparturePosition>34</DeparturePosition>
+        <DepartureName>Clearwater Air Park</DepartureName>
+        <DestinationName>Clearwater Air Park</DestinationName>
+        <AppVersion>
+            <AppVersionMajor>11</AppVersionMajor>
+            <AppVersionBuild>282174</AppVersionBuild>
+        </AppVersion>
+        <ATCWaypoint id="KCLW">
+            <ATCWaypointType>Airport</ATCWaypointType>
+            <WorldPosition>N27° 58' 33.29",W82° 45' 27.52",+000050.00</WorldPosition>
+            <SpeedMaxFP>-1</SpeedMaxFP>
+            <RunwayNumberFP>34</RunwayNumberFP>
+            <ICAO>
+                <ICAOIdent>KCLW</ICAOIdent>
+            </ICAO>
+        </ATCWaypoint>
+        <ATCWaypoint id="Custom">
+            <ATCWaypointType>User</ATCWaypointType>
+            <WorldPosition>N28° 0' 33.14",W82° 45' 26.81",+000950.00</WorldPosition>
+            <SpeedMaxFP>100</SpeedMaxFP>
+            <Alt1FP>200</Alt1FP>
+            <Alt2FP>1200</Alt2FP>            
+        </ATCWaypoint>
+        <ATCWaypoint id="Custom">
+            <ATCWaypointType>User</ATCWaypointType>
+            <WorldPosition>N28° 4' 54.07",W82° 50' 6.44",+001800.00</WorldPosition>
+            <SpeedMaxFP>100</SpeedMaxFP>
+            <Alt1FP>800</Alt1FP>
+            <Alt2FP>1200</Alt2FP>
+        </ATCWaypoint>
+        <ATCWaypoint id="Custom">
+            <ATCWaypointType>User</ATCWaypointType>
+            <WorldPosition>N27° 58' 15.73",W82° 50' 18.44",+000900.00</WorldPosition>
+            <SpeedMaxFP>120</SpeedMaxFP>
+            <Alt1FP>800</Alt1FP>
+            <Alt2FP>1200</Alt2FP>
+        </ATCWaypoint>
+        <ATCWaypoint id="KCLW">
+            <ATCWaypointType>Airport</ATCWaypointType>
+            <WorldPosition>N27° 58' 33.29",W82° 45' 27.52",+000050.00</WorldPosition>
+            <SpeedMaxFP>-1</SpeedMaxFP>
+            <ICAO>
+                <ICAOIdent>KCLW</ICAOIdent>
+            </ICAO>
+        </ATCWaypoint>
+    </FlightPlan.FlightPlan>
+</SimBase.Document>

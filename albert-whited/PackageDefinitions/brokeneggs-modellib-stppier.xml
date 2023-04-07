@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AssetPackage Version="0.1.0">
+	<ItemSettings>
+		<ContentType>SCENERY</ContentType>
+		<Title>StPetePier</Title>
+		<Manufacturer/>
+		<Creator>William Smith</Creator>
+	</ItemSettings>
+	<Flags>
+		<VisibleInStore>false</VisibleInStore>
+		<CanBeReferenced>false</CanBeReferenced>
+	</Flags>
+	<AssetGroups>
+		<AssetGroup Name="ContentInfo">
+			<Type>ContentInfo</Type>
+			<Flags>
+				<FSXCompatibility>false</FSXCompatibility>
+			</Flags>
+			<AssetDir>PackageDefinitions\brokeneggs-modellib-stppier\ContentInfo\</AssetDir>
+			<OutputDir>ContentInfo\brokeneggs-modellib-stppier\</OutputDir>
+		</AssetGroup>
+		<AssetGroup Name="models">
+			<Type>BGL</Type>
+			<Flags>
+				<FSXCompatibility>false</FSXCompatibility>
+			</Flags>
+			<AssetDir>PackageSources\Scenery\modellib-stppier\models\</AssetDir>
+			<OutputDir>Scenery\modellib-stppier\models\</OutputDir>
+		</AssetGroup>
+	</AssetGroups>
+</AssetPackage>
+

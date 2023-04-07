@@ -1,0 +1,47 @@
+{
+  "market-data": {
+    "Neutral": {
+      "creator": "Broken Eggs",
+      "title": "KCLW Clearwater Air Park, Florida",
+      "description": "KCLW is a non-towered, public airport located in Clearwater, Florida. Minutes from famed Clearwater Beach, this small air park hosts 35+ small aircraft and used for local GA and training.\n\nAirport Features\n\n* Elevation: 71ft\n* Runways: 34\/15 - 4,108 x 75 ft; asphalt\n* Operation: 0700 - 2300\n* Notes and notices: \n   Trees near both ends of the runway call for displacement (marked)\n   3.5 glide slope on to clear\n   Full-stop only - No Touch & Go\n\n\nEnhancements in this mod\n\n* Painted aprons\n* Added a functional helipad\n* Added additional parking options\n* Enhanced taxiway lighting\n* Restored original logo paintwork on taxiway\n* Fixed the traffic pattern 34 Right \/ 16 Left\n* Updated positioning and accuracy of VASI lighting for 34\/16 at proper 3.5 slope\n* Light weight, no custom models.\n",
+      "support-contact": "ibrokeggs@gmail.com",
+      "tags": "SMALL,TAMPA,PINELLAS,AIRPARK,HELIPAD",
+      "media-backgrounds": [
+        "MicrosoftFlightSimulator3_5_20238_55_35PM.jpg,MicrosoftFlightSimulator3_5_20238_55_35PM.jpg"
+      ],
+      "blocks": [
+        {
+          "type": "MEDIASLIDER",
+          "data": {
+            "medias": [
+              {
+                "thumbnail": "MARKET4.jpg"
+              },
+              {
+                "thumbnail": "MARKET2.jpg"
+              },
+              {
+                "thumbnail": "MARKET3.jpg"
+              },
+              {
+                "thumbnail": "MARKET6.jpg"
+              },
+              {
+                "thumbnail": "MARKET1.jpg"
+              },
+              {
+                "thumbnail": "MARKET5.jpg"
+              },
+              {
+                "thumbnail": "MARKET8.jpg"
+              },
+              {
+                "thumbnail": "MARKET7.jpg"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

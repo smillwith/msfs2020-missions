@@ -1,0 +1,24 @@
+{
+  "business": {
+    "PriceInUSD": 0.0,
+    "ThirdPartyShortName": "brokeneggs",
+    "AccountSellerId": "TBD",
+    "UseFirstAvailableReleaseDate": true
+  },
+  "marketplace": {
+    "sections": [
+      {
+        "category": "Airports",
+        "section": "Airports"
+      }
+    ]
+  },
+  "locations": [
+    {
+      "type": "airport",
+      "airportCode": "KCLW",
+      "latitude": 27.97591309996089,
+      "longitude": -82.75764494979568
+    }
+  ]
+}

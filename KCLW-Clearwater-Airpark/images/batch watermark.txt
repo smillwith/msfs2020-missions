@@ -1,0 +1,4 @@
+https://batchwatermark.com/en?font=helvetica&visibility=0.7&horiz=Left&vert=Bottom&size=0.7&text=KCLW%20for%20MSFS%202020%20%2F%20William%20Smith&type=text&preset=true
+
+https://batchwatermark.com/en?font=helvetica&visibility=0.7&horiz=Right&vert=Top&size=0.3&text=KCLW%20for%20MSFS%202020%20%2F%20William%20Smith&textColor=0a0000&type=text&preset=true
+

@@ -1,0 +1,19 @@
+{
+  "content": [
+    {
+      "path": "ContentInfo/brokeneggs-airport-kclw-clearwater/ContentHistory.json",
+      "size": 158,
+      "date": 133248527478430902
+    },
+    {
+      "path": "ContentInfo/brokeneggs-airport-kclw-clearwater/Thumbnail.jpg",
+      "size": 35873,
+      "date": 133201173642258129
+    },
+    {
+      "path": "Scenery/airport-kclw-clearwater/scenery/KCLW.bgl",
+      "size": 42907,
+      "date": 133248527478375738
+    }
+  ]
+}

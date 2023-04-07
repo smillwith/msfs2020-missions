@@ -1,0 +1,10 @@
+{
+  "package-name": "brokeneggs-airport-kspg-st-petersburg",
+  "items": [
+    {
+      "type": "Airport",
+      "content": "KSPG",
+      "revision": 1
+    }
+  ]
+}

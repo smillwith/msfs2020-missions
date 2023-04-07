@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AssetPackage ReleaseNotes="PackageDefinitions\brokeneggs-airport-kclw-clearwater\ReleaseNotes.xml" Version="1.8.2">
+	<ItemSettings>
+		<ContentType>SCENERY</ContentType>
+		<Title>KCLW Clearwater Air Park, Florida</Title>
+		<Manufacturer/>
+		<Creator>Broken Eggs</Creator>
+	</ItemSettings>
+	<Flags>
+		<VisibleInStore>false</VisibleInStore>
+		<CanBeReferenced>false</CanBeReferenced>
+	</Flags>
+	<MarketplaceData>
+		<AssetDir>PackageDefinitions\brokeneggs-airport-kclw-clearwater\MarketplaceData\</AssetDir>
+		<OutputDir>MarketplaceData\brokeneggs-airport-kclw-clearwater\</OutputDir>
+	</MarketplaceData>
+	<AssetGroups>
+		<AssetGroup Name="ContentInfo">
+			<Type>ContentInfo</Type>
+			<Flags>
+				<FSXCompatibility>false</FSXCompatibility>
+			</Flags>
+			<AssetDir>PackageDefinitions\brokeneggs-airport-kclw-clearwater\ContentInfo\</AssetDir>
+			<OutputDir>ContentInfo\brokeneggs-airport-kclw-clearwater\</OutputDir>
+		</AssetGroup>
+		<AssetGroup Name="scenery">
+			<Type>BGL</Type>
+			<Flags>
+				<FSXCompatibility>false</FSXCompatibility>
+			</Flags>
+			<AssetDir>PackageSources\Scenery\airport-kclw-clearwater\scenery\</AssetDir>
+			<OutputDir>Scenery\airport-kclw-clearwater\scenery\</OutputDir>
+		</AssetGroup>
+	</AssetGroups>
+</AssetPackage>
+
