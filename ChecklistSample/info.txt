@@ -1,0 +1,103 @@
+
+https://docs.flightsimulator.com/html/Content_Configuration/Checklists/Checklists.htm
+
+https://docs.flightsimulator.com/html/Content_Configuration/Checklists/Checklist_Examples.htm
+
+https://docs.flightsimulator.com/html/Content_Configuration/Checklists/Checklist_Definitions.htm
+
+
+
+https://docs.flightsimulator.com/html/mergedProjects/How_To_Make_An_Aircraft/Contents/Files/Checklists/Checklists.htm
+
+https://docs.flightsimulator.com/html/mergedProjects/How_To_Make_An_Aircraft/Contents/Files/Checklists/Checklist_Best_Practices.htm
+
+https://docs.flightsimulator.com/html/mergedProjects/How_To_Make_An_Aircraft/Contents/Files/Checklists/Creating_A_Checklist.htm
+
+============================
+Questions
+============================
+
+Where do I place my file to make it work?
+  - Probably need to make a new package and dev mode project and enter the file there
+How do I test my checklist in game?
+
+How do I know the list of aircraft names to reference?
+ - in the packages folder listed at the bottom of this document
+How do I know the list of controls to reference?
+ - they are in the asobo model xml files - some are referenced here
+
+
+============================
+Notes
+============================
+
+A subject is a particular control such as Parking Brake or Prop Lever or Throttle
+
+An expectation is the expected setting or value for that subject
+
+A clue is a reference to the control item in question
+
+A checkpoint is an individual action or task and references a subject and expectation and a clue.
+
+A step is a section of checkpoints such as "Before Takeoff" or "Approach"
+
+A page is the "in-game" name for a step
+
+A checklist is collection of one or more steps that contain the checkpoints
+
+A checkpoint library is where common checkpoints can be stored and referenced by different aircraft checklists
+
+Checkpoints in the library must contain an "Id" value
+
+Checklists can then reference the shared checkpoints by setting a ReferenceId and entering the "Id" of the shared checkpoint
+
+
+For the C-152, let's add - what?
+
+To use "Fuel Selector ON" as an example:
+
+The Aircraft file (C152.xml) has a reference to Common.xml
+Common.xml has reference to: Fuel.xml
+Fuel.xml has a Reference to: ASOBO_FUEL_Cutoff_Template
+Template: ASOBO_FUEL_Cutoff_SubTemplate (Fuel_Subtemplates.xml)
+
+
+The checklist for the C-152 has this reference:
+CheclistId: Fuel_Shutoff_Valve_Open
+
+Which references instrument:FUEL_Switch_Cutoff
+
+
+=============================
+Installation
+=============================
+
+Copy the Checklist files to the Checklist folder in the appropriate aircraft (see folders below)
+Copy the Localization files *.loc to the Localization
+
+
+=============================
+Reference
+=============================
+
+Correct Location for Me:
+
+C:\Users\ibrok\AppData\Local\Packages\Microsoft.FlightSimulator_8wekyb3d8bbwe\LocalCache\Packages\Official\OneStore\fs-base-aircraft-common\CheckpointsLibrary
+
+C:\Users\ibrok\AppData\Local\Packages\Microsoft.FlightSimulator_8wekyb3d8bbwe\LocalCache\Packages\Official\OneStore\asobo-aircraft-c152
+
+
+Default checklist libraries to reference: - WRONG
+
+Steam:
+Users\[USER_NAME]\AppData\Roaming\Microsoft Flight Simulator\Packages\Official\Steam\fs-base-aircraft-common\CheckpointsLibrary\Asobo_DefaultCheckpointLibrary.xml
+
+OneStore:
+Users\[USER_NAME]\AppData\Roaming\Microsoft Flight Simulator\Official\OneStore\fs-base-aircraft-common\CheckpointsLibrary\Asobo_DefaultCheckpointLibrary.xml
+
+
+
+
+
+
+

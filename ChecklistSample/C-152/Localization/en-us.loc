@@ -1,0 +1,35 @@
+{
+  "LocalisationFile": {
+    "Version": 2,
+    "UUID": "80C503AC-C5A3-42AB-96C0-653D936372E5",
+    "Languages": [
+      "en-US"
+    ],
+    "Strings": {
+      "IBE.CLUE.IGNITION_SWITCH_OFF": {
+        "UUID": "456CDF67-D4A1-4BB7-87B9-D685AD01A040",
+        "LastModifiedBy": "Will",
+        "LastModifiedDate": "2021-04-30 16:44:54",
+        "LocalizationStatus": "TranslationNeeded",
+        "Languages": {
+          "en-US": {
+            "Text": "Off",
+            "LocalizationStatus": "TranslationOk"
+          }
+        }
+      },
+      "IBE.GAME.CHECKLIST_IGNITION_SWITCH": {
+        "UUID": "A2B4E7F2-6B5A-451E-A760-D8F23EF3046F",
+        "LastModifiedBy": "Will",
+        "LastModifiedDate": "2021-04-30 16:44:54",
+        "LocalizationStatus": "TranslationNeeded",
+        "Languages": {
+          "en-US": {
+            "Text": "Ignition Switch"
+          }
+        }
+      }
+
+    }
+  }
+}

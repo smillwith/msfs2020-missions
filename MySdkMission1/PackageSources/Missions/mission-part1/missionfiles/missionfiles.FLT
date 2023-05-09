@@ -1,11 +1,13 @@
 
 [Main]
 MissionType=Tutorial
-MissionLocation=Clearwater Airpark
 Title=Clearwater Discovery Flight
 Description=Clearwater Airpark Training Area
 AppVersion=10.0.282174
 FlightVersion=1
+
+[Briefing]
+BriefingText=My Briefing Text
 
 [Options]
 Sound=True
@@ -59,6 +61,15 @@ Hours=18
 Minutes=8
 Seconds=6.8911299705505371094
 UseZuluTime=False
+
+[TrafficOptions]
+AllowAmbientVehicleTraffic=False
+
+[Multiplayer]
+Status=0
+
+[AirTraffic]
+Status=0
 
 [Panels]
 Panel.On=True

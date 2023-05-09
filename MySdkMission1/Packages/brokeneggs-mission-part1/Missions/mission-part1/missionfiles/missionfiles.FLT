@@ -315,59 +315,9 @@ WpInfo3=120, 0, 274, 0, 0, 0.0, 0.4, 0.0
 WpInfo4=55, 0, 15, 0, 0, 0.0, 0.8, 0.0
 CountFP=0
 
-[Panel.1]
-ScreenUniCoords=0, 0, 0, 0
-UndocCoords=0, 0, 0, 0
-Visible=False
-Undocked=False
-HiddenOn=False
-ID=0
-ViewsOn=1
-
-[Panel.2]
-ScreenUniCoords=0, 0, 0, 0
-UndocCoords=0, 0, 0, 0
-Visible=False
-Undocked=False
-HiddenOn=False
-ID=50
-ViewsOn=0
-
-[Panel.3]
-ScreenUniCoords=0, 0, 0, 0
-UndocCoords=0, 0, 0, 0
-Visible=False
-Undocked=False
-HiddenOn=False
-ID=225
-ViewsOn=0
-
-[Panel.4]
-ScreenUniCoords=0, 0, 0, 0
-UndocCoords=0, 0, 0, 0
-Visible=False
-Undocked=False
-HiddenOn=False
-ID=1
-ViewsOn=0
-
-[Panel.5]
-ScreenUniCoords=0, 0, 0, 0
-UndocCoords=0, 0, 0, 0
-Visible=False
-Undocked=False
-HiddenOn=False
-ID=2
-ViewsOn=0
-
-[Panel.6]
-ScreenUniCoords=0, 0, 0, 0
-UndocCoords=0, 0, 0, 0
-Visible=False
-Undocked=False
-HiddenOn=False
-ID=20000
-ViewsOn=1
+[Panels]
+Panel.On=True
+HUD.On=False
 
 [SimVars.0]
 Latitude=N27° 58' 27.69"
