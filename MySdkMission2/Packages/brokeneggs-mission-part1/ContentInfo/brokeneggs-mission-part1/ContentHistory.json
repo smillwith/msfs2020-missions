@@ -1,0 +1,10 @@
+{
+  "package-name": "brokeneggs-mission-part1",
+  "items": [
+    {
+      "type": "Tutorial",
+      "content": "missionfiles.FLT",
+      "revision": 1
+    }
+  ]
+}

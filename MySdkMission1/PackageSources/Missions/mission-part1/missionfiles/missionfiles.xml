@@ -3,15 +3,16 @@
 <SimBase.Document Type="MissionFile" version="1,0">
     <Title>My SDK Mission</Title>
     <WorldBase.Flight>
+        <OverwriteAction>REPLACE_DUPLICATES</OverwriteAction>
         <SimMission.TimerTrigger InstanceId="{50B730D9-18C0-41F6-8B7D-8FD0A17BDD57}" id="timer1">
             <Descr>TimerPlayDialog1</Descr>
             <StaysVisible>False</StaysVisible>
             <DefaultActivated>True</DefaultActivated>
             <StopTime>3.000</StopTime>
-            <SimMission.Actions>
-                <WorldBase.ObjectReference InstanceId="{B6C708EB-A5DE-4ADC-A589-A4413A6BD6F0}" id="playDiag1"/>
-                <WorldBase.ObjectReference InstanceId="{FC24DDC7-045C-4F53-A486-E404A25B0A30}" id="SubGoalResolutionAction"/>
-            </SimMission.Actions>
+            <Actions>
+                <ObjectReference InstanceId="{FC24DDC7-045C-4F53-A486-E404A25B0A30}" id="SubGoalResolutionAction"/>
+                <ObjectReference InstanceId="{B6C708EB-A5DE-4ADC-A589-A4413A6BD6F0}" id="playDiag1"/>
+            </Actions>
         </SimMission.TimerTrigger>
         <SimMission.InstructorDialogAction InstanceId="{B6C708EB-A5DE-4ADC-A589-A4413A6BD6F0}" id="PlayDialog1Action">
             <Descr>playDiag1</Descr>
@@ -30,7 +31,7 @@
             </Goals>
         </SimMission.GoalResolutionAction>
         <SimMission.TimerTrigger InstanceId="{55558FAB-A535-4866-98A1-2355A2E2EDC6}" id="timer2">
-            <StopTime>30.000</StopTime>
+            <StopTime>300.000</StopTime>
             <Descr>TimerEndMission</Descr>
             <DefaultActivated>True</DefaultActivated>
             <StaysVisible>False</StaysVisible>
@@ -49,7 +50,7 @@
         <SimMission.Tutorial InstanceId="{69A54FA2-C7D9-4005-9E0F-72BF79D473BB}" id="sdkTutorial1">
             <SuccessText>Success here</SuccessText>
             <FailureText>Failure here</FailureText>
-            <Descr>This is a discovery flight. Enjoy!</Descr>
+            <Descr>tutorialMain</Descr>
             <CrashActions>
                 <ObjectReference InstanceId="{C367830D-65D3-4E1D-8C41-2FA9013AD71A}" id="crashResolution"/>
             </CrashActions>
@@ -59,13 +60,62 @@
                     <SuccessText>Objective Success here</SuccessText>
                     <FailureText>Objective Failure here</FailureText>
                     <Steps>
-                        <Step UniqueRefId="{FC24DDC7-045C-4F53-A486-E404A25B0A30}" id="stepWait1">
-                            <Descr>Hang loose and enjoy the ride</Descr>
+                        <Step UniqueRefId="{E5729062-E046-4BB5-B209-D3815609CBE1}" id="objective1setp1">
+                            <Descr>Step 1 Descr</Descr>
+                            <SuccessText>Step Success</SuccessText>
+                            <FailureText>Step Failure</FailureText>
+                            <AbortedText>Step aborted</AbortedText>
                         </Step>
                     </Steps>
                 </Objective>
             </Objectives>
         </SimMission.Tutorial>
-        <SimMission.SubGoalResolutionAction InstanceId="{FC24DDC7-045C-4F53-A486-E404A25B0A30}"/>
+        <SimMission.SubGoalResolutionAction InstanceId="{FC24DDC7-045C-4F53-A486-E404A25B0A30}">
+            <SubGoals>
+                <ObjectReference InstanceId="{E5729062-E046-4BB5-B209-D3815609CBE1}" id="SubGoal"/>
+            </SubGoals>
+        </SimMission.SubGoalResolutionAction>
+        <SimMission.ChangeAssistanceItemAction InstanceId="{6C1DBD3F-BDEC-4B6D-AFC6-7B437EF5998A}" id="changeStallOff">
+            <SetValue>Off</SetValue>
+            <AssistanceItemID>ASSISTANCE_ITEM_ANTI_STALL</AssistanceItemID>
+            <Descr>setStallProtectionOff</Descr>
+        </SimMission.ChangeAssistanceItemAction>
+        <SimMission.TimerTrigger InstanceId="{149D725D-F5CD-4CBC-B587-34B6FC49EB0E}" id="timerSetOptions">
+            <StopTime>2.000</StopTime>
+            <StaysVisible>False</StaysVisible>
+            <DefaultActivated>True</DefaultActivated>
+            <Descr>setAssistanceOptoins</Descr>
+            <Actions>
+                <ObjectReference InstanceId="{4C87FD6E-FA63-4D9C-AF9B-A96D3423DE99}" id="actionAssistHudOff"/>
+                <ObjectReference InstanceId="{6C1DBD3F-BDEC-4B6D-AFC6-7B437EF5998A}" id="changeStallOff"/>
+            </Actions>
+        </SimMission.TimerTrigger>
+        <SimMission.ChangeAssistanceItemAction InstanceId="{4C87FD6E-FA63-4D9C-AF9B-A96D3423DE99}" id="actionAssistHudOff">
+            <SetChangeable>Unlock</SetChangeable>
+            <SetValue>Off</SetValue>
+            <AssistanceItemID>ASSISTANCE_ITEM_HUD_COCKPIT</AssistanceItemID>
+            <Descr>setHudOff</Descr>
+        </SimMission.ChangeAssistanceItemAction>
+        <SimMission.SubGoal InstanceId="{E5729062-E046-4BB5-B209-D3815609CBE1}" id="subgoal1">
+            <Descr>Sub Goal Wait Test</Descr>
+        </SimMission.SubGoal>
+        <SimEdition.CommentNode InstanceId="{1ECC6D55-43B4-4888-B00C-1B51DD857C8E}">
+            <NodeComment>Mission</NodeComment>
+        </SimEdition.CommentNode>
+        <SimMission.OnSpawnTrigger InstanceId="{18D52FC4-07B0-4905-9F61-CED1DCD3CD99}">
+            <Actions>
+                <ObjectReference InstanceId="{705AF48B-B6DF-42AC-A288-02DCDB4D5CDA}" id="FlowStateAction"/>
+            </Actions>
+        </SimMission.OnSpawnTrigger>
+        <SimMission.FlowStateAction InstanceId="{705AF48B-B6DF-42AC-A288-02DCDB4D5CDA}">
+            <FromSpawn>True</FromSpawn>
+            <FlowStateName>PREFLIGHT_GATE</FlowStateName>
+            <IsFirstStateInTimeline>True</IsFirstStateInTimeline>
+            <StartFlowEvents>
+                <FlowEvent id="PANEL_OBJECTIVES_FORCE_SHOW"/>
+            </StartFlowEvents>
+            <ObjectReference>
+            </ObjectReference>
+        </SimMission.FlowStateAction>
     </WorldBase.Flight>
 </SimBase.Document>

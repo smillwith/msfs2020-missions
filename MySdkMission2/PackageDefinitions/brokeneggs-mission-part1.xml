@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AssetPackage Version="0.1.1">
+	<ItemSettings>
+		<ContentType>MISSION</ContentType>
+		<Title>My SDK Mission 1</Title>
+		<Manufacturer/>
+		<Creator>William Smith</Creator>
+	</ItemSettings>
+	<Flags>
+		<VisibleInStore>false</VisibleInStore>
+		<CanBeReferenced>false</CanBeReferenced>
+	</Flags>
+	<AssetGroups>
+		<AssetGroup Name="ContentInfo">
+			<Type>ContentInfo</Type>
+			<Flags>
+				<FSXCompatibility>false</FSXCompatibility>
+			</Flags>
+			<AssetDir>PackageDefinitions\brokeneggs-mission-part1\ContentInfo\</AssetDir>
+			<OutputDir>ContentInfo\brokeneggs-mission-part1\</OutputDir>
+		</AssetGroup>
+		<AssetGroup Name="missionfiles">
+			<Type>Mission</Type>
+			<Flags>
+				<FSXCompatibility>false</FSXCompatibility>
+			</Flags>
+			<AssetDir>PackageSources\Missions\mission-part1\missionfiles\</AssetDir>
+			<OutputDir>Missions\mission-part1\missionfiles\</OutputDir>
+		</AssetGroup>
+	</AssetGroups>
+</AssetPackage>
+

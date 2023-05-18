@@ -1,11 +1,14 @@
 
 [Main]
 MissionType=Tutorial
-MissionLocation=Clearwater Airpark
 Title=Clearwater Discovery Flight
 Description=Clearwater Airpark Training Area
 AppVersion=10.0.282174
 FlightVersion=1
+
+[Briefing]
+BriefingText=My Briefing Text
+BriefingImage0=./images/MissionName_Briefing.jpg
 
 [Options]
 Sound=True
@@ -48,7 +51,7 @@ RunwayDesignator=NONE
 ICAO=KCLW
 
 [Loading]
-ImageName=LOADING_FREEFLIGHT
+ImageName=./images/Loading_Screen.png
 Tips0=TT:LOADING.TIPS.C172_002
 
 [DateTimeSeason]
@@ -59,6 +62,15 @@ Hours=18
 Minutes=8
 Seconds=6.8911299705505371094
 UseZuluTime=False
+
+[TrafficOptions]
+AllowAmbientVehicleTraffic=False
+
+[Multiplayer]
+Status=0
+
+[AirTraffic]
+Status=0
 
 [Panels]
 Panel.On=True
@@ -315,9 +327,59 @@ WpInfo3=120, 0, 274, 0, 0, 0.0, 0.4, 0.0
 WpInfo4=55, 0, 15, 0, 0, 0.0, 0.8, 0.0
 CountFP=0
 
-[Panels]
-Panel.On=True
-HUD.On=False
+[Panel.1]
+ScreenUniCoords=0, 0, 0, 0
+UndocCoords=0, 0, 0, 0
+Visible=False
+Undocked=False
+HiddenOn=False
+ID=0
+ViewsOn=1
+
+[Panel.2]
+ScreenUniCoords=0, 0, 0, 0
+UndocCoords=0, 0, 0, 0
+Visible=False
+Undocked=False
+HiddenOn=False
+ID=50
+ViewsOn=0
+
+[Panel.3]
+ScreenUniCoords=0, 0, 0, 0
+UndocCoords=0, 0, 0, 0
+Visible=False
+Undocked=False
+HiddenOn=False
+ID=225
+ViewsOn=0
+
+[Panel.4]
+ScreenUniCoords=0, 0, 0, 0
+UndocCoords=0, 0, 0, 0
+Visible=False
+Undocked=False
+HiddenOn=False
+ID=1
+ViewsOn=0
+
+[Panel.5]
+ScreenUniCoords=0, 0, 0, 0
+UndocCoords=0, 0, 0, 0
+Visible=False
+Undocked=False
+HiddenOn=False
+ID=2
+ViewsOn=0
+
+[Panel.6]
+ScreenUniCoords=0, 0, 0, 0
+UndocCoords=0, 0, 0, 0
+Visible=False
+Undocked=False
+HiddenOn=False
+ID=20000
+ViewsOn=1
 
 [SimVars.0]
 Latitude=N27° 58' 27.69"
