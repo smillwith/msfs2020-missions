@@ -1,0 +1,226 @@
+
+[Main]
+MissionType=Tutorial
+MissionSubType=BasicHandling
+MissionLocation=Sedona, AZ
+Title=TT:MENU.TUTORIAL.NAME_ATTITUDEPITCH
+Description=TT:AttitudesPitch.Description
+AppVersion=10.0.282174
+FlightVersion=1
+;;NextMission=T02_BasicInstruments.flt
+
+[Options]
+Sound=True
+Pause=True
+Moonlight=True
+TextDisplayPage=0
+SlewDisplayPage=1
+AxisIndicator=Off
+Titles=False
+
+[Sim.0]
+Sim=Cessna 152 Asobo
+SimFile=Cruise.flt
+Instructor=Pilot_Female_Casual
+Pilot=Default
+
+[ResourcePath]
+Path=AttitudePitch
+
+[ObjectFile]
+NbFiles=6
+File.0=AttitudePitch
+File.1=AttitudePitch_01_Plane_Pitch_Up
+File.2=AttitudePitch_02_Plane_Pitch_Level_01
+File.3=AttitudePitch_03_Plane_Pitch_Down
+File.4=AttitudePitch_04_Plane_Pitch_Level_02
+File.5=AttitudePitch_Dialogues
+
+[Atc_Menu]
+Visible=False
+
+[Weather]
+UseWeatherFile=True
+
+[Assistance]
+Preset=ASSISTANCE_PRESET_TUTORIALS
+EventTriggersFileCount=0
+;;EventTriggersFile.0=EventTriggersAttitudePitch
+
+
+[Briefing]
+BriefingText=TT:AttitudesPitch.Briefing
+BriefingInfo0=FLIGHT_INFO_TOTAL_FLIGHT_DURATION, 120
+BriefingImage0=./images/BasicControls_Briefing.jpg
+BriefingImageOverlay0=./images/FlightSchool_Briefing_AttitudePitch/FlightSchool_Briefing_AttitudePitch.uxml
+;;StartUpLocationInfo0=FLIGHT_INFO_RUNWAY_DEPARTURE_ELEVATION
+;;StartUpLocationInfo1=FLIGHT_INFO_RUNWAY_DEPARTURE_SLOPE
+StartUpLocationInfo0=FLIGHT_INFO_LOCATION_TIME
+StartUpLocationInfo1=FLIGHT_INFO_LOCATION_WIND
+StartUpAircraftInfo0=FLIGHT_INFO_AIRCRAFT_IAS
+StartUpAircraftInfo1=FLIGHT_INFO_AIRCRAFT_HEADING
+StartUpAircraftInfo2=FLIGHT_INFO_LOCATION_ALTITUDE
+
+[Loading]
+ImageName=./images/Basic_Controls_loading.jpg
+Tips0=TT:LOADING.TIPS.YOKE_002
+Tips1=TT:LOADING.TIPS.ATTITUDE_003
+Tips2=TT:LOADING.TIPS.YOKE_001
+Tips3=TT:LOADING.TIPS.ATTITUDE_002
+
+[Panels]
+Panel.On=True
+HUD.On=False
+
+[Window.1]
+Order=255
+Active=True
+Undocked=False
+Maximized=True
+ScreenUniCoords=0, 0, 8192, 4000
+UndocCoords=0, 0, 0, 0
+CurrentCamera={BCA3FDD1-FB83-4BBA-8407-4922A7F0D00C}
+
+[ATC_AgentManager]
+NumberofAgents=0
+
+[ATC_Aircraft.0]
+ActiveFlightPlan=False
+RequestedFlightPlan=True
+AcState=ACSTATE_REQUEST_TAXI_CLEARANCE_OUT_VFR_ATIS
+NumberofWaypoints=0
+ClearanceFlags=82
+CtCur=CLEARANCE_NONE
+WaypointNext=0
+AltCleared=-1
+HdgAssigned=-1
+SquawkAssigned=4608
+LandingSequence=LANDING_NONE
+DepartureRequest=DEPARTURE_VFR_REQUEST_NONE
+ParkingRequest=PARKING_NAME_NONE
+ParkingTypeRequest=PARKING_TYPE_NONE
+PatternLeg=PATTERN_LEG_NONE
+ApproachIndex=-1
+ApproachTransitionIndex=-1
+ApproachRequestIndex=-1
+ApproachTransitionRequestIndex=-1
+RunwayIndex=-1
+RunwayRequestIndex=-1
+ParkingIndex=-1
+FlightFollowing=FLIGHT_FOLLOWING_NO
+AirspaceTransition=AIRSPACE_TRANSITION_NONE
+BVAirspaceTransition=BV_TYPE_NONE
+BVAirspaceTransitionReq=BV_TYPE_NONE
+TakeoffSequence=TAKEOFF_SEQUENCE_NONE
+LandingSequenceNumber=-1
+TaxiRouteCurrent=-1
+CruisingAltitude=6000
+RequestedCruisingAltitude=-1
+ExpectedAltitude=-1
+AircraftSignature=1,0  
+
+[ATC_RequestedFlightPlan.0]
+title=Basic Controls Tutorial
+description=Basic Controls Tutorial
+type=VFR
+routetype=0
+cruising_altitude=5500
+departure_id=CUST0,  N34° 52' 6.2", W111° 44' 43.4", +005500.00
+departure_position=
+destination_id=CUST10, N34° 51' 57.36", W111° 44' 42.53", +005500.00
+departure_name=Sedona, AZ
+destination_name=Sedona, AZ
+Waypoint.0=, , , CUST0, U, N34° 53' 6.0", W111° 44' 42.0", +005500.00,   
+Waypoint.1=, , , CUST1, U, N34° 51' 9.9", W111° 45' 22.3", +005500.00, 
+Waypoint.2=, , , CUST2, U, N34° 49' 25.3", W111° 47' 4.7", +005500.00,
+Waypoint.3=, , , CUST3, U, N34° 50' 4.77", W111° 48' 32.59",+005500.00, 
+Waypoint.4=, , , CUST4, U, N34° 50' 25.57", W111° 48' 50.49",+005500.00, 
+Waypoint.5=, , , CUST5, U, N34° 51' 1.57", W111° 48' 23.93",+005500.00, 
+Waypoint.6=, , , CUST6, U, N34° 51' 32.01", W111° 47' 39.44",+005500.00, 
+Waypoint.7=, , , CUST7, U, N34° 51' 55.32", W111° 47' 7.30",+005500.00,
+Waypoint.8=, , , CUST8, U, N34° 51' 56.85",W111° 46' 12.78",+005500.00,
+Waypoint.9=, , , CUST9, U, N34° 51' 37.07",W111° 45' 51.75",+005500.00,
+Waypoint.10=, , , CUST10, U, N34° 50' 53.97",W111° 46' 42.45",+005500.00,
+
+[ATC_AircraftManager]
+NumberofAircraft=1
+
+[ATC_MessageSystem]
+FrequencyNodes=0
+
+[DateTimeSeason]
+Season=Fall
+Year=2018
+Day=250
+Hours=16
+Minutes=40
+Seconds=0
+
+[SimVars.0]
+Latitude=N34° 41' 28.15"       
+Longitude=W111° 57' 12.89"      
+Altitude=+005500
+Pitch=-0.75
+Bank=0
+Heading=090
+PVelBodyAxis=0
+BVelBodyAxis=0
+HVelBodyAxis=0
+XVelBodyAxis=0
+YVelBodyAxis=0
+ZVelBodyAxis=167
+SimOnGround=False
+OnPlatformHeight=-9999999999
+
+[Slew.0]
+Active=False
+
+[Freeze.0]
+Location=False
+Altitude=False
+Attitude=False
+
+[Engine Parameters.1.0]
+MixtureLeverPct=0.7
+ThrottleLeverPct=0.75
+Pct Engine RPM=0.9
+
+[Fuel.0]
+TankSelector=All
+TankSelector1=All
+Center=100
+LeftMain=90
+RightMain=90
+LeftAux=100
+RightAux=100
+LeftTip=100
+RightTip=100
+Center 2=100
+Center 3=100
+External 1=100
+External 2=100
+
+[Payload.0]
+PayloadList=  170.0,  170.0,   0.0,   0.0,   0.0
+
+[Controls.0]
+ElevatorTrim=051.58
+
+[Multiplayer]
+Status=0
+RadiusAlpha=50
+RadiusCreate=5000
+RadiusRemove=5500
+
+[AirTraffic]
+Status=0
+RadiusAlpha=50
+RadiusCreate=5000
+RadiusRemove=5500
+
+[TrafficManager]
+disable=True
+
+[SimScheduler]
+SimSpeed=001.00
+SimTime=596.82995962224549658

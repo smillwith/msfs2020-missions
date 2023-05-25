@@ -65,8 +65,8 @@
             <ElementName>NON_RTC</ElementName>
         </SimMission.FlowStateWise>
         <SimMission.Tutorial InstanceId="{69A54FA2-C7D9-4005-9E0F-72BF79D473BB}" id="sdkTutorial1">
-            <SuccessText>Success here</SuccessText>
-            <FailureText>Failure here</FailureText>
+            <SuccessText>Tutorial Success here</SuccessText>
+            <FailureText>Tutorial Failure here</FailureText>
             <Descr>tutorialMain</Descr>
             <CrashActions>
                 <ObjectReference InstanceId="{C367830D-65D3-4E1D-8C41-2FA9013AD71A}" id="crashResolution"/>
@@ -91,7 +91,7 @@
             <Descr>TimerPlayDialog1</Descr>
             <StaysVisible>False</StaysVisible>
             <DefaultActivated>True</DefaultActivated>
-            <StopTime>3.000</StopTime>
+            <StopTime>5.000</StopTime>
             <Actions>
                 <ObjectReference InstanceId="{FC24DDC7-045C-4F53-A486-E404A25B0A30}" id="SubGoalResolutionAction"/>
                 <ObjectReference InstanceId="{B6C708EB-A5DE-4ADC-A589-A4413A6BD6F0}" id="playDiag1"/>
@@ -131,6 +131,7 @@
             </Goals>
         </SimMission.GoalResolutionAction>
         <SimMission.SubGoalResolutionAction InstanceId="{FC24DDC7-045C-4F53-A486-E404A25B0A30}">
+            <StateChange>none</StateChange>
             <SubGoals>
                 <ObjectReference InstanceId="{E5729062-E046-4BB5-B209-D3815609CBE1}" id="SubGoal"/>
             </SubGoals>
@@ -141,7 +142,7 @@
             <Descr>setStallProtectionOff</Descr>
         </SimMission.ChangeAssistanceItemAction>
         <SimMission.TimerTrigger InstanceId="{149D725D-F5CD-4CBC-B587-34B6FC49EB0E}" id="timerSetOptions">
-            <StopTime>2.000</StopTime>
+            <StopTime>1.000</StopTime>
             <StaysVisible>False</StaysVisible>
             <DefaultActivated>True</DefaultActivated>
             <Descr>setAssistanceOptoins</Descr>

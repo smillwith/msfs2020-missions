@@ -1,0 +1,141 @@
+{
+  "LocalisationFile": {
+    "Version": 2,
+    "UUID": "fe39ad22-88c0-4d85-9a1d-4993fee8e48e",
+    "Languages": [
+      "en-US"
+    ],
+    "Strings": {
+      "LOADING.TIPS.SIMPLEMISSION_000": {
+        "UUID": "8d51b1c7-d25e-4da4-8264-f84b0786006e",
+        "LastModifiedBy": "Admin",
+        "LastModifiedDate": "2021-11-22 17:18:06",
+        "LocalizationStatus": "Active",
+        "Languages": {
+          "en-US": {
+            "Text": "This is a loading tip.",
+            "LocalizationStatus": "TranslationOk",
+            "LastModifiedDate": "2023-05-16 20:07:25"
+          }
+        }
+      },
+      "LOADING.TIPS.SIMPLEMISSION_001": {
+        "UUID": "8e8f981e-ef4b-4cd4-a98e-11788f84d437",
+        "LastModifiedBy": "Admin",
+        "LastModifiedDate": "2021-11-22 17:18:10",
+        "LocalizationStatus": "Active",
+        "Languages": {
+          "en-US": {
+            "Text": "This is another loading tip.",
+            "LocalizationStatus": "TranslationOk",
+            "LastModifiedDate": "2023-05-16 20:07:25"
+          }
+        }
+      },
+      "LOADING.TIPS.SIMPLEMISSION_002": {
+        "UUID": "704ecd05-27e5-4234-8118-862a4903a25c",
+        "LastModifiedBy": "Admin",
+        "LastModifiedDate": "2021-11-22 17:18:10",
+        "LocalizationStatus": "Active",
+        "Languages": {
+          "en-US": {
+            "Text": "The loading tips will be played in random order.",
+            "LocalizationStatus": "TranslationOk",
+            "LastModifiedDate": "2023-05-16 20:07:25"
+          }
+        }
+      },
+      "SIMPLEMISSION.BRIEFING": {
+        "UUID": "052b3468-6f32-4466-9f32-65a1e27bfc47",
+        "LastModifiedBy": "Admin",
+        "LastModifiedDate": "2021-11-22 17:17:02",
+        "LocalizationStatus": "Active",
+        "Languages": {
+          "en-US": {
+            "Text": "This is the briefing.",
+            "LocalizationStatus": "TranslationOk",
+            "LastModifiedDate": "2023-05-16 20:07:25"
+          }
+        }
+      },
+      "SIMPLEMISSION.DEPARTURE": {
+        "UUID": "44f64711-3491-4285-92ba-d937d7479d6c",
+        "LastModifiedBy": "Admin",
+        "LastModifiedDate": "2023-05-16 20:08:09",
+        "LocalizationStatus": "Active",
+        "Languages": {
+          "en-US": {
+            "Text": "Rotterdam The Hague Airport",
+            "LocalizationStatus": "TranslationNeeded",
+            "LastModifiedDate": "2023-05-16 20:08:09"
+          }
+        }
+      },
+      "SIMPLEMISSION.DESCR": {
+        "UUID": "27194426-3614-4646-ad0a-c40e38311886",
+        "LastModifiedBy": "Admin",
+        "LastModifiedDate": "2021-11-22 17:16:35",
+        "LocalizationStatus": "Active",
+        "Languages": {
+          "en-US": {
+            "Text": "A simple mission template",
+            "LocalizationStatus": "TranslationOk",
+            "LastModifiedDate": "2023-05-16 20:07:25"
+          }
+        }
+      },
+      "SIMPLEMISSION.DESTINATION": {
+        "UUID": "d3b214e4-e156-44ed-b4cb-73363cd2c9e2",
+        "LastModifiedBy": "Admin",
+        "LastModifiedDate": "2023-05-16 20:08:29",
+        "LocalizationStatus": "Active",
+        "Languages": {
+          "en-US": {
+            "Text": "Lelystad Airport",
+            "LocalizationStatus": "TranslationNeeded",
+            "LastModifiedDate": "2023-05-16 20:08:29"
+          }
+        }
+      },
+      "SIMPLEMISSION.GL_ENDMISSION": {
+        "UUID": "97178a6d-b146-4790-8afd-649f2929b974",
+        "LastModifiedBy": "Admin",
+        "LastModifiedDate": "2021-11-22 17:20:23",
+        "LocalizationStatus": "Active",
+        "Languages": {
+          "en-US": {
+            "Text": "End the mission",
+            "LocalizationStatus": "TranslationOk",
+            "LastModifiedDate": "2023-05-16 20:07:25"
+          }
+        }
+      },
+      "SIMPLEMISSION.SGL_80KTS": {
+        "UUID": "984c8b89-dd43-4395-8e3e-ec47459d2085",
+        "LastModifiedBy": "Admin",
+        "LastModifiedDate": "2021-11-22 17:20:40",
+        "LocalizationStatus": "Active",
+        "Languages": {
+          "en-US": {
+            "Text": "Accelerate to 80 knots",
+            "LocalizationStatus": "TranslationOk",
+            "LastModifiedDate": "2023-05-16 20:07:25"
+          }
+        }
+      },
+      "SIMPLEMISSION.TITLE": {
+        "UUID": "25810df4-4079-47ac-993e-7e845437ee12",
+        "LastModifiedBy": "Admin",
+        "LastModifiedDate": "2021-11-22 17:16:26",
+        "LocalizationStatus": "Active",
+        "Languages": {
+          "en-US": {
+            "Text": "Simple mission",
+            "LocalizationStatus": "TranslationOk",
+            "LastModifiedDate": "2023-05-16 20:07:25"
+          }
+        }
+      }
+    }
+  }
+}

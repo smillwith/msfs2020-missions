@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<SimBase.Document Type="MissionFile" version="1,0">
+    <Title>Mission_Template</Title>
+    <WorldBase.Flight>
+        <SimMission.OnSpawnTrigger InstanceId="{0B219FA8-D2DA-4C44-8165-34DC61A44D3B}">
+            <Descr>OnSpawnTrigger</Descr>
+            <Actions>
+                <ObjectReference id="PreloadRTC for FirstFlightState" InstanceId="{F53045E9-D487-4C89-B21C-15F3C4EE0F07}"/>
+            </Actions>
+        </SimMission.OnSpawnTrigger>
+        <SimMission.RTCLocationsPreloadAction InstanceId="{F53045E9-D487-4C89-B21C-15F3C4EE0F07}">
+            <Descr>PreloadRTC for FirstFlightState</Descr>
+            <UseFirstFlightState>True</UseFirstFlightState>
+        </SimMission.RTCLocationsPreloadAction>
+        <SimMission.OnEndLoadingTrigger InstanceId="{7D2AA4FF-1FF8-4799-A4B4-EB67B29A66E4}">
+            <Descr>Start Flow States</Descr>
+            <FullLoadingActions>
+                <ObjectReference InstanceId="{2A9CB907-3D69-4905-AEDF-9D66EC6E55F7}" id="Intro Flowstate"/>
+            </FullLoadingActions>
+            <RestartActions>
+                <ObjectReference InstanceId="{2A9CB907-3D69-4905-AEDF-9D66EC6E55F7}" id="Intro Flowstate"/>
+            </RestartActions>
+        </SimMission.OnEndLoadingTrigger>
+        <SimMission.FlowStateAction InstanceId="{2A9CB907-3D69-4905-AEDF-9D66EC6E55F7}">
+            <FlowStateName>PREFLIGHT_GATE</FlowStateName>
+            <FromSpawn>True</FromSpawn>
+            <IsFirstStateInTimeline>True</IsFirstStateInTimeline>
+            <TeleportActions>
+                <ObjectReference InstanceId="{43071EAB-D106-41CC-88D6-B113CDAE289B}" id="WiseAFSSet"/>
+                <ObjectReference InstanceId="{D6980D36-9C6D-4DD1-AFC6-3CB0C3D775B3}" id="SetWwiseState_MFS_RTC_INTRO"/>
+                <ObjectReference id="RTC_Ground_Airport_Aircraft_Intro" InstanceId="{306B2AE4-06BA-48C3-93A0-BD5569E6EF5B}"/>
+            </TeleportActions>
+            <TeleportFlowEvents>
+                <FlowEvent id="ATC_STOP"/>
+                <FlowEvent id="PAUSE_SIM"/>
+                <FlowEvent id="SHOW_MISSION_STARTUP"/>
+            </TeleportFlowEvents>
+            <StartFlowEvents>
+                <FlowEvent id="ATC_RESUME"/>
+                <FlowEvent id="UNPAUSE_SIM"/>
+                <FlowEvent id="PANEL_OBJECTIVES_FORCE_SHOW"/>
+                <FlowEvent id="PANEL_ATC_HIDE"/>
+                <FlowEvent id="PANEL_CHECKLIST_HIDE"/>
+            </StartFlowEvents>
+            <StartActions>
+                <ObjectReference InstanceId="{C3271B26-2A26-4830-A0DA-BB6AF9020A87}" id="WWiseRTCState_NON_RTC"/>
+                <ObjectReference InstanceId="{B889B0F1-6310-4039-AC94-5F4F6781103B}" id="Activate_Timer-Intro"/>
+            </StartActions>
+            <ObjectReference>
+            </ObjectReference>
+        </SimMission.FlowStateAction>
+        <SimMission.FlowStateWise InstanceId="{43071EAB-D106-41CC-88D6-B113CDAE289B}">
+            <Descr>WiseAFSSet</Descr>
+            <GroupName>ACTIVITIES_FLOW_STATE</GroupName>
+            <ElementName>FREEFLIGHT</ElementName>
+        </SimMission.FlowStateWise>
+        <SimMission.FlowStateWise InstanceId="{D6980D36-9C6D-4DD1-AFC6-3CB0C3D775B3}">
+            <Descr>SetWwiseState_MFS_RTC_INTRO</Descr>
+            <GroupName>MISSION_FLOW_STATE</GroupName>
+            <ElementName>RTC_INTRO</ElementName>
+        </SimMission.FlowStateWise>
+        <SimMission.FlowStateWise InstanceId="{C3271B26-2A26-4830-A0DA-BB6AF9020A87}">
+            <Descr>WWiseRTCState_NON_RTC</Descr>
+            <GroupName>GAME_RTC_STATE</GroupName>
+            <ElementName>NON_RTC</ElementName>
+        </SimMission.FlowStateWise>
+        <SimMission.Tutorial InstanceId="{EA8E6426-13D4-4CE8-8EBC-0E94E78DEA3A}" id="tutorial1">
+            <Descr>Prop Lever training</Descr>
+            <SuccessText>TT:MISSIONMESSAGE.ACTIVITY.SUCCESS</SuccessText>
+            <FailureText>TT:MISSIONMESSAGE.ACTIVITY.FAILED</FailureText>
+            <AbortedText>TT:MISSIONMESSAGE.ACTIVITY.ABORTED</AbortedText>
+            <Objectives>
+                <Objective UniqueRefId="{F1415134-4F77-4CCF-89B4-70241725FBBD}" id="OBJ_ListenToIntro">
+                    <Descr>Listen to the introduction.</Descr>
+                    <SuccessText>Success</SuccessText>
+                </Objective>
+                <Objective UniqueRefId="{4177AC50-ADC6-4FB7-9D9E-B58119E714F9}" id="OBJ_CompleteRunupTest">
+                    <Descr>Exercise the prop lever for run-up</Descr>
+                    <Steps>
+                        <Step UniqueRefId="{3A713B82-710D-4E33-AAFE-1E517E12865C}" id="ST_IncreaseThrottle">
+                            <Descr>Increase throttle to set RPM to 1600</Descr>
+                            <SuccessText>Complete</SuccessText>
+                        </Step>
+                    </Steps>
+                </Objective>
+            </Objectives>
+        </SimMission.Tutorial>
+        <SimMission.ObjectActivationAction InstanceId="{B889B0F1-6310-4039-AC94-5F4F6781103B}" id="Activate_Timer-Intro">
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{1C894AA8-48B7-40D1-83AE-F0A772200891}" id="Timer_Intro"/>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.TimerTrigger InstanceId="{1C894AA8-48B7-40D1-83AE-F0A772200891}" id="Timer_Intro">
+            <StopTime>3.000</StopTime>
+            <Activated>False</Activated>
+            <Actions>
+                <ObjectReference InstanceId="{51B401E8-412A-49C5-9BA5-CDE8B09B08BB}" id="Activate_PropTrig-80kts"/>
+                <ObjectReference InstanceId="{B82479A6-431D-4D82-8D18-9B1B39119D98}" id="InstructorDialogAction"/>
+            </Actions>
+        </SimMission.TimerTrigger>
+        <SimEdition.CommentNode InstanceId="{62AB504B-A35D-44FC-B263-C48AEF951B12}" id="Before mission start">
+            <NodeColor>194,239,183,255</NodeColor>
+        </SimEdition.CommentNode>
+        <SimEdition.CommentNode InstanceId="{475D0641-C94F-4609-BA74-E14880731622}" id="Mission objects">
+            <NodeColor>194,183,239,255</NodeColor>
+        </SimEdition.CommentNode>
+        <SimMission.PropertyTrigger InstanceId="{4155471B-6185-4346-B000-15F3FEB37C30}" id="PropTrig_80Kts">
+            <ReversePolishCondition>(A:AIRSPEED INDICATED, knots) 80 &gt;=</ReversePolishCondition>
+            <Activated>False</Activated>
+            <Actions>
+            </Actions>
+        </SimMission.PropertyTrigger>
+        <SimMission.ObjectActivationAction InstanceId="{51B401E8-412A-49C5-9BA5-CDE8B09B08BB}" id="Activate_PropTrig-80kts">
+            <Immediate>False</Immediate>
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{4155471B-6185-4346-B000-15F3FEB37C30}" id="PropTrig_80Kts"/>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.InstructorDialogAction InstanceId="{B82479A6-431D-4D82-8D18-9B1B39119D98}">
+            <SoundFileName>prop-lever-intro.wav</SoundFileName>
+            <EndActions>
+                <ObjectReference InstanceId="{D80F6648-8B6C-4B49-A675-5DCD8E5B3783}" id="Complete_GL-ListenToIntro"/>
+                <ObjectReference InstanceId="{739A794A-3574-4068-A45B-E2A6B7576B22}" id="Activate_Throttle_Trigger"/>
+                <ObjectReference InstanceId="{AA6AF9A5-E50C-4CE0-A58A-24CB8F7E8FC1}" id="Activate_RunupGoal"/>
+                <ObjectReference InstanceId="{93522D7E-70CF-4E4B-8A46-E3DE364BF93F}" id="Activate_RunupSG1"/>
+            </EndActions>
+        </SimMission.InstructorDialogAction>
+        <SimMission.PropertyTrigger InstanceId="{1F0B8C44-FACB-4D0A-9DE2-BD5587DA189A}" id="PropTrig_IncrThrottle1">
+            <ReversePolishCondition>(A:GENERAL ENG RPM:1, rpm) 1590 &gt;</ReversePolishCondition>
+            <Activated>False</Activated>
+            <Actions>
+                <ObjectReference InstanceId="{24335065-5E3D-4FEC-969E-629704CDF7FE}" id="Complete_SGL_IncrThrottle1"/>
+            </Actions>
+        </SimMission.PropertyTrigger>
+        <SimMission.Goal InstanceId="{F1415134-4F77-4CCF-89B4-70241725FBBD}" id="GL_ListenToIntro"/>
+        <SimMission.GoalResolutionAction InstanceId="{D80F6648-8B6C-4B49-A675-5DCD8E5B3783}" id="Complete_GL-ListenToIntro">
+            <Goals>
+                <ObjectReference InstanceId="{F1415134-4F77-4CCF-89B4-70241725FBBD}" id="GL_ListenToIntro"/>
+            </Goals>
+        </SimMission.GoalResolutionAction>
+        <SimMission.Goal InstanceId="{4177AC50-ADC6-4FB7-9D9E-B58119E714F9}" id="GL_CompleteRunupTest">
+            <Activated>False</Activated>
+        </SimMission.Goal>
+        <SimMission.SubGoalResolutionAction InstanceId="{24335065-5E3D-4FEC-969E-629704CDF7FE}" id="Complete_SGL_IncrThrottle1">
+            <SubGoals>
+                <ObjectReference InstanceId="{3A713B82-710D-4E33-AAFE-1E517E12865C}" id="SGL_IncrThrottle1"/>
+            </SubGoals>
+        </SimMission.SubGoalResolutionAction>
+        <SimMission.SubGoal InstanceId="{3A713B82-710D-4E33-AAFE-1E517E12865C}" id="SGL_IncrThrottle1">
+            <Activated>False</Activated>
+        </SimMission.SubGoal>
+        <SimMission.ObjectActivationAction InstanceId="{739A794A-3574-4068-A45B-E2A6B7576B22}" id="Activate_Throttle_Trigger">
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{1F0B8C44-FACB-4D0A-9DE2-BD5587DA189A}" id="PropTrig_IncrThrottle1"/>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.ObjectActivationAction InstanceId="{AA6AF9A5-E50C-4CE0-A58A-24CB8F7E8FC1}" id="Activate_RunupGoal">
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{4177AC50-ADC6-4FB7-9D9E-B58119E714F9}" id="GL_CompleteRunupTest"/>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.ObjectActivationAction InstanceId="{93522D7E-70CF-4E4B-8A46-E3DE364BF93F}" id="Activate_RunupSG1">
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{3A713B82-710D-4E33-AAFE-1E517E12865C}" id="SGL_IncrThrottle1"/>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+    </WorldBase.Flight>
+</SimBase.Document>

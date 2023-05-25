@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<SimBase.Document Type="AceXML" version="1,0">
+    <Descr>AceXML Document</Descr>
+    <FlightPlan.FlightPlan>
+        <Title>Santa Barbara Muni to Lompoc</Title>
+        <FPType>VFR</FPType>
+        <CruisingAlt>3100.000</CruisingAlt>
+        <DepartureID>KSBA</DepartureID>
+        <DepartureLLA>N34° 25' 34.29",W119° 50' 29.37",+000011.16</DepartureLLA>
+        <DestinationID>KLPC</DestinationID>
+        <DestinationLLA>N34° 39' 56.23",W120° 28' 3.01",+000083.50</DestinationLLA>
+        <Descr>Santa Barbara Muni to Lompoc</Descr>
+        <DeparturePosition>PARKING 6 PARKING NONE</DeparturePosition>
+        <DepartureName>Santa Barbara Muni</DepartureName>
+        <DestinationName>Lompoc</DestinationName>
+        <AppVersion>
+            <AppVersionMajor>11</AppVersionMajor>
+            <AppVersionBuild>282174</AppVersionBuild>
+        </AppVersion>
+        <ATCWaypoint id="KSBA">
+            <ATCWaypointType>Airport</ATCWaypointType>
+            <WorldPosition>N34° 25' 34.29",W119° 50' 29.37",+000011.16</WorldPosition>
+            <SpeedMaxFP>-1</SpeedMaxFP>
+            <ICAO>
+                <ICAOIdent>KSBA</ICAOIdent>
+            </ICAO>
+        </ATCWaypoint>
+        <ATCWaypoint id="KLPC">
+            <ATCWaypointType>Airport</ATCWaypointType>
+            <WorldPosition>N34° 39' 56.23",W120° 28' 3.01",+000083.50</WorldPosition>
+            <SpeedMaxFP>-1</SpeedMaxFP>
+            <ICAO>
+                <ICAOIdent>KLPC</ICAOIdent>
+            </ICAO>
+        </ATCWaypoint>
+    </FlightPlan.FlightPlan>
+</SimBase.Document>
