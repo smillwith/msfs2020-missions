@@ -23,7 +23,7 @@ AxisIndicator=Off
 [Sim.0]
 Sim=Bonanza G36 Asobo
 Pilot=Pilot_Male_Casual
-Copilot=Pilot_Female_Casual
+Copilot=Pilot_Male_Casual
 TailNumber=N67G4P
 AirlineCallSign=
 FlightNumber=
@@ -68,6 +68,7 @@ ImageName0=./images/PropLeverMission_Loading.jpg
 
 [Briefing]
 BriefingText=After a brief introduction, learn how to include the Prop Lever in your run-up procedure and how to reduce RPM for cruise configuration. Finally, on approach to Lompoc, learn how to return the RPM back to full before landing.
+BriefingInfo0=FLIGHT_INFO_TOTAL_FLIGHT_DURATION, 120
 BriefingImage0=./images/PropLeverMission_Briefing.jpg
 
 [TrafficOptions]
@@ -143,7 +144,7 @@ title=Santa Barbara Muni to Lompoc
 description=Santa Barbara Muni to Lompoc
 type=VFR
 routetype=0
-cruising_altitude=3100
+cruising_altitude=3500
 departure_id=KSBA, N34° 25.57', W119° 50.49', +000011.16
 departure_position=PARKING 6 PARKING NONE
 destination_id=KLPC, N34° 39.94', W120° 28.05', +000083.50
@@ -523,7 +524,7 @@ Nav1Lock=False
 HeadingLock=False
 HeadingValue=252
 AltitudeLock=False
-AltitudeValue=3100
+AltitudeValue=3500
 AttitudeHold=False
 AirspeedHold=False
 AirspeedValue=0
