@@ -1,15 +1,18 @@
-
 [Assistance]
 Preset=ASSISTANCE_PRESET_TRUE_TO_LIFE
 EventTriggersFileCount=1
 EventTriggersFile.0=EventTriggers
 
 [Main]
-Title=Introduction to the Prop Lever
-Description=Learn how to use the blue lever in run-up, cruise and descent stages.
-AppVersion=10.0.61355
-FlightVersion=1
+Title=Low Fuel Emergency
+Description=Out of fuel in flight. Land immediately.
+AppVersion=10.0.1
+FlightVersion=0
 MissionType=Tutorial
+MissionLocation=
+OriginalFlight=Airborne_Low_Fuel-NoFD.FLT
+FlightType=NORMAL
+StartingCameraCategory=Cockpit
 
 [Options]
 Sound=True
@@ -23,20 +26,17 @@ AxisIndicator=Off
 [Sim.0]
 Sim=Bonanza G36 Asobo
 Pilot=Pilot_Male_Casual
-Copilot=Pilot_Male_Casual
+Copilot=Pilot_Female_Casual
 TailNumber=N67G4P
 AirlineCallSign=
 FlightNumber=
 AppendHeavy=False
 
 [ResourcePath]
-Path=missionfiles
+Path=lowfueldmission
 
 [ObjectFile]
-File=missionfiles
-
-[Atc_Menu]
-Visible=True
+File=lowfueldmission
 
 [Weather]
 UseWeatherFile=False
@@ -49,30 +49,15 @@ CloudmapInitialPosY=0
 FixedClouds=False
 DebugPublicAirflowDisplay=False
 
-[Departure]
-ICAO=KSBA
-GateName=PARKING
-GateNumber=6
-GateSuffix=NONE
-RunwayNumber=25
-RunwayDesignator=NONE
-
-[Arrival]
-ICAO=KLPC
-RunwayNumber=25
-RunwayDesignator=NONE
+[Briefing]
+BriefingText=While airborne you notice a problem with the fuel system. You are running out of fuel and aren't sure why. Troubleshoot the problem and land as soon as possible.
+BriefingImage0=./images/LowFuel_Briefing.jpg
 
 [Loading]
-;ImageName0=LOADING_FREEFLIGHT
-ImageName0=./images/PropLeverMission_Loading.jpg
-
-[Briefing]
-BriefingText=After a brief introduction, learn how to include the Prop Lever in your run-up procedure and how to reduce RPM for cruise configuration. Finally, on approach to Lompoc, learn how to return the RPM back to full before landing.
-BriefingInfo0=FLIGHT_INFO_TOTAL_FLIGHT_DURATION, 900
-BriefingImage0=./images/PropLeverMission_Briefing.jpg
+ImageName0=./images/LowFuel_Loading.jpg
 
 [TrafficOptions]
-AllowAmbientVehicleTraffic=FALSE
+AllowAbientVehicleTraffic=FALSE
 
 [Multiplayer]
 Status=0
@@ -92,31 +77,23 @@ Maximized=True
 ScreenUniCoords=0, 0, 0, 0
 UndocCoords=0, 0, 0, 0
 
-[ATC_Agent.0]
-AgentType=Tower
-Callsign=SANTA BARBARA
-Frequency=1197000
-NumberofAircraft=1
-SecLastMessage=2622.602843752395529
-
 [ATC_AgentManager]
-NumberofAgents=1
+NumberofAgents=0
 
 [ATC_Aircraft.0]
-ActiveFlightPlan=True
+ActiveFlightPlan=False
 RequestedFlightPlan=False
-AcState=ACSTATE_REQUEST_TAXI_CLEARANCE_OUT_VFR_ATIS
-Waypoint.0=, KSBA, , KSBA, A, N34° 25.57', W119° 50.49', +000011.16, , , , , , NONE, 0, 0, -1, 0, 0,  
-Waypoint.1=, KLPC, , KLPC, A, N34° 39.94', W120° 28.05', +000083.50, , , , , , NONE, 0, 0, -1, 0, 0,
-NumberofWaypoints=2
+AcState=ACSTATE_CTAF_LANDING_TYPE
+ActiveVFRAirport=1E2
+NumberofWaypoints=0
 ClearanceFlags=882
 CtCur=CLEARANCE_NONE
-WaypointNext=1
+WaypointNext=0
 AltCleared=-1
 HdgAssigned=-1
 SquawkAssigned=4608
 LandingSequence=LANDING_NONE
-DepartureRequest=DEPARTURE_VFR_REQUEST_DEPART_WEST
+DepartureRequest=DEPARTURE_VFR_REQUEST_NONE
 ParkingRequest=PARKING_NAME_NONE
 ParkingTypeRequest=PARKING_TYPE_NONE
 PatternLeg=PATTERN_LEG_NONE
@@ -124,34 +101,20 @@ ApproachIndex=-1
 ApproachTransitionIndex=-1
 ApproachRequestIndex=-1
 ApproachTransitionRequestIndex=-1
-RunwayIndex=5
+RunwayIndex=1
 RunwayRequestIndex=-1
 ParkingIndex=-1
 FlightFollowing=FLIGHT_FOLLOWING_NO
 AirspaceTransition=AIRSPACE_TRANSITION_NONE
 BVAirspaceTransition=BV_TYPE_NONE
 BVAirspaceTransitionReq=BV_TYPE_NONE
-TakeoffSequence=TAKEOFF_SEQUENCE_CLEARED
+TakeoffSequence=TAKEOFF_SEQUENCE_NONE
 LandingSequenceNumber=-1
 TaxiRouteCurrent=-1
-CruisingAltitude=3500
+CruisingAltitude=-1
 RequestedCruisingAltitude=-1
 ExpectedAltitude=-1
 AircraftSignature=1,0
-
-[ATC_ActiveFlightPlan.0]
-title=Santa Barbara Muni to Lompoc
-description=Santa Barbara Muni to Lompoc
-type=VFR
-routetype=0
-cruising_altitude=3500
-departure_id=KSBA, N34° 25.57', W119° 50.49', +000011.16
-departure_position=PARKING 6 PARKING NONE
-destination_id=KLPC, N34° 39.94', W120° 28.05', +000083.50
-departure_name=Santa Barbara Muni
-destination_name=Lompoc
-waypoint.0=, KSBA, , KSBA, A, N34° 25.57', W119° 50.49', +000011.16, , , , , , NONE, 0, 0, -1, 0, 0,  
-waypoint.1=, KLPC, , KLPC, A, N34° 39.94', W120° 28.05', +000083.50, , , , , , NONE, 0, 0, -1, 0, 0,
 
 [ATC_AircraftManager]
 NumberofAircraft=1
@@ -159,49 +122,37 @@ NumberofAircraft=1
 [ATC_MessageSystem]
 FrequencyNodes=0
 
-[GPS_Engine]
-Filename=missionfiles
-position=N0° 0.02', E0° 0.84', +000003.39
-Time=-1
-TimeWP=58785
-ArriveTime=1281
-CountWP=2
-NextWP=1
-WpInfo0=66, 0, 3, 0, 0, 40.0, 0.0, 0.0
-WpInfo5=128, 0, 25, 0, 0, 0.0, 0.5, 0.0
-CountFP=0
-
 [DateTimeSeason]
-Season=Summer
+Season=Spring
 Year=2023
-Day=89
-Hours=16
-Minutes=19
-Seconds=45.166961669921875
+Day=152
+Hours=20
+Minutes=9
+Seconds=51.3923797607421875
 UseZuluTime=False
 
 [SimplifiedSim.0]
 Mode=None
 
 [SimVars.0]
-Latitude=N34° 25' 37.07"
-Longitude=W119° 50' 3.39"
-Altitude=+000015.37
-Pitch=0.04152056655205545177
-Bank=0.080586640767022973963
-Heading=2.1591777320604292889
-PVelBodyAxis=0.00066008318061360003303
-BVelBodyAxis=-0.0070027589267368708231
-HVelBodyAxis=2.8309011022363200836e-05
-XVelBodyAxis=0.027699963101003605842
-YVelBodyAxis=0.011680464923509959255
-ZVelBodyAxis=0.0027391962161971606
-SimOnGround=True
+Latitude=N29° 27' 54.93"
+Longitude=W103° 27' 39.11"
+Altitude=+008092.01
+Pitch=-2.0443432801462817494
+Bank=-0.16270007995748239638
+Heading=100.56288267316728025
+PVelBodyAxis=-0.014332438875092730346
+BVelBodyAxis=0.00063291868144192827642
+HVelBodyAxis=0.00030225294875121081926
+XVelBodyAxis=-1.8271843761446036059
+YVelBodyAxis=-9.1946338657245991755
+ZVelBodyAxis=234.17392205535816174
+SimOnGround=False
 OnPlatformHeight=-9999999999
 
 [Avionics.0]
-Comm1Active=124.850
-Comm1Standby=121.700
+Comm1Active=122.900
+Comm1Standby=124.850
 Comm2Active=124.850
 Comm2Standby=124.850
 Comm3Active=124.850
@@ -245,40 +196,40 @@ Altitude=False
 Attitude=False
 
 [Engine Parameters.1.0]
-ThrottleLeverPct=0
-PropellerLeverPct=1
+ThrottleLeverPct=0.8134765625
+PropellerLeverPct=0.7579345703125
 MixtureLeverPct=1
-Pct Engine RPM=0.2347749873475010185
-MaxReachedEngineRPM=2454.7394303494743326
+Pct Engine RPM=0.75782353888866582636
+MaxReachedEngineRPM=4107.6570107070192535
 Pct N1=-1.7976931348623157081e+308
 Pct N2=-1.7976931348623157081e+308
 LeftMagneto=True
 RightMagneto=True
-GeneratorSwitch=False
-CowlFlapPct=0.8704833984375
+GeneratorSwitch=True
+CowlFlapPct=0
 FuelPumpSwitch=False
 FuelPumpSwitch_EX1=0
 FuelValveOpen=True
 CarbHeat/DeiceSwitch=False
-EngineMasterSwitch=False
+EngineMasterSwitch=True
 GlowPlugTemperaturePct=1
 IgnitionSwitch=0
 StarterSwitch=False
-EGT_DegR=754.38293759651219261
+EGT_DegR=1240.919443660270872
 ITT_DegR=-1.7976931348623157081e+308
-FuelPressurePSF=960.23241846882240225
+FuelPressurePSF=2375.9999999999899956
 CorrectedFF=-1.7976931348623157081e+308
 
 [Propeller.1.0]
-prop_beta=0.2321287905152458475
-prop_max_rpm_percent=0.2347749873475010185
+prop_beta=0.38358266853731309842
+prop_max_rpm_percent=0.75782353888866582636
 
 [Fuel.0]
-TankSelector=Left
+TankSelector=Right
 TankSelector1=Left
 Center=0
-LeftMain=49.360157012939453125
-RightMain=50
+LeftMain=12.222151756286621094
+RightMain=8.1413202285766601562
 LeftAux=0
 RightAux=0
 LeftTip=0
@@ -289,7 +240,7 @@ External 1=0
 External 2=0
 
 [Gauges.0]
-KollsmanSetting=29.977560043334960938
+KollsmanSetting=29.921342849731445312
 
 [BleedAir.0]
 BleedAirSource=0
@@ -304,138 +255,130 @@ EngineAirBleed.8=True
 APUAirBleed=True
 
 [LocalVars.0]
-AS1000_PFD_ScreenLuminosity=1
-AS1000_PFD_Brightness=2
-AS1000_MFD_ScreenLuminosity=1
-AS1000_MFD_Brightness=2
-XMLVAR_Autopilot_2_Status=0
-XMLVAR_Magneto_Starter_IsHeld=0
-HANDLING_ElevatorTrim=0
-XMLVAR_YokeHidden1=0
+XMLVAR_YokeHidden1=1
+HANDLING_ElevatorTrim=1414
+ParkingBrake_Position=0
 XMLVAR_ELT_STATE=1
-ParkingBrake_Position=100
-AS1000_PFD_SelectedNavIndex=1
-AS1000_PFD_SelectedComIndex=1
-PFD_CDI_Source=3
-AS1000_MFD_SelectedNavIndex=1
-AS1000_MFD_SelectedComIndex=1
-DEICE_Pitot_1=1
-DEICE_Propeller_1=0
-HANDLING_AileronsTrim=0
-INSTRUMENT_Altimeter_2=1015.1537380647660029
-LANDING_GEAR_Gear=1
-LIGHTING_STROBE_1=1
 LIGHTING_BEACON_1=1
-LIGHTING_PANEL_1=0
-LIGHTING_GLARESHIELD_1=0
-LIGHTING_NAV_1=1
-LIGHTING_TAXI_1=1
 LIGHTING_LANDING_1=0
-LIGHTING_POTENTIOMETER_14_Power_Setting=50
-LIGHTING_GLARESHIELD_1_Power_Setting=0
-LIGHTING_PANEL_1_Power_Setting=0
-LIGHTING_POTENTIOMETER_2=50
-LIGHTING_CABIN_1=0
-LIGHTING_CABIN_2=0
-LIGHTING_CABIN_3=0
+LIGHTING_TAXI_1=0
+DEICE_Pitot_1=1
+LIGHTING_GLARESHIELD_1=0
+LIGHTING_PANEL_1=1
+LIGHTING_CABIN_1=1
+LIGHTING_CABIN_2=1
 XMLVAR_NEXTGEN_FLIGHTPLAN_ENABLED=1
 PFD_BRG1_Source=0
 PFD_BRG2_Source=0
 Generic_Master_Caution_Active=0
 Generic_Master_Warning_Active=0
-WT1000_Fuel_GalRemaining=39.799427032470703125
-WT1000_Fuel_GalBurned=0.200572967529296875
-WT_LNavData_DTK_True=295.08843994140625
-WT_LNavData_DTK_Mag=282.996063232421875
-WT_LNavData_XTK=0.19358764588832855225
+WT1000_Fuel_GalRemaining=8.1762266159057617188
+WT1000_Fuel_GalBurned=31.823772430419921875
+AS1000_PFD_SelectedNavIndex=1
+PFD_CDI_Source=3
+WT_LNavData_DTK_True=0
+WT_LNavData_DTK_Mag=0
+WT_LNavData_XTK=0
 WTGarmin_LNavData_Next_DTK_True=0
 WTGarmin_LNavData_Next_DTK_Mag=0
 WT_LNavData_CDI_Scale=2
-WTGarmin_LNavData_CDI_Scale_Label=1
-WT_LNavData_Waypoint_Bearing_True=294.766754150390625
-WT_LNavData_Waypoint_Bearing_Mag=282.674346923828125
-WT_LNavData_Waypoint_Distance=34.476306915283203125
-WT_LNavData_Destination_Distance=34.476306915283203125
-WTGarmin_LNavData_Egress_Distance=34.476291656494140625
-WTAP_LNav_DTK=295.08843994140625
-WTAP_LNav_XTK=0.19358766078948974609
-WTAP_LNav_Is_Tracking=1
-WTAP_LNav_Tracked_Leg_Index=1
+WTGarmin_LNavData_CDI_Scale_Label=4
+WT_LNavData_Waypoint_Bearing_True=0
+WT_LNavData_Waypoint_Bearing_Mag=0
+WT_LNavData_Waypoint_Distance=0
+WT_LNavData_Destination_Distance=0
+WTGarmin_LNavData_Egress_Distance=0
+WTAP_LNav_DTK=0
+WTAP_LNav_XTK=0
+WTAP_LNav_Is_Tracking=0
+WTAP_LNav_Tracked_Leg_Index=0
 WTAP_LNav_Transition_Mode=0
 WTAP_LNav_Tracked_Vector_Index=0
 WTAP_LNav_Course_To_Steer=0
 WTAP_LNav_Is_Suspended=0
-WTAP_LNav_Leg_Distance_Along=-0.30441999435424804688
-WTAP_LNav_Leg_Distance_Remaining=34.475765228271484375
-WTAP_LNav_Vector_Distance_Along=-0.30441999435424804688
-WTAP_LNav_Vector_Distance_Remaining=34.475765228271484375
-WTAP_LNav_Vector_Anticipation_Distance=5.4028282647777814418e-06
+WTAP_LNav_Leg_Distance_Along=0
+WTAP_LNav_Leg_Distance_Remaining=0
+WTAP_LNav_Vector_Distance_Along=0
+WTAP_LNav_Vector_Distance_Remaining=0
+WTAP_LNav_Vector_Anticipation_Distance=0
 WTAP_GP_Vertical_Deviation=-1001
 WTAP_VNav_Path_Mode=0
-WTAP_VNav_TOD_Leg_Index=1
-WTAP_VNav_BOD_Leg_Index=1
-WTAP_VNav_TOD_Distance_In_Leg=395.5592041015625
-WTAP_VNav_Distance_To_TOD=63453.55859375
-WTAP_VNav_Distance_To_BOD=63849.1171875
-WTAP_VNav_Constraint_Leg_Index=1
+WTAP_VNav_TOD_Leg_Index=-1
+WTAP_VNav_BOD_Leg_Index=-1
+WTAP_VNav_TOD_Distance_In_Leg=0
+WTAP_VNav_Distance_To_TOD=0
+WTAP_VNav_Distance_To_BOD=0
+WTAP_VNav_Constraint_Leg_Index=-1
 WTAP_VNav_State=1
-WTAP_VNav_Vertical_Deviation=10910.2880859375
+AS1000_pfd_Brightness=2
 WTAP_GP_Distance=-1
-WTAP_VNav_Target_Altitude=0
-WTAP_VNav_Constraint_Altitude=-1
-WTAP_VNav_FPA=3
-WTAP_VNAV_Required_VS=0
+AS1000_mfd_Brightness=2
 WTAP_GP_FPA=0
+AS1000_MFD_SelectedNavIndex=1
+AS1000_MFD_SelectedComIndex=1
+AS1000_PFD_SelectedComIndex=1
 WT1000_AP_G1000_INSTALLED=1
-AP_KAP140_INSTALLED=0
-WT1000_AP_KAP140_INSTALLED=0
-XMLVAR_IsDeiceAirFrame=0
-XMLVAR_IsDeiceAirFrame2=0
-HUD_AP_SELECTED_SPEED=0
-HUD_AP_SELECTED_ALTITUDE=0
+AS1000_PFD_ScreenLuminosity=1
 AS1000_PFD_State=2
+AS1000_MFD_ScreenLuminosity=1
 AS1000_MFD_State=2
 DigitalOAT_ScreenLuminosity=1
 DigitalOAT_State=2
-WTAP_VNav_Next_Constraint_Altitude=0
-GPS_Current_Phase=0
-Glasscockpit_DmeSource=1
+AS1000_MID_Display_Backup_Active=0
+AS1000_MFD_Brightness_IsAuto=0
+XMLVAR_Autopilot_2_Status=1
+XMLVAR_LeverPropellerHidden1=0
+MFD_InnerMap_MapZoomRange=0
+DEICE_Propeller_1=0
+HANDLING_AileronsTrim=0
+INSTRUMENT_Altimeter_2=1013.2500109386215854
+LANDING_GEAR_Gear=0
+LIGHTING_STROBE_1=1
+LIGHTING_NAV_1=1
+LIGHTING_POTENTIOMETER_14_Power_Setting=50
+LIGHTING_GLARESHIELD_1_Power_Setting=0
+LIGHTING_PANEL_1_Power_Setting=50
+LIGHTING_POTENTIOMETER_2=50
+LIGHTING_CABIN_3=1
+XMLVAR_IsDeiceAirFrame2=0
+WT1000_AP_KAP140_INSTALLED=0
+HUD_AP_SELECTED_SPEED=0
+HUD_AP_SELECTED_ALTITUDE=0
 
 [Switches.0]
 PitotHeat=True
 PitotHeat_EX1=1
 WindshieldDeice=0
 BeaconLights=True
-LandingLights=True
-LogoLights=False
+LandingLights=False
+LogoLights=True
 NavLights=True
-PanelLights=False
-RecognitionLights=False
+PanelLights=True
+RecognitionLights=True
 StrobeLights=True
-TaxiLights=True
-WingLights=False
-CabinLights=False
+TaxiLights=False
+WingLights=True
+CabinLights=True
 GlareshieldLights=False
 PedestalLights=False
 AmbientLights=False
-BeaconLightsNight=False
+BeaconLightsNight=True
 LandingLightsNight=False
-LogoLightsNight=False
-NavLightsNight=False
-PanelLightsNight=False
-RecognitionLightsNight=False
-StrobeLightsNight=False
+LogoLightsNight=True
+NavLightsNight=True
+PanelLightsNight=True
+RecognitionLightsNight=True
+StrobeLightsNight=True
 TaxiLightsNight=False
-WingLightsNight=False
-CabinLightsNight=False
+WingLightsNight=True
+CabinLightsNight=True
 GlareshieldLightsNight=False
 PedestalLightsNight=False
 AmbientLightsNight=False
 Potentiometer.2=0.5
 Potentiometer.3=0.5
 Potentiometer.5=0.5
-Potentiometer.9=0
-Potentiometer.10=0
+Potentiometer.9=0.5
 Potentiometer.11=1.0300000000000000266
 Potentiometer.12=1.0300000000000000266
 Potentiometer.14=0.5
@@ -443,28 +386,28 @@ Potentiometer.14=0.5
 [Electrical.0]
 circuit.1=True,1.00
 circuit.2=True,1.00
-circuit.3=True,1.00
+circuit.3=False,1.00
 circuit.4=False,1.00
-circuit.5=True,1.00
-circuit.6=True,1.00
-circuit.7=False,1.00
-circuit.8=True,1.00
-circuit.9=True,1.00
-circuit.10=False,1.00
-circuit.11=False,1.00
+circuit.5=False,1.00
+circuit.6=False,1.00
+circuit.7=True,1.00
+circuit.8=False,1.00
+circuit.9=False,1.00
+circuit.10=True,1.00
+circuit.11=True,1.00
 circuit.12=False,1.00
 circuit.13=False,1.00
-circuit.14=False,1.00
-circuit.15=False,1.00
+circuit.14=True,1.00
+circuit.15=True,1.00
 circuit.16=False,1.00
-circuit.17=False,1.00
-circuit.18=False,1.00
-circuit.19=False,1.00
-circuit.20=False,1.00
-circuit.21=False,1.00
+circuit.17=True,1.00
+circuit.18=True,1.00
+circuit.19=True,1.00
+circuit.20=True,1.00
+circuit.21=True,1.00
 circuit.22=False,1.00
-circuit.23=False,1.00
-circuit.24=False,1.00
+circuit.23=True,1.00
+circuit.24=True,1.00
 circuit.25=True,1.00
 circuit.26=True,1.00
 circuit.27=True,1.00
@@ -503,7 +446,7 @@ StandbyVacuum=False
 PropSync=False
 AutoFeatherSwitch=False
 FlightDirector=False
-PanelLights=False
+PanelLights=True
 LaunchBarSwitch=False
 LaunchBarState=0
 TailhookHandle=False
@@ -522,9 +465,9 @@ MasterSwitch=False
 WingLeveler=False
 Nav1Lock=False
 HeadingLock=False
-HeadingValue=252
+HeadingValue=0
 AltitudeLock=False
-AltitudeValue=3500
+AltitudeValue=0
 AttitudeHold=False
 AirspeedHold=False
 AirspeedValue=0
@@ -558,18 +501,18 @@ SpoilersHandle=000.00
 FlapsHandle=000.00
 LeftFlap=000.00
 RightFlap=000.00
-GearsHandle=000.01
-Gear1=099.99
-Gear2=099.99
-Gear3=099.99
-YokeY=050.00
-YokeX=050.00
+GearsHandle=000.00
+Gear1=000.00
+Gear2=000.00
+Gear3=000.00
+YokeY=050.34
+YokeX=050.06
 Rudder=050.00
 Collective=000.00
 LeftBrake=000.00
 RightBrake=000.00
-ParkingBrake=100.00
-ElevatorTrim=050.00
+ParkingBrake=000.00
+ElevatorTrim=054.31
 LateralTrim=050.00
 LongitudinalTrim=050.00
 RudderTrimPct=0
@@ -586,4 +529,4 @@ NosewheelMaxSteering=-1
 
 [SimScheduler]
 SimSpeed=001.00
-SimTime=1919.1716574250126541
+SimTime=1283.9605033197069588
