@@ -23,12 +23,13 @@
             </RestartActions>
         </SimMission.OnEndLoadingTrigger>
         <SimMission.FlowStateAction InstanceId="{2A9CB907-3D69-4905-AEDF-9D66EC6E55F7}">
-            <FlowStateName>PREFLIGHT_GATE</FlowStateName>
+            <FlowStateName>PREFLIGHT_HOLDSHORT</FlowStateName>
             <FromSpawn>True</FromSpawn>
             <IsFirstStateInTimeline>True</IsFirstStateInTimeline>
             <TeleportActions>
                 <ObjectReference InstanceId="{43071EAB-D106-41CC-88D6-B113CDAE289B}" id="WiseAFSSet"/>
                 <ObjectReference InstanceId="{D6980D36-9C6D-4DD1-AFC6-3CB0C3D775B3}" id="SetWwiseState_MFS_RTC_INTRO"/>
+                <ObjectReference id="RTC_Ground_Airport_Aircraft_Intro" InstanceId="{306B2AE4-06BA-48C3-93A0-BD5569E6EF5B}"/>
             </TeleportActions>
             <TeleportFlowEvents>
                 <FlowEvent id="ATC_STOP"/>
@@ -46,6 +47,8 @@
                 <ObjectReference InstanceId="{C3271B26-2A26-4830-A0DA-BB6AF9020A87}" id="WWiseRTCState_NON_RTC"/>
                 <ObjectReference InstanceId="{B889B0F1-6310-4039-AC94-5F4F6781103B}" id="Activate_Timer-Intro"/>
             </StartActions>
+            <ObjectReference>
+            </ObjectReference>
         </SimMission.FlowStateAction>
         <SimMission.FlowStateWise InstanceId="{43071EAB-D106-41CC-88D6-B113CDAE289B}">
             <Descr>WiseAFSSet</Descr>
@@ -127,7 +130,7 @@
                         </Step>
                     </Steps>
                 </Objective>
-                <SimMission.Objective UniqueRefId="{CC5CCB8F-9FC6-4800-8925-F8993FA6829B}" id="OBJ_LandAtLompoc">
+                <Objective UniqueRefId="{CC5CCB8F-9FC6-4800-8925-F8993FA6829B}" id="OBJ_LandAtLompoc">
                     <Descr>Land at Lompoc</Descr>
                     <Steps>
                         <Step UniqueRefId="{A679EBE2-368C-4228-BA0F-E39E94F4A49F}" id="ST_Set_Prop_Full">
@@ -137,18 +140,18 @@
                             <Descr>Reduce throttle to get 1,800 RPM</Descr>
                         </Step>
                         <Step UniqueRefId="{798103A4-6430-4DBF-A949-92E7AFDBD854}" id="ST_Land_Lompoc_28">
-                            <Descr>Land at Lompoc on Runway 28</Descr>
+                            <Descr>Land at Lompoc on Runway 25</Descr>
                         </Step>
                     </Steps>
-                </SimMission.Objective>
-                <SimMission.Objective UniqueRefId="{22EBED2E-4685-43F4-A6CA-CF8106781D1C}" id="OBJ_BeginDescent">
+                </Objective>
+                <Objective UniqueRefId="{22EBED2E-4685-43F4-A6CA-CF8106781D1C}" id="OBJ_BeginDescent">
                     <Descr>Descend to pattern altitude</Descr>
                     <Steps>
                         <Step UniqueRefId="{CBBE1F29-0850-4080-85C4-2355CFF26D52}" id="ST_Descend_1400">
                             <Descr>Descend to 1,400 ft</Descr>
                         </Step>
                     </Steps>
-                </SimMission.Objective>
+                </Objective>
             </Objectives>
         </SimMission.Tutorial>
         <SimMission.ObjectActivationAction InstanceId="{B889B0F1-6310-4039-AC94-5F4F6781103B}" id="Activate_Timer-Intro">
@@ -536,9 +539,10 @@
         </SimMission.PropertyTrigger>
         <SimMission.InstructorDialogAction InstanceId="{1A50E44A-F169-44F2-A434-378AB5C2F726}" id="Dialog_CruiseIntro">
             <SoundFileName>prop-lever-climb-intro.wav</SoundFileName>
-            <DelaySeconds>3.000</DelaySeconds>
+            <DelaySeconds>20.000</DelaySeconds>
             <EndActions>
                 <ObjectReference InstanceId="{C6A4F547-9B07-4375-A9F4-701EE80BBF64}" id="Activate_TrigLowAltitude"/>
+                <ObjectReference InstanceId="{6BC9CBAD-3E0E-469E-B5B0-E4AA5944D409}" id="Activate_Trig_Timer_Additional"/>
             </EndActions>
         </SimMission.InstructorDialogAction>
         <SimMission.InstructorDialogAction InstanceId="{DBA748D0-7F17-4088-986F-22EBB7C488CA}" id="Dialog_RetractGear">
@@ -548,9 +552,9 @@
             <Activated>False</Activated>
             <ConditionTimer>8.000</ConditionTimer>
             <ReversePolishCondition>(A:INDICATED ALTITUDE, feet) 3200 &lt;</ReversePolishCondition>
-            <SimMission.Actions>
+            <Actions>
                 <ObjectReference InstanceId="{DECB71D3-750E-487B-8724-767510B0BF0B}" id="InstructorDialogAction"/>
-            </SimMission.Actions>
+            </Actions>
         </SimMission.PropertyTrigger>
         <SimMission.InstructorDialogAction InstanceId="{DECB71D3-750E-487B-8724-767510B0BF0B}" id="Dialog_BelowAlt">
             <SoundFileName>prop-lever-maintain-3500.wav</SoundFileName>
@@ -575,13 +579,13 @@
             <ConditionTimer>4.000</ConditionTimer>
             <ReversePolishCondition>(A:INDICATED ALTITUDE, feet) 3480 &gt;</ReversePolishCondition>
             <Activated>False</Activated>
-            <SimMission.Actions>
+            <Actions>
                 <ObjectReference InstanceId="{A116A8EE-E1AD-4D26-A1C9-225E8FC9BF12}" id="InstructorDialogAction"/>
                 <ObjectReference InstanceId="{36C63830-8797-4EC0-8903-6E1809B8C5D3}" id="SubGoalResolutionAction"/>
                 <ObjectReference InstanceId="{8196848B-C8E3-4BF7-A980-A9C6A9279D11}" id="Activate_Prop_Trig_ThrottleDrop"/>
                 <ObjectReference InstanceId="{CC3881D7-9DA5-4DE9-A7D9-66ECE0BF4242}" id="Activate_Trig_LowAltitude2"/>
-                <WorldBase.ObjectReference InstanceId="{C0A06368-63F7-4038-89D6-A196240328A4}" id="ObjectActivationAction"/>
-            </SimMission.Actions>
+                <ObjectReference InstanceId="{C0A06368-63F7-4038-89D6-A196240328A4}" id="ObjectActivationAction"/>
+            </Actions>
         </SimMission.PropertyTrigger>
         <SimMission.ObjectActivationAction InstanceId="{92E54CB0-634F-4036-A0C5-3CB28D1BA45F}" id="Activate_Prop_Trig_Cruise">
             <ObjectReferenceList>
@@ -646,13 +650,13 @@
         </SimMission.SubGoalResolutionAction>
         <SimMission.PropertyTrigger InstanceId="{3969AFFD-5F91-4D3D-B37A-10F1601BBF07}" id="Prop_Trig_ThrottleDropDone">
             <Activated>False</Activated>
-            <ReversePolishCondition>(B:ENGINE_Throttle_1, percent) 86 &lt; (B:ENGINE_Throttle_1, percent) &gt; 83 and</ReversePolishCondition>
+            <ReversePolishCondition>(A:GENERAL ENG THROTTLE LEVER POSITION:1, Percent) 69 &lt; (A:GENERAL ENG THROTTLE LEVER POSITION:1, Percent) 62 &gt; and</ReversePolishCondition>
             <ConditionTimer>3.000</ConditionTimer>
-            <SimMission.Actions>
+            <Actions>
                 <ObjectReference InstanceId="{07D58E6D-E0A6-49AC-A4E3-8ABF9554F00E}" id="SubGoalResolutionAction"/>
-                <WorldBase.ObjectReference InstanceId="{98FC8E02-1259-4B49-B174-9EA9F6FF87A8}" id="Activate_SGL_DecreaseRPM"/>
-                <WorldBase.ObjectReference InstanceId="{12F3144A-9A9E-4DB8-BE58-D609703096D9}" id="Activate_Prop_Trig_DropRPMCruise"/>
-            </SimMission.Actions>
+                <ObjectReference InstanceId="{98FC8E02-1259-4B49-B174-9EA9F6FF87A8}" id="Activate_SGL_DecreaseRPM"/>
+                <ObjectReference InstanceId="{12F3144A-9A9E-4DB8-BE58-D609703096D9}" id="Activate_Prop_Trig_DropRPMCruise"/>
+            </Actions>
         </SimMission.PropertyTrigger>
         <SimMission.ObjectActivationAction InstanceId="{8196848B-C8E3-4BF7-A980-A9C6A9279D11}" id="Activate_Prop_Trig_ThrottleDrop">
             <ObjectReferenceList>
@@ -733,11 +737,11 @@
         </SimMission.ObjectActivationAction>
         <SimMission.GoalResolutionAction InstanceId="{7E47FA75-117A-4203-9708-B903D37CDC90}">
             <Goals>
-                <ObjectReference InstanceId="{045BA93C-717D-482D-B94D-2A7CD48736E1}" id="GL_FlyToLompoc"/>
+                <ObjectReference InstanceId="{CC5CCB8F-9FC6-4800-8925-F8993FA6829B}" id="GL_LandAtLompoc"/>
             </Goals>
         </SimMission.GoalResolutionAction>
         <SimMission.FocusInstrumentAction InstanceId="{DC74FBCC-A92A-4822-83C6-CC280EA2FAA2}" id="Action_Highlight_PropLever">
-            <FocusDuration>5.000</FocusDuration>
+            <FocusDuration>15.000</FocusDuration>
             <SetCamera>True</SetCamera>
             <InstrumentPartId>ENGINE_Lever_Propeller</InstrumentPartId>
         </SimMission.FocusInstrumentAction>
@@ -775,7 +779,7 @@
             </EndActions>
         </SimMission.InstructorDialogAction>
         <SimMission.TimerTrigger InstanceId="{8DB61F59-04A7-4798-990C-6029E12F211A}" id="Timer_ReachedLompoc">
-            <StopTime>360.000</StopTime>
+            <StopTime>300.000</StopTime>
             <Activated>False</Activated>
             <Actions>
                 <ObjectReference InstanceId="{0E84AC5D-EAF8-4E88-9A36-B38DC70A7C44}" id="SubGoalResolutionAction"/>
@@ -795,9 +799,10 @@
         </SimMission.ObjectActivationAction>
         <SimMission.AirportLandingTrigger InstanceId="{D1BB7ED3-BBE9-4ACD-B229-4DA80B88BA28}" id="Trig_Landed_Airport">
             <AirportIdent>KLPC</AirportIdent>
-            <Actions>
+            <SimMission.Actions>
                 <ObjectReference InstanceId="{D451115B-7D37-45E0-8EFA-80D02AA228A4}" id="Activate_Timer_End_Mission"/>
-            </Actions>
+                <WorldBase.ObjectReference InstanceId="{EA3F06B7-ED43-4389-9484-86A3BF8E9845}" id="Dialog_Test1"/>
+            </SimMission.Actions>
         </SimMission.AirportLandingTrigger>
         <SimEdition.CommentNode InstanceId="{417786FA-5CC8-4720-9019-A7586D1AFDC4}" id="Mission_End">
             <NodeComment>MIssion End</NodeComment>
@@ -853,11 +858,11 @@
             </EndActions>
         </SimMission.InstructorDialogAction>
         <SimMission.ObjectActivationAction InstanceId="{B192F510-ED64-4DF9-83DE-FD7029D9C5EB}" id="Activate_GL_LandingChecks">
-            <WorldBase.ObjectReferenceList>
+            <ObjectReferenceList>
                 <ObjectReference InstanceId="{CC5CCB8F-9FC6-4800-8925-F8993FA6829B}" id="GL_LandAtLompoc"/>
-                <WorldBase.ObjectReference InstanceId="{A679EBE2-368C-4228-BA0F-E39E94F4A49F}" id="SGL_ReturnPropLeverFull"/>
-                <WorldBase.ObjectReference InstanceId="{3ECDE8EA-271A-4E20-9D80-173C369FDEA7}" id="Prop_Trig_Lever_Return_Appr"/>
-            </WorldBase.ObjectReferenceList>
+                <ObjectReference InstanceId="{A679EBE2-368C-4228-BA0F-E39E94F4A49F}" id="SGL_ReturnPropLeverFull"/>
+                <ObjectReference InstanceId="{3ECDE8EA-271A-4E20-9D80-173C369FDEA7}" id="Prop_Trig_Lever_Return_Appr"/>
+            </ObjectReferenceList>
         </SimMission.ObjectActivationAction>
         <SimMission.ObjectActivationAction InstanceId="{C0A06368-63F7-4038-89D6-A196240328A4}" id="Deactivate_Alt_Warning">
             <NewObjectState>False</NewObjectState>
@@ -868,7 +873,7 @@
         <SimMission.PropertyTrigger InstanceId="{3ECDE8EA-271A-4E20-9D80-173C369FDEA7}" id="Prop_Trig_Lever_Return_Appr">
             <Activated>False</Activated>
             <ConditionTimer>3.000</ConditionTimer>
-            <ReversePolishCondition>(B:ENGINE_Propeller_1, percent) 95 &gt;</ReversePolishCondition>
+            <ReversePolishCondition>(A:GENERAL ENG PROPELLER LEVER POSITION:1, percent) 95 &gt;</ReversePolishCondition>
             <Actions>
                 <ObjectReference InstanceId="{BF7D2EC2-4C0F-473F-975F-92DDE9B15B95}" id="Complete_SGL_Return_lever"/>
                 <ObjectReference InstanceId="{7C4B92C3-9C0C-4343-A947-4F593E91DAFD}" id="InstructorDialogAction"/>
@@ -920,5 +925,23 @@
                 <ObjectReference InstanceId="{798103A4-6430-4DBF-A949-92E7AFDBD854}" id="SGL_Land_At_Lompoc"/>
             </ObjectReferenceList>
         </SimMission.ObjectActivationAction>
+        <SimMission.TimerTrigger InstanceId="{5566E6A3-D783-4B8D-B465-2E4E46BA64BE}" id="Trig_Timer_Additional_Info">
+            <StopTime>15.000</StopTime>
+            <Activated>False</Activated>
+            <Actions>
+                <ObjectReference InstanceId="{C5D6E69B-9D73-46D6-A1B6-1D3637531093}" id="Dialog_Additional_Info"/>
+            </Actions>
+        </SimMission.TimerTrigger>
+        <SimMission.InstructorDialogAction InstanceId="{C5D6E69B-9D73-46D6-A1B6-1D3637531093}" id="Dialog_Additional_Info">
+            <SoundFileName>prop-lever-additional-info.wav</SoundFileName>
+        </SimMission.InstructorDialogAction>
+        <SimMission.ObjectActivationAction InstanceId="{6BC9CBAD-3E0E-469E-B5B0-E4AA5944D409}" id="Activate_Trig_Timer_Additional">
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{5566E6A3-D783-4B8D-B465-2E4E46BA64BE}" id="Trig_Timer_Additional_Info"/>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.InstructorDialogAction InstanceId="{EA3F06B7-ED43-4389-9484-86A3BF8E9845}" id="Dialog_Test1">
+            <SoundFileName>excellent.wav</SoundFileName>
+        </SimMission.InstructorDialogAction>
     </WorldBase.Flight>
 </SimBase.Document>

@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<SimBase.Document Type="MissionFile" version="1,0">
+    <Title>Mission_Template</Title>
+    <WorldBase.Flight>
+        <SimMission.OnSpawnTrigger InstanceId="{96CCAD30-BCDB-4E7D-9750-115AF55D6903}">
+            <Descr>OnSpawnTrigger</Descr>
+            <Actions>
+                <ObjectReference id="PreloadRTC for FirstFlightState" InstanceId="{581A8BE9-D754-4B99-AD3A-FA4A879D892F}"/>
+            </Actions>
+        </SimMission.OnSpawnTrigger>
+        <SimMission.RTCLocationsPreloadAction InstanceId="{581A8BE9-D754-4B99-AD3A-FA4A879D892F}">
+            <Descr>PreloadRTC for FirstFlightState</Descr>
+            <UseFirstFlightState>True</UseFirstFlightState>
+        </SimMission.RTCLocationsPreloadAction>
+        <SimMission.OnEndLoadingTrigger InstanceId="{9EE6CAC2-B048-40E2-BBE0-A2C2F26595A4}">
+            <Descr>Start Flow States</Descr>
+            <FullLoadingActions>
+                <ObjectReference InstanceId="{8CB2D3FE-C69D-4DA5-9545-99228B54625D}" id="Intro Flowstate"/>
+            </FullLoadingActions>
+            <RestartActions>
+                <ObjectReference InstanceId="{8CB2D3FE-C69D-4DA5-9545-99228B54625D}" id="Intro Flowstate"/>
+            </RestartActions>
+        </SimMission.OnEndLoadingTrigger>
+        <SimMission.FlowStateAction InstanceId="{8CB2D3FE-C69D-4DA5-9545-99228B54625D}">
+            <FlowStateName>PREFLIGHT_GATE</FlowStateName>
+            <FromSpawn>True</FromSpawn>
+            <IsFirstStateInTimeline>True</IsFirstStateInTimeline>
+            <TeleportActions>
+                <ObjectReference InstanceId="{5E1694B9-BE18-4832-8AE7-0FA5FB826E5B}" id="WiseAFSSet"/>
+                <ObjectReference InstanceId="{E3043244-0CD4-4D52-98CF-845558CD10F6}" id="SetWwiseState_MFS_RTC_INTRO"/>
+                <ObjectReference InstanceId="{1B46F27B-1FE4-4789-899F-6890862F4FCB}" id="RTC_Ground_Airport_Aircraft_Intro"/>
+            </TeleportActions>
+            <TeleportFlowEvents>
+                <FlowEvent id="ATC_STOP"/>
+                <FlowEvent id="PAUSE_SIM"/>
+                <FlowEvent id="SHOW_MISSION_STARTUP"/>
+            </TeleportFlowEvents>
+            <StartFlowEvents>
+                <FlowEvent id="ATC_RESUME"/>
+                <FlowEvent id="UNPAUSE_SIM"/>
+                <FlowEvent id="PANEL_OBJECTIVES_FORCE_SHOW"/>
+                <FlowEvent id="PANEL_ATC_HIDE"/>
+                <FlowEvent id="PANEL_CHECKLIST_HIDE"/>
+            </StartFlowEvents>
+            <StartActions>
+                <ObjectReference InstanceId="{71015DC0-E568-494E-9C97-C6118FA69262}" id="WWiseRTCState_NON_RTC"/>
+                <ObjectReference InstanceId="{52E996A0-900A-43DD-AB5E-4DFED8A0ADE4}" id="Activate_Timer-Intro"/>
+            </StartActions>
+            <ObjectReference>
+            </ObjectReference>
+        </SimMission.FlowStateAction>
+        <SimMission.FlowStateWise InstanceId="{5E1694B9-BE18-4832-8AE7-0FA5FB826E5B}">
+            <Descr>WiseAFSSet</Descr>
+            <GroupName>ACTIVITIES_FLOW_STATE</GroupName>
+            <ElementName>FREEFLIGHT</ElementName>
+        </SimMission.FlowStateWise>
+        <SimMission.FlowStateWise InstanceId="{E3043244-0CD4-4D52-98CF-845558CD10F6}">
+            <Descr>SetWwiseState_MFS_RTC_INTRO</Descr>
+            <GroupName>MISSION_FLOW_STATE</GroupName>
+            <ElementName>RTC_INTRO</ElementName>
+        </SimMission.FlowStateWise>
+        <SimMission.FlowStateWise InstanceId="{71015DC0-E568-494E-9C97-C6118FA69262}">
+            <Descr>WWiseRTCState_NON_RTC</Descr>
+            <GroupName>GAME_RTC_STATE</GroupName>
+            <ElementName>NON_RTC</ElementName>
+        </SimMission.FlowStateWise>
+        <SimMission.Tutorial InstanceId="{F153CF90-D093-4EF7-B57A-F09617B4A2FF}" id="Tutorial_Mixture_Intro">
+            <Descr>Mixture Tutorial</Descr>
+            <SuccessText>Mission Success</SuccessText>
+            <FailureText>Mission Failed</FailureText>
+            <AbortedText>Mission aborted</AbortedText>
+            <Objectives>
+                <Objective id="OBJ_LearnAboutMixture" UniqueRefId="{6EDEF92E-A83C-409A-9D50-A73C4E3F4C53}">
+                    <Descr>Learn about Fuel Mixture</Descr>
+                    <SuccessText>Success</SuccessText>
+                    <Steps>
+                        <Step UniqueRefId="{8169ED59-2241-4DBA-A8E5-19079EAE5325}" id="ST_ListenToIntro">
+                            <Descr>Listen to the Introduction</Descr>
+                        </Step>
+                        <Step UniqueRefId="{BA614806-CFE8-47F9-9A99-025A5B66AB12}" id="ST_Maintain3500">
+                            <Descr>Maintain 3,500 ft and Heading 100.</Descr>
+                        </Step>
+                        <Step UniqueRefId="{E27373CB-F885-4DFC-8A63-2CAD87BB7C1C}" id="ST_IncreaseThrottleFull">
+                            <Descr>Increase Throttle to Full</Descr>
+                        </Step>
+                        <Step UniqueRefId="{9D2ABBC1-7D2E-46E7-B0E2-86A88D7C7689}" id="ST_ClimbTo6000">
+                            <Descr>Climb to 6,000 ft</Descr>
+                        </Step>
+                    </Steps>
+                </Objective>
+            </Objectives>
+        </SimMission.Tutorial>
+        <SimMission.Goal InstanceId="{ECB9B82B-155C-48C8-AA42-88821380812C}" id="GL_EndMission">
+            <Activated>False</Activated>
+        </SimMission.Goal>
+        <SimMission.ObjectActivationAction InstanceId="{52E996A0-900A-43DD-AB5E-4DFED8A0ADE4}" id="Activate_Timer-Intro">
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{C0B5C085-9415-4168-8D86-40A6F3B91EDB}" id="Timer_Intro"/>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.TimerTrigger InstanceId="{C0B5C085-9415-4168-8D86-40A6F3B91EDB}" id="Timer_Intro">
+            <StopTime>3.000</StopTime>
+            <Activated>False</Activated>
+            <Actions>
+                <ObjectReference InstanceId="{01C4E901-3582-4453-A381-975504E4278A}" id="Dialog_MixtureIntro1"/>
+            </Actions>
+        </SimMission.TimerTrigger>
+        <SimEdition.CommentNode InstanceId="{BFFF1AF3-4D20-434F-A46A-B4E139A01E05}" id="Before mission start">
+            <NodeColor>194,239,183,255</NodeColor>
+        </SimEdition.CommentNode>
+        <SimEdition.CommentNode InstanceId="{AB361173-4D5E-43DB-BBCC-F61A87E9BD5C}" id="Mission objects">
+            <NodeColor>194,183,239,255</NodeColor>
+        </SimEdition.CommentNode>
+        <SimMission.Goal InstanceId="{6EDEF92E-A83C-409A-9D50-A73C4E3F4C53}" id="GL_LearnAboutMixture"/>
+        <SimMission.SubGoal InstanceId="{8169ED59-2241-4DBA-A8E5-19079EAE5325}" id="SGL_ListenToIntro"/>
+        <SimMission.SubGoal InstanceId="{BA614806-CFE8-47F9-9A99-025A5B66AB12}" id="SGL_MaintainAltInitial">
+            <Activated>False</Activated>
+        </SimMission.SubGoal>
+        <SimMission.SubGoal InstanceId="{E27373CB-F885-4DFC-8A63-2CAD87BB7C1C}" id="SGL_IncreaseThrottleFull">
+            <Activated>False</Activated>
+        </SimMission.SubGoal>
+        <SimMission.SubGoal InstanceId="{9D2ABBC1-7D2E-46E7-B0E2-86A88D7C7689}" id="SGL_Climb6000">
+            <Activated>False</Activated>
+        </SimMission.SubGoal>
+        <SimMission.InstructorDialogAction InstanceId="{01C4E901-3582-4453-A381-975504E4278A}" id="Dialog_MixtureIntro1">
+            <EndActionsDelaySeconds>3.000</EndActionsDelaySeconds>
+            <SoundFileName>excellent.wav</SoundFileName>
+            <EndActions>
+                <ObjectReference InstanceId="{8276D7A8-C490-4EC0-BCF9-B5D42BD81373}" id="Activate_SGL_MaintainAlt"/>
+                <ObjectReference InstanceId="{221C7A39-DA04-46BC-B5F4-8FA7C9EDF8DD}" id="Dialog_MixtureIntro2"/>
+            </EndActions>
+        </SimMission.InstructorDialogAction>
+        <SimMission.SubGoalResolutionAction InstanceId="{B7753170-FC84-47FE-B791-364B7555CA05}" id="Complete_SGL_ListenToIntro1">
+            <StateChange>none</StateChange>
+            <SubGoals>
+                <ObjectReference InstanceId="{8169ED59-2241-4DBA-A8E5-19079EAE5325}" id="SGL_ListenToIntro"/>
+            </SubGoals>
+        </SimMission.SubGoalResolutionAction>
+        <SimMission.ObjectActivationAction InstanceId="{8276D7A8-C490-4EC0-BCF9-B5D42BD81373}" id="Activate_SGL_MaintainAlt">
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{BA614806-CFE8-47F9-9A99-025A5B66AB12}" id="SGL_MaintainAltInitial"/>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.InstructorDialogAction InstanceId="{221C7A39-DA04-46BC-B5F4-8FA7C9EDF8DD}" id="Dialog_MixtureIntro2">
+            <DelaySeconds>2.000</DelaySeconds>
+            <EndActionsDelaySeconds>3.000</EndActionsDelaySeconds>
+            <SoundFileName>excellent.wav</SoundFileName>
+            <EndActions>
+                <ObjectReference InstanceId="{B7753170-FC84-47FE-B791-364B7555CA05}" id="Complete_SGL_ListenToIntro1"/>
+                <ObjectReference InstanceId="{62BE2A4D-ABD7-4292-B04E-D23B5D409A71}" id="Dialog_MixturePart3"/>
+            </EndActions>
+        </SimMission.InstructorDialogAction>
+        <SimMission.ObjectActivationAction InstanceId="{CA79FAB9-9B6E-4498-8E47-BD02CA9BD680}" id="Activate_SGL_IncreaseThrottle">
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{E27373CB-F885-4DFC-8A63-2CAD87BB7C1C}" id="SGL_IncreaseThrottleFull"/>
+                <ObjectReference InstanceId="{1EDEE717-D72B-4A5C-AD3F-12A54C0CB144}" id="Prop_Trig_FullThrottle"/>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.PropertyTrigger InstanceId="{2950866B-8394-411B-A702-F45966AD94F3}" id="Prop_Trig_Reached_6000">
+            <Activated>False</Activated>
+            <ConditionTimer>4.000</ConditionTimer>
+            <ReversePolishCondition>(A:INDICATED ALTITUDE, feet) 5900 &gt; (A:INDICATED ALTITUDE, feet) 6100 &lt; and</ReversePolishCondition>
+            <Actions>
+                <ObjectReference InstanceId="{8120D963-1F15-43D4-B600-6D84189B8156}" id="Complete_SGL_ClimbTo6000"/>
+                <ObjectReference InstanceId="{7D561BC3-F9E8-42E6-987B-441067CA389F}" id="Dialog_Reached6000"/>
+            </Actions>
+        </SimMission.PropertyTrigger>
+        <SimMission.PropertyTrigger InstanceId="{1EDEE717-D72B-4A5C-AD3F-12A54C0CB144}" id="Prop_Trig_FullThrottle">
+            <Activated>False</Activated>
+            <ConditionTimer>3.000</ConditionTimer>
+            <ReversePolishCondition>(A:GENERAL ENG RPM:1, rpm) 2660 &gt;</ReversePolishCondition>
+            <SimMission.Actions>
+                <ObjectReference InstanceId="{30FC3150-A9EC-41B6-97F9-8A592D407CE0}" id="Dialog_ClimbTo6000"/>
+                <WorldBase.ObjectReference InstanceId="{750FDB05-6120-497E-BDB4-39F8649C5E0B}" id="Complete_SGL_IncreaseThrottle"/>
+            </SimMission.Actions>
+        </SimMission.PropertyTrigger>
+        <SimMission.InstructorDialogAction InstanceId="{62BE2A4D-ABD7-4292-B04E-D23B5D409A71}" id="Dialog_MixturePart3">
+            <DelaySeconds>3.000</DelaySeconds>
+            <EndActionsDelaySeconds>3.000</EndActionsDelaySeconds>
+            <SoundFileName>excellent.wav</SoundFileName>
+            <EndActions>
+                <ObjectReference InstanceId="{CA79FAB9-9B6E-4498-8E47-BD02CA9BD680}" id="Activate_SGL_IncreaseThrottle"/>
+            </EndActions>
+        </SimMission.InstructorDialogAction>
+        <SimMission.InstructorDialogAction InstanceId="{30FC3150-A9EC-41B6-97F9-8A592D407CE0}" id="Dialog_ClimbTo6000">
+            <DelaySeconds>3.000</DelaySeconds>
+            <SoundFileName>excellent.wav</SoundFileName>
+            <EndActions>
+                <ObjectReference InstanceId="{E9392E58-7B25-4E83-8291-0611A0B53A83}" id="Activate_Prop_Trig_6000"/>
+                <ObjectReference InstanceId="{055F6F7C-B8A2-4409-84B8-54C3E1332C47}" id="Activate_SGL_Climb6000"/>
+                <ObjectReference InstanceId="{3A122F95-18A4-42A0-B7AB-780EC1087AEC}" id="SubGoalResolutionAction"/>
+            </EndActions>
+        </SimMission.InstructorDialogAction>
+        <SimMission.ObjectActivationAction InstanceId="{E9392E58-7B25-4E83-8291-0611A0B53A83}" id="Activate_Prop_Trig_6000">
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{2950866B-8394-411B-A702-F45966AD94F3}" id="Prop_Trig_Reached_6000"/>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.ObjectActivationAction InstanceId="{055F6F7C-B8A2-4409-84B8-54C3E1332C47}" id="Activate_SGL_Climb6000">
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{9D2ABBC1-7D2E-46E7-B0E2-86A88D7C7689}" id="SGL_Climb6000"/>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.SubGoalResolutionAction InstanceId="{8120D963-1F15-43D4-B600-6D84189B8156}" id="Complete_SGL_ClimbTo6000">
+            <StateChange>none</StateChange>
+            <SimMission.SubGoals>
+                <ObjectReference InstanceId="{9D2ABBC1-7D2E-46E7-B0E2-86A88D7C7689}" id="SGL_Climb6000"/>
+            </SimMission.SubGoals>
+        </SimMission.SubGoalResolutionAction>
+        <SimMission.InstructorDialogAction InstanceId="{7D561BC3-F9E8-42E6-987B-441067CA389F}" id="Dialog_Reached6000">
+            <SoundFileName>excellent.wav</SoundFileName>
+        </SimMission.InstructorDialogAction>
+        <SimMission.SubGoalResolutionAction InstanceId="{3A122F95-18A4-42A0-B7AB-780EC1087AEC}">
+            <SubGoals>
+                <ObjectReference InstanceId="{BA614806-CFE8-47F9-9A99-025A5B66AB12}" id="SGL_MaintainAltInitial"/>
+            </SubGoals>
+        </SimMission.SubGoalResolutionAction>
+        <SimMission.SubGoalResolutionAction InstanceId="{750FDB05-6120-497E-BDB4-39F8649C5E0B}" id="Complete_SGL_IncreaseThrottle">
+            <StateChange>none</StateChange>
+            <SubGoals>
+                <ObjectReference InstanceId="{E27373CB-F885-4DFC-8A63-2CAD87BB7C1C}" id="SGL_IncreaseThrottleFull"/>
+            </SubGoals>
+        </SimMission.SubGoalResolutionAction>
+    </WorldBase.Flight>
+</SimBase.Document>

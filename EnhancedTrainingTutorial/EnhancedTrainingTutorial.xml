@@ -5,6 +5,7 @@
 	<PublishingGroupTemporaryOutputDirectory>_PublishingGroupInt</PublishingGroupTemporaryOutputDirectory>
 	<Packages>
 		<Package>PackageDefinitions\brokeneggs-enhanced-training-one.xml</Package>
+		<Package>PackageDefinitions\brokeneggs-fuel-mixture-intro.xml</Package>
 		<Package>PackageDefinitions\brokeneggs-lowfuellanding.xml</Package>
 	</Packages>
 	<PublishingGroups/>

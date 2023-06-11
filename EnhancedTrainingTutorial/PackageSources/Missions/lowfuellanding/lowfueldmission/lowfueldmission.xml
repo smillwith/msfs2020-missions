@@ -29,6 +29,7 @@
             <TeleportActions>
                 <ObjectReference InstanceId="{B02417F8-2461-4825-9D69-6BA0867F71E5}" id="WiseAFSSet"/>
                 <ObjectReference InstanceId="{D2F0D086-2486-40E9-9652-8E3BE66F7726}" id="SetWwiseState_MFS_RTC_INTRO"/>
+                <ObjectReference id="RTC_Ground_Airport_Aircraft_Intro" InstanceId="{306B2AE4-06BA-48C3-93A0-BD5569E6EF5B}"/>
             </TeleportActions>
             <TeleportFlowEvents>
                 <FlowEvent id="ATC_STOP"/>
@@ -70,15 +71,15 @@
             <FailureText>Mission Failed</FailureText>
             <AbortedText>Mission aborted</AbortedText>
             <Objectives>
-                <SimMission.Objective id="OBJ_EndMission" UniqueRefId="{C3FFC036-7432-4E98-8F22-A7FCB95982E7}">
+                <Objective id="OBJ_EndMission" UniqueRefId="{C3FFC036-7432-4E98-8F22-A7FCB95982E7}">
                     <Descr>Land Safely</Descr>
                     <SuccessText>Success</SuccessText>
                     <Steps>
                         <SimMission.Step UniqueRefId="{2CD4717A-91F2-4436-9050-4FB58F69507F}" id="ST_80Kts">
-                            <Descr>Reach 80 Kts</Descr>
+                            <Descr>Land where possible</Descr>
                         </SimMission.Step>
                     </Steps>
-                </SimMission.Objective>
+                </Objective>
             </Objectives>
             <CrashActions>
                 <ObjectReference InstanceId="{65590C1A-0F66-4167-BDE3-839B357950D3}" id="Fail_GL_EndMission"/>
@@ -93,9 +94,8 @@
         <SimMission.TimerTrigger InstanceId="{D9D12AEB-0F9B-466A-A90D-C954D32F111D}" id="Timer_Intro">
             <StopTime>3.000</StopTime>
             <Activated>False</Activated>
-            <Actions>
-                <ObjectReference InstanceId="{1A9D6574-7213-4C43-96A0-6620233C9587}" id="Activate_PropTrig-80kts"/>
-            </Actions>
+            <SimMission.Actions>
+            </SimMission.Actions>
         </SimMission.TimerTrigger>
         <SimEdition.CommentNode InstanceId="{30031D99-9091-48D5-AA48-A4A5D0D4EBE4}" id="Before mission start">
             <NodeColor>194,239,183,255</NodeColor>
@@ -104,25 +104,6 @@
             <NodeColor>194,183,239,255</NodeColor>
         </SimEdition.CommentNode>
         <SimMission.SubGoal InstanceId="{2CD4717A-91F2-4436-9050-4FB58F69507F}" id="SGL_80Kts"/>
-        <SimMission.PropertyTrigger InstanceId="{24DB588E-A9C8-4F5C-9877-9DF478011D09}" id="PropTrig_80Kts">
-            <ReversePolishCondition>(A:AIRSPEED INDICATED, knots) 80 &lt;=</ReversePolishCondition>
-            <Activated>False</Activated>
-            <Actions>
-                <ObjectReference InstanceId="{C801F5EF-F189-4B9C-B8EC-07F929BBE24A}" id="Complete_SGL-80Kts"/>
-            </Actions>
-        </SimMission.PropertyTrigger>
-        <SimMission.ObjectActivationAction InstanceId="{1A9D6574-7213-4C43-96A0-6620233C9587}" id="Activate_PropTrig-80kts">
-            <Immediate>False</Immediate>
-            <ObjectReferenceList>
-                <ObjectReference InstanceId="{24DB588E-A9C8-4F5C-9877-9DF478011D09}" id="PropTrig_80Kts"/>
-            </ObjectReferenceList>
-        </SimMission.ObjectActivationAction>
-        <SimMission.SubGoalResolutionAction InstanceId="{C801F5EF-F189-4B9C-B8EC-07F929BBE24A}" id="Complete_SGL-80Kts">
-            <StateChange>none</StateChange>
-            <SubGoals>
-                <ObjectReference InstanceId="{2CD4717A-91F2-4436-9050-4FB58F69507F}" id="SGL_80Kts"/>
-            </SubGoals>
-        </SimMission.SubGoalResolutionAction>
         <SimMission.AirportLandingTrigger InstanceId="{700F70CA-775A-415A-8686-478E5A2C3EEF}" id="Trig_Land_Airport">
             <AirportIdent>1E2</AirportIdent>
             <AirportIdent>09TS</AirportIdent>

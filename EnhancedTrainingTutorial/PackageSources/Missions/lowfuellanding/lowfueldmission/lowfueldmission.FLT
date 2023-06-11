@@ -25,8 +25,8 @@ AxisIndicator=Off
 
 [Sim.0]
 Sim=Bonanza G36 Asobo
-Pilot=Pilot_Male_Casual
-Copilot=Pilot_Female_Casual
+Pilot=Pilot_Female_Casual
+Copilot=Pilot_Male_Casual
 TailNumber=N67G4P
 AirlineCallSign=
 FlightNumber=
@@ -57,7 +57,7 @@ BriefingImage0=./images/LowFuel_Briefing.jpg
 ImageName0=./images/LowFuel_Loading.jpg
 
 [TrafficOptions]
-AllowAbientVehicleTraffic=FALSE
+AllowAbientVehicleTraffic=False
 
 [Multiplayer]
 Status=0

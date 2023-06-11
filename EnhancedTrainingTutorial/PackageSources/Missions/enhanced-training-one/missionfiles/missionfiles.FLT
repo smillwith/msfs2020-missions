@@ -22,7 +22,7 @@ AxisIndicator=Off
 
 [Sim.0]
 Sim=Bonanza G36 Asobo
-Pilot=Pilot_Male_Casual
+Pilot=Pilot_Female_Casual
 Copilot=Pilot_Male_Casual
 TailNumber=N67G4P
 AirlineCallSign=
@@ -72,7 +72,7 @@ BriefingInfo0=FLIGHT_INFO_TOTAL_FLIGHT_DURATION, 900
 BriefingImage0=./images/PropLeverMission_Briefing.jpg
 
 [TrafficOptions]
-AllowAmbientVehicleTraffic=FALSE
+AllowAmbientVehicleTraffic=False
 
 [Multiplayer]
 Status=0
@@ -410,7 +410,7 @@ LandingLights=True
 LogoLights=False
 NavLights=True
 PanelLights=False
-RecognitionLights=False
+RecognitionLights=True
 StrobeLights=True
 TaxiLights=True
 WingLights=False
@@ -418,14 +418,14 @@ CabinLights=False
 GlareshieldLights=False
 PedestalLights=False
 AmbientLights=False
-BeaconLightsNight=False
-LandingLightsNight=False
+BeaconLightsNight=True
+LandingLightsNight=True
 LogoLightsNight=False
-NavLightsNight=False
+NavLightsNight=True
 PanelLightsNight=False
-RecognitionLightsNight=False
-StrobeLightsNight=False
-TaxiLightsNight=False
+RecognitionLightsNight=True
+StrobeLightsNight=True
+TaxiLightsNight=True
 WingLightsNight=False
 CabinLightsNight=False
 GlareshieldLightsNight=False
@@ -568,7 +568,7 @@ Rudder=050.00
 Collective=000.00
 LeftBrake=000.00
 RightBrake=000.00
-ParkingBrake=100.00
+ParkingBrake=099.99
 ElevatorTrim=050.00
 LateralTrim=050.00
 LongitudinalTrim=050.00
