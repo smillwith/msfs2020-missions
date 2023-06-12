@@ -1,13 +1,13 @@
 
 [Main]
-Title=Intro to Fuel Mixture
-Description=Review the basics of fuel mixture and the mixture control while flying below and above 3,000 feet.
+Title=Slow Speed Maneuvers
+Description=Practice basic maneuvers at just above stall speed
 AppVersion=10.0.1
 FlightVersion=0
 MissionType=Tutorial
 MissionLocation=
 FlightType=NORMAL
-;StartingCameraCategory=Cockpit
+;StartingCameraCategory=Custom
 
 [Options]
 Sound=True
@@ -28,15 +28,15 @@ FlightNumber=
 AppendHeavy=False
 
 [ResourcePath]
-Path=fuelmixture
+Path=slowspeed
 
 [ObjectFile]
-File=fuelmixture
+File=slowspeed
 
 [Weather]
 UseWeatherFile=False
 UseLiveWeather=False
-WeatherPresetFile=.\WeatherPresets\ScatteredClouds.WPR
+WeatherPresetFile=.\WeatherPresets\FewClouds.WPR
 WeatherCanBeLive=False
 CloudmapPosOverride=False
 CloudmapInitialPosX=0
@@ -44,22 +44,16 @@ CloudmapInitialPosY=0
 FixedClouds=False
 DebugPublicAirflowDisplay=False
 
-[Departure]
-ICAO=L88
-RunwayNumber=28
-RunwayDesignator=NONE
-
-[Briefing]
-BriefingText=Review the basics of fuel mixture, the mixture control, and leaning procedures while flying at various altitudes.
-BriefingInfo0=FLIGHT_INFO_TOTAL_FLIGHT_DURATION, 900
-BriefingImage0=./images/Mixture_Briefing.jpg
-
 [Loading]
 ImageName0=LOADING_FREEFLIGHT
 Tips0=asobo-aircraft-c172sp-as1000,TT:LOADING.TIPS.C172_001,TipCategory_Aircraft
 Tips1=asobo-aircraft-c172sp-as1000,TT:LOADING.TIPS.C172_002,TipCategory_Aircraft
 Tips2=asobo-aircraft-c172sp-as1000,TT:LOADING.TIPS.C172_003,TipCategory_Aircraft
 Tips3=asobo-aircraft-c172sp-as1000,TT:LOADING.TIPS.C172_004,TipCategory_Aircraft
+
+[Briefing]
+BriefingText=Practice the basics of turns and elevation changes while maintaining airspeed and without stalling
+BriefingInfo0=FLIGHT_INFO_TOTAL_FLIGHT_DURATION, 900
 
 [TrafficOptions]
 AllowAmbientVehicleTraffic=False
@@ -90,7 +84,7 @@ ActiveFlightPlan=False
 RequestedFlightPlan=False
 AcState=ACSTATE_VFR_ENROUTE_CONTACT
 NumberofWaypoints=0
-ClearanceFlags=88a
+ClearanceFlags=882
 CtCur=CLEARANCE_NONE
 WaypointNext=0
 AltCleared=-1
@@ -127,36 +121,36 @@ NumberofAircraft=1
 FrequencyNodes=0
 
 [DateTimeSeason]
-Season=Spring
+Season=Summer
 Year=2023
-Day=89
-Hours=18
-Minutes=17
-Seconds=50.504215240478515625
+Day=163
+Hours=13
+Minutes=55
+Seconds=38.057888031005859375
 UseZuluTime=False
 
 [SimplifiedSim.0]
 Mode=None
 
 [SimVars.0]
-Latitude=N34° 55' 17.28"
-Longitude=W119° 38' 58.76"
-Altitude=+003507.09
-Pitch=-2.7224179939621140356
-Bank=1.1977640877982260736
-Heading=108.9025061352894852
-PVelBodyAxis=-0.0032310890763413290146
-BVelBodyAxis=0.0062415623068169502966
-HVelBodyAxis=-0.0031388147919289371111
-XVelBodyAxis=-4.4728692744363724998
-YVelBodyAxis=-8.0550033088889474442
-ZVelBodyAxis=184.04318080771292898
+Latitude=N34° 13' 20.52"
+Longitude=W119° 16' 4.49"
+Altitude=+001490.88
+Pitch=-2.1817299739801496727
+Bank=0.19012744352655325253
+Heading=-33.1945268396505071
+PVelBodyAxis=-0.01127596233138780657
+BVelBodyAxis=0.0022186980976387476322
+HVelBodyAxis=-0.0024922171207790895509
+XVelBodyAxis=3.5579276154283565603
+YVelBodyAxis=-6.5635283201518666019
+ZVelBodyAxis=171.07898022931519222
 SimOnGround=False
 OnPlatformHeight=-9999999999
 
 [Avionics.0]
-Comm1Active=125.850
-Comm1Standby=122.900
+Comm1Active=127.850
+Comm1Standby=124.850
 Comm2Active=124.850
 Comm2Standby=124.850
 Comm3Active=124.850
@@ -200,11 +194,11 @@ Altitude=False
 Attitude=False
 
 [Engine Parameters.1.0]
-ThrottleLeverPct=0.77777099609375
+ThrottleLeverPct=0.69049072265625
 PropellerLeverPct=1
 MixtureLeverPct=1
-Pct Engine RPM=0.84131717695725283246
-MaxReachedEngineRPM=2612.4212163809065714
+Pct Engine RPM=0.80963282146954462792
+MaxReachedEngineRPM=2735.7506414081717594
 Pct N1=-1.7976931348623157081e+308
 Pct N2=-1.7976931348623157081e+308
 LeftMagneto=True
@@ -219,21 +213,21 @@ EngineMasterSwitch=True
 GlowPlugTemperaturePct=1
 IgnitionSwitch=0
 StarterSwitch=False
-EGT_DegR=1799.7121417560811096
+EGT_DegR=1754.2117082059021413
 ITT_DegR=-1.7976931348623157081e+308
 FuelPressurePSF=2375.9999999999899956
 CorrectedFF=-1.7976931348623157081e+308
 
 [Propeller.1.0]
 prop_beta=0.33161255787892263136
-prop_max_rpm_percent=0.84131717695725283246
+prop_max_rpm_percent=0.80963282146954462792
 
 [Fuel.0]
 TankSelector=All
 TankSelector1=All
 Center=0
-LeftMain=48.41949462890625
-RightMain=48.41949462890625
+LeftMain=49.45906829833984375
+RightMain=49.45906829833984375
 LeftAux=0
 RightAux=0
 LeftTip=0
@@ -259,34 +253,22 @@ EngineAirBleed.8=True
 APUAirBleed=True
 
 [LocalVars.0]
-AS1000_PFD_ScreenLuminosity=1
-AS1000_PFD_Brightness=2
-AS1000_MFD_ScreenLuminosity=1
-AS1000_MFD_Brightness=2
-XMLVAR_Autopilot_2_Status=0
-HANDLING_ElevatorTrim=2281.1392296893122875
-XMLVAR_YokeHidden1=1
 ParkingBrake_Position=0
-AS1000_PFD_SelectedNavIndex=1
-AS1000_PFD_SelectedComIndex=1
-PFD_CDI_Source=3
-AS1000_MFD_SelectedNavIndex=1
-AS1000_MFD_SelectedComIndex=1
+XMLVAR_Autopilot_1_Status=1
 DEICE_Pitot_1=0
-INSTRUMENT_Altimeter_2=1013.2500109386215854
-LIGHTING_BEACON_1=1
-LIGHTING_PANEL_1=100
 LIGHTING_TAXI_1=0
-LIGHTING_LANDING_1=1
+LIGHTING_BEACON_1=1
 LIGHTING_CABIN_1=100
-LIGHTING_CABIN_2=100
+LIGHTING_PANEL_1=100
 XMLVAR_NEXTGEN_FLIGHTPLAN_ENABLED=1
 PFD_BRG1_Source=0
 PFD_BRG2_Source=0
 Generic_Master_Caution_Active=0
 Generic_Master_Warning_Active=0
-WT1000_Fuel_GalRemaining=27.188295364379882812
-WT1000_Fuel_GalBurned=0.8117046356201171875
+WT1000_Fuel_GalBurned=0.3029232025146484375
+WT1000_Fuel_GalRemaining=27.697076797485351562
+AS1000_PFD_SelectedNavIndex=1
+PFD_CDI_Source=3
 WT_LNavData_DTK_True=0
 WT_LNavData_DTK_Mag=0
 WT_LNavData_XTK=0
@@ -321,31 +303,43 @@ WTAP_VNav_Distance_To_TOD=0
 WTAP_VNav_Distance_To_BOD=0
 WTAP_VNav_Constraint_Leg_Index=-1
 WTAP_VNav_State=1
+AS1000_pfd_Brightness=2
 WTAP_GP_Distance=-1
+AS1000_mfd_Brightness=2
 WTAP_GP_FPA=0
+AS1000_MFD_SelectedNavIndex=1
+AS1000_MFD_SelectedComIndex=1
+AS1000_PFD_SelectedComIndex=1
 WT1000_AP_G1000_INSTALLED=1
-HUD_AP_SELECTED_SPEED=0
-HUD_AP_SELECTED_ALTITUDE=0
+AS1000_PFD_ScreenLuminosity=1
 AS1000_PFD_State=2
+AS1000_MFD_ScreenLuminosity=1
 AS1000_MFD_State=2
 HourMeter_ScreenLuminosity=1
 HourMeter_State=2
-XMLVAR_ElevatorTrim_Switch_YOKE=1
-XMLVAR_Autopilot_1_Status=0
+XMLVAR_BatterySTBY_SwitchState=0
 ENG FUEL VALVE:1=1
+XMLVAR_YokeHidden1=0
+XMLVAR_ElevatorTrim_Switch_Yoke=1
+HANDLING_ElevatorTrim=2119.9306345679442529
+XMLVAR_Autopilot_2_Status=1
+INSTRUMENT_Altimeter_2=1013.2500109386215854
+LIGHTING_POTENTIOMETER_3=0
+LIGHTING_PEDESTRAL_1=100
+LIGHTING_POTENTIOMETER_4=100
+LIGHTING_CABIN_2=100
+LIGHTING_LANDING_1=0
 LIGHTING_NAV_0=1
 LIGHTING_STROBE_0=1
-LIGHTING_PEDESTRAL_1=100
-XMLVAR_BatterySTBY_SwitchState=0
-LIGHTING_POTENTIOMETER_3=0
-LIGHTING_POTENTIOMETER_4=100
+HUD_AP_SELECTED_SPEED=0
+HUD_AP_SELECTED_ALTITUDE=0
 
 [Switches.0]
 PitotHeat=False
 PitotHeat_EX1=0
 WindshieldDeice=0
 BeaconLights=True
-LandingLights=True
+LandingLights=False
 LogoLights=True
 NavLights=True
 PanelLights=True
@@ -358,7 +352,7 @@ GlareshieldLights=False
 PedestalLights=False
 AmbientLights=False
 BeaconLightsNight=True
-LandingLightsNight=True
+LandingLightsNight=False
 LogoLightsNight=True
 NavLightsNight=True
 PanelLightsNight=True
@@ -366,7 +360,7 @@ RecognitionLightsNight=True
 StrobeLightsNight=True
 TaxiLightsNight=False
 WingLightsNight=True
-CabinLightsNight=False
+CabinLightsNight=True
 GlareshieldLightsNight=False
 PedestalLightsNight=False
 AmbientLightsNight=False
@@ -386,7 +380,7 @@ circuit.7=True,1.00
 circuit.8=True,1.00
 circuit.9=True,1.00
 circuit.10=True,1.00
-circuit.11=True,1.00
+circuit.11=False,1.00
 circuit.12=False,1.00
 circuit.13=True,1.00
 circuit.14=True,1.00
@@ -437,7 +431,7 @@ Autobrakes=0
 StandbyVacuum=False
 PropSync=False
 AutoFeatherSwitch=False
-FlightDirector=False
+FlightDirector=True
 PanelLights=True
 LaunchBarSwitch=False
 LaunchBarState=0
@@ -454,19 +448,19 @@ GovernorSwitch=False
 
 [AutoPilot.0]
 MasterSwitch=True
-WingLeveler=True
+WingLeveler=False
 Nav1Lock=False
 HeadingLock=True
-HeadingValue=100
+HeadingValue=315
 AltitudeLock=True
-AltitudeValue=3500
+AltitudeValue=1500
 AttitudeHold=False
 AirspeedHold=False
 AirspeedValue=0
 MachHold=False
-MachValue=0.021092567592859268188
+MachValue=0.020818643271923065186
 VerticalSpeedHold=False
-VerticalSpeedValue=0
+VerticalSpeedValue=-100
 RPMHold=False
 RPMValue=0
 GlideslopeHold=False
@@ -497,14 +491,14 @@ GearsHandle=000.00
 Gear1=100.00
 Gear2=100.00
 Gear3=100.00
-YokeY=050.07
-YokeX=050.20
+YokeY=050.24
+YokeX=049.35
 Rudder=050.00
 Collective=000.00
 LeftBrake=000.00
 RightBrake=000.00
 ParkingBrake=000.00
-ElevatorTrim=056.96
+ElevatorTrim=056.47
 LateralTrim=050.00
 LongitudinalTrim=050.00
 RudderTrimPct=0
@@ -521,4 +515,4 @@ NosewheelMaxSteering=-1
 
 [SimScheduler]
 SimSpeed=001.00
-SimTime=959.97423626897875693
+SimTime=950.3335615531170788
