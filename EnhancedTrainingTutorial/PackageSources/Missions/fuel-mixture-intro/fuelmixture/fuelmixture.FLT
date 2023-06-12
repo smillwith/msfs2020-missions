@@ -1,3 +1,5 @@
+[Assistance]
+Preset=ASSISTANCE_PRESET_TRUE_TO_LIFE
 
 [Main]
 Title=Intro to Fuel Mixture
@@ -144,7 +146,7 @@ Longitude=W119° 38' 58.76"
 Altitude=+003507.09
 Pitch=-2.7224179939621140356
 Bank=1.1977640877982260736
-Heading=108.9025061352894852
+Heading=89.9025061352894852
 PVelBodyAxis=-0.0032310890763413290146
 BVelBodyAxis=0.0062415623068169502966
 HVelBodyAxis=-0.0031388147919289371111
@@ -454,13 +456,13 @@ GovernorSwitch=False
 
 [AutoPilot.0]
 MasterSwitch=True
-WingLeveler=True
+WingLeveler=False
 Nav1Lock=False
 HeadingLock=True
-HeadingValue=100
-AltitudeLock=True
+HeadingValue=095
+AltitudeLock=False
 AltitudeValue=3500
-AttitudeHold=False
+AttitudeHold=True
 AirspeedHold=False
 AirspeedValue=0
 MachHold=False

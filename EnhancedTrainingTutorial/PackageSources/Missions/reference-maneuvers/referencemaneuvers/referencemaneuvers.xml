@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<SimBase.Document Type="MissionFile" version="1,0">
+    <Title>Mission_Template</Title>
+    <WorldBase.Flight>
+        <SimMission.OnSpawnTrigger InstanceId="{B61424BE-F2A5-4F6E-82A2-7E55C32FC9A6}">
+            <Descr>OnSpawnTrigger</Descr>
+            <Actions>
+                <ObjectReference id="PreloadRTC for FirstFlightState" InstanceId="{943B429E-3701-4351-86C1-C74D192BB2DB}"/>
+            </Actions>
+        </SimMission.OnSpawnTrigger>
+        <SimMission.RTCLocationsPreloadAction InstanceId="{943B429E-3701-4351-86C1-C74D192BB2DB}">
+            <Descr>PreloadRTC for FirstFlightState</Descr>
+            <UseFirstFlightState>True</UseFirstFlightState>
+        </SimMission.RTCLocationsPreloadAction>
+        <SimMission.OnEndLoadingTrigger InstanceId="{CFEA4610-58D6-4617-8465-5F3C3444465A}">
+            <Descr>Start Flow States</Descr>
+            <FullLoadingActions>
+                <ObjectReference InstanceId="{15B07E31-F0D8-45D3-B432-54D71D69D3CF}" id="Intro Flowstate"/>
+            </FullLoadingActions>
+            <RestartActions>
+                <ObjectReference InstanceId="{15B07E31-F0D8-45D3-B432-54D71D69D3CF}" id="Intro Flowstate"/>
+            </RestartActions>
+        </SimMission.OnEndLoadingTrigger>
+        <SimMission.FlowStateAction InstanceId="{15B07E31-F0D8-45D3-B432-54D71D69D3CF}">
+            <FlowStateName>PREFLIGHT_GATE</FlowStateName>
+            <FromSpawn>True</FromSpawn>
+            <IsFirstStateInTimeline>True</IsFirstStateInTimeline>
+            <TeleportActions>
+                <ObjectReference InstanceId="{4DA369D9-FC8D-4B8B-95C1-12476B6F22F7}" id="WiseAFSSet"/>
+                <ObjectReference InstanceId="{919F4E8D-069E-4946-9EC8-602FA0989B74}" id="SetWwiseState_MFS_RTC_INTRO"/>
+                <ObjectReference InstanceId="{47A214DA-49F5-4090-A063-263AA6B86126}" id="RTC_Ground_Airport_Aircraft_Intro"/>
+            </TeleportActions>
+            <TeleportFlowEvents>
+                <FlowEvent id="ATC_STOP"/>
+                <FlowEvent id="PAUSE_SIM"/>
+                <FlowEvent id="SHOW_MISSION_STARTUP"/>
+            </TeleportFlowEvents>
+            <StartFlowEvents>
+                <FlowEvent id="ATC_RESUME"/>
+                <FlowEvent id="UNPAUSE_SIM"/>
+                <FlowEvent id="PANEL_OBJECTIVES_FORCE_SHOW"/>
+                <FlowEvent id="PANEL_ATC_HIDE"/>
+                <FlowEvent id="PANEL_CHECKLIST_HIDE"/>
+            </StartFlowEvents>
+            <StartActions>
+                <ObjectReference InstanceId="{6B660CE6-13ED-4ACE-A4BF-596E0D6E9D66}" id="WWiseRTCState_NON_RTC"/>
+                <ObjectReference InstanceId="{A1157934-AF01-4CC1-B403-1B8C47010EF4}" id="Activate_Timer-Intro"/>
+            </StartActions>
+            <ObjectReference>
+            </ObjectReference>
+        </SimMission.FlowStateAction>
+        <SimMission.FlowStateWise InstanceId="{4DA369D9-FC8D-4B8B-95C1-12476B6F22F7}">
+            <Descr>WiseAFSSet</Descr>
+            <GroupName>ACTIVITIES_FLOW_STATE</GroupName>
+            <ElementName>FREEFLIGHT</ElementName>
+        </SimMission.FlowStateWise>
+        <SimMission.FlowStateWise InstanceId="{919F4E8D-069E-4946-9EC8-602FA0989B74}">
+            <Descr>SetWwiseState_MFS_RTC_INTRO</Descr>
+            <GroupName>MISSION_FLOW_STATE</GroupName>
+            <ElementName>RTC_INTRO</ElementName>
+        </SimMission.FlowStateWise>
+        <SimMission.FlowStateWise InstanceId="{6B660CE6-13ED-4ACE-A4BF-596E0D6E9D66}">
+            <Descr>WWiseRTCState_NON_RTC</Descr>
+            <GroupName>GAME_RTC_STATE</GroupName>
+            <ElementName>NON_RTC</ElementName>
+        </SimMission.FlowStateWise>
+        <SimMission.Tutorial InstanceId="{DF4E211A-9D5D-4C2D-A1AE-569A494CDA00}">
+            <Descr>Simple Tutorial</Descr>
+            <SuccessText>Mission Success</SuccessText>
+            <FailureText>Mission Failed</FailureText>
+            <AbortedText>Mission aborted</AbortedText>
+            <Objectives>
+                <Objective id="GL_EndMission" UniqueRefId="{CBC1DC31-0DD9-45FF-B38D-17176456B54C}">
+                    <Descr>Complete the Mission</Descr>
+                    <SuccessText>Success</SuccessText>
+                    <Steps>
+                        <Step UniqueRefId="{DB7FD6E6-D855-4288-850D-C3E45AEDF743}" id="SGL_80Kts">
+                            <Descr>Reach 80 Kts</Descr>
+                        </Step>
+                    </Steps>
+                </Objective>
+            </Objectives>
+        </SimMission.Tutorial>
+        <SimMission.Goal InstanceId="{CBC1DC31-0DD9-45FF-B38D-17176456B54C}" id="GL_EndMission"/>
+        <SimMission.ObjectActivationAction InstanceId="{A1157934-AF01-4CC1-B403-1B8C47010EF4}" id="Activate_Timer-Intro">
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{42AE9E99-4057-4B53-9171-51E6A1086131}" id="Timer_Intro"/>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.TimerTrigger InstanceId="{42AE9E99-4057-4B53-9171-51E6A1086131}" id="Timer_Intro">
+            <StopTime>3.000</StopTime>
+            <Activated>False</Activated>
+            <Actions>
+                <ObjectReference InstanceId="{48F54696-07CC-422E-9A5D-6DA9DC7948B8}" id="Activate_PropTrig-80kts"/>
+            </Actions>
+        </SimMission.TimerTrigger>
+        <SimEdition.CommentNode InstanceId="{846CA586-77EA-45B3-933D-E8DA810AD3B7}" id="Before mission start">
+            <NodeColor>194,239,183,255</NodeColor>
+        </SimEdition.CommentNode>
+        <SimEdition.CommentNode InstanceId="{8AB346D5-D387-4F81-8D08-918ADA99E2A9}" id="Mission objects">
+            <NodeColor>194,183,239,255</NodeColor>
+        </SimEdition.CommentNode>
+        <SimMission.SubGoal InstanceId="{DB7FD6E6-D855-4288-850D-C3E45AEDF743}" id="SGL_80Kts"/>
+        <SimMission.PropertyTrigger InstanceId="{C25B378D-743E-4768-A20E-2776C0EFB889}" id="PropTrig_80Kts">
+            <ReversePolishCondition>(A:AIRSPEED INDICATED, knots) 80 &gt;=</ReversePolishCondition>
+            <Activated>False</Activated>
+            <Actions>
+                <ObjectReference InstanceId="{084367C8-FFCA-4396-8BB4-211A3789AF41}" id="Dia_80kts1"/>
+                <ObjectReference InstanceId="{F06E46F9-C1F8-4D56-B8CA-FBC4760F69AD}" id="Complete_SGL-80Kts"/>
+                <ObjectReference InstanceId="{1ADC7E9A-611E-4FC7-A766-952F1669532C}" id="Dia_80kts2"/>
+            </Actions>
+        </SimMission.PropertyTrigger>
+        <SimMission.ObjectActivationAction InstanceId="{48F54696-07CC-422E-9A5D-6DA9DC7948B8}" id="Activate_PropTrig-80kts">
+            <Immediate>False</Immediate>
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{C25B378D-743E-4768-A20E-2776C0EFB889}" id="PropTrig_80Kts"/>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.DialogAction InstanceId="{084367C8-FFCA-4396-8BB4-211A3789AF41}" id="Dia_80kts1">
+            <Immediate>False</Immediate>
+            <Priority>NORMAL</Priority>
+            <Text>80 knots.</Text>
+            <Speaker>COPILOT</Speaker>
+        </SimMission.DialogAction>
+        <SimMission.DialogAction InstanceId="{1ADC7E9A-611E-4FC7-A766-952F1669532C}" id="Dia_80kts2">
+            <Immediate>False</Immediate>
+            <Priority>NORMAL</Priority>
+            <Text>Well done!</Text>
+            <Speaker>COPILOT</Speaker>
+        </SimMission.DialogAction>
+        <SimMission.GoalResolutionAction InstanceId="{865F79A7-9D54-4243-912C-9FA0D11FC81E}" id="Complete_GL-EndMission">
+            <Goals>
+                <ObjectReference InstanceId="{CBC1DC31-0DD9-45FF-B38D-17176456B54C}" id="GL_EndMission"/>
+            </Goals>
+        </SimMission.GoalResolutionAction>
+        <SimMission.SubGoalResolutionAction InstanceId="{F06E46F9-C1F8-4D56-B8CA-FBC4760F69AD}" id="Complete_SGL-80Kts">
+            <SubGoals>
+                <ObjectReference InstanceId="{DB7FD6E6-D855-4288-850D-C3E45AEDF743}" id="SGL_80Kts"/>
+            </SubGoals>
+        </SimMission.SubGoalResolutionAction>
+    </WorldBase.Flight>
+</SimBase.Document>

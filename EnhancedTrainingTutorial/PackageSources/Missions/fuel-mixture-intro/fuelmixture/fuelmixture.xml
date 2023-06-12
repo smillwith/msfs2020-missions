@@ -23,7 +23,7 @@
             </RestartActions>
         </SimMission.OnEndLoadingTrigger>
         <SimMission.FlowStateAction InstanceId="{8CB2D3FE-C69D-4DA5-9545-99228B54625D}">
-            <FlowStateName>PREFLIGHT_GATE</FlowStateName>
+            <FlowStateName>FLIGHT_CRUISE</FlowStateName>
             <FromSpawn>True</FromSpawn>
             <IsFirstStateInTimeline>True</IsFirstStateInTimeline>
             <TeleportActions>
@@ -195,6 +195,7 @@
             <ReversePolishCondition>(A:GENERAL ENG RPM:1, rpm) 2660 &gt;</ReversePolishCondition>
             <Actions>
                 <ObjectReference InstanceId="{750FDB05-6120-497E-BDB4-39F8649C5E0B}" id="Complete_SGL_IncreaseThrottle"/>
+                <ObjectReference InstanceId="{ADE53F01-DCA1-48D1-8FBE-EAA7A805311C}" id="Dialog_NoteRPM"/>
             </Actions>
         </SimMission.PropertyTrigger>
         <SimMission.InstructorDialogAction InstanceId="{62BE2A4D-ABD7-4292-B04E-D23B5D409A71}" id="Dialog_MixturePart3">
@@ -202,7 +203,6 @@
             <SoundFileName>IncreaseThrottle.wav</SoundFileName>
             <EndActions>
                 <ObjectReference InstanceId="{CA79FAB9-9B6E-4498-8E47-BD02CA9BD680}" id="Activate_SGL_IncreaseThrottle"/>
-                <ObjectReference InstanceId="{ADE53F01-DCA1-48D1-8FBE-EAA7A805311C}" id="Dialog_NoteRPM"/>
             </EndActions>
         </SimMission.InstructorDialogAction>
         <SimMission.InstructorDialogAction InstanceId="{30FC3150-A9EC-41B6-97F9-8A592D407CE0}" id="Dialog_ClimbTo6000">
@@ -250,7 +250,7 @@
             </SubGoals>
         </SimMission.SubGoalResolutionAction>
         <SimMission.InstructorDialogAction InstanceId="{9BF2C2C4-C191-4676-B1F8-A803C7966978}" id="Dialog_WhileClimbing">
-            <DelaySeconds>6.000</DelaySeconds>
+            <DelaySeconds>40.000</DelaySeconds>
             <SoundFileName>DuringClimb-Unfinished.wav</SoundFileName>
         </SimMission.InstructorDialogAction>
         <SimMission.InstructorDialogAction InstanceId="{ADE53F01-DCA1-48D1-8FBE-EAA7A805311C}" id="Dialog_NoteRPM">

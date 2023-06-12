@@ -23,13 +23,13 @@
             </RestartActions>
         </SimMission.OnEndLoadingTrigger>
         <SimMission.FlowStateAction InstanceId="{2A3E8CD4-2262-41D2-8D62-1FC60D9749D6}">
-            <FlowStateName>PREFLIGHT_GATE</FlowStateName>
+            <FlowStateName>FLIGHT_CRUISE</FlowStateName>
             <FromSpawn>True</FromSpawn>
             <IsFirstStateInTimeline>True</IsFirstStateInTimeline>
             <TeleportActions>
                 <ObjectReference InstanceId="{86BC4932-4F8B-4CD6-B5D5-6631ADBD6D23}" id="WiseAFSSet"/>
                 <ObjectReference InstanceId="{A0D311B1-6ACE-4EBA-A1CC-66C045A607B0}" id="SetWwiseState_MFS_RTC_INTRO"/>
-                <ObjectReference InstanceId="{58E6361A-221C-4CD3-BED6-CE1FA1A94804}" id="RTC_Ground_Airport_Aircraft_Intro"/>
+                <ObjectReference id="RTC_Ground_Airport_Aircraft_Intro" InstanceId="{306B2AE4-06BA-48C3-93A0-BD5569E6EF5B}"/>
             </TeleportActions>
             <TeleportFlowEvents>
                 <FlowEvent id="ATC_STOP"/>
@@ -96,6 +96,15 @@
                             <Descr>Maintain 1,500 ft</Descr>
                         </Step>
                     </Steps>
+                    <Score>
+                        <ScoreName>Score_OBJ_ClearingTurns</ScoreName>
+                        <ScoreParamMinScore>
+                            <ScoreParam
+                                    UniqueRefId="{CD44A6BC-D674-4244-B2D6-6C4F452CB0AA}"
+                                    FixedValue="10.000"
+                                    id="SP_ClearingTurns_MinScore"/>
+                        </ScoreParamMinScore>
+                    </Score>
                 </Objective>
             </Objectives>
             <CrashActions>
@@ -130,6 +139,7 @@
                 <ObjectReference InstanceId="{F2B70CD8-6E76-4D8E-9CCE-0168AC3AEE94}" id="Complete_SGL_TurnLeft1"/>
                 <ObjectReference InstanceId="{505A104B-10A1-4A73-BA7E-8E4E002A36AD}" id="Dialog_ClearingTurnsLeftComplete"/>
                 <ObjectReference InstanceId="{AFD751AF-34AC-4AE4-9C1F-4A4B37C885F8}" id="Complete_SGL_MaintainAlt1"/>
+                <ObjectReference InstanceId="{8A60ABF4-05BD-48CF-964D-5DA0B04D1965}" id="Deactivate_Prop_Trigs_Turn1"/>
             </Actions>
         </SimMission.PropertyTrigger>
         <SimMission.DialogAction InstanceId="{26573BE9-15F5-4C08-8D9A-CFFEE90AE7C8}" id="Dialog_Intro">
@@ -190,6 +200,8 @@
         <SimMission.ObjectActivationAction InstanceId="{8B9C4DCB-FA1C-4D3D-B7C1-2B71CE325230}" id="Activate_Prop_Trig_Heading135">
             <ObjectReferenceList>
                 <ObjectReference InstanceId="{C9257210-264F-424C-856D-ABE0B4BA8356}" id="Prop_Trig_Heading_135"/>
+                <ObjectReference InstanceId="{381C632D-CB44-4CF5-92D2-166A2F175261}" id="Prop_Trig_AltitudeDeviatedTurn1"/>
+                <ObjectReference InstanceId="{FEB6D190-9AA3-4333-A9E6-7DCDCEFC6D1F}" id="Prop_Trig_AltitudeCapturedTurn1"/>
             </ObjectReferenceList>
         </SimMission.ObjectActivationAction>
         <SimMission.GoalResolutionAction InstanceId="{08E062F3-FF5B-417F-B8B8-D40A85E6763C}">
@@ -217,6 +229,9 @@
             <DelaySeconds>2.000</DelaySeconds>
             <SoundFileName>TurnLeftTo315.wav</SoundFileName>
             <EndActions>
+                <ObjectReference InstanceId="{17303B56-48B4-4585-9654-34431E336540}" id="Activate_SGL_TurnLeft2"/>
+                <ObjectReference InstanceId="{8562F784-EF94-4483-90DB-60B371428478}" id="Activate_SGL_MaintainAlt2"/>
+                <ObjectReference InstanceId="{59420A39-E4D2-45A2-AFF1-D678EBA42B47}" id="Activate_Prop_Trig_Heading315"/>
             </EndActions>
         </SimMission.InstructorDialogAction>
         <SimMission.SubGoalResolutionAction InstanceId="{AFD751AF-34AC-4AE4-9C1F-4A4B37C885F8}" id="Complete_SGL_MaintainAlt1">
@@ -232,9 +247,113 @@
                 <ObjectReference InstanceId="{8B9C4DCB-FA1C-4D3D-B7C1-2B71CE325230}" id="Activate_Prop_Trig_Heading135"/>
             </EndActions>
         </SimMission.InstructorDialogAction>
-        <SimMission.ObjectActivationAction InstanceId="{D20125BB-CE59-4564-8FF7-1865B766759D}">
+        <SimMission.ObjectActivationAction InstanceId="{D20125BB-CE59-4564-8FF7-1865B766759D}" id="Activate_SGL_Maintain1500_1">
             <ObjectReferenceList>
                 <ObjectReference InstanceId="{EB1B1340-8207-4EE1-BE5A-7CA86803471E}" id="SGL_Maintain1500"/>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.Calculator
+                InstanceId="{CD44A6BC-D674-4244-B2D6-6C4F452CB0AA}"
+                StartValue="10.000"
+                id="Calc_ClearingTurnsScore"/>
+        <SimMission.PropertyTrigger InstanceId="{381C632D-CB44-4CF5-92D2-166A2F175261}" id="Prop_Trig_AltitudeDeviatedTurn1">
+            <Activated>False</Activated>
+            <ReversePolishCondition>(A:INDICATED ALTITUDE, feet) 1480 &lt; (A:INDICATED ALTITUDE, feet) 1520 &gt; or</ReversePolishCondition>
+            <Actions>
+                <ObjectReference InstanceId="{7256EEF0-C395-460F-B344-1237FBD63721}" id="SubGoalResolutionAction"/>
+            </Actions>
+        </SimMission.PropertyTrigger>
+        <SimMission.PropertyTrigger InstanceId="{FEB6D190-9AA3-4333-A9E6-7DCDCEFC6D1F}" id="Prop_Trig_AltitudeCapturedTurn1">
+            <Activated>False</Activated>
+            <ReversePolishCondition>(A:INDICATED ALTITUDE, feet) 1480 &gt;= (A:INDICATED ALTITUDE, feet) 1520 &lt;= and</ReversePolishCondition>
+            <Actions>
+                <ObjectReference InstanceId="{AFD751AF-34AC-4AE4-9C1F-4A4B37C885F8}" id="Complete_SGL_MaintainAlt1"/>
+            </Actions>
+        </SimMission.PropertyTrigger>
+        <SimMission.ObjectActivationAction InstanceId="{8A60ABF4-05BD-48CF-964D-5DA0B04D1965}" id="Deactivate_Prop_Trigs_Turn1">
+            <NewObjectState>False</NewObjectState>
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{FEB6D190-9AA3-4333-A9E6-7DCDCEFC6D1F}" id="Prop_Trig_AltitudeCapturedTurn1"/>
+                <ObjectReference InstanceId="{381C632D-CB44-4CF5-92D2-166A2F175261}" id="Prop_Trig_AltitudeDeviatedTurn1"/>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.SubGoalResolutionAction InstanceId="{7256EEF0-C395-460F-B344-1237FBD63721}" id="Deactivate_SGL_Maintain_Alt_Turn1">
+            <SubGoalResolution>pending</SubGoalResolution>
+            <StateChange>none</StateChange>
+            <SubGoals>
+                <ObjectReference InstanceId="{EB1B1340-8207-4EE1-BE5A-7CA86803471E}" id="SGL_Maintain1500"/>
+            </SubGoals>
+        </SimMission.SubGoalResolutionAction>
+        <SimMission.ObjectActivationAction InstanceId="{17303B56-48B4-4585-9654-34431E336540}" id="Activate_SGL_TurnLeft2">
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{3785CB86-11D1-4F30-BAF3-3972C9C05998}" id="SGL_TurnLeftComplete"/>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.ObjectActivationAction InstanceId="{8562F784-EF94-4483-90DB-60B371428478}" id="Activate_SGL_MaintainAlt2">
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{F34C6F47-30A4-47E3-92F6-D314BD41FCE1}" id="SGL_Maintain1500_2"/>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.PropertyTrigger InstanceId="{74C02F3D-13F0-47DF-ABE8-FA52EAD70914}" id="Prop_Trig_Heading_315">
+            <ReversePolishCondition>(A:HEADING INDICATOR, degrees) 313 &gt;= (A:HEADING INDICATOR, degrees) 317 &lt;= (A:INDICATED ALTITUDE, feet) 1450 &gt;= (A:INDICATED ALTITUDE, feet) 1550 &lt;= and and</ReversePolishCondition>
+            <Activated>False</Activated>
+            <ConditionTimer>5.000</ConditionTimer>
+            <SimMission.Actions>
+                <ObjectReference id="Complete_SGL_TurnLeft1"/>
+                <ObjectReference id="Dialog_ClearingTurnsLeftComplete"/>
+                <ObjectReference id="Complete_SGL_MaintainAlt1"/>
+                <ObjectReference id="Deactivate_Prop_Trigs_Turn1"/>
+                <ObjectReference InstanceId="{F2267F82-9233-458C-B406-AE332BB36880}" id="Complete_SGL_Turn315"/>
+                <ObjectReference InstanceId="{43D4997A-B0E1-4C19-87D4-7A937F624F59}" id="Complete_SGL_Maintain_Alt2"/>
+                <WorldBase.ObjectReference InstanceId="{6E0A7540-A412-46C5-9511-48B087547FD3}" id="Deactivate_Prop_Trigs_Turn2"/>
+            </SimMission.Actions>
+        </SimMission.PropertyTrigger>
+        <SimMission.ObjectActivationAction InstanceId="{59420A39-E4D2-45A2-AFF1-D678EBA42B47}" id="Activate_Prop_Trig_Heading315">
+            <WorldBase.ObjectReferenceList>
+                <ObjectReference InstanceId="{74C02F3D-13F0-47DF-ABE8-FA52EAD70914}" id="Prop_Trig_Heading_315"/>
+                <ObjectReference InstanceId="{CD4E2EF4-BF72-4BFE-A8A8-6C8EF036E62C}" id="Prop_Trig_AltitudeCapturedTurn1"/>
+                <WorldBase.ObjectReference InstanceId="{AA98B78D-674D-48F1-ACD4-C26CE04EFE4A}" id="Prop_Trig_AltitudeDeviatedTurn2"/>
+            </WorldBase.ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.SubGoalResolutionAction InstanceId="{F2267F82-9233-458C-B406-AE332BB36880}" id="Complete_SGL_Turn315">
+            <StateChange>none</StateChange>
+            <SubGoals>
+                <ObjectReference InstanceId="{3785CB86-11D1-4F30-BAF3-3972C9C05998}" id="SGL_TurnLeftComplete"/>
+            </SubGoals>
+        </SimMission.SubGoalResolutionAction>
+        <SimMission.SubGoalResolutionAction InstanceId="{43D4997A-B0E1-4C19-87D4-7A937F624F59}" id="Complete_SGL_Maintain_Alt2">
+            <StateChange>none</StateChange>
+            <SubGoals>
+                <ObjectReference InstanceId="{F34C6F47-30A4-47E3-92F6-D314BD41FCE1}" id="SGL_Maintain1500_2"/>
+            </SubGoals>
+        </SimMission.SubGoalResolutionAction>
+        <SimMission.PropertyTrigger InstanceId="{AA98B78D-674D-48F1-ACD4-C26CE04EFE4A}" id="Prop_Trig_AltitudeDeviatedTurn2">
+            <Activated>False</Activated>
+            <ReversePolishCondition>(A:INDICATED ALTITUDE, feet) 1480 &lt; (A:INDICATED ALTITUDE, feet) 1520 &gt; or</ReversePolishCondition>
+            <Actions>
+                <ObjectReference id="SubGoalResolutionAction"/>
+                <ObjectReference InstanceId="{47D5E5A5-3347-482E-8860-4463E4231511}" id="Deactivate_SGL_Maintain_Alt_Turn2"/>
+            </Actions>
+        </SimMission.PropertyTrigger>
+        <SimMission.PropertyTrigger InstanceId="{CD4E2EF4-BF72-4BFE-A8A8-6C8EF036E62C}" id="Prop_Trig_AltitudeCapturedTurn1">
+            <Activated>False</Activated>
+            <ReversePolishCondition>(A:INDICATED ALTITUDE, feet) 1480 &gt;= (A:INDICATED ALTITUDE, feet) 1520 &lt;= and</ReversePolishCondition>
+            <Actions>
+                <ObjectReference id="Complete_SGL_MaintainAlt1"/>
+                <ObjectReference InstanceId="{43D4997A-B0E1-4C19-87D4-7A937F624F59}" id="Complete_SGL_Maintain_Alt2"/>
+            </Actions>
+        </SimMission.PropertyTrigger>
+        <SimMission.SubGoalResolutionAction InstanceId="{47D5E5A5-3347-482E-8860-4463E4231511}" id="Deactivate_SGL_Maintain_Alt_Turn2">
+            <SubGoalResolution>pending</SubGoalResolution>
+            <StateChange>none</StateChange>
+            <SubGoals>
+            </SubGoals>
+        </SimMission.SubGoalResolutionAction>
+        <SimMission.ObjectActivationAction InstanceId="{6E0A7540-A412-46C5-9511-48B087547FD3}" id="Deactivate_Prop_Trigs_Turn2">
+            <NewObjectState>False</NewObjectState>
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{AA98B78D-674D-48F1-ACD4-C26CE04EFE4A}" id="Prop_Trig_AltitudeDeviatedTurn2"/>
+                <ObjectReference InstanceId="{CD4E2EF4-BF72-4BFE-A8A8-6C8EF036E62C}" id="Prop_Trig_AltitudeCapturedTurn1"/>
             </ObjectReferenceList>
         </SimMission.ObjectActivationAction>
     </WorldBase.Flight>
