@@ -54,6 +54,7 @@ Tips3=asobo-aircraft-c172sp-as1000,TT:LOADING.TIPS.C172_004,TipCategory_Aircraft
 [Briefing]
 BriefingText=Practice the basics of turns and elevation changes while maintaining airspeed and without stalling
 BriefingInfo0=FLIGHT_INFO_TOTAL_FLIGHT_DURATION, 900
+BriefingImage0=./images/Slowspeed_Briefing.jpg
 
 [TrafficOptions]
 AllowAmbientVehicleTraffic=False

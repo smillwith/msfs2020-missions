@@ -71,12 +71,29 @@
             <FailureText>Mission Failed</FailureText>
             <AbortedText>Mission aborted</AbortedText>
             <Objectives>
-                <Objective id="GL_EndMission" UniqueRefId="{F2F82DCB-522A-46BE-8324-7BDB5E307D38}">
-                    <Descr>Complete the Mission</Descr>
+                <Objective id="OBJ_ListenToIntro" UniqueRefId="{F2F82DCB-522A-46BE-8324-7BDB5E307D38}">
+                    <Descr>Listen to the Introduction</Descr>
                     <SuccessText>Success</SuccessText>
                     <Steps>
-                        <Step UniqueRefId="{BA8770DA-9069-4F78-A286-6F5212D46284}" id="SGL_80Kts">
-                            <Descr>Reach 80 Kts</Descr>
+                        <Step UniqueRefId="{BA8770DA-9069-4F78-A286-6F5212D46284}" id="ST_ListenToIntro">
+                            <Descr>Listen to the Introduction</Descr>
+                        </Step>
+                    </Steps>
+                </Objective>
+                <Objective UniqueRefId="{C4ACF4C9-0347-45F7-8A22-502707DE2D27}" id="OBJ_PerformClearingTurns">
+                    <Descr>Perform Clearing Turns</Descr>
+                    <Steps>
+                        <Step UniqueRefId="{8A650567-6004-4EE3-A572-398AD1A7FDC5}" id="ST_TurnLeft180">
+                            <Descr>Turn Left to Heading 135</Descr>
+                        </Step>
+                        <Step UniqueRefId="{EB1B1340-8207-4EE1-BE5A-7CA86803471E}" id="ST_Maintain1500">
+                            <Descr>Maintain 1,500 ft</Descr>
+                        </Step>
+                        <Step UniqueRefId="{3785CB86-11D1-4F30-BAF3-3972C9C05998}" id="ST_TurnLeftTo315">
+                            <Descr>Turn Left to heading 315</Descr>
+                        </Step>
+                        <Step UniqueRefId="{F34C6F47-30A4-47E3-92F6-D314BD41FCE1}" id="ST_Maintain1500_2">
+                            <Descr>Maintain 1,500 ft</Descr>
                         </Step>
                     </Steps>
                 </Objective>
@@ -85,7 +102,7 @@
                 <ObjectReference InstanceId="{6132B395-5BE8-48E3-AFB4-830A71C55D1D}" id="Fail_GL_EndMission"/>
             </CrashActions>
         </SimMission.Tutorial>
-        <SimMission.Goal InstanceId="{F2F82DCB-522A-46BE-8324-7BDB5E307D38}" id="GL_EndMission"/>
+        <SimMission.Goal InstanceId="{F2F82DCB-522A-46BE-8324-7BDB5E307D38}" id="GL_ListenToIntro"/>
         <SimMission.ObjectActivationAction InstanceId="{A1314AB3-23CB-432A-B13A-4820587BA67A}" id="Activate_Timer-Intro">
             <ObjectReferenceList>
                 <ObjectReference InstanceId="{3AFE5161-9BE3-4019-9491-3DD26A8838C5}" id="Timer_Intro"/>
@@ -95,7 +112,7 @@
             <StopTime>3.000</StopTime>
             <Activated>False</Activated>
             <Actions>
-                <ObjectReference InstanceId="{0E501811-DBAF-4AA1-9B00-B0366B77A653}" id="Activate_PropTrig-80kts"/>
+                <ObjectReference InstanceId="{26573BE9-15F5-4C08-8D9A-CFFEE90AE7C8}" id="Dialog_Intro"/>
             </Actions>
         </SimMission.TimerTrigger>
         <SimEdition.CommentNode InstanceId="{41E83BE5-75FA-49D7-8C11-F71D951BB426}" id="Before mission start">
@@ -104,40 +121,36 @@
         <SimEdition.CommentNode InstanceId="{9E78E6E3-31C4-4908-BDCB-957631B198FF}" id="Mission objects">
             <NodeColor>194,183,239,255</NodeColor>
         </SimEdition.CommentNode>
-        <SimMission.SubGoal InstanceId="{BA8770DA-9069-4F78-A286-6F5212D46284}" id="SGL_80Kts"/>
-        <SimMission.PropertyTrigger InstanceId="{C9257210-264F-424C-856D-ABE0B4BA8356}" id="PropTrig_80Kts">
-            <ReversePolishCondition>(A:AIRSPEED INDICATED, knots) 80 &gt;=</ReversePolishCondition>
+        <SimMission.SubGoal InstanceId="{BA8770DA-9069-4F78-A286-6F5212D46284}" id="SGL_ListenToIntro"/>
+        <SimMission.PropertyTrigger InstanceId="{C9257210-264F-424C-856D-ABE0B4BA8356}" id="Prop_Trig_Heading_135">
+            <ReversePolishCondition>(A:HEADING INDICATOR, degrees) 133 &gt;= (A:HEADING INDICATOR, degrees) 137 &lt;= (A:INDICATED ALTITUDE, feet) 1480 &gt;= (A:INDICATED ALTITUDE, feet) 1520 &lt;= and and</ReversePolishCondition>
             <Activated>False</Activated>
+            <ConditionTimer>5.000</ConditionTimer>
             <Actions>
-                <ObjectReference InstanceId="{26573BE9-15F5-4C08-8D9A-CFFEE90AE7C8}" id="Dia_80kts1"/>
-                <ObjectReference InstanceId="{CB6ADA5B-C8CF-48A9-A4D2-E0F7005EFA53}" id="Complete_SGL-80Kts"/>
-                <ObjectReference InstanceId="{3F498511-B929-4D39-B8B7-19997455314C}" id="Dia_80kts2"/>
+                <ObjectReference InstanceId="{F2B70CD8-6E76-4D8E-9CCE-0168AC3AEE94}" id="Complete_SGL_TurnLeft1"/>
+                <ObjectReference InstanceId="{505A104B-10A1-4A73-BA7E-8E4E002A36AD}" id="Dialog_ClearingTurnsLeftComplete"/>
+                <ObjectReference InstanceId="{AFD751AF-34AC-4AE4-9C1F-4A4B37C885F8}" id="Complete_SGL_MaintainAlt1"/>
             </Actions>
         </SimMission.PropertyTrigger>
-        <SimMission.ObjectActivationAction InstanceId="{0E501811-DBAF-4AA1-9B00-B0366B77A653}" id="Activate_PropTrig-80kts">
-            <Immediate>False</Immediate>
-            <ObjectReferenceList>
-                <ObjectReference InstanceId="{C9257210-264F-424C-856D-ABE0B4BA8356}" id="PropTrig_80Kts"/>
-            </ObjectReferenceList>
-        </SimMission.ObjectActivationAction>
-        <SimMission.DialogAction InstanceId="{26573BE9-15F5-4C08-8D9A-CFFEE90AE7C8}" id="Dia_80kts1">
+        <SimMission.DialogAction InstanceId="{26573BE9-15F5-4C08-8D9A-CFFEE90AE7C8}" id="Dialog_Intro">
             <Immediate>False</Immediate>
             <Priority>NORMAL</Priority>
-            <Text>80 knots.</Text>
+            <Text>This is the introduction to maneuvers.</Text>
             <Speaker>COPILOT</Speaker>
-        </SimMission.DialogAction>
-        <SimMission.DialogAction InstanceId="{3F498511-B929-4D39-B8B7-19997455314C}" id="Dia_80kts2">
-            <Immediate>False</Immediate>
-            <Priority>NORMAL</Priority>
-            <Text>Well done!</Text>
-            <Speaker>COPILOT</Speaker>
+            <EndActionsDelaySeconds>2.000</EndActionsDelaySeconds>
+            <EndActions>
+                <ObjectReference InstanceId="{CB6ADA5B-C8CF-48A9-A4D2-E0F7005EFA53}" id="Complete_SGL_ListenToIntro"/>
+                <ObjectReference InstanceId="{08E062F3-FF5B-417F-B8B8-D40A85E6763C}" id="GoalResolutionAction"/>
+                <ObjectReference InstanceId="{3F794196-FDC1-4392-BD30-8B5854E5050D}" id="Dialog_ClearingTurnsIntro"/>
+            </EndActions>
         </SimMission.DialogAction>
         <SimMission.GoalResolutionAction InstanceId="{1A0A9329-244D-4273-8BE0-31003AF63392}" id="Complete_GL-EndMission">
             <Goals>
                 <ObjectReference InstanceId="{F2F82DCB-522A-46BE-8324-7BDB5E307D38}" id="GL_EndMission"/>
             </Goals>
         </SimMission.GoalResolutionAction>
-        <SimMission.SubGoalResolutionAction InstanceId="{CB6ADA5B-C8CF-48A9-A4D2-E0F7005EFA53}" id="Complete_SGL-80Kts">
+        <SimMission.SubGoalResolutionAction InstanceId="{CB6ADA5B-C8CF-48A9-A4D2-E0F7005EFA53}" id="Complete_SGL_ListenToIntro">
+            <StateChange>none</StateChange>
             <SubGoals>
                 <ObjectReference InstanceId="{BA8770DA-9069-4F78-A286-6F5212D46284}" id="SGL_80Kts"/>
             </SubGoals>
@@ -149,5 +162,80 @@
                 <ObjectReference InstanceId="{F2F82DCB-522A-46BE-8324-7BDB5E307D38}" id="GL_EndMission"/>
             </Goals>
         </SimMission.GoalResolutionAction>
+        <SimMission.Goal InstanceId="{C4ACF4C9-0347-45F7-8A22-502707DE2D27}" id="GL_PerformClearingTurns">
+            <Activated>False</Activated>
+        </SimMission.Goal>
+        <SimMission.SubGoal InstanceId="{8A650567-6004-4EE3-A572-398AD1A7FDC5}" id="SGL_TurnLeft180">
+            <Activated>False</Activated>
+        </SimMission.SubGoal>
+        <SimMission.SubGoal InstanceId="{EB1B1340-8207-4EE1-BE5A-7CA86803471E}" id="SGL_Maintain1500">
+            <Activated>False</Activated>
+        </SimMission.SubGoal>
+        <SimMission.SubGoal InstanceId="{3785CB86-11D1-4F30-BAF3-3972C9C05998}" id="SGL_TurnLeftComplete">
+            <Activated>False</Activated>
+        </SimMission.SubGoal>
+        <SimMission.SubGoal InstanceId="{F34C6F47-30A4-47E3-92F6-D314BD41FCE1}" id="SGL_Maintain1500_2">
+            <Activated>False</Activated>
+        </SimMission.SubGoal>
+        <SimMission.InstructorDialogAction InstanceId="{3F794196-FDC1-4392-BD30-8B5854E5050D}" id="Dialog_ClearingTurnsIntro">
+            <DelaySeconds>3.000</DelaySeconds>
+            <SoundFileName>ClearingTurnsIntro.wav</SoundFileName>
+            <EndActions>
+                <ObjectReference InstanceId="{7CDB47AE-A448-4330-91C4-897BCED3759F}" id="Activate_GL_ClearingTurns"/>
+                <ObjectReference InstanceId="{77875D32-C962-432F-A798-2429564F2FD6}" id="Activate_SGL_TurnLeft1"/>
+                <ObjectReference InstanceId="{8E7D9FF2-4176-4033-9EA3-CB36CAB21651}" id="Dialog_ClearingTurnsLeft"/>
+                <ObjectReference InstanceId="{D20125BB-CE59-4564-8FF7-1865B766759D}" id="ObjectActivationAction"/>
+            </EndActions>
+        </SimMission.InstructorDialogAction>
+        <SimMission.ObjectActivationAction InstanceId="{8B9C4DCB-FA1C-4D3D-B7C1-2B71CE325230}" id="Activate_Prop_Trig_Heading135">
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{C9257210-264F-424C-856D-ABE0B4BA8356}" id="Prop_Trig_Heading_135"/>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.GoalResolutionAction InstanceId="{08E062F3-FF5B-417F-B8B8-D40A85E6763C}">
+            <Goals>
+                <ObjectReference InstanceId="{F2F82DCB-522A-46BE-8324-7BDB5E307D38}" id="GL_ListenToIntro"/>
+            </Goals>
+        </SimMission.GoalResolutionAction>
+        <SimMission.ObjectActivationAction InstanceId="{7CDB47AE-A448-4330-91C4-897BCED3759F}" id="Activate_GL_ClearingTurns">
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{C4ACF4C9-0347-45F7-8A22-502707DE2D27}" id="GL_PerformClearingTurns"/>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.ObjectActivationAction InstanceId="{77875D32-C962-432F-A798-2429564F2FD6}" id="Activate_SGL_TurnLeft1">
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{8A650567-6004-4EE3-A572-398AD1A7FDC5}" id="SGL_TurnLeft180"/>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.SubGoalResolutionAction InstanceId="{F2B70CD8-6E76-4D8E-9CCE-0168AC3AEE94}" id="Complete_SGL_TurnLeft1">
+            <StateChange>none</StateChange>
+            <SubGoals>
+                <ObjectReference InstanceId="{8A650567-6004-4EE3-A572-398AD1A7FDC5}" id="SGL_TurnLeft180"/>
+            </SubGoals>
+        </SimMission.SubGoalResolutionAction>
+        <SimMission.InstructorDialogAction InstanceId="{505A104B-10A1-4A73-BA7E-8E4E002A36AD}" id="Dialog_ClearingTurnsLeftComplete">
+            <DelaySeconds>2.000</DelaySeconds>
+            <SoundFileName>TurnLeftTo315.wav</SoundFileName>
+            <EndActions>
+            </EndActions>
+        </SimMission.InstructorDialogAction>
+        <SimMission.SubGoalResolutionAction InstanceId="{AFD751AF-34AC-4AE4-9C1F-4A4B37C885F8}" id="Complete_SGL_MaintainAlt1">
+            <StateChange>none</StateChange>
+            <SubGoals>
+                <ObjectReference InstanceId="{EB1B1340-8207-4EE1-BE5A-7CA86803471E}" id="SGL_Maintain1500"/>
+            </SubGoals>
+        </SimMission.SubGoalResolutionAction>
+        <SimMission.InstructorDialogAction InstanceId="{8E7D9FF2-4176-4033-9EA3-CB36CAB21651}" id="Dialog_ClearingTurnsLeft">
+            <DelaySeconds>2.000</DelaySeconds>
+            <SoundFileName>Turn180Left.wav</SoundFileName>
+            <EndActions>
+                <ObjectReference InstanceId="{8B9C4DCB-FA1C-4D3D-B7C1-2B71CE325230}" id="Activate_Prop_Trig_Heading135"/>
+            </EndActions>
+        </SimMission.InstructorDialogAction>
+        <SimMission.ObjectActivationAction InstanceId="{D20125BB-CE59-4564-8FF7-1865B766759D}">
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{EB1B1340-8207-4EE1-BE5A-7CA86803471E}" id="SGL_Maintain1500"/>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
     </WorldBase.Flight>
 </SimBase.Document>
