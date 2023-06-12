@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<SimBase.Document
+        Type="EditionInfo"
+        version="1,0"
+        id="fuelmixture_edition">
+    <Descr>This file contains useful additional properties for edition purpose.</Descr>
+    <SimEdition.EditionInfo RelatedInstanceId="{96CCAD30-BCDB-4E7D-9750-115AF55D6903}">
+        <NodePosition>-958.000,-1422.000</NodePosition>
+    </SimEdition.EditionInfo>
+    <SimEdition.EditionInfo RelatedInstanceId="{581A8BE9-D754-4B99-AD3A-FA4A879D892F}">
+        <NodePosition>-324.000,-1402.000</NodePosition>
+    </SimEdition.EditionInfo>
+    <SimEdition.EditionInfo RelatedInstanceId="{9EE6CAC2-B048-40E2-BBE0-A2C2F26595A4}">
+        <NodePosition>-1158.000,-1160.000</NodePosition>
+    </SimEdition.EditionInfo>
+    <SimEdition.EditionInfo RelatedInstanceId="{8CB2D3FE-C69D-4DA5-9545-99228B54625D}">
+        <NodePosition>-462.000,-1138.000</NodePosition>
+    </SimEdition.EditionInfo>
+    <SimEdition.EditionInfo RelatedInstanceId="{5E1694B9-BE18-4832-8AE7-0FA5FB826E5B}">
+        <NodePosition>280.000,-799.000</NodePosition>
+    </SimEdition.EditionInfo>
+    <SimEdition.EditionInfo RelatedInstanceId="{E3043244-0CD4-4D52-98CF-845558CD10F6}">
+        <NodePosition>280.000,-1112.000</NodePosition>
+    </SimEdition.EditionInfo>
+    <SimEdition.EditionInfo RelatedInstanceId="{71015DC0-E568-494E-9C97-C6118FA69262}">
+        <NodePosition>280.000,-954.000</NodePosition>
+    </SimEdition.EditionInfo>
+    <SimEdition.EditionInfo RelatedInstanceId="{F153CF90-D093-4EF7-B57A-F09617B4A2FF}">
+        <NodePosition>-1236.000,34.000</NodePosition>
+    </SimEdition.EditionInfo>
+    <SimEdition.EditionInfo RelatedInstanceId="{52E996A0-900A-43DD-AB5E-4DFED8A0ADE4}">
+        <NodePosition>184.000,-56.000</NodePosition>
+    </SimEdition.EditionInfo>
+    <SimEdition.EditionInfo RelatedInstanceId="{C0B5C085-9415-4168-8D86-40A6F3B91EDB}">
+        <NodePosition>204.000,154.000</NodePosition>
+    </SimEdition.EditionInfo>
+    <SimEdition.EditionInfo RelatedInstanceId="{BFFF1AF3-4D20-434F-A46A-B4E139A01E05}">
+        <NodePosition>-1200.000,-1504.000</NodePosition>
+        <NodeSize>1965.000,1568.000</NodeSize>
+    </SimEdition.EditionInfo>
+    <SimEdition.EditionInfo RelatedInstanceId="{AB361173-4D5E-43DB-BBCC-F61A87E9BD5C}">
+        <NodePosition>-1280.000,-80.000</NodePosition>
+        <NodeSize>1472.000,2672.000</NodeSize>
+    </SimEdition.EditionInfo>
+    <SimEdition.EditionInfo RelatedInstanceId="{6EDEF92E-A83C-409A-9D50-A73C4E3F4C53}">
+        <NodePosition>-520.000,56.000</NodePosition>
+    </SimEdition.EditionInfo>
+    <SimEdition.EditionInfo RelatedInstanceId="{8169ED59-2241-4DBA-A8E5-19079EAE5325}">
+        <NodePosition>-408.000,278.000</NodePosition>
+    </SimEdition.EditionInfo>
+    <SimEdition.EditionInfo RelatedInstanceId="{BA614806-CFE8-47F9-9A99-025A5B66AB12}">
+        <NodePosition>-408.000,472.000</NodePosition>
+    </SimEdition.EditionInfo>
+    <SimEdition.EditionInfo RelatedInstanceId="{E27373CB-F885-4DFC-8A63-2CAD87BB7C1C}">
+        <NodePosition>-408.000,678.000</NodePosition>
+    </SimEdition.EditionInfo>
+    <SimEdition.EditionInfo RelatedInstanceId="{9D2ABBC1-7D2E-46E7-B0E2-86A88D7C7689}">
+        <NodePosition>-408.000,872.000</NodePosition>
+    </SimEdition.EditionInfo>
+    <SimEdition.EditionInfo RelatedInstanceId="{01C4E901-3582-4453-A381-975504E4278A}">
+        <NodePosition>1068.000,244.000</NodePosition>
+    </SimEdition.EditionInfo>
+    <SimEdition.EditionInfo RelatedInstanceId="{B7753170-FC84-47FE-B791-364B7555CA05}">
+        <NodePosition>1704.000,856.000</NodePosition>
+    </SimEdition.EditionInfo>
+    <SimEdition.EditionInfo RelatedInstanceId="{8276D7A8-C490-4EC0-BCF9-B5D42BD81373}">
+        <NodePosition>1740.000,283.000</NodePosition>
+    </SimEdition.EditionInfo>
+    <SimEdition.EditionInfo RelatedInstanceId="{221C7A39-DA04-46BC-B5F4-8FA7C9EDF8DD}">
+        <NodePosition>1052.000,806.000</NodePosition>
+    </SimEdition.EditionInfo>
+    <SimEdition.EditionInfo RelatedInstanceId="{CA79FAB9-9B6E-4498-8E47-BD02CA9BD680}">
+        <NodePosition>1736.000,1288.000</NodePosition>
+    </SimEdition.EditionInfo>
+    <SimEdition.EditionInfo RelatedInstanceId="{2950866B-8394-411B-A702-F45966AD94F3}">
+        <NodePosition>1020.000,3594.000</NodePosition>
+    </SimEdition.EditionInfo>
+    <SimEdition.EditionInfo RelatedInstanceId="{1EDEE717-D72B-4A5C-AD3F-12A54C0CB144}">
+        <NodePosition>1714.000,1500.000</NodePosition>
+    </SimEdition.EditionInfo>
+    <SimEdition.EditionInfo RelatedInstanceId="{62BE2A4D-ABD7-4292-B04E-D23B5D409A71}">
+        <NodePosition>1048.000,1374.000</NodePosition>
+    </SimEdition.EditionInfo>
+    <SimEdition.EditionInfo RelatedInstanceId="{30FC3150-A9EC-41B6-97F9-8A592D407CE0}">
+        <NodePosition>1048.000,2497.000</NodePosition>
+    </SimEdition.EditionInfo>
+    <SimEdition.EditionInfo RelatedInstanceId="{E9392E58-7B25-4E83-8291-0611A0B53A83}">
+        <NodePosition>1809.000,2829.000</NodePosition>
+    </SimEdition.EditionInfo>
+    <SimEdition.EditionInfo RelatedInstanceId="{055F6F7C-B8A2-4409-84B8-54C3E1332C47}">
+        <NodePosition>1809.000,2657.000</NodePosition>
+    </SimEdition.EditionInfo>
+    <SimEdition.EditionInfo RelatedInstanceId="{8120D963-1F15-43D4-B600-6D84189B8156}">
+        <NodePosition>2301.000,3476.000</NodePosition>
+    </SimEdition.EditionInfo>
+    <SimEdition.EditionInfo RelatedInstanceId="{7D561BC3-F9E8-42E6-987B-441067CA389F}">
+        <NodePosition>1660.000,3724.000</NodePosition>
+    </SimEdition.EditionInfo>
+    <SimEdition.EditionInfo RelatedInstanceId="{3A122F95-18A4-42A0-B7AB-780EC1087AEC}">
+        <NodePosition>1816.000,2426.000</NodePosition>
+    </SimEdition.EditionInfo>
+    <SimEdition.EditionInfo RelatedInstanceId="{750FDB05-6120-497E-BDB4-39F8649C5E0B}">
+        <NodePosition>2344.000,1560.000</NodePosition>
+    </SimEdition.EditionInfo>
+    <SimEdition.EditionInfo RelatedInstanceId="{9BF2C2C4-C191-4676-B1F8-A803C7966978}">
+        <NodePosition>1068.000,3076.000</NodePosition>
+    </SimEdition.EditionInfo>
+    <SimEdition.EditionInfo RelatedInstanceId="{ADE53F01-DCA1-48D1-8FBE-EAA7A805311C}">
+        <NodePosition>1036.000,1968.000</NodePosition>
+    </SimEdition.EditionInfo>
+    <SimEdition.EditionInfo RelatedInstanceId="{B33843A7-5F9E-404C-9316-A41B36A67F51}">
+        <NodePosition>2312.000,3713.000</NodePosition>
+    </SimEdition.EditionInfo>
+    <SimEdition.EditionInfo RelatedInstanceId="{A2E03BD1-33D9-4797-A5FE-FA1200A52D0C}">
+        <NodePosition>2369.000,4075.000</NodePosition>
+    </SimEdition.EditionInfo>
+    <SimEdition.EditionInfo RelatedInstanceId="{21A43BA3-FE81-48EE-90AE-B569CFBED780}">
+        <NodePosition>-536.000,1064.000</NodePosition>
+    </SimEdition.EditionInfo>
+    <SimEdition.EditionInfo RelatedInstanceId="{84CE00D9-03C4-4F7E-9DC9-BCC225416D20}">
+        <NodePosition>-392.000,1304.000</NodePosition>
+    </SimEdition.EditionInfo>
+    <SimEdition.EditionInfo RelatedInstanceId="{7CD0DBDD-4BAE-439B-BFE9-430905461EC0}">
+        <NodePosition>-392.000,1480.000</NodePosition>
+    </SimEdition.EditionInfo>
+    <SimEdition.EditionInfo RelatedInstanceId="{E3CD777E-62F4-4302-BEC2-F1969B8FEE4F}">
+        <NodePosition>-388.000,1672.000</NodePosition>
+    </SimEdition.EditionInfo>
+    <SimEdition.EditionInfo RelatedInstanceId="{5541F907-BC97-4750-881D-D4CAC1A6EC21}">
+        <NodePosition>-388.000,1873.000</NodePosition>
+    </SimEdition.EditionInfo>
+    <SimEdition.EditionInfo RelatedInstanceId="{06A79CF2-17BD-4B87-83D7-8C5E3C6A3052}">
+        <NodePosition>-1092.000,1334.000</NodePosition>
+    </SimEdition.EditionInfo>
+    <SimEdition.EditionInfo RelatedInstanceId="{34E87AC3-CE21-448A-B099-5CB43474339A}">
+        <NodePosition>-1028.000,1569.000</NodePosition>
+    </SimEdition.EditionInfo>
+    <SimEdition.EditionInfo RelatedInstanceId="{6764D7F1-FDC7-4F68-83AB-D6480328EF01}">
+        <NodePosition>921.000,6738.000</NodePosition>
+    </SimEdition.EditionInfo>
+    <SimEdition.EditionInfo RelatedInstanceId="{623233FB-4E7F-42CB-A1B0-B8AA129C31E3}">
+        <NodePosition>2156.000,6929.000</NodePosition>
+    </SimEdition.EditionInfo>
+    <SimEdition.EditionInfo RelatedInstanceId="{312DA50B-63C3-4BF8-BA81-1C529330726B}">
+        <NodePosition>978.000,4830.000</NodePosition>
+    </SimEdition.EditionInfo>
+    <SimEdition.EditionInfo RelatedInstanceId="{AA9B73B4-F8A0-4A5A-B7C2-B11871C915B5}">
+        <NodePosition>2337.000,4539.000</NodePosition>
+    </SimEdition.EditionInfo>
+    <SimEdition.EditionInfo RelatedInstanceId="{B47077BE-2DB2-4A59-8122-51D9D20CA030}">
+        <NodePosition>977.000,4603.000</NodePosition>
+    </SimEdition.EditionInfo>
+    <SimEdition.EditionInfo RelatedInstanceId="{EBE673B1-AE4A-414E-AFA2-0F2E44D3B3BE}">
+        <NodePosition>2344.000,6006.000</NodePosition>
+    </SimEdition.EditionInfo>
+    <SimEdition.EditionInfo RelatedInstanceId="{6C1690A6-3187-4F6E-8F03-13A345C53E54}">
+        <NodePosition>1653.000,6027.000</NodePosition>
+    </SimEdition.EditionInfo>
+    <SimEdition.EditionInfo RelatedInstanceId="{DC3BEB0C-ABA5-4E03-A0D8-A0335A14F8F1}">
+        <NodePosition>853.000,5856.000</NodePosition>
+    </SimEdition.EditionInfo>
+    <SimEdition.EditionInfo RelatedInstanceId="{023B54A9-16F7-4BA3-8AC1-8DEB30020793}">
+        <NodePosition>1676.000,4300.000</NodePosition>
+    </SimEdition.EditionInfo>
+    <SimEdition.EditionInfo RelatedInstanceId="{60ADD339-D4E8-462F-A39F-2D9513874587}">
+        <NodePosition>1692.000,5100.000</NodePosition>
+    </SimEdition.EditionInfo>
+    <SimEdition.EditionInfo RelatedInstanceId="{48DAADF0-0A04-4C03-B40D-36F7C1D727D1}">
+        <NodePosition>1708.000,4817.000</NodePosition>
+    </SimEdition.EditionInfo>
+    <SimEdition.EditionInfo RelatedInstanceId="{E0BC5E63-9A39-4BE6-BF3C-0A6413940D21}">
+        <NodePosition>2424.000,5121.000</NodePosition>
+    </SimEdition.EditionInfo>
+    <SimEdition.EditionInfo RelatedInstanceId="{77A740B6-E8FA-4BF3-987D-2FC6C1ADB2C4}">
+        <NodePosition>1692.000,6536.000</NodePosition>
+    </SimEdition.EditionInfo>
+    <SimEdition.EditionInfo RelatedInstanceId="{4A3D1D05-1D3C-4753-82EE-FF1B0370171E}">
+        <NodePosition>1516.000,6952.000</NodePosition>
+    </SimEdition.EditionInfo>
+    <SimEdition.EditionInfo RelatedInstanceId="{333F3664-95B9-4F5A-83F8-ABCD38F35312}">
+        <NodePosition>2380.000,5442.000</NodePosition>
+    </SimEdition.EditionInfo>
+</SimBase.Document>

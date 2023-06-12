@@ -117,16 +117,24 @@
                             <Descr>Lift Flaps</Descr>
                         </Step>
                         <Step UniqueRefId="{F8926B95-C005-4777-BE40-EE0F4496DEE2}" id="ST_ClimbToCruise">
-                            <Descr>Climb to 3,500 ft</Descr>
+                            <Descr>Climb to 3,500 FT</Descr>
                         </Step>
                         <Step UniqueRefId="{9B3239BC-9829-4755-93DF-EBD1DFB6B5C6}" id="ST_SetCourseForLompoc">
                             <Descr>Follow heading 283 to Lompoc</Descr>
                         </Step>
                         <Step UniqueRefId="{27D4E499-8754-486A-8AFB-2EC0F8FDEA4E}" id="ST_ReducePower18">
-                            <Descr>Reduce Throttle to 18 inches</Descr>
+                            <Descr>Reduce Throttle to 20 in</Descr>
                         </Step>
                         <Step UniqueRefId="{E5183CF1-3380-4BF5-947C-8694F83478D2}" id="ST_ReduceThrottle1800">
                             <Descr>Reduce RPM to 2,200</Descr>
+                        </Step>
+                    </Steps>
+                </Objective>
+                <Objective UniqueRefId="{22EBED2E-4685-43F4-A6CA-CF8106781D1C}" id="OBJ_BeginDescent">
+                    <Descr>Descend to pattern altitude</Descr>
+                    <Steps>
+                        <Step UniqueRefId="{CBBE1F29-0850-4080-85C4-2355CFF26D52}" id="ST_Descend_1400">
+                            <Descr>Descend to 1,400 FT</Descr>
                         </Step>
                     </Steps>
                 </Objective>
@@ -137,21 +145,14 @@
                             <Descr>Set the Prop Lever Full Forward</Descr>
                         </Step>
                         <Step UniqueRefId="{16C8550A-63B0-49EB-89D4-066FD7366451}" id="ST_Reduce_RPM_Approach">
-                            <Descr>Reduce throttle to get 1,800 RPM</Descr>
+                            <Descr>Reduce throttle to around 2,200 RPM</Descr>
                         </Step>
                         <Step UniqueRefId="{798103A4-6430-4DBF-A949-92E7AFDBD854}" id="ST_Land_Lompoc_28">
                             <Descr>Land at Lompoc on Runway 25</Descr>
                         </Step>
                     </Steps>
                 </Objective>
-                <Objective UniqueRefId="{22EBED2E-4685-43F4-A6CA-CF8106781D1C}" id="OBJ_BeginDescent">
-                    <Descr>Descend to pattern altitude</Descr>
-                    <Steps>
-                        <Step UniqueRefId="{CBBE1F29-0850-4080-85C4-2355CFF26D52}" id="ST_Descend_1400">
-                            <Descr>Descend to 1,400 ft</Descr>
-                        </Step>
-                    </Steps>
-                </Objective>
+
             </Objectives>
         </SimMission.Tutorial>
         <SimMission.ObjectActivationAction InstanceId="{B889B0F1-6310-4039-AC94-5F4F6781103B}" id="Activate_Timer-Intro">
