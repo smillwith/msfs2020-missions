@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AssetPackage Version="0.1.0">
+	<ItemSettings>
+		<ContentType>MISSION</ContentType>
+		<Title>Fuel Emergency</Title>
+		<Manufacturer/>
+		<Creator>William Smith</Creator>
+	</ItemSettings>
+	<Flags>
+		<VisibleInStore>false</VisibleInStore>
+		<CanBeReferenced>false</CanBeReferenced>
+	</Flags>
+	<AssetGroups>
+		<AssetGroup Name="ContentInfo">
+			<Type>ContentInfo</Type>
+			<Flags>
+				<FSXCompatibility>false</FSXCompatibility>
+			</Flags>
+			<AssetDir>PackageDefinitions\brokeneggs-lowfuellanding\ContentInfo\</AssetDir>
+			<OutputDir>ContentInfo\brokeneggs-lowfuellanding\</OutputDir>
+		</AssetGroup>
+		<AssetGroup Name="lowfueldmission">
+			<Type>Mission</Type>
+			<Flags>
+				<FSXCompatibility>false</FSXCompatibility>
+			</Flags>
+			<AssetDir>PackageSources\Missions\lowfuellanding\lowfueldmission\</AssetDir>
+			<OutputDir>Missions\lowfuellanding\lowfueldmission\</OutputDir>
+		</AssetGroup>
+	</AssetGroups>
+</AssetPackage>
+

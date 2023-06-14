@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AssetPackage Version="0.1.0">
+	<ItemSettings>
+		<ContentType>MISSION</ContentType>
+		<Title>Ground Reference Maneuvers</Title>
+		<Manufacturer/>
+		<Creator>William Smith</Creator>
+	</ItemSettings>
+	<Flags>
+		<VisibleInStore>false</VisibleInStore>
+		<CanBeReferenced>false</CanBeReferenced>
+	</Flags>
+	<AssetGroups>
+		<AssetGroup Name="ContentInfo">
+			<Type>ContentInfo</Type>
+			<Flags>
+				<FSXCompatibility>false</FSXCompatibility>
+			</Flags>
+			<AssetDir>PackageDefinitions\brokeneggs-reference-maneuvers\ContentInfo\</AssetDir>
+			<OutputDir>ContentInfo\brokeneggs-reference-maneuvers\</OutputDir>
+		</AssetGroup>
+		<AssetGroup Name="referencemaneuvers">
+			<Type>Mission</Type>
+			<Flags>
+				<FSXCompatibility>false</FSXCompatibility>
+			</Flags>
+			<AssetDir>PackageSources\Missions\reference-maneuvers\referencemaneuvers\</AssetDir>
+			<OutputDir>Missions\reference-maneuvers\referencemaneuvers\</OutputDir>
+		</AssetGroup>
+	</AssetGroups>
+</AssetPackage>
+

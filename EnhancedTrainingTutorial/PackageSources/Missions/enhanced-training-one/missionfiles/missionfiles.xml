@@ -152,7 +152,6 @@
                         </Step>
                     </Steps>
                 </Objective>
-
             </Objectives>
         </SimMission.Tutorial>
         <SimMission.ObjectActivationAction InstanceId="{B889B0F1-6310-4039-AC94-5F4F6781103B}" id="Activate_Timer-Intro">
@@ -594,7 +593,7 @@
             </ObjectReferenceList>
         </SimMission.ObjectActivationAction>
         <SimMission.InstructorDialogAction InstanceId="{A116A8EE-E1AD-4D26-A1C9-225E8FC9BF12}" id="Dialog_At_Cruise">
-            <SoundFileName>prop-lever-cruise-rpm-2200.wav</SoundFileName>
+            <SoundFileName>reached-cruise-manifold-20.wav</SoundFileName>
             <EndActions>
                 <ObjectReference InstanceId="{95C8938C-6801-47E8-8A95-A3463D6CA59A}" id="Activate_SGL_DecreaseThrottle"/>
             </EndActions>
@@ -651,12 +650,13 @@
         </SimMission.SubGoalResolutionAction>
         <SimMission.PropertyTrigger InstanceId="{3969AFFD-5F91-4D3D-B37A-10F1601BBF07}" id="Prop_Trig_ThrottleDropDone">
             <Activated>False</Activated>
-            <ReversePolishCondition>(A:GENERAL ENG THROTTLE LEVER POSITION:1, Percent) 69 &lt; (A:GENERAL ENG THROTTLE LEVER POSITION:1, Percent) 62 &gt; and</ReversePolishCondition>
+            <ReversePolishCondition>(A:GENERAL ENG THROTTLE LEVER POSITION:1, Percent) 79 &lt; (A:GENERAL ENG THROTTLE LEVER POSITION:1, Percent) 72 &gt; and</ReversePolishCondition>
             <ConditionTimer>3.000</ConditionTimer>
             <Actions>
                 <ObjectReference InstanceId="{07D58E6D-E0A6-49AC-A4E3-8ABF9554F00E}" id="SubGoalResolutionAction"/>
                 <ObjectReference InstanceId="{98FC8E02-1259-4B49-B174-9EA9F6FF87A8}" id="Activate_SGL_DecreaseRPM"/>
                 <ObjectReference InstanceId="{12F3144A-9A9E-4DB8-BE58-D609703096D9}" id="Activate_Prop_Trig_DropRPMCruise"/>
+                <ObjectReference InstanceId="{07F291B8-5812-43BF-BE56-791093AC22E2}" id="Dialog_Cruise_RPM_2200"/>
             </Actions>
         </SimMission.PropertyTrigger>
         <SimMission.ObjectActivationAction InstanceId="{8196848B-C8E3-4BF7-A980-A9C6A9279D11}" id="Activate_Prop_Trig_ThrottleDrop">
@@ -717,6 +717,7 @@
             <SoundFileName>prop-lever-set-for-cruise-complete.wav</SoundFileName>
             <EndActions>
                 <ObjectReference InstanceId="{B33EFFF8-4562-4BA0-8092-15E5734A308A}" id="Activate_Timer_Cruise_Complete"/>
+                <ObjectReference InstanceId="{B3EC3E27-9E4D-4117-BEE4-0AB4A7B89200}" id="InstructorDialogAction"/>
             </EndActions>
         </SimMission.InstructorDialogAction>
         <SimMission.ObjectActivationAction InstanceId="{CC3881D7-9DA5-4DE9-A7D9-66ECE0BF4242}" id="Activate_Trig_LowAltitude2">
@@ -774,13 +775,14 @@
         </SimMission.SubGoal>
         <SimMission.InstructorDialogAction InstanceId="{A4C12BDD-D062-40FB-A629-130FF7B0FE02}" id="Play_Dialog_ReachedLompoc">
             <Text> </Text>
-            <SoundFileName>prop-lever-approach-descent.wav</SoundFileName>
-            <EndActions>
+            <SoundFileName>cleared-ridge-descend-1400.wav</SoundFileName>
+            <SimMission.EndActions>
                 <ObjectReference InstanceId="{F5CDE5A3-C09D-450B-9AEE-FB7D51FF8442}" id="Activate_GL_BeginApproach"/>
-            </EndActions>
+                <WorldBase.ObjectReference InstanceId="{DAF6E5E3-99A3-499D-A11D-B77915A7008C}" id="InstructorDialogAction"/>
+            </SimMission.EndActions>
         </SimMission.InstructorDialogAction>
         <SimMission.TimerTrigger InstanceId="{8DB61F59-04A7-4798-990C-6029E12F211A}" id="Timer_ReachedLompoc">
-            <StopTime>300.000</StopTime>
+            <StopTime>270.000</StopTime>
             <Activated>False</Activated>
             <Actions>
                 <ObjectReference InstanceId="{0E84AC5D-EAF8-4E88-9A36-B38DC70A7C44}" id="SubGoalResolutionAction"/>
@@ -800,10 +802,10 @@
         </SimMission.ObjectActivationAction>
         <SimMission.AirportLandingTrigger InstanceId="{D1BB7ED3-BBE9-4ACD-B229-4DA80B88BA28}" id="Trig_Landed_Airport">
             <AirportIdent>KLPC</AirportIdent>
-            <SimMission.Actions>
+            <Actions>
                 <ObjectReference InstanceId="{D451115B-7D37-45E0-8EFA-80D02AA228A4}" id="Activate_Timer_End_Mission"/>
-                <WorldBase.ObjectReference InstanceId="{EA3F06B7-ED43-4389-9484-86A3BF8E9845}" id="Dialog_Test1"/>
-            </SimMission.Actions>
+                <ObjectReference InstanceId="{EA3F06B7-ED43-4389-9484-86A3BF8E9845}" id="Dialog_Test1"/>
+            </Actions>
         </SimMission.AirportLandingTrigger>
         <SimEdition.CommentNode InstanceId="{417786FA-5CC8-4720-9019-A7586D1AFDC4}" id="Mission_End">
             <NodeComment>MIssion End</NodeComment>
@@ -899,10 +901,10 @@
                 <ObjectReference InstanceId="{FE0B2EA7-076E-4A74-99CA-CA119D98E39F}" id="Prop_Trig_Throttle_1800"/>
             </ObjectReferenceList>
         </SimMission.ObjectActivationAction>
-        <SimMission.PropertyTrigger InstanceId="{FE0B2EA7-076E-4A74-99CA-CA119D98E39F}" id="Prop_Trig_Throttle_1800">
+        <SimMission.PropertyTrigger InstanceId="{FE0B2EA7-076E-4A74-99CA-CA119D98E39F}" id="Prop_Trig_Throttle_2200">
             <Activated>False</Activated>
             <ConditionTimer>3.000</ConditionTimer>
-            <ReversePolishCondition>(A:GENERAL ENG RPM:1, rpm) 1780 &gt; (A:GENERAL ENG RPM:1, rpm) 1890 &lt; and</ReversePolishCondition>
+            <ReversePolishCondition>(A:GENERAL ENG RPM:1, rpm) 2180 &gt; (A:GENERAL ENG RPM:1, rpm) 2290 &lt; and</ReversePolishCondition>
             <Actions>
                 <ObjectReference InstanceId="{D99541F8-15A3-4732-8768-16232715EF8A}" id="SubGoalResolutionAction"/>
                 <ObjectReference InstanceId="{0DAD7E5F-BAD8-4879-BFA8-AF86DE7FA85F}" id="InstructorDialogAction"/>
@@ -943,6 +945,27 @@
         </SimMission.ObjectActivationAction>
         <SimMission.InstructorDialogAction InstanceId="{EA3F06B7-ED43-4389-9484-86A3BF8E9845}" id="Dialog_Test1">
             <SoundFileName>excellent.wav</SoundFileName>
+        </SimMission.InstructorDialogAction>
+        <SimMission.InstructorDialogAction InstanceId="{07F291B8-5812-43BF-BE56-791093AC22E2}" id="Dialog_Cruise_RPM_2200">
+            <DelaySeconds>1.000</DelaySeconds>
+            <SoundFileName>reached-cruise-rpm-2200.wav</SoundFileName>
+        </SimMission.InstructorDialogAction>
+        <SimMission.InstructorDialogAction InstanceId="{B3EC3E27-9E4D-4117-BEE4-0AB4A7B89200}" id="Dialog_WhileCruising">
+            <DelaySeconds>45.000</DelaySeconds>
+            <SoundFileName>while-cruising.wav</SoundFileName>
+            <Immediate>False</Immediate>
+            <EndActionsDelaySeconds>2.000</EndActionsDelaySeconds>
+            <EndActions>
+                <ObjectReference InstanceId="{710942F1-4C03-4F0D-89E2-1BB899B5FCE4}" id="InstructorDialogAction"/>
+            </EndActions>
+        </SimMission.InstructorDialogAction>
+        <SimMission.InstructorDialogAction InstanceId="{710942F1-4C03-4F0D-89E2-1BB899B5FCE4}" id="Dialog_KeepOnTrack">
+            <SoundFileName>hold-altitude-over-ridge.wav</SoundFileName>
+        </SimMission.InstructorDialogAction>
+        <SimMission.InstructorDialogAction InstanceId="{DAF6E5E3-99A3-499D-A11D-B77915A7008C}" id="Dialog_AsYouDescend">
+            <DelaySeconds>10.000</DelaySeconds>
+            <Immediate>False</Immediate>
+            <SoundFileName>as-you-descend.wav</SoundFileName>
         </SimMission.InstructorDialogAction>
     </WorldBase.Flight>
 </SimBase.Document>

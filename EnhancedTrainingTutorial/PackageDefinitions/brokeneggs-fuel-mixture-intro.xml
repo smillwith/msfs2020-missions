@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AssetPackage Version="0.1.0">
+	<ItemSettings>
+		<ContentType>MISC</ContentType>
+		<Title>Intro to Fuel Mixture</Title>
+		<Manufacturer/>
+		<Creator>William Smith</Creator>
+	</ItemSettings>
+	<Flags>
+		<VisibleInStore>false</VisibleInStore>
+		<CanBeReferenced>false</CanBeReferenced>
+	</Flags>
+	<AssetGroups>
+		<AssetGroup Name="ContentInfo">
+			<Type>ContentInfo</Type>
+			<Flags>
+				<FSXCompatibility>false</FSXCompatibility>
+			</Flags>
+			<AssetDir>PackageDefinitions\brokeneggs-fuel-mixture-intro\ContentInfo\</AssetDir>
+			<OutputDir>ContentInfo\brokeneggs-fuel-mixture-intro\</OutputDir>
+		</AssetGroup>
+		<AssetGroup Name="fuelmixture">
+			<Type>Mission</Type>
+			<Flags>
+				<FSXCompatibility>false</FSXCompatibility>
+			</Flags>
+			<AssetDir>PackageSources\Missions\fuel-mixture-intro\fuelmixture\</AssetDir>
+			<OutputDir>Missions\fuel-mixture-intro\fuelmixture\</OutputDir>
+		</AssetGroup>
+	</AssetGroups>
+</AssetPackage>
+

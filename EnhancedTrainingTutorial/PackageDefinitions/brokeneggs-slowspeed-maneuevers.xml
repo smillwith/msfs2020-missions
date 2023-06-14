@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AssetPackage Version="0.1.0">
+	<ItemSettings>
+		<ContentType>MISSION</ContentType>
+		<Title>Slow Speed Maneuvers</Title>
+		<Manufacturer/>
+		<Creator>William Smith</Creator>
+	</ItemSettings>
+	<Flags>
+		<VisibleInStore>false</VisibleInStore>
+		<CanBeReferenced>false</CanBeReferenced>
+	</Flags>
+	<AssetGroups>
+		<AssetGroup Name="ContentInfo">
+			<Type>ContentInfo</Type>
+			<Flags>
+				<FSXCompatibility>false</FSXCompatibility>
+			</Flags>
+			<AssetDir>PackageDefinitions\brokeneggs-slowspeed-maneuevers\ContentInfo\</AssetDir>
+			<OutputDir>ContentInfo\brokeneggs-slowspeed-maneuevers\</OutputDir>
+		</AssetGroup>
+		<AssetGroup Name="slowspeed">
+			<Type>Mission</Type>
+			<Flags>
+				<FSXCompatibility>false</FSXCompatibility>
+			</Flags>
+			<AssetDir>PackageSources\Missions\slowspeed-maneuevers\slowspeed\</AssetDir>
+			<OutputDir>Missions\slowspeed-maneuevers\slowspeed\</OutputDir>
+		</AssetGroup>
+	</AssetGroups>
+</AssetPackage>
+

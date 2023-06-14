@@ -82,7 +82,7 @@
                 </Objective>
                 <Objective UniqueRefId="{C4ACF4C9-0347-45F7-8A22-502707DE2D27}" id="OBJ_PerformClearingTurns">
                     <Descr>Perform Clearing Turns</Descr>
-                    <Steps>
+                    <SimMission.Steps>
                         <Step UniqueRefId="{8A650567-6004-4EE3-A572-398AD1A7FDC5}" id="ST_TurnLeft180">
                             <Descr>Turn Left to Heading 135</Descr>
                         </Step>
@@ -95,8 +95,11 @@
                         <Step UniqueRefId="{F34C6F47-30A4-47E3-92F6-D314BD41FCE1}" id="ST_Maintain1500_2">
                             <Descr>Maintain 1,500 ft</Descr>
                         </Step>
-                    </Steps>
-                    <Score>
+                        <SimMission.Step UniqueRefId="{491922A9-3317-4AB5-ADB9-D865DC9FC23D}" id="ST_KeepCoordinated">
+                            <Descr>Keep Coordinated</Descr>
+                        </SimMission.Step>
+                    </SimMission.Steps>
+                    <SimMission.Score>
                         <ScoreName>Score_OBJ_ClearingTurns</ScoreName>
                         <ScoreParamMinScore>
                             <ScoreParam
@@ -104,7 +107,18 @@
                                     FixedValue="10.000"
                                     id="SP_ClearingTurns_MinScore"/>
                         </ScoreParamMinScore>
-                    </Score>
+                    </SimMission.Score>
+                </Objective>
+                <Objective UniqueRefId="{7140BD45-52F6-4D7D-AE94-10723927BB62}" id="OBJ_ConfigureSlowSpeed">
+                    <Descr>Configure for Slow Speed</Descr>
+                    <Steps>
+                        <Step UniqueRefId="{AE441DD8-0A55-43EE-8C6E-D831B3A5234F}" id="ST_SlowTo65">
+                            <Descr>Slow to 65 kts</Descr>
+                        </Step>
+                        <Step UniqueRefId="{D0BE190B-0406-45C6-9B98-CAE1462D8947}" id="ST_TrimForLevelFlightSlow">
+                            <Descr>Maintain 1,500 ft</Descr>
+                        </Step>
+                    </Steps>
                 </Objective>
             </Objectives>
             <CrashActions>
@@ -132,7 +146,7 @@
         </SimEdition.CommentNode>
         <SimMission.SubGoal InstanceId="{BA8770DA-9069-4F78-A286-6F5212D46284}" id="SGL_ListenToIntro"/>
         <SimMission.PropertyTrigger InstanceId="{C9257210-264F-424C-856D-ABE0B4BA8356}" id="Prop_Trig_Heading_135">
-            <ReversePolishCondition>(A:HEADING INDICATOR, degrees) 133 &gt;= (A:HEADING INDICATOR, degrees) 137 &lt;= (A:INDICATED ALTITUDE, feet) 1480 &gt;= (A:INDICATED ALTITUDE, feet) 1520 &lt;= and and</ReversePolishCondition>
+            <ReversePolishCondition>(A:HEADING INDICATOR, degrees) 133 &gt;= (A:HEADING INDICATOR, degrees) 137 &lt;= (A:INDICATED ALTITUDE, feet) 1450 &gt;= (A:INDICATED ALTITUDE, feet) 1550 &lt;= and and and</ReversePolishCondition>
             <Activated>False</Activated>
             <ConditionTimer>5.000</ConditionTimer>
             <Actions>
@@ -243,9 +257,10 @@
         <SimMission.InstructorDialogAction InstanceId="{8E7D9FF2-4176-4033-9EA3-CB36CAB21651}" id="Dialog_ClearingTurnsLeft">
             <DelaySeconds>2.000</DelaySeconds>
             <SoundFileName>Turn180Left.wav</SoundFileName>
-            <EndActions>
+            <SimMission.EndActions>
                 <ObjectReference InstanceId="{8B9C4DCB-FA1C-4D3D-B7C1-2B71CE325230}" id="Activate_Prop_Trig_Heading135"/>
-            </EndActions>
+                <WorldBase.ObjectReference InstanceId="{3590DFBB-2749-4108-928F-E7C1EDA17F7A}" id="Activate_SGL_KeepCoordinated"/>
+            </SimMission.EndActions>
         </SimMission.InstructorDialogAction>
         <SimMission.ObjectActivationAction InstanceId="{D20125BB-CE59-4564-8FF7-1865B766759D}" id="Activate_SGL_Maintain1500_1">
             <ObjectReferenceList>
@@ -258,7 +273,8 @@
                 id="Calc_ClearingTurnsScore"/>
         <SimMission.PropertyTrigger InstanceId="{381C632D-CB44-4CF5-92D2-166A2F175261}" id="Prop_Trig_AltitudeDeviatedTurn1">
             <Activated>False</Activated>
-            <ReversePolishCondition>(A:INDICATED ALTITUDE, feet) 1480 &lt; (A:INDICATED ALTITUDE, feet) 1520 &gt; or</ReversePolishCondition>
+            <ReversePolishCondition>(A:INDICATED ALTITUDE, feet) 1450 &lt; (A:INDICATED ALTITUDE, feet) 1550 &gt; or</ReversePolishCondition>
+            <OneShot>False</OneShot>
             <Actions>
                 <ObjectReference InstanceId="{7256EEF0-C395-460F-B344-1237FBD63721}" id="SubGoalResolutionAction"/>
             </Actions>
@@ -266,6 +282,7 @@
         <SimMission.PropertyTrigger InstanceId="{FEB6D190-9AA3-4333-A9E6-7DCDCEFC6D1F}" id="Prop_Trig_AltitudeCapturedTurn1">
             <Activated>False</Activated>
             <ReversePolishCondition>(A:INDICATED ALTITUDE, feet) 1480 &gt;= (A:INDICATED ALTITUDE, feet) 1520 &lt;= and</ReversePolishCondition>
+            <OneShot>False</OneShot>
             <Actions>
                 <ObjectReference InstanceId="{AFD751AF-34AC-4AE4-9C1F-4A4B37C885F8}" id="Complete_SGL_MaintainAlt1"/>
             </Actions>
@@ -295,25 +312,23 @@
             </ObjectReferenceList>
         </SimMission.ObjectActivationAction>
         <SimMission.PropertyTrigger InstanceId="{74C02F3D-13F0-47DF-ABE8-FA52EAD70914}" id="Prop_Trig_Heading_315">
-            <ReversePolishCondition>(A:HEADING INDICATOR, degrees) 313 &gt;= (A:HEADING INDICATOR, degrees) 317 &lt;= (A:INDICATED ALTITUDE, feet) 1450 &gt;= (A:INDICATED ALTITUDE, feet) 1550 &lt;= and and</ReversePolishCondition>
+            <ReversePolishCondition>(A:HEADING INDICATOR, degrees) 310 &gt;= (A:HEADING INDICATOR, degrees) 320 &lt;= (A:INDICATED ALTITUDE, feet) 1450 &gt;= (A:INDICATED ALTITUDE, feet) 1550 &lt;= and and and</ReversePolishCondition>
             <Activated>False</Activated>
             <ConditionTimer>5.000</ConditionTimer>
-            <SimMission.Actions>
-                <ObjectReference id="Complete_SGL_TurnLeft1"/>
-                <ObjectReference id="Dialog_ClearingTurnsLeftComplete"/>
-                <ObjectReference id="Complete_SGL_MaintainAlt1"/>
-                <ObjectReference id="Deactivate_Prop_Trigs_Turn1"/>
+            <Actions>
                 <ObjectReference InstanceId="{F2267F82-9233-458C-B406-AE332BB36880}" id="Complete_SGL_Turn315"/>
                 <ObjectReference InstanceId="{43D4997A-B0E1-4C19-87D4-7A937F624F59}" id="Complete_SGL_Maintain_Alt2"/>
-                <WorldBase.ObjectReference InstanceId="{6E0A7540-A412-46C5-9511-48B087547FD3}" id="Deactivate_Prop_Trigs_Turn2"/>
-            </SimMission.Actions>
+                <ObjectReference InstanceId="{6E0A7540-A412-46C5-9511-48B087547FD3}" id="Deactivate_Prop_Trigs_Turn2"/>
+                <ObjectReference InstanceId="{17FA8E6C-C2A5-47E4-A598-DEF4CA986804}" id="Activate_Timer_ReduceSpeed"/>
+                <ObjectReference InstanceId="{17F0E841-D6B0-48DF-9A53-FB1C80521184}" id="GoalResolutionAction"/>
+            </Actions>
         </SimMission.PropertyTrigger>
         <SimMission.ObjectActivationAction InstanceId="{59420A39-E4D2-45A2-AFF1-D678EBA42B47}" id="Activate_Prop_Trig_Heading315">
-            <WorldBase.ObjectReferenceList>
+            <ObjectReferenceList>
                 <ObjectReference InstanceId="{74C02F3D-13F0-47DF-ABE8-FA52EAD70914}" id="Prop_Trig_Heading_315"/>
                 <ObjectReference InstanceId="{CD4E2EF4-BF72-4BFE-A8A8-6C8EF036E62C}" id="Prop_Trig_AltitudeCapturedTurn1"/>
-                <WorldBase.ObjectReference InstanceId="{AA98B78D-674D-48F1-ACD4-C26CE04EFE4A}" id="Prop_Trig_AltitudeDeviatedTurn2"/>
-            </WorldBase.ObjectReferenceList>
+                <ObjectReference InstanceId="{AA98B78D-674D-48F1-ACD4-C26CE04EFE4A}" id="Prop_Trig_AltitudeDeviatedTurn2"/>
+            </ObjectReferenceList>
         </SimMission.ObjectActivationAction>
         <SimMission.SubGoalResolutionAction InstanceId="{F2267F82-9233-458C-B406-AE332BB36880}" id="Complete_SGL_Turn315">
             <StateChange>none</StateChange>
@@ -329,17 +344,17 @@
         </SimMission.SubGoalResolutionAction>
         <SimMission.PropertyTrigger InstanceId="{AA98B78D-674D-48F1-ACD4-C26CE04EFE4A}" id="Prop_Trig_AltitudeDeviatedTurn2">
             <Activated>False</Activated>
-            <ReversePolishCondition>(A:INDICATED ALTITUDE, feet) 1480 &lt; (A:INDICATED ALTITUDE, feet) 1520 &gt; or</ReversePolishCondition>
+            <ReversePolishCondition>(A:INDICATED ALTITUDE, feet) 1450 &lt; (A:INDICATED ALTITUDE, feet) 1550 &gt; or</ReversePolishCondition>
+            <OneShot>False</OneShot>
             <Actions>
-                <ObjectReference id="SubGoalResolutionAction"/>
                 <ObjectReference InstanceId="{47D5E5A5-3347-482E-8860-4463E4231511}" id="Deactivate_SGL_Maintain_Alt_Turn2"/>
             </Actions>
         </SimMission.PropertyTrigger>
-        <SimMission.PropertyTrigger InstanceId="{CD4E2EF4-BF72-4BFE-A8A8-6C8EF036E62C}" id="Prop_Trig_AltitudeCapturedTurn1">
+        <SimMission.PropertyTrigger InstanceId="{CD4E2EF4-BF72-4BFE-A8A8-6C8EF036E62C}" id="Prop_Trig_AltitudeCapturedTurn2">
             <Activated>False</Activated>
-            <ReversePolishCondition>(A:INDICATED ALTITUDE, feet) 1480 &gt;= (A:INDICATED ALTITUDE, feet) 1520 &lt;= and</ReversePolishCondition>
+            <ReversePolishCondition>(A:INDICATED ALTITUDE, feet) 1450 &gt;= (A:INDICATED ALTITUDE, feet) 1550 &lt;= and</ReversePolishCondition>
+            <OneShot>False</OneShot>
             <Actions>
-                <ObjectReference id="Complete_SGL_MaintainAlt1"/>
                 <ObjectReference InstanceId="{43D4997A-B0E1-4C19-87D4-7A937F624F59}" id="Complete_SGL_Maintain_Alt2"/>
             </Actions>
         </SimMission.PropertyTrigger>
@@ -347,6 +362,7 @@
             <SubGoalResolution>pending</SubGoalResolution>
             <StateChange>none</StateChange>
             <SubGoals>
+                <ObjectReference InstanceId="{F34C6F47-30A4-47E3-92F6-D314BD41FCE1}" id="SGL_Maintain1500_2"/>
             </SubGoals>
         </SimMission.SubGoalResolutionAction>
         <SimMission.ObjectActivationAction InstanceId="{6E0A7540-A412-46C5-9511-48B087547FD3}" id="Deactivate_Prop_Trigs_Turn2">
@@ -356,5 +372,209 @@
                 <ObjectReference InstanceId="{CD4E2EF4-BF72-4BFE-A8A8-6C8EF036E62C}" id="Prop_Trig_AltitudeCapturedTurn1"/>
             </ObjectReferenceList>
         </SimMission.ObjectActivationAction>
+        <SimMission.Goal InstanceId="{7140BD45-52F6-4D7D-AE94-10723927BB62}" id="GL_ConfigureSlowSpeed">
+            <Activated>False</Activated>
+        </SimMission.Goal>
+        <SimMission.SubGoal InstanceId="{AE441DD8-0A55-43EE-8C6E-D831B3A5234F}" id="ST_ReduceSpeed">
+            <Activated>False</Activated>
+        </SimMission.SubGoal>
+        <SimMission.SubGoal InstanceId="{D0BE190B-0406-45C6-9B98-CAE1462D8947}" id="ST_MaintainAltitudeSlow">
+            <Activated>False</Activated>
+        </SimMission.SubGoal>
+        <SimMission.TimerTrigger InstanceId="{731169FE-B941-4F0C-B9F6-8927F59D6FC9}" id="Timer_StartReduceSpeed">
+            <StopTime>3.000</StopTime>
+            <Activated>False</Activated>
+            <Actions>
+                <ObjectReference InstanceId="{F0E8D951-B506-46D0-BC75-DBDC124F4F6D}" id="Dialog_ReduceSpeed"/>
+                <ObjectReference InstanceId="{78CB1B74-F329-4F74-B54F-C80C9F9C5113}" id="Activate_GL_ReduceSpeed"/>
+                <ObjectReference InstanceId="{DEC59005-6084-4372-921C-0721C11A4A46}" id="Activate_SGL_ReduceSpeed"/>
+                <ObjectReference InstanceId="{DAC4613C-6CB1-480A-9C63-9142EB86CC99}" id="Activate_SGL_MaintainAltSlow"/>
+                <ObjectReference InstanceId="{FFFE21CA-20B5-498F-A7B6-78CC43C3C9C4}" id="ObjectActivationAction"/>
+            </Actions>
+        </SimMission.TimerTrigger>
+        <SimMission.ObjectActivationAction InstanceId="{17FA8E6C-C2A5-47E4-A598-DEF4CA986804}" id="Activate_Timer_ReduceSpeed">
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{731169FE-B941-4F0C-B9F6-8927F59D6FC9}" id="Timer_StartReduceSpeed"/>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.InstructorDialogAction InstanceId="{F0E8D951-B506-46D0-BC75-DBDC124F4F6D}" id="Dialog_ReduceSpeed">
+            <Text>Now you&apos;ll need to reduce speed to 65 knots and keep level at 1,500 feet.</Text>
+        </SimMission.InstructorDialogAction>
+        <SimMission.ObjectActivationAction InstanceId="{78CB1B74-F329-4F74-B54F-C80C9F9C5113}" id="Activate_GL_ReduceSpeed">
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{7140BD45-52F6-4D7D-AE94-10723927BB62}" id="GL_ConfigureSlowSpeed"/>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.ObjectActivationAction InstanceId="{DEC59005-6084-4372-921C-0721C11A4A46}" id="Activate_SGL_ReduceSpeed">
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{AE441DD8-0A55-43EE-8C6E-D831B3A5234F}" id="ST_ReduceSpeed"/>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.ObjectActivationAction InstanceId="{DAC4613C-6CB1-480A-9C63-9142EB86CC99}" id="Activate_SGL_MaintainAltSlow">
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{D0BE190B-0406-45C6-9B98-CAE1462D8947}" id="ST_MaintainAltitudeSlow"/>
+                <ObjectReference InstanceId="{480A17D1-7A6E-4FC3-B107-7567E5D54154}" id="Activate_Prop_Trig_Deviated_Alt_Slow"/>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimEdition.CommentNode InstanceId="{3A8A25AE-560C-447C-B8C8-70BB8B4E317C}" id="Comment_ReduceSpeed">
+            <NodeComment>Reduce Speed to 65</NodeComment>
+        </SimEdition.CommentNode>
+        <SimMission.PropertyTrigger InstanceId="{008937CC-40DB-4777-BBF9-E473B49EDC67}" id="Prop_Trig_ReduceSpeed">
+            <Activated>False</Activated>
+            <ConditionTimer>5.000</ConditionTimer>
+            <ReversePolishCondition>(A:AIRSPEED INDICATED, knots) 60 &gt;= (A:AIRSPEED INDICATED, knots) 70 &lt;= and</ReversePolishCondition>
+            <Actions>
+                <ObjectReference InstanceId="{E9B9AD80-84BE-431B-9598-76FC3BA6F6EA}" id="SubGoalResolutionAction"/>
+                <ObjectReference InstanceId="{CE3B22B0-BA9D-438C-ACE6-60141D0CA7D6}" id="InstructorDialogAction"/>
+                <ObjectReference InstanceId="{C5595A54-8181-4B22-88B3-BEA82BEB95CE}" id="Activate_Prop_Trigger_Maintain_65"/>
+            </Actions>
+        </SimMission.PropertyTrigger>
+        <SimMission.ObjectActivationAction InstanceId="{FFFE21CA-20B5-498F-A7B6-78CC43C3C9C4}" id="Activate_Trigger_SpeedReduction">
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{008937CC-40DB-4777-BBF9-E473B49EDC67}" id="PropertyTrigger"/>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.SubGoalResolutionAction InstanceId="{E9B9AD80-84BE-431B-9598-76FC3BA6F6EA}" id="Complete_SGL_SlowTo65">
+            <StateChange>none</StateChange>
+            <SubGoals>
+                <ObjectReference InstanceId="{AE441DD8-0A55-43EE-8C6E-D831B3A5234F}" id="ST_ReduceSpeed"/>
+            </SubGoals>
+        </SimMission.SubGoalResolutionAction>
+        <SimMission.PropertyTrigger InstanceId="{1E2959F4-C22E-42BC-9C67-9A05BD1DF576}" id="Prop_Trig_Maintain_65">
+            <Activated>False</Activated>
+            <ConditionTimer>25.000</ConditionTimer>
+            <ReversePolishCondition>(A:INDICATED ALTITUDE, feet) 1480 &gt;= (A:INDICATED ALTITUDE, feet) 1520 &lt;= (A:AIRSPEED INDICATED, knots) 60 &gt;= (A:AIRSPEED INDICATED, knots) 70 &lt;= and and</ReversePolishCondition>
+            <Actions>
+                <ObjectReference InstanceId="{C8B68251-384B-4EED-BB1F-C4AB41E3D083}" id="Dialog_SlowSpeedHeldOK"/>
+                <ObjectReference InstanceId="{1D8E69B3-4B0E-4261-A01F-91166A4798B0}" id="SubGoalResolutionAction"/>
+                <ObjectReference InstanceId="{322C2AE9-7E08-4F00-96F9-5F62BF1F1433}" id="Complete_SGL_HoldAltitudeSlow"/>
+                <ObjectReference InstanceId="{54397965-BCF0-4B1D-9AB5-BF781B3F641B}" id="Activate_Timer_ResolveGoalSlow"/>
+                <ObjectReference InstanceId="{D2A5CD08-F5F8-4C24-89B2-5A8C6C938CC9}" id="Deactivate_Prop_Trig_Deviated_Alt_Slow"/>
+            </Actions>
+        </SimMission.PropertyTrigger>
+        <SimMission.InstructorDialogAction InstanceId="{CE3B22B0-BA9D-438C-ACE6-60141D0CA7D6}" id="Dialog_Maintain65_For_30">
+            <DelaySeconds>3.000</DelaySeconds>
+            <Text>Okay. Hold this configuration for a while.</Text>
+        </SimMission.InstructorDialogAction>
+        <SimMission.ObjectActivationAction InstanceId="{C5595A54-8181-4B22-88B3-BEA82BEB95CE}" id="Activate_Prop_Trigger_Maintain_65">
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{1E2959F4-C22E-42BC-9C67-9A05BD1DF576}" id="Prop_Trig_Maintain_65"/>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.InstructorDialogAction InstanceId="{C8B68251-384B-4EED-BB1F-C4AB41E3D083}" id="Dialog_SlowSpeedHeldOK">
+            <Text>Nice job. You&apos;ve maintained altitude and speed for 30 seconds.</Text>
+        </SimMission.InstructorDialogAction>
+        <SimMission.SubGoalResolutionAction InstanceId="{1D8E69B3-4B0E-4261-A01F-91166A4798B0}" id="Complete_SGL_Hold65">
+            <SubGoals>
+                <ObjectReference InstanceId="{AE441DD8-0A55-43EE-8C6E-D831B3A5234F}" id="ST_ReduceSpeed"/>
+            </SubGoals>
+        </SimMission.SubGoalResolutionAction>
+        <SimMission.SubGoalResolutionAction InstanceId="{322C2AE9-7E08-4F00-96F9-5F62BF1F1433}" id="Complete_SGL_HoldAltitudeSlow">
+            <SubGoals>
+                <ObjectReference InstanceId="{D0BE190B-0406-45C6-9B98-CAE1462D8947}" id="ST_MaintainAltitudeSlow"/>
+            </SubGoals>
+        </SimMission.SubGoalResolutionAction>
+        <SimMission.GoalResolutionAction InstanceId="{DEF44A9A-944A-458C-AF95-5E8C86CC4FA6}" id="Complete_GL_SlowSpeed">
+            <Goals>
+                <ObjectReference InstanceId="{7140BD45-52F6-4D7D-AE94-10723927BB62}" id="GL_ConfigureSlowSpeed"/>
+            </Goals>
+        </SimMission.GoalResolutionAction>
+        <SimMission.TimerTrigger InstanceId="{9251673F-8899-4358-90F5-14887C9F849D}">
+            <StopTime>3.000</StopTime>
+            <Activated>False</Activated>
+            <Actions>
+                <ObjectReference InstanceId="{DEF44A9A-944A-458C-AF95-5E8C86CC4FA6}" id="Complete_GL_SlowSpeed"/>
+            </Actions>
+        </SimMission.TimerTrigger>
+        <SimMission.ObjectActivationAction InstanceId="{54397965-BCF0-4B1D-9AB5-BF781B3F641B}" id="Activate_Timer_ResolveGoalSlow">
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{9251673F-8899-4358-90F5-14887C9F849D}" id="TimerTrigger"/>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.PropertyTrigger InstanceId="{F33C2A2A-C755-47F0-A259-11D4713885D5}" id="Prop_Trig_Deviated_Altitude_Slow">
+            <Activated>False</Activated>
+            <ReversePolishCondition>(A:INDICATED ALTITUDE, feet) 1450 &lt; (A:INDICATED ALTITUDE, feet) 1550 &gt; or</ReversePolishCondition>
+            <Actions>
+                <ObjectReference InstanceId="{3BF4AE6A-C62E-4EBB-BD54-A1B8089FA486}" id="Deactivate_SGL_Maintain_Alt_Slow"/>
+            </Actions>
+        </SimMission.PropertyTrigger>
+        <SimMission.ObjectActivationAction InstanceId="{480A17D1-7A6E-4FC3-B107-7567E5D54154}" id="Activate_Prop_Trig_Deviated_Alt_Slow">
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{F33C2A2A-C755-47F0-A259-11D4713885D5}" id="Prop_Trig_Deviated_Altitude_Slow"/>
+                <ObjectReference InstanceId="{4DF33322-20F1-4297-AD74-95FEDEAE7F41}" id="Prop_Trig_Captured_Altitude_Slow"/>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.ObjectActivationAction InstanceId="{D2A5CD08-F5F8-4C24-89B2-5A8C6C938CC9}" id="Deactivate_Prop_Trig_Deviated_Alt_Slow">
+            <NewObjectState>False</NewObjectState>
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{F33C2A2A-C755-47F0-A259-11D4713885D5}" id="Prop_Trig_Deviated_Altitude_Slow"/>
+                <ObjectReference InstanceId="{4DF33322-20F1-4297-AD74-95FEDEAE7F41}" id="Prop_Trig_Captured_Altitude_Slow"/>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.SubGoalResolutionAction InstanceId="{4B8E4897-65EF-462C-8E46-B96E6F4F39C6}" id="Activate_SGL_Maintain_Alt_Slow">
+            <StateChange>none</StateChange>
+            <SubGoals>
+                <ObjectReference InstanceId="{D0BE190B-0406-45C6-9B98-CAE1462D8947}" id="ST_MaintainAltitudeSlow"/>
+            </SubGoals>
+        </SimMission.SubGoalResolutionAction>
+        <SimMission.SubGoalResolutionAction InstanceId="{3BF4AE6A-C62E-4EBB-BD54-A1B8089FA486}" id="Deactivate_SGL_Maintain_Alt_Slow">
+            <SubGoalResolution>pending</SubGoalResolution>
+            <StateChange>none</StateChange>
+            <SubGoals>
+                <ObjectReference InstanceId="{D0BE190B-0406-45C6-9B98-CAE1462D8947}" id="ST_MaintainAltitudeSlow"/>
+            </SubGoals>
+        </SimMission.SubGoalResolutionAction>
+        <SimMission.PropertyTrigger InstanceId="{4DF33322-20F1-4297-AD74-95FEDEAE7F41}" id="Prop_Trig_Captured_Altitude_Slow">
+            <Activated>False</Activated>
+            <ReversePolishCondition>(A:INDICATED ALTITUDE, feet) 1450 &gt; (A:INDICATED ALTITUDE, feet) 1550 &lt; and</ReversePolishCondition>
+            <Actions>
+                <ObjectReference InstanceId="{4B8E4897-65EF-462C-8E46-B96E6F4F39C6}" id="Activate_SGL_Maintain_Alt_Slow"/>
+            </Actions>
+        </SimMission.PropertyTrigger>
+        <SimMission.GoalResolutionAction InstanceId="{17F0E841-D6B0-48DF-9A53-FB1C80521184}" id="Complete_GL_ClearingTurns">
+            <Goals>
+                <ObjectReference InstanceId="{C4ACF4C9-0347-45F7-8A22-502707DE2D27}" id="GL_PerformClearingTurns"/>
+            </Goals>
+        </SimMission.GoalResolutionAction>
+        <SimEdition.CommentNode InstanceId="{69F12135-4F12-489E-A1F9-EA51EAB7D5F9}" id="Comment_TestItem"/>
+        <SimMission.SubGoal InstanceId="{491922A9-3317-4AB5-ADB9-D865DC9FC23D}" id="SGL_KeepCoordinated">
+            <Activated>False</Activated>
+        </SimMission.SubGoal>
+        <SimMission.ObjectActivationAction InstanceId="{3590DFBB-2749-4108-928F-E7C1EDA17F7A}" id="Activate_SGL_KeepCoordinated">
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{491922A9-3317-4AB5-ADB9-D865DC9FC23D}" id="SGL_KeepCoordinated"/>
+                <ObjectReference InstanceId="{9C49198E-EE1F-4017-AB93-8246A7F78D29}" id="PropertyTrigger"/>
+                <ObjectReference InstanceId="{3017A67D-1E85-49B3-A299-72E3501259FA}" id="Prop_Trig_CoordinateLost"/>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.PropertyTrigger InstanceId="{9C49198E-EE1F-4017-AB93-8246A7F78D29}" id="Prop_Trig_KeepCoordinated">
+            <Activated>False</Activated>
+            <OneShot>False</OneShot>
+            <ReversePolishCondition>(A:Turn coordinator ball, position) 0.5 &lt; (A:Turn coordinator ball, position) -0.5 &gt;</ReversePolishCondition>
+            <Actions>
+                <ObjectReference InstanceId="{1F8F1188-1436-4E20-8AD6-33A86B428F7E}" id="SubGoalResolutionAction"/>
+            </Actions>
+        </SimMission.PropertyTrigger>
+        <SimMission.SubGoalResolutionAction InstanceId="{1F8F1188-1436-4E20-8AD6-33A86B428F7E}" id="Activate_SGL_KeepCoordinated">
+            <StateChange>none</StateChange>
+            <SubGoals>
+                <ObjectReference InstanceId="{491922A9-3317-4AB5-ADB9-D865DC9FC23D}" id="SGL_KeepCoordinated"/>
+            </SubGoals>
+        </SimMission.SubGoalResolutionAction>
+        <SimMission.PropertyTrigger InstanceId="{3017A67D-1E85-49B3-A299-72E3501259FA}" id="Prop_Trig_CoordinateLost">
+            <Activated>False</Activated>
+            <OneShot>False</OneShot>
+            <ReversePolishCondition>(A:Turn coordinator ball, position) 2 &gt;</ReversePolishCondition>
+            <Actions>
+                <ObjectReference InstanceId="{1067B267-D7A6-4C95-ADC1-5383538E5960}" id="Deactivate_SGL_Coordinated"/>
+            </Actions>
+        </SimMission.PropertyTrigger>
+        <SimMission.SubGoalResolutionAction InstanceId="{1067B267-D7A6-4C95-ADC1-5383538E5960}" id="Deactivate_SGL_Coordinated">
+            <SubGoalResolution>pending</SubGoalResolution>
+            <StateChange>none</StateChange>
+            <SubGoals>
+                <ObjectReference InstanceId="{491922A9-3317-4AB5-ADB9-D865DC9FC23D}" id="SGL_KeepCoordinated"/>
+            </SubGoals>
+        </SimMission.SubGoalResolutionAction>
     </WorldBase.Flight>
 </SimBase.Document>

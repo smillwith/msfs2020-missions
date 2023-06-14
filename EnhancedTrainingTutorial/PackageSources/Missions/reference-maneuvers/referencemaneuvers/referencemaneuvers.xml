@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 
 <SimBase.Document Type="MissionFile" version="1,0">
     <Title>Mission_Template</Title>
@@ -23,7 +23,7 @@
             </RestartActions>
         </SimMission.OnEndLoadingTrigger>
         <SimMission.FlowStateAction InstanceId="{15B07E31-F0D8-45D3-B432-54D71D69D3CF}">
-            <FlowStateName>PREFLIGHT_GATE</FlowStateName>
+            <FlowStateName>FLIGHT_CRUISE</FlowStateName>
             <FromSpawn>True</FromSpawn>
             <IsFirstStateInTimeline>True</IsFirstStateInTimeline>
             <TeleportActions>
@@ -82,7 +82,8 @@
                 </Objective>
             </Objectives>
         </SimMission.Tutorial>
-        <SimMission.Goal InstanceId="{CBC1DC31-0DD9-45FF-B38D-17176456B54C}" id="GL_EndMission"/>
+        <SimMission.Goal InstanceId="{CBC1DC31-0DD9-45FF-B38D-17176456B54C}" id="GL_EndMission">
+        </SimMission.Goal>
         <SimMission.ObjectActivationAction InstanceId="{A1157934-AF01-4CC1-B403-1B8C47010EF4}" id="Activate_Timer-Intro">
             <ObjectReferenceList>
                 <ObjectReference InstanceId="{42AE9E99-4057-4B53-9171-51E6A1086131}" id="Timer_Intro"/>
@@ -139,5 +140,28 @@
                 <ObjectReference InstanceId="{DB7FD6E6-D855-4288-850D-C3E45AEDF743}" id="SGL_80Kts"/>
             </SubGoals>
         </SimMission.SubGoalResolutionAction>
+        <SimMission.RectangleArea InstanceId="{FD49F326-DBC2-448C-9C87-00E18F649A15}" id="Rectangle_Target1">
+            <Length>220.000</Length>
+            <Height>1200.000</Height>
+            <Orientation>0.000,0.000,0.000</Orientation>
+            <AttachedWorldPosition>
+                <AltitudeIsAGL>False</AltitudeIsAGL>
+                <IsOnGround>True</IsOnGround>
+                <WorldPosition>N34° 11' 9.18",W118° 57' 3.68",+000668.79</WorldPosition>
+                <Orientation>0.001,359.997,356.385</Orientation>
+            </AttachedWorldPosition>
+            <InitWorldPosition>
+                <AltitudeIsAGL>True</AltitudeIsAGL>
+                <IsOnGround>False</IsOnGround>
+                <Orientation>0.000,0.000,0.000</Orientation>
+            </InitWorldPosition>
+            <InitRelativeToWorldObject>
+                <IsOnGround>False</IsOnGround>
+                <Orientation>0.000,0.000,0.000</Orientation>
+                <NodeName>_FIND_DEFAULT_ROOT_NODE_</NodeName>
+                <ObjectReference>
+                </ObjectReference>
+            </InitRelativeToWorldObject>
+        </SimMission.RectangleArea>
     </WorldBase.Flight>
 </SimBase.Document>
