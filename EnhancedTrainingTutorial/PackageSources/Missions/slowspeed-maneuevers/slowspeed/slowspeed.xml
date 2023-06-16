@@ -82,7 +82,7 @@
                 </Objective>
                 <Objective UniqueRefId="{C4ACF4C9-0347-45F7-8A22-502707DE2D27}" id="OBJ_PerformClearingTurns">
                     <Descr>Perform Clearing Turns</Descr>
-                    <SimMission.Steps>
+                    <Steps>
                         <Step UniqueRefId="{8A650567-6004-4EE3-A572-398AD1A7FDC5}" id="ST_TurnLeft180">
                             <Descr>Turn Left to Heading 135</Descr>
                         </Step>
@@ -95,13 +95,13 @@
                         <Step UniqueRefId="{F34C6F47-30A4-47E3-92F6-D314BD41FCE1}" id="ST_Maintain1500_2">
                             <Descr>Maintain 1,500 ft</Descr>
                         </Step>
-                        <SimMission.Step UniqueRefId="{491922A9-3317-4AB5-ADB9-D865DC9FC23D}" id="ST_KeepCoordinated_T1">
+                        <Step UniqueRefId="{491922A9-3317-4AB5-ADB9-D865DC9FC23D}" id="ST_KeepCoordinated_T1">
                             <Descr>Keep Coordinated</Descr>
-                        </SimMission.Step>
-                        <SimMission.Step UniqueRefId="{BAB6854E-A2CB-4088-86BA-DE3630F45E63}" id="ST_KeepCoordinated_T2">
+                        </Step>
+                        <Step UniqueRefId="{BAB6854E-A2CB-4088-86BA-DE3630F45E63}" id="ST_KeepCoordinated_T2">
                             <Descr>Keep Coordinated</Descr>
-                        </SimMission.Step>
-                    </SimMission.Steps>
+                        </Step>
+                    </Steps>
                     <Score>
                         <ScoreName>Score_OBJ_ClearingTurns</ScoreName>
                         <ScoreParamMinScore>
@@ -378,10 +378,10 @@
         <SimMission.Goal InstanceId="{7140BD45-52F6-4D7D-AE94-10723927BB62}" id="GL_ConfigureSlowSpeed">
             <Activated>False</Activated>
         </SimMission.Goal>
-        <SimMission.SubGoal InstanceId="{AE441DD8-0A55-43EE-8C6E-D831B3A5234F}" id="ST_ReduceSpeed">
+        <SimMission.SubGoal InstanceId="{AE441DD8-0A55-43EE-8C6E-D831B3A5234F}" id="SGL_ReduceSpeed">
             <Activated>False</Activated>
         </SimMission.SubGoal>
-        <SimMission.SubGoal InstanceId="{D0BE190B-0406-45C6-9B98-CAE1462D8947}" id="ST_MaintainAltitudeSlow">
+        <SimMission.SubGoal InstanceId="{D0BE190B-0406-45C6-9B98-CAE1462D8947}" id="SGL_MaintainAltitudeSlow">
             <Activated>False</Activated>
         </SimMission.SubGoal>
         <SimMission.TimerTrigger InstanceId="{731169FE-B941-4F0C-B9F6-8927F59D6FC9}" id="Timer_StartReduceSpeed">
