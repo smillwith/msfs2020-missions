@@ -40,11 +40,11 @@
     </SimEdition.EditionInfo>
     <SimEdition.EditionInfo RelatedInstanceId="{30031D99-9091-48D5-AA48-A4A5D0D4EBE4}">
         <NodePosition>-2176.000,-2352.000</NodePosition>
-        <NodeSize>2608.000,1248.000</NodeSize>
+        <NodeSize>2640.000,1336.000</NodeSize>
     </SimEdition.EditionInfo>
     <SimEdition.EditionInfo RelatedInstanceId="{B3360621-0B79-4097-89FB-8A0ECE3FF07A}">
         <NodePosition>-2224.000,-1088.000</NodePosition>
-        <NodeSize>768.000,1296.000</NodeSize>
+        <NodeSize>800.000,1384.000</NodeSize>
     </SimEdition.EditionInfo>
     <SimEdition.EditionInfo RelatedInstanceId="{2CD4717A-91F2-4436-9050-4FB58F69507F}">
         <NodePosition>-2948.000,353.000</NodePosition>

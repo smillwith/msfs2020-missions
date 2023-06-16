@@ -40,11 +40,11 @@
     </SimEdition.EditionInfo>
     <SimEdition.EditionInfo RelatedInstanceId="{41E83BE5-75FA-49D7-8C11-F71D951BB426}">
         <NodePosition>-1568.000,-1744.000</NodePosition>
-        <NodeSize>2448.000,1080.000</NodeSize>
+        <NodeSize>2480.000,1168.000</NodeSize>
     </SimEdition.EditionInfo>
     <SimEdition.EditionInfo RelatedInstanceId="{9E78E6E3-31C4-4908-BDCB-957631B198FF}">
         <NodePosition>-1920.000,-544.000</NodePosition>
-        <NodeSize>1552.000,2652.000</NodeSize>
+        <NodeSize>1584.000,2740.000</NodeSize>
     </SimEdition.EditionInfo>
     <SimEdition.EditionInfo RelatedInstanceId="{BA8770DA-9069-4F78-A286-6F5212D46284}">
         <NodePosition>-1044.000,-220.000</NodePosition>
@@ -183,7 +183,7 @@
     </SimEdition.EditionInfo>
     <SimEdition.EditionInfo RelatedInstanceId="{3A8A25AE-560C-447C-B8C8-70BB8B4E317C}">
         <NodePosition>416.000,2880.000</NodePosition>
-        <NodeSize>2368.000,3464.000</NodeSize>
+        <NodeSize>2400.000,3608.000</NodeSize>
     </SimEdition.EditionInfo>
     <SimEdition.EditionInfo RelatedInstanceId="{008937CC-40DB-4777-BBF9-E473B49EDC67}">
         <NodePosition>524.000,3962.000</NodePosition>
@@ -244,7 +244,7 @@
     </SimEdition.EditionInfo>
     <SimEdition.EditionInfo RelatedInstanceId="{69F12135-4F12-489E-A1F9-EA51EAB7D5F9}">
         <NodePosition>-1920.000,2688.000</NodePosition>
-        <NodeSize>2016.000,1672.000</NodeSize>
+        <NodeSize>2048.000,1760.000</NodeSize>
     </SimEdition.EditionInfo>
     <SimEdition.EditionInfo RelatedInstanceId="{491922A9-3317-4AB5-ADB9-D865DC9FC23D}">
         <NodePosition>-1060.000,920.000</NodePosition>
@@ -263,5 +263,8 @@
     </SimEdition.EditionInfo>
     <SimEdition.EditionInfo RelatedInstanceId="{1067B267-D7A6-4C95-ADC1-5383538E5960}">
         <NodePosition>312.000,2040.000</NodePosition>
+    </SimEdition.EditionInfo>
+    <SimEdition.EditionInfo RelatedInstanceId="{BAB6854E-A2CB-4088-86BA-DE3630F45E63}">
+        <NodePosition>-824.000,1112.000</NodePosition>
     </SimEdition.EditionInfo>
 </SimBase.Document>

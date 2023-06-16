@@ -776,10 +776,10 @@
         <SimMission.InstructorDialogAction InstanceId="{A4C12BDD-D062-40FB-A629-130FF7B0FE02}" id="Play_Dialog_ReachedLompoc">
             <Text> </Text>
             <SoundFileName>cleared-ridge-descend-1400.wav</SoundFileName>
-            <SimMission.EndActions>
+            <EndActions>
                 <ObjectReference InstanceId="{F5CDE5A3-C09D-450B-9AEE-FB7D51FF8442}" id="Activate_GL_BeginApproach"/>
-                <WorldBase.ObjectReference InstanceId="{DAF6E5E3-99A3-499D-A11D-B77915A7008C}" id="InstructorDialogAction"/>
-            </SimMission.EndActions>
+                <ObjectReference InstanceId="{DAF6E5E3-99A3-499D-A11D-B77915A7008C}" id="InstructorDialogAction"/>
+            </EndActions>
         </SimMission.InstructorDialogAction>
         <SimMission.TimerTrigger InstanceId="{8DB61F59-04A7-4798-990C-6029E12F211A}" id="Timer_ReachedLompoc">
             <StopTime>270.000</StopTime>
@@ -793,6 +793,7 @@
         <SimMission.ObjectActivationAction InstanceId="{B33EFFF8-4562-4BA0-8092-15E5734A308A}" id="Activate_Timer_Cruise_Complete">
             <ObjectReferenceList>
                 <ObjectReference InstanceId="{8DB61F59-04A7-4798-990C-6029E12F211A}" id="TimerTrigger"/>
+                <ObjectReference InstanceId="{E804B088-5F6E-4171-8494-FEB13DA19CB7}" id="TimerTrigger"/>
             </ObjectReferenceList>
         </SimMission.ObjectActivationAction>
         <SimMission.ObjectActivationAction InstanceId="{98FC8E02-1259-4B49-B174-9EA9F6FF87A8}" id="Activate_SGL_DecreaseRPM">
@@ -951,9 +952,7 @@
             <SoundFileName>reached-cruise-rpm-2200.wav</SoundFileName>
         </SimMission.InstructorDialogAction>
         <SimMission.InstructorDialogAction InstanceId="{B3EC3E27-9E4D-4117-BEE4-0AB4A7B89200}" id="Dialog_WhileCruising">
-            <DelaySeconds>45.000</DelaySeconds>
             <SoundFileName>while-cruising.wav</SoundFileName>
-            <Immediate>False</Immediate>
             <EndActionsDelaySeconds>2.000</EndActionsDelaySeconds>
             <EndActions>
                 <ObjectReference InstanceId="{710942F1-4C03-4F0D-89E2-1BB899B5FCE4}" id="InstructorDialogAction"/>
@@ -967,5 +966,12 @@
             <Immediate>False</Immediate>
             <SoundFileName>as-you-descend.wav</SoundFileName>
         </SimMission.InstructorDialogAction>
+        <SimMission.TimerTrigger InstanceId="{E804B088-5F6E-4171-8494-FEB13DA19CB7}">
+            <StopTime>40.000</StopTime>
+            <Activated>False</Activated>
+            <Actions>
+                <ObjectReference InstanceId="{B3EC3E27-9E4D-4117-BEE4-0AB4A7B89200}" id="Dialog_WhileCruising"/>
+            </Actions>
+        </SimMission.TimerTrigger>
     </WorldBase.Flight>
 </SimBase.Document>

@@ -95,11 +95,14 @@
                         <Step UniqueRefId="{F34C6F47-30A4-47E3-92F6-D314BD41FCE1}" id="ST_Maintain1500_2">
                             <Descr>Maintain 1,500 ft</Descr>
                         </Step>
-                        <SimMission.Step UniqueRefId="{491922A9-3317-4AB5-ADB9-D865DC9FC23D}" id="ST_KeepCoordinated">
+                        <SimMission.Step UniqueRefId="{491922A9-3317-4AB5-ADB9-D865DC9FC23D}" id="ST_KeepCoordinated_T1">
+                            <Descr>Keep Coordinated</Descr>
+                        </SimMission.Step>
+                        <SimMission.Step UniqueRefId="{BAB6854E-A2CB-4088-86BA-DE3630F45E63}" id="ST_KeepCoordinated_T2">
                             <Descr>Keep Coordinated</Descr>
                         </SimMission.Step>
                     </SimMission.Steps>
-                    <SimMission.Score>
+                    <Score>
                         <ScoreName>Score_OBJ_ClearingTurns</ScoreName>
                         <ScoreParamMinScore>
                             <ScoreParam
@@ -107,7 +110,7 @@
                                     FixedValue="10.000"
                                     id="SP_ClearingTurns_MinScore"/>
                         </ScoreParamMinScore>
-                    </SimMission.Score>
+                    </Score>
                 </Objective>
                 <Objective UniqueRefId="{7140BD45-52F6-4D7D-AE94-10723927BB62}" id="OBJ_ConfigureSlowSpeed">
                     <Descr>Configure for Slow Speed</Descr>
@@ -146,7 +149,7 @@
         </SimEdition.CommentNode>
         <SimMission.SubGoal InstanceId="{BA8770DA-9069-4F78-A286-6F5212D46284}" id="SGL_ListenToIntro"/>
         <SimMission.PropertyTrigger InstanceId="{C9257210-264F-424C-856D-ABE0B4BA8356}" id="Prop_Trig_Heading_135">
-            <ReversePolishCondition>(A:HEADING INDICATOR, degrees) 133 &gt;= (A:HEADING INDICATOR, degrees) 137 &lt;= (A:INDICATED ALTITUDE, feet) 1450 &gt;= (A:INDICATED ALTITUDE, feet) 1550 &lt;= and and and</ReversePolishCondition>
+            <ReversePolishCondition>(A:HEADING INDICATOR, degrees) 130 &gt;= (A:HEADING INDICATOR, degrees) 140 &lt;= (A:INDICATED ALTITUDE, feet) 1450 &gt;= (A:INDICATED ALTITUDE, feet) 1550 &lt;= and and and</ReversePolishCondition>
             <Activated>False</Activated>
             <ConditionTimer>5.000</ConditionTimer>
             <Actions>
@@ -257,10 +260,10 @@
         <SimMission.InstructorDialogAction InstanceId="{8E7D9FF2-4176-4033-9EA3-CB36CAB21651}" id="Dialog_ClearingTurnsLeft">
             <DelaySeconds>2.000</DelaySeconds>
             <SoundFileName>Turn180Left.wav</SoundFileName>
-            <SimMission.EndActions>
+            <EndActions>
                 <ObjectReference InstanceId="{8B9C4DCB-FA1C-4D3D-B7C1-2B71CE325230}" id="Activate_Prop_Trig_Heading135"/>
-                <WorldBase.ObjectReference InstanceId="{3590DFBB-2749-4108-928F-E7C1EDA17F7A}" id="Activate_SGL_KeepCoordinated"/>
-            </SimMission.EndActions>
+                <ObjectReference InstanceId="{3590DFBB-2749-4108-928F-E7C1EDA17F7A}" id="Activate_SGL_KeepCoordinated"/>
+            </EndActions>
         </SimMission.InstructorDialogAction>
         <SimMission.ObjectActivationAction InstanceId="{D20125BB-CE59-4564-8FF7-1865B766759D}" id="Activate_SGL_Maintain1500_1">
             <ObjectReferenceList>
@@ -281,7 +284,7 @@
         </SimMission.PropertyTrigger>
         <SimMission.PropertyTrigger InstanceId="{FEB6D190-9AA3-4333-A9E6-7DCDCEFC6D1F}" id="Prop_Trig_AltitudeCapturedTurn1">
             <Activated>False</Activated>
-            <ReversePolishCondition>(A:INDICATED ALTITUDE, feet) 1480 &gt;= (A:INDICATED ALTITUDE, feet) 1520 &lt;= and</ReversePolishCondition>
+            <ReversePolishCondition>(A:INDICATED ALTITUDE, feet) 1450 &gt;= (A:INDICATED ALTITUDE, feet) 1550 &lt;= and</ReversePolishCondition>
             <OneShot>False</OneShot>
             <Actions>
                 <ObjectReference InstanceId="{AFD751AF-34AC-4AE4-9C1F-4A4B37C885F8}" id="Complete_SGL_MaintainAlt1"/>
@@ -442,8 +445,8 @@
         </SimMission.SubGoalResolutionAction>
         <SimMission.PropertyTrigger InstanceId="{1E2959F4-C22E-42BC-9C67-9A05BD1DF576}" id="Prop_Trig_Maintain_65">
             <Activated>False</Activated>
-            <ConditionTimer>25.000</ConditionTimer>
-            <ReversePolishCondition>(A:INDICATED ALTITUDE, feet) 1480 &gt;= (A:INDICATED ALTITUDE, feet) 1520 &lt;= (A:AIRSPEED INDICATED, knots) 60 &gt;= (A:AIRSPEED INDICATED, knots) 70 &lt;= and and</ReversePolishCondition>
+            <ConditionTimer>30.000</ConditionTimer>
+            <ReversePolishCondition>(A:INDICATED ALTITUDE, feet) 1450 &gt;= (A:INDICATED ALTITUDE, feet) 1550 &lt;= (A:AIRSPEED INDICATED, knots) 60 &gt;= (A:AIRSPEED INDICATED, knots) 70 &lt;= and and and</ReversePolishCondition>
             <Actions>
                 <ObjectReference InstanceId="{C8B68251-384B-4EED-BB1F-C4AB41E3D083}" id="Dialog_SlowSpeedHeldOK"/>
                 <ObjectReference InstanceId="{1D8E69B3-4B0E-4261-A01F-91166A4798B0}" id="SubGoalResolutionAction"/>
@@ -537,7 +540,7 @@
             </Goals>
         </SimMission.GoalResolutionAction>
         <SimEdition.CommentNode InstanceId="{69F12135-4F12-489E-A1F9-EA51EAB7D5F9}" id="Comment_TestItem"/>
-        <SimMission.SubGoal InstanceId="{491922A9-3317-4AB5-ADB9-D865DC9FC23D}" id="SGL_KeepCoordinated">
+        <SimMission.SubGoal InstanceId="{491922A9-3317-4AB5-ADB9-D865DC9FC23D}" id="SGL_KeepCoordinated_T1">
             <Activated>False</Activated>
         </SimMission.SubGoal>
         <SimMission.ObjectActivationAction InstanceId="{3590DFBB-2749-4108-928F-E7C1EDA17F7A}" id="Activate_SGL_KeepCoordinated">
@@ -550,7 +553,7 @@
         <SimMission.PropertyTrigger InstanceId="{9C49198E-EE1F-4017-AB93-8246A7F78D29}" id="Prop_Trig_KeepCoordinated">
             <Activated>False</Activated>
             <OneShot>False</OneShot>
-            <ReversePolishCondition>(A:Turn coordinator ball, position) 0.5 &lt; (A:Turn coordinator ball, position) -0.5 &gt;</ReversePolishCondition>
+            <ReversePolishCondition>(A:Turn coordinator ball, position) 0.1 &lt; (A:Turn coordinator ball, position) -0.1 &gt;</ReversePolishCondition>
             <Actions>
                 <ObjectReference InstanceId="{1F8F1188-1436-4E20-8AD6-33A86B428F7E}" id="SubGoalResolutionAction"/>
             </Actions>
@@ -564,7 +567,7 @@
         <SimMission.PropertyTrigger InstanceId="{3017A67D-1E85-49B3-A299-72E3501259FA}" id="Prop_Trig_CoordinateLost">
             <Activated>False</Activated>
             <OneShot>False</OneShot>
-            <ReversePolishCondition>(A:Turn coordinator ball, position) 2 &gt;</ReversePolishCondition>
+            <ReversePolishCondition>(A:Turn coordinator ball, position) 0.1 &gt; (A:Turn coordinator ball, position) -0.1 &lt; or</ReversePolishCondition>
             <Actions>
                 <ObjectReference InstanceId="{1067B267-D7A6-4C95-ADC1-5383538E5960}" id="Deactivate_SGL_Coordinated"/>
             </Actions>
@@ -576,5 +579,8 @@
                 <ObjectReference InstanceId="{491922A9-3317-4AB5-ADB9-D865DC9FC23D}" id="SGL_KeepCoordinated"/>
             </SubGoals>
         </SimMission.SubGoalResolutionAction>
+        <SimMission.SubGoal InstanceId="{BAB6854E-A2CB-4088-86BA-DE3630F45E63}" id="SGL_KeepCoordinated_T2">
+            <Activated>False</Activated>
+        </SimMission.SubGoal>
     </WorldBase.Flight>
 </SimBase.Document>
