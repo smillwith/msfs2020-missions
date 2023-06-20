@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AssetPackage Version="0.1.0">
+	<ItemSettings>
+		<ContentType>MISSION</ContentType>
+		<Title>Cool Tutorial Mission Title</Title>
+		<Manufacturer/>
+		<Creator>Broken Eggs Productions</Creator>
+	</ItemSettings>
+	<Flags>
+		<VisibleInStore>false</VisibleInStore>
+		<CanBeReferenced>false</CanBeReferenced>
+	</Flags>
+	<AssetGroups>
+		<AssetGroup Name="ContentInfo">
+			<Type>ContentInfo</Type>
+			<Flags>
+				<FSXCompatibility>false</FSXCompatibility>
+			</Flags>
+			<AssetDir>PackageDefinitions\brokeneggs-tutorial-sample\ContentInfo</AssetDir>
+			<OutputDir>ContentInfo\brokeneggs-tutorial-sample</OutputDir>
+		</AssetGroup>
+		<AssetGroup Name="cooltutorial">
+			<Type>Mission</Type>
+			<Flags>
+				<FSXCompatibility>false</FSXCompatibility>
+			</Flags>
+			<AssetDir>PackageSources\Missions\tutorial-sample\cooltutorial\</AssetDir>
+			<OutputDir>Missions\tutorial-sample\cooltutorial\</OutputDir>
+		</AssetGroup>
+	</AssetGroups>
+</AssetPackage>
+
