@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<SimBase.Document Type="AceXML" version="1,0">
+    <Descr>AceXML Document</Descr>
+    <FlightPlan.FlightPlan>
+        <Title>Custom departure to Sangster Intl</Title>
+        <FPType>VFR</FPType>
+        <CruisingAlt>8500.000</CruisingAlt>
+        <DepartureID>CUSTD</DepartureID>
+        <DepartureLLA>N18° 39' 13.04",W77° 48' 42.28",+001500.00</DepartureLLA>
+        <DestinationID>MKJS</DestinationID>
+        <DestinationLLA>N18° 30' 13.00",W77° 54' 48.00",+000000.00</DestinationLLA>
+        <Descr>Custom departure to Sangster Intl</Descr>
+        <DepartureName>Custom departure</DepartureName>
+        <DestinationName>Sangster Intl</DestinationName>
+        <AppVersion>
+            <AppVersionMajor>11</AppVersionMajor>
+            <AppVersionBuild>282174</AppVersionBuild>
+        </AppVersion>
+        <ATCWaypoint id="CUSTD">
+            <ATCWaypointType>Intersection</ATCWaypointType>
+            <WorldPosition>N18° 39' 13.04",W77° 48' 42.28",+002150.00</WorldPosition>
+            <SpeedMaxFP>-1</SpeedMaxFP>
+            <ICAO>
+                <ICAOIdent>CUSTD</ICAOIdent>
+            </ICAO>
+        </ATCWaypoint>
+        <ATCWaypoint id="MKJS">
+            <ATCWaypointType>Airport</ATCWaypointType>
+            <WorldPosition>N18° 30' 13.00",W77° 54' 48.00",+000000.00</WorldPosition>
+            <SpeedMaxFP>-1</SpeedMaxFP>
+            <ICAO>
+                <ICAOIdent>MKJS</ICAOIdent>
+            </ICAO>
+        </ATCWaypoint>
+    </FlightPlan.FlightPlan>
+</SimBase.Document>

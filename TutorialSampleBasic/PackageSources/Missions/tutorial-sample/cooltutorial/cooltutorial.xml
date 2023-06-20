@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<SimBase.Document Type="MissionFile" version="1,0">
+    <Title>Mission_Template</Title>
+    <WorldBase.Flight>
+        <SimMission.Tutorial InstanceId="{123EA313-8C48-4DFE-98FC-6225DF462B7D}" id="tutorial1">
+            <Descr>Tutorial Mission</Descr>
+            <SuccessText>Mission Success</SuccessText>
+            <FailureText>Mission Failed</FailureText>
+            <AbortedText>Mission aborted</AbortedText>
+        </SimMission.Tutorial>
+    </WorldBase.Flight>
+</SimBase.Document>
