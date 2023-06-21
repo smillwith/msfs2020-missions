@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<SimBase.Document Type="MissionFile" version="1,0">
+    <Title>Mission_Template</Title>
+    <WorldBase.Flight>
+        <SimMission.OnSpawnTrigger InstanceId="{F21FCD8A-2E40-4A13-9F92-4E187C2596C8}">
+            <Descr>OnSpawnTrigger</Descr>
+            <Actions>
+                <ObjectReference id="PreloadRTC for FirstFlightState" InstanceId="{A4199BC5-FD23-4644-A873-2A83DF26F688}"/>
+            </Actions>
+        </SimMission.OnSpawnTrigger>
+        <SimMission.RTCLocationsPreloadAction InstanceId="{A4199BC5-FD23-4644-A873-2A83DF26F688}">
+            <Descr>PreloadRTC for FirstFlightState</Descr>
+            <UseFirstFlightState>True</UseFirstFlightState>
+        </SimMission.RTCLocationsPreloadAction>
+        <SimMission.OnEndLoadingTrigger InstanceId="{5DB848F6-C5A5-426A-9718-CB09EA4380D8}">
+            <Descr>Start Flow States</Descr>
+            <FullLoadingActions>
+                <ObjectReference InstanceId="{7950AF54-C4C3-45F0-97B8-8873A47A7B4C}" id="Intro Flowstate"/>
+            </FullLoadingActions>
+            <RestartActions>
+                <ObjectReference InstanceId="{7950AF54-C4C3-45F0-97B8-8873A47A7B4C}" id="Intro Flowstate"/>
+            </RestartActions>
+        </SimMission.OnEndLoadingTrigger>
+        <SimMission.FlowStateAction InstanceId="{7950AF54-C4C3-45F0-97B8-8873A47A7B4C}">
+            <FlowStateName>FLIGHT_RUNWAY</FlowStateName>
+            <FromSpawn>True</FromSpawn>
+            <IsFirstStateInTimeline>True</IsFirstStateInTimeline>
+            <TeleportActions>
+                <ObjectReference InstanceId="{B7F449AC-8251-4C89-B2CF-22D17546DA2A}" id="WiseAFSSet"/>
+                <ObjectReference InstanceId="{4C2FC8BC-B538-497A-9AFC-52B0B22326C2}" id="SetWwiseState_MFS_RTC_INTRO"/>
+                <ObjectReference id="RTC_Ground_Airport_Aircraft_Intro" InstanceId="{306B2AE4-06BA-48C3-93A0-BD5569E6EF5B}"/>
+            </TeleportActions>
+            <TeleportFlowEvents>
+                <FlowEvent id="ATC_STOP"/>
+                <FlowEvent id="PAUSE_SIM"/>
+                <FlowEvent id="SHOW_MISSION_STARTUP"/>
+            </TeleportFlowEvents>
+            <StartFlowEvents>
+                <FlowEvent id="ATC_RESUME"/>
+                <FlowEvent id="UNPAUSE_SIM"/>
+                <FlowEvent id="PANEL_OBJECTIVES_FORCE_SHOW"/>
+                <FlowEvent id="PANEL_ATC_FORCE_HIDE"/>
+                <FlowEvent id="PANEL_CHECKLIST_FORCE_HIDE"/>
+            </StartFlowEvents>
+            <StartActions>
+                <ObjectReference InstanceId="{5453DE6A-C681-46BB-A988-C7573935BD0D}" id="WWiseRTCState_NON_RTC"/>
+                <ObjectReference InstanceId="{9638E9E3-19D6-4151-B2D3-960C539FAD2E}" id="Activate_Timer-Intro"/>
+            </StartActions>
+            <ObjectReference>
+            </ObjectReference>
+        </SimMission.FlowStateAction>
+        <SimMission.FlowStateWise InstanceId="{B7F449AC-8251-4C89-B2CF-22D17546DA2A}">
+            <Descr>WiseAFSSet</Descr>
+            <GroupName>ACTIVITIES_FLOW_STATE</GroupName>
+            <ElementName>FREEFLIGHT</ElementName>
+        </SimMission.FlowStateWise>
+        <SimMission.FlowStateWise InstanceId="{4C2FC8BC-B538-497A-9AFC-52B0B22326C2}">
+            <Descr>SetWwiseState_MFS_RTC_INTRO</Descr>
+            <GroupName>MISSION_FLOW_STATE</GroupName>
+            <ElementName>RTC_INTRO</ElementName>
+        </SimMission.FlowStateWise>
+        <SimMission.FlowStateWise InstanceId="{5453DE6A-C681-46BB-A988-C7573935BD0D}">
+            <Descr>WWiseRTCState_NON_RTC</Descr>
+            <GroupName>GAME_RTC_STATE</GroupName>
+            <ElementName>NON_RTC</ElementName>
+        </SimMission.FlowStateWise>
+        <SimMission.Tutorial InstanceId="{123EA313-8C48-4DFE-98FC-6225DF462B7D}" id="tutorial1">
+            <Descr>C-172 Emergency Mission</Descr>
+            <SuccessText>Mission Success</SuccessText>
+            <FailureText>Mission Failed</FailureText>
+            <AbortedText>Mission aborted</AbortedText>
+            <Objectives>
+                <Objective id="OBJ_EndMission" UniqueRefId="{6619808B-9E6F-4464-B9D6-1E926712888E}">
+                    <Descr>Enjoy your flight</Descr>
+                    <SuccessText>Success</SuccessText>
+                    <Steps>
+                        <Step UniqueRefId="{F1225E1D-83E8-489E-9688-C498C880F99E}" id="ST_Takeoff">
+                            <Descr>Takeoff and follow GPS Guidance</Descr>
+                        </Step>
+                    </Steps>
+                </Objective>
+                <Objective UniqueRefId="{3D862F73-79E5-4BF4-BC3C-752F2668AA86}" id="OBJ_LandSafely">
+                    <Descr>Land Safely</Descr>
+                    <Steps>
+                        <Step UniqueRefId="{BB98610D-0963-461E-A234-A9D644699032}" id="ST_LandWhenAble">
+                            <Descr>Land at your discretion</Descr>
+                        </Step>
+                    </Steps>
+                </Objective>
+            </Objectives>
+            <CrashActions>
+                <ObjectReference InstanceId="{9EFDF1A6-8E6E-42B9-919A-2F439C91E52D}" id="GoalResolutionAction"/>
+            </CrashActions>
+        </SimMission.Tutorial>
+        <SimMission.Goal InstanceId="{6619808B-9E6F-4464-B9D6-1E926712888E}" id="GL_EndMission"/>
+        <SimMission.ObjectActivationAction InstanceId="{9638E9E3-19D6-4151-B2D3-960C539FAD2E}" id="Activate_Timer-Intro">
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{440547FF-9548-4D21-AC2A-4BD1075439A0}" id="Timer_Intro"/>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.TimerTrigger InstanceId="{440547FF-9548-4D21-AC2A-4BD1075439A0}" id="Timer_Intro">
+            <StopTime>3.000</StopTime>
+            <Activated>False</Activated>
+            <Actions>
+                <ObjectReference InstanceId="{4D91406B-BD33-4A1C-8F1E-3D38EAED8640}" id="Activate_PropTrig-80kts"/>
+            </Actions>
+        </SimMission.TimerTrigger>
+        <SimEdition.CommentNode InstanceId="{7374B52C-3B16-4DF9-9068-FDE68E4C8D9C}" id="Before mission start">
+            <NodeColor>194,239,183,255</NodeColor>
+        </SimEdition.CommentNode>
+        <SimEdition.CommentNode InstanceId="{050470C4-99E8-4DD6-848D-997D18FBDC3F}" id="Mission objects">
+            <NodeColor>194,183,239,255</NodeColor>
+        </SimEdition.CommentNode>
+        <SimMission.SubGoal InstanceId="{F1225E1D-83E8-489E-9688-C498C880F99E}" id="SGL_Takeoff"/>
+        <SimMission.PropertyTrigger InstanceId="{53057723-EE5A-4D84-820C-7E5CC204A5C3}" id="PropTrig_80Kts">
+            <ReversePolishCondition>(A:AIRSPEED INDICATED, knots) 80 &gt;=</ReversePolishCondition>
+            <Activated>False</Activated>
+            <Actions>
+                <ObjectReference InstanceId="{68BD8A5B-4B62-46C8-AB58-32D8D7270560}" id="Activate_Trig_Landed"/>
+                <ObjectReference InstanceId="{686926FA-479C-4C8F-A30E-E479DE2B4DF2}" id="Randomizer_SelectError"/>
+            </Actions>
+        </SimMission.PropertyTrigger>
+        <SimMission.ObjectActivationAction InstanceId="{4D91406B-BD33-4A1C-8F1E-3D38EAED8640}" id="Activate_PropTrig-80kts">
+            <Immediate>False</Immediate>
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{53057723-EE5A-4D84-820C-7E5CC204A5C3}" id="PropTrig_80Kts"/>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.GoalResolutionAction InstanceId="{9EFDF1A6-8E6E-42B9-919A-2F439C91E52D}" id="Fail_Goals">
+            <GoalResolution>failed</GoalResolution>
+            <Goals>
+                <ObjectReference InstanceId="{6619808B-9E6F-4464-B9D6-1E926712888E}" id="GL_EndMission"/>
+                <ObjectReference InstanceId="{3D862F73-79E5-4BF4-BC3C-752F2668AA86}" id="GL_LandSafely"/>
+            </Goals>
+        </SimMission.GoalResolutionAction>
+        <SimMission.GoalResolutionAction InstanceId="{FE96AA9D-FB5E-440D-AAEF-1A06802345E4}" id="Resolve_GL_LandSafely">
+            <Descr>Landed Safely</Descr>
+            <Goals>
+                <ObjectReference InstanceId="{3D862F73-79E5-4BF4-BC3C-752F2668AA86}" id="GL_LandSafely"/>
+            </Goals>
+        </SimMission.GoalResolutionAction>
+        <SimMission.Goal InstanceId="{3D862F73-79E5-4BF4-BC3C-752F2668AA86}" id="GL_LandSafely">
+            <Activated>False</Activated>
+        </SimMission.Goal>
+        <SimMission.SubGoal InstanceId="{BB98610D-0963-461E-A234-A9D644699032}" id="SGL_LandAtDiscretion">
+            <Activated>False</Activated>
+        </SimMission.SubGoal>
+        <SimMission.AirportLandingTrigger InstanceId="{2E4BECEF-6FCE-49AA-8894-EB5C268AB2FD}" id="Trig_AirportLanding">
+            <Activated>False</Activated>
+            <AirportIdent>KSBP</AirportIdent>
+            <AirportIdent>KPRB</AirportIdent>
+            <Actions>
+                <ObjectReference InstanceId="{FE96AA9D-FB5E-440D-AAEF-1A06802345E4}" id="Resolve_GL_LandSafely"/>
+            </Actions>
+        </SimMission.AirportLandingTrigger>
+        <SimMission.FailureAction InstanceId="{5E7BC5E4-5BC2-4410-A638-C9DB8179AF0B}" id="Failure_Engine_Main"/>
+        <SimMission.TimerTrigger InstanceId="{52EE7875-026A-4C8B-AC40-B5289BEBF504}" id="Timer_Trig_ActivateFailureMIssion">
+            <StopTime>2.000</StopTime>
+            <Activated>False</Activated>
+            <Actions>
+                <ObjectReference InstanceId="{0A8D268B-C1C5-42E7-9CCE-614CF7ECF1ED}" id="Activate_Engine_Failure"/>
+                <ObjectReference InstanceId="{EA6E9DE2-6655-4E49-B465-14CD4B32C366}" id="Activate_Timer_StartEngineFailureMission"/>
+                <ObjectReference InstanceId="{FC7931F5-D30B-467A-874C-A97418FEA543}" id="Complete_GL_EnjoyFlight"/>
+            </Actions>
+        </SimMission.TimerTrigger>
+        <SimMission.ObjectActivationAction InstanceId="{35F6BCD6-76E2-42F3-AAA6-1AD0C8A9C822}" id="Activate_Trig_EngineFailure">
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{52EE7875-026A-4C8B-AC40-B5289BEBF504}" id="TimerTrigger"/>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.ObjectActivationAction InstanceId="{0A8D268B-C1C5-42E7-9CCE-614CF7ECF1ED}" id="Activate_Engine_Failure">
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{5E7BC5E4-5BC2-4410-A638-C9DB8179AF0B}" id="Failure_Engine_Main"/>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.RandomAction InstanceId="{686926FA-479C-4C8F-A30E-E479DE2B4DF2}" id="Randomizer_SelectError">
+            <Actions>
+                <ObjectReference InstanceId="{321ECB85-3411-4A6F-A981-69D8F3ECE5D1}" id="ObjectActivationAction"/>
+                <ObjectReference InstanceId="{35F6BCD6-76E2-42F3-AAA6-1AD0C8A9C822}" id="Activate_Trig_EngineFailure"/>
+                <ObjectReference InstanceId="{980C6839-E30D-432C-80D1-419A357EF57F}" id="Activate_Timer_BeforePitotFailure"/>
+            </Actions>
+        </SimMission.RandomAction>
+        <SimMission.ObjectActivationAction InstanceId="{EA6E9DE2-6655-4E49-B465-14CD4B32C366}" id="Activate_Timer_StartEngineFailureMission">
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{8E085D5E-44B3-46B8-B1E2-4B9DEFA5938F}" id="Prop_Trig_StartEngineFailure"/>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.ObjectActivationAction InstanceId="{29892FFD-F75B-483D-98AC-EF0EDCFB68A7}" id="Activate_GL_Land">
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{3D862F73-79E5-4BF4-BC3C-752F2668AA86}" id="GL_LandSafely"/>
+                <ObjectReference InstanceId="{BB98610D-0963-461E-A234-A9D644699032}" id="SGL_LandAtDiscretion"/>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.TimerTrigger InstanceId="{8E085D5E-44B3-46B8-B1E2-4B9DEFA5938F}" id="Prop_Trig_Start_Post_EngineFailure">
+            <StartTime>3.000</StartTime>
+            <Activated>False</Activated>
+            <Actions>
+                <ObjectReference InstanceId="{29892FFD-F75B-483D-98AC-EF0EDCFB68A7}" id="Activate_GL_Land"/>
+            </Actions>
+        </SimMission.TimerTrigger>
+        <SimMission.GoalResolutionAction InstanceId="{FC7931F5-D30B-467A-874C-A97418FEA543}" id="Complete_GL_EnjoyFlight">
+            <Goals>
+                <ObjectReference InstanceId="{6619808B-9E6F-4464-B9D6-1E926712888E}" id="GL_EndMission"/>
+            </Goals>
+        </SimMission.GoalResolutionAction>
+        <SimMission.ObjectActivationAction InstanceId="{68BD8A5B-4B62-46C8-AB58-32D8D7270560}" id="Activate_Trig_Landed">
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{2E4BECEF-6FCE-49AA-8894-EB5C268AB2FD}" id="Trig_AirportLanding"/>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.ObjectActivationAction InstanceId="{321ECB85-3411-4A6F-A981-69D8F3ECE5D1}" id="Activate_Trig_VacFailure">
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{B2B27F3A-000B-4F6C-9026-61F3DA44EAC1}" id="Timer_Pre_Vac_Failure"/>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.TimerTrigger InstanceId="{B2B27F3A-000B-4F6C-9026-61F3DA44EAC1}" id="Timer_Pre_Vac_Failure">
+            <StopTime>15.000</StopTime>
+            <Activated>False</Activated>
+            <Actions>
+                <ObjectReference InstanceId="{90EA6A87-DFF9-40A7-895B-FDC5990B4B66}" id="Activate_Vacuum_Failure"/>
+                <ObjectReference InstanceId="{FC7931F5-D30B-467A-874C-A97418FEA543}" id="Complete_GL_EnjoyFlight"/>
+            </Actions>
+        </SimMission.TimerTrigger>
+        <SimMission.ObjectActivationAction InstanceId="{90EA6A87-DFF9-40A7-895B-FDC5990B4B66}" id="Activate_Vacuum_Failure">
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{7BC11567-1995-414B-80DF-104A24377235}" id="FailureAction"/>
+                <ObjectReference InstanceId="{1204065A-F62F-464C-8507-7152A8B29319}" id="ObjectActivationAction2"/>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.FailureAction InstanceId="{7BC11567-1995-414B-80DF-104A24377235}" id="Failure_Vacuum">
+            <System>VacuumSystem</System>
+        </SimMission.FailureAction>
+        <SimMission.ObjectActivationAction InstanceId="{1204065A-F62F-464C-8507-7152A8B29319}" id="Activate_GL_Land">
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{3D862F73-79E5-4BF4-BC3C-752F2668AA86}" id="GL_LandSafely"/>
+                <ObjectReference InstanceId="{BB98610D-0963-461E-A234-A9D644699032}" id="SGL_LandAtDiscretion"/>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.FailureAction InstanceId="{A700E43D-BF01-44B1-82F7-297027D8D799}" id="Failure_Pitot">
+            <System>Pitot</System>
+        </SimMission.FailureAction>
+        <SimMission.PropertyTrigger InstanceId="{DC2FD85F-CD21-4AD3-93B2-71CA2CF668D0}" id="Trigger_Landed"/>
+        <SimMission.ObjectActivationAction InstanceId="{E0C5E8C3-9395-4F6E-B350-1AC06027C38B}" id="Activate_VacuumFailure">
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{A700E43D-BF01-44B1-82F7-297027D8D799}" id="Failure_Pitot"/>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.TimerTrigger InstanceId="{61D22D0B-7453-49E6-91FD-14D5258F4885}" id="Timer_BeforePitotFailure">
+            <StopTime>18.000</StopTime>
+            <Activated>False</Activated>
+            <Actions>
+                <ObjectReference InstanceId="{E0C5E8C3-9395-4F6E-B350-1AC06027C38B}" id="Activate_VacuumFailure"/>
+                <ObjectReference InstanceId="{FC7931F5-D30B-467A-874C-A97418FEA543}" id="Complete_GL_EnjoyFlight"/>
+                <ObjectReference InstanceId="{87506450-86C2-4348-A240-737BD075D319}" id="Activate_Trig_Timer_PitotFailure"/>
+            </Actions>
+        </SimMission.TimerTrigger>
+        <SimMission.ObjectActivationAction InstanceId="{980C6839-E30D-432C-80D1-419A357EF57F}" id="Activate_Timer_BeforePitotFailure">
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{61D22D0B-7453-49E6-91FD-14D5258F4885}" id="Timer_BeforePitotFailure"/>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimEdition.CommentNode InstanceId="{379CE9EF-278A-45BE-A813-B6958C00FEDB}" id="Comment_Shared"/>
+        <SimMission.ObjectActivationAction InstanceId="{87506450-86C2-4348-A240-737BD075D319}" id="Activate_Trig_Timer_PitotFailure">
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{AAA73D08-7564-4F76-AD55-186BF4F74D2F}" id="TimerTrigger"/>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.TimerTrigger InstanceId="{AAA73D08-7564-4F76-AD55-186BF4F74D2F}" id="Trig_Timer_AfterPitotFailure">
+            <StopTime>3.000</StopTime>
+            <Actions>
+                <ObjectReference InstanceId="{29892FFD-F75B-483D-98AC-EF0EDCFB68A7}" id="Activate_GL_Land"/>
+            </Actions>
+        </SimMission.TimerTrigger>
+    </WorldBase.Flight>
+</SimBase.Document>

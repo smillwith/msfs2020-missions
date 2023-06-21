@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<SimBase.Document Type="AceXML" version="1,0">
+    <Descr>AceXML Document</Descr>
+    <FlightPlan.FlightPlan>
+        <Title>San Luis County Rgnl to Paso Robles Muni</Title>
+        <FPType>VFR</FPType>
+        <CruisingAlt>3200.000</CruisingAlt>
+        <DepartureID>KSBP</DepartureID>
+        <DepartureLLA>N35° 14' 14.20",W120° 38' 33.40",+000182.75</DepartureLLA>
+        <DestinationID>KPRB</DestinationID>
+        <DestinationLLA>N35° 40' 22.40",W120° 37' 37.50",+000816.75</DestinationLLA>
+        <Descr>San Luis County Rgnl to Paso Robles Muni</Descr>
+        <DeparturePosition>29</DeparturePosition>
+        <DepartureName>San Luis County Rgnl</DepartureName>
+        <DestinationName>Paso Robles Muni</DestinationName>
+        <AppVersion>
+            <AppVersionMajor>11</AppVersionMajor>
+            <AppVersionBuild>282174</AppVersionBuild>
+        </AppVersion>
+        <ATCWaypoint id="KSBP">
+            <ATCWaypointType>Airport</ATCWaypointType>
+            <WorldPosition>N35° 14' 14.20",W120° 38' 33.40",+000182.75</WorldPosition>
+            <SpeedMaxFP>-1</SpeedMaxFP>
+            <ICAO>
+                <ICAOIdent>KSBP</ICAOIdent>
+            </ICAO>
+        </ATCWaypoint>
+        <ATCWaypoint id="TIMECLIMB">
+            <ATCWaypointType>User</ATCWaypointType>
+            <WorldPosition>N35° 15' 42.90",W120° 41' 3.22",+000768.00</WorldPosition>
+            <SpeedMaxFP>-1</SpeedMaxFP>
+        </ATCWaypoint>
+        <ATCWaypoint id="Custom">
+            <ATCWaypointType>User</ATCWaypointType>
+            <WorldPosition>N35° 17' 22.84",W120° 44' 7.40",+001350.00</WorldPosition>
+            <SpeedMaxFP>-1</SpeedMaxFP>
+        </ATCWaypoint>
+        <ATCWaypoint id="TIMECRUIS">
+            <ATCWaypointType>User</ATCWaypointType>
+            <WorldPosition>N35° 24' 54.82",W120° 37' 10.22",+003200.00</WorldPosition>
+            <SpeedMaxFP>-1</SpeedMaxFP>
+        </ATCWaypoint>
+        <ATCWaypoint id="TIMEDSCNT">
+            <ATCWaypointType>User</ATCWaypointType>
+            <WorldPosition>N35° 28' 53.48",W120° 33' 29.26",+003200.00</WorldPosition>
+            <SpeedMaxFP>-1</SpeedMaxFP>
+        </ATCWaypoint>
+        <ATCWaypoint id="Custom">
+            <ATCWaypointType>User</ATCWaypointType>
+            <WorldPosition>N35° 31' 7.17",W120° 31' 25.25",+003000.00</WorldPosition>
+            <SpeedMaxFP>-1</SpeedMaxFP>
+        </ATCWaypoint>
+        <ATCWaypoint id="TIMEAPPROACH">
+            <ATCWaypointType>User</ATCWaypointType>
+            <WorldPosition>N35° 37' 37.39",W120° 34' 53.93",+001550.00</WorldPosition>
+            <SpeedMaxFP>-1</SpeedMaxFP>
+        </ATCWaypoint>
+        <ATCWaypoint id="KPRB">
+            <ATCWaypointType>Airport</ATCWaypointType>
+            <WorldPosition>N35° 40' 22.40",W120° 37' 37.50",+000816.75</WorldPosition>
+            <SpeedMaxFP>-1</SpeedMaxFP>
+            <ICAO>
+                <ICAOIdent>KPRB</ICAOIdent>
+            </ICAO>
+        </ATCWaypoint>
+    </FlightPlan.FlightPlan>
+</SimBase.Document>
