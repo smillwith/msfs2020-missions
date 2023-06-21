@@ -79,7 +79,7 @@
                             <Descr>Listen to the Introduction</Descr>
                         </Step>
                         <Step UniqueRefId="{BA614806-CFE8-47F9-9A99-025A5B66AB12}" id="ST_Maintain3500">
-                            <Descr>Maintain 3,500 ft and Heading 100.</Descr>
+                            <Descr>Maintain 3,500 ft and Heading 75</Descr>
                         </Step>
                         <Step UniqueRefId="{E27373CB-F885-4DFC-8A63-2CAD87BB7C1C}" id="ST_IncreaseThrottleFull">
                             <Descr>Increase Throttle to Full</Descr>
@@ -106,11 +106,28 @@
                         </Step>
                     </Steps>
                 </Objective>
+                <Objective UniqueRefId="{9173FB4F-91F6-4DD2-A786-5C528B6B708B}" id="OBJ_Cruise">
+                    <Descr>Maintain Heading and Altitude</Descr>
+                    <Steps>
+                        <Step UniqueRefId="{BC8FF90A-6A29-4BF8-A5A5-A7ACE020792A}" id="ST_MaintainAlt6000">
+                            <Descr>Maintain Altitude</Descr>
+                        </Step>
+                        <Step UniqueRefId="{91A61DFF-AF47-450F-83C7-D43665D8CA37}" id="ST_MaintainHeading">
+                            <Descr>Maintain Heading 275</Descr>
+                        </Step>
+                    </Steps>
+                </Objective>
                 <Objective UniqueRefId="{06A79CF2-17BD-4B87-83D7-8C5E3C6A3052}" id="OBJ_ApproachAndLand">
                     <Descr>Approach and Land</Descr>
                     <Steps>
+                        <Step UniqueRefId="{1E9EE6DD-9941-4C5A-93E1-A7C00E6D7709}" id="ST_Heading275">
+                            <Descr>Turn Heading 275</Descr>
+                        </Step>
+                        <Step UniqueRefId="{43C2BA3D-FE94-4842-A45F-54F68668DB3A}" id="ST_DescendTo2200">
+                            <Descr>Descend to 2,200 ft</Descr>
+                        </Step>
                         <Step UniqueRefId="{34E87AC3-CE21-448A-B099-5CB43474339A}" id="ST_FullMixture">
-                            <Descr>Set Miture back to Full</Descr>
+                            <Descr>Set Mixture back to Full</Descr>
                         </Step>
                     </Steps>
                 </Objective>
@@ -147,7 +164,7 @@
         </SimMission.SubGoal>
         <SimMission.InstructorDialogAction InstanceId="{01C4E901-3582-4453-A381-975504E4278A}" id="Dialog_MixtureIntro1">
             <EndActionsDelaySeconds>3.000</EndActionsDelaySeconds>
-            <SoundFileName>MixtureIntro1.wav</SoundFileName>
+            <SoundFileName>1-MixtureIntro.wav</SoundFileName>
             <EndActions>
                 <ObjectReference InstanceId="{8276D7A8-C490-4EC0-BCF9-B5D42BD81373}" id="Activate_SGL_MaintainAlt"/>
                 <ObjectReference InstanceId="{221C7A39-DA04-46BC-B5F4-8FA7C9EDF8DD}" id="Dialog_MixtureIntro2"/>
@@ -167,7 +184,7 @@
         <SimMission.InstructorDialogAction InstanceId="{221C7A39-DA04-46BC-B5F4-8FA7C9EDF8DD}" id="Dialog_MixtureIntro2">
             <DelaySeconds>2.000</DelaySeconds>
             <EndActionsDelaySeconds>3.000</EndActionsDelaySeconds>
-            <SoundFileName>MixtureIntro2.wav</SoundFileName>
+            <SoundFileName>2-MixtureIntro2.wav</SoundFileName>
             <EndActions>
                 <ObjectReference InstanceId="{B7753170-FC84-47FE-B791-364B7555CA05}" id="Complete_SGL_ListenToIntro1"/>
                 <ObjectReference InstanceId="{62BE2A4D-ABD7-4292-B04E-D23B5D409A71}" id="Dialog_MixturePart3"/>
@@ -192,7 +209,7 @@
         <SimMission.PropertyTrigger InstanceId="{1EDEE717-D72B-4A5C-AD3F-12A54C0CB144}" id="Prop_Trig_FullThrottle">
             <Activated>False</Activated>
             <ConditionTimer>3.000</ConditionTimer>
-            <ReversePolishCondition>(A:GENERAL ENG RPM:1, rpm) 2660 &gt;</ReversePolishCondition>
+            <ReversePolishCondition>(A:GENERAL ENG RPM:1, rpm) 2650 &gt;=</ReversePolishCondition>
             <Actions>
                 <ObjectReference InstanceId="{750FDB05-6120-497E-BDB4-39F8649C5E0B}" id="Complete_SGL_IncreaseThrottle"/>
                 <ObjectReference InstanceId="{ADE53F01-DCA1-48D1-8FBE-EAA7A805311C}" id="Dialog_NoteRPM"/>
@@ -200,14 +217,14 @@
         </SimMission.PropertyTrigger>
         <SimMission.InstructorDialogAction InstanceId="{62BE2A4D-ABD7-4292-B04E-D23B5D409A71}" id="Dialog_MixturePart3">
             <DelaySeconds>3.000</DelaySeconds>
-            <SoundFileName>IncreaseThrottle.wav</SoundFileName>
+            <SoundFileName>3-IncreaseThrottle.wav</SoundFileName>
             <EndActions>
                 <ObjectReference InstanceId="{CA79FAB9-9B6E-4498-8E47-BD02CA9BD680}" id="Activate_SGL_IncreaseThrottle"/>
             </EndActions>
         </SimMission.InstructorDialogAction>
         <SimMission.InstructorDialogAction InstanceId="{30FC3150-A9EC-41B6-97F9-8A592D407CE0}" id="Dialog_ClimbTo6000">
             <DelaySeconds>3.000</DelaySeconds>
-            <SoundFileName>BeginClimb6000.wav</SoundFileName>
+            <SoundFileName>4-ClimbTo6000.wav</SoundFileName>
             <EndActions>
                 <ObjectReference InstanceId="{E9392E58-7B25-4E83-8291-0611A0B53A83}" id="Activate_Prop_Trig_6000"/>
                 <ObjectReference InstanceId="{055F6F7C-B8A2-4409-84B8-54C3E1332C47}" id="Activate_SGL_Climb6000"/>
@@ -232,10 +249,11 @@
             </SubGoals>
         </SimMission.SubGoalResolutionAction>
         <SimMission.InstructorDialogAction InstanceId="{7D561BC3-F9E8-42E6-987B-441067CA389F}" id="Dialog_Reached6000">
-            <SoundFileName>ReachedTargetAltitude.wav</SoundFileName>
+            <SoundFileName>7-ReachedAltitude.wav</SoundFileName>
+            <DelaySeconds>3.000</DelaySeconds>
             <EndActions>
                 <ObjectReference InstanceId="{A2E03BD1-33D9-4797-A5FE-FA1200A52D0C}" id="Activate_GL_LeanForCruise"/>
-                <ObjectReference InstanceId="{023B54A9-16F7-4BA3-8AC1-8DEB30020793}" id="Dialog_ReduceRPM"/>
+                <ObjectReference InstanceId="{458DF850-97CF-4E7F-8902-C53E8210FD0A}" id="Dialog_AtAltitude"/>
             </EndActions>
         </SimMission.InstructorDialogAction>
         <SimMission.SubGoalResolutionAction InstanceId="{3A122F95-18A4-42A0-B7AB-780EC1087AEC}">
@@ -251,7 +269,10 @@
         </SimMission.SubGoalResolutionAction>
         <SimMission.InstructorDialogAction InstanceId="{9BF2C2C4-C191-4676-B1F8-A803C7966978}" id="Dialog_WhileClimbing">
             <DelaySeconds>40.000</DelaySeconds>
-            <SoundFileName>DuringClimb-Unfinished.wav</SoundFileName>
+            <SoundFileName>5-WhileClimbing.wav</SoundFileName>
+            <EndActions>
+                <ObjectReference InstanceId="{C757A733-127B-44B1-9345-C3BFDD0231B8}" id="Dialog_WhileClimbing2"/>
+            </EndActions>
         </SimMission.InstructorDialogAction>
         <SimMission.InstructorDialogAction InstanceId="{ADE53F01-DCA1-48D1-8FBE-EAA7A805311C}" id="Dialog_NoteRPM">
             <DelaySeconds>3.000</DelaySeconds>
@@ -295,7 +316,7 @@
         <SimMission.PropertyTrigger InstanceId="{6764D7F1-FDC7-4F68-83AB-D6480328EF01}" id="Prop_Trig_CHT_Temp">
             <Activated>False</Activated>
             <ConditionTimer>5.000</ConditionTimer>
-            <ReversePolishCondition>(A:ENG EXHAUST GAS TEMPERATURE:1, celsius) 715 &gt; (A:ENG EXHAUST GAS TEMPERATURE:1, celsius) 716 &lt; and</ReversePolishCondition>
+            <ReversePolishCondition>(A:ENG EXHAUST GAS TEMPERATURE:1, celsius) 715 &gt;= (A:ENG EXHAUST GAS TEMPERATURE:1, celsius) 735 &lt;= and</ReversePolishCondition>
             <Actions>
                 <ObjectReference InstanceId="{4A3D1D05-1D3C-4753-82EE-FF1B0370171E}" id="Dialog_LeanComplete"/>
             </Actions>
@@ -330,7 +351,7 @@
             </ObjectReferenceList>
         </SimMission.ObjectActivationAction>
         <SimMission.InstructorDialogAction InstanceId="{6C1690A6-3187-4F6E-8F03-13A345C53E54}" id="Dialog_BeginLeaning">
-            <SoundFileName>BeginLeaning2.wav</SoundFileName>
+            <SoundFileName>13-LeanForCruise2.wav</SoundFileName>
             <EndActions>
                 <ObjectReference InstanceId="{EBE673B1-AE4A-414E-AFA2-0F2E44D3B3BE}" id="Activate_SGL_LeanForOptimal"/>
                 <ObjectReference InstanceId="{6764D7F1-FDC7-4F68-83AB-D6480328EF01}" id="Prop_Trig_CHT_Temp"/>
@@ -339,7 +360,7 @@
         </SimMission.InstructorDialogAction>
         <SimMission.InstructorDialogAction InstanceId="{DC3BEB0C-ABA5-4E03-A0D8-A0335A14F8F1}" id="Dialog_StartToLean">
             <DelaySeconds>2.000</DelaySeconds>
-            <SoundFileName>BeginLeaning1.wav</SoundFileName>
+            <SoundFileName>12-LeanForCruise.wav</SoundFileName>
             <EndActionsDelaySeconds>3.000</EndActionsDelaySeconds>
             <EndActions>
                 <ObjectReference InstanceId="{6C1690A6-3187-4F6E-8F03-13A345C53E54}" id="Dialog_BeginLeaning"/>
@@ -347,7 +368,7 @@
         </SimMission.InstructorDialogAction>
         <SimMission.InstructorDialogAction InstanceId="{023B54A9-16F7-4BA3-8AC1-8DEB30020793}" id="Dialog_ReduceRPM">
             <DelaySeconds>3.000</DelaySeconds>
-            <SoundFileName>AdjustThrottle2200</SoundFileName>
+            <SoundFileName>9-ReduceThrottle.wav</SoundFileName>
             <EndActions>
                 <ObjectReference InstanceId="{AA9B73B4-F8A0-4A5A-B7C2-B11871C915B5}" id="Activate_SGL_ReduceRPM"/>
                 <ObjectReference InstanceId="{B47077BE-2DB2-4A59-8122-51D9D20CA030}" id="Activate_Prop_Trig_ThrottleDrop"/>
@@ -355,7 +376,7 @@
         </SimMission.InstructorDialogAction>
         <SimMission.InstructorDialogAction InstanceId="{60ADD339-D4E8-462F-A39F-2D9513874587}" id="Dialog_ConfigureMFD">
             <DelaySeconds>2.000</DelaySeconds>
-            <SoundFileName>ConfigureMFD1.wav</SoundFileName>
+            <SoundFileName>10-ConfigureMFD1.wav</SoundFileName>
             <EndActions>
                 <ObjectReference InstanceId="{E0BC5E63-9A39-4BE6-BF3C-0A6413940D21}" id="Activate_SGL_ConfigureMFD"/>
                 <ObjectReference InstanceId="{333F3664-95B9-4F5A-83F8-ABCD38F35312}" id="InstructorDialogAction"/>
@@ -373,21 +394,236 @@
             </ObjectReferenceList>
         </SimMission.ObjectActivationAction>
         <SimMission.InstructorDialogAction InstanceId="{77A740B6-E8FA-4BF3-987D-2FC6C1ADB2C4}" id="Dialog_BeingLeanFollowup">
-            <SoundFileName>LeaningFollowUp.wav</SoundFileName>
+            <SoundFileName>13-LeanForCruise2.wav</SoundFileName>
             <DelaySeconds>3.000</DelaySeconds>
         </SimMission.InstructorDialogAction>
         <SimMission.InstructorDialogAction InstanceId="{4A3D1D05-1D3C-4753-82EE-FF1B0370171E}" id="Dialog_LeanComplete">
-            <SoundFileName>LeanComplete.wav</SoundFileName>
+            <SoundFileName>14-LeanForCruiseComplete.wav</SoundFileName>
             <EndActions>
                 <ObjectReference InstanceId="{623233FB-4E7F-42CB-A1B0-B8AA129C31E3}" id="Complete_SGL_LeanForCruise"/>
+                <ObjectReference InstanceId="{B461F31D-1B59-4963-ABC9-B3B461169F50}" id="Activate_Timer_Start_Cruise"/>
             </EndActions>
         </SimMission.InstructorDialogAction>
         <SimMission.InstructorDialogAction InstanceId="{333F3664-95B9-4F5A-83F8-ABCD38F35312}" id="Dialog_ConfigureMFD2">
             <DelaySeconds>3.000</DelaySeconds>
-            <SoundFileName>ConfigureMFD2.wav</SoundFileName>
+            <SoundFileName>11-ConfigureMFD2.wav</SoundFileName>
             <EndActions>
                 <ObjectReference InstanceId="{DC3BEB0C-ABA5-4E03-A0D8-A0335A14F8F1}" id="Dialog_StartToLean"/>
             </EndActions>
+        </SimMission.InstructorDialogAction>
+        <SimMission.TimerTrigger InstanceId="{59774E25-0ADF-4C37-BB58-ECEA52C672BB}" id="Timer_Start_Cruise">
+            <StopTime>3.000</StopTime>
+            <Activated>False</Activated>
+            <Actions>
+                <ObjectReference InstanceId="{4E4A4AC1-C457-4B96-8488-9BBF94E4C75A}" id="Dialg_ StartOfCruise"/>
+                <ObjectReference InstanceId="{F6F45C66-2B3E-47F6-886D-1261821B7E3E}" id="Activate_GL_Cruise"/>
+            </Actions>
+        </SimMission.TimerTrigger>
+        <SimMission.ObjectActivationAction InstanceId="{B461F31D-1B59-4963-ABC9-B3B461169F50}" id="Activate_Timer_Start_Cruise">
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{59774E25-0ADF-4C37-BB58-ECEA52C672BB}" id="Timer_Start_Cruise"/>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.InstructorDialogAction InstanceId="{4E4A4AC1-C457-4B96-8488-9BBF94E4C75A}" id="Dialg_ StartOfCruise">
+            <Text> </Text>
+            <SoundFileName>15-MaintainCruise.wav</SoundFileName>
+            <EndActions>
+                <ObjectReference InstanceId="{2917773F-58DC-4295-A1D9-8891F7C64AAD}" id="Complete_GL_Cruise"/>
+                <ObjectReference InstanceId="{58923C55-C48C-4B55-AD77-F170B1C77FAE}" id="Activate_GL_ApproachAndLand"/>
+                <ObjectReference InstanceId="{607E2283-181B-4B99-ABEE-53CB6D08801F}" id="Dialog_TurnAround"/>
+            </EndActions>
+        </SimMission.InstructorDialogAction>
+        <SimMission.ObjectActivationAction InstanceId="{58923C55-C48C-4B55-AD77-F170B1C77FAE}" id="Activate_GL_ApproachAndLand">
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{06A79CF2-17BD-4B87-83D7-8C5E3C6A3052}" id="GL_ApproachAndLand"/>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.InstructorDialogAction InstanceId="{607E2283-181B-4B99-ABEE-53CB6D08801F}" id="Dialog_TurnAround">
+            <DelaySeconds>5.000</DelaySeconds>
+            <Text> </Text>
+            <SoundFileName>16-WhileCruising.wav</SoundFileName>
+            <EndActions>
+                <ObjectReference InstanceId="{D668D571-E52A-46E0-B4A9-9BE1C42E3851}" id="ObjectActivationAction"/>
+                <ObjectReference InstanceId="{E3EA4D05-75CF-4DD2-B33E-07BA76DF51FC}" id="Activate_Prop_Trig_Heading275"/>
+                <ObjectReference InstanceId="{FD4D04AB-6AC3-4D0D-8F72-C469DA4FAB59}" id="Activate_Trig_StartDescend"/>
+                <ObjectReference InstanceId="{7D96BD47-B024-425F-845D-D1C4D0146697}" id="InstructorDialogAction"/>
+            </EndActions>
+        </SimMission.InstructorDialogAction>
+        <SimMission.ObjectActivationAction InstanceId="{D668D571-E52A-46E0-B4A9-9BE1C42E3851}" id="Activate_SGL_Heading275">
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{1E9EE6DD-9941-4C5A-93E1-A7C00E6D7709}" id="SGL_Heading275"/>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.ObjectActivationAction InstanceId="{E3EA4D05-75CF-4DD2-B33E-07BA76DF51FC}" id="Activate_Prop_Trig_Heading275">
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{42894DB2-1C27-4C1F-9DA0-52488259BFE8}" id="Prop_Trig_TurnedHeading275"/>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.PropertyTrigger InstanceId="{42894DB2-1C27-4C1F-9DA0-52488259BFE8}" id="Prop_Trig_TurnedHeading275">
+            <ReversePolishCondition>(A:HEADING INDICATOR, degrees) 255 &gt; (A:HEADING INDICATOR, degrees) 285 &lt; and</ReversePolishCondition>
+            <Activated>False</Activated>
+            <Actions>
+                <ObjectReference InstanceId="{13F4C17A-2DDA-4F9C-AB0D-B493F749D237}" id="Trig_Timer_StartDescend"/>
+                <ObjectReference InstanceId="{FF1F97A2-C05E-4802-A49C-F9383776B42A}" id="Complete_SGL_Turn275"/>
+            </Actions>
+        </SimMission.PropertyTrigger>
+        <SimMission.InstructorDialogAction InstanceId="{233CF59F-4AFA-42D5-8B01-86DE55D5CB18}" id="Dialog_WhileDescending">
+            <SoundFileName>18-WhileDescending.wav</SoundFileName>
+        </SimMission.InstructorDialogAction>
+        <SimMission.TimerTrigger InstanceId="{13F4C17A-2DDA-4F9C-AB0D-B493F749D237}" id="Trig_Timer_StartDescend">
+            <StopTime>3.000</StopTime>
+            <Activated>False</Activated>
+            <Actions>
+                <ObjectReference InstanceId="{233CF59F-4AFA-42D5-8B01-86DE55D5CB18}" id="InstructorDialogAction"/>
+                <ObjectReference InstanceId="{751DE786-3C0C-4907-AB8A-1B2D68B89D78}" id="Activate_SGL_Descend2200"/>
+            </Actions>
+        </SimMission.TimerTrigger>
+        <SimMission.ObjectActivationAction InstanceId="{FD4D04AB-6AC3-4D0D-8F72-C469DA4FAB59}" id="Activate_Trig_StartDescend">
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{13F4C17A-2DDA-4F9C-AB0D-B493F749D237}" id="Trig_Timer_StartDescend"/>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.ObjectActivationAction InstanceId="{751DE786-3C0C-4907-AB8A-1B2D68B89D78}" id="Activate_SGL_Descend2200">
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{8C15E458-287C-4FE0-8065-8DC19E8BD032}" id="Prop_Trig_Reach2200"/>
+                <ObjectReference InstanceId="{43C2BA3D-FE94-4842-A45F-54F68668DB3A}" id="SGL_Descend2200"/>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.PropertyTrigger InstanceId="{8C15E458-287C-4FE0-8065-8DC19E8BD032}" id="Prop_Trig_Reach2200">
+            <Activated>False</Activated>
+            <ReversePolishCondition>(A:INDICATED ALTITUDE, feet) 2300 &lt; (A:INDICATED ALTITUDE, feet) 2100 &gt; and</ReversePolishCondition>
+            <Actions>
+                <ObjectReference InstanceId="{252789A4-1A17-4B9A-808C-16365A7900DA}" id="GoalResolutionAction"/>
+                <ObjectReference InstanceId="{A34A6084-9C3E-4FF4-A123-67F8FD7D648D}" id="Dialog_ReachedApproach"/>
+            </Actions>
+        </SimMission.PropertyTrigger>
+        <SimMission.GoalResolutionAction InstanceId="{252789A4-1A17-4B9A-808C-16365A7900DA}" id="Complete_SGL_Reach2200">
+            <Goals>
+                <ObjectReference InstanceId="{43C2BA3D-FE94-4842-A45F-54F68668DB3A}" id="SGL_Descend2200"/>
+            </Goals>
+        </SimMission.GoalResolutionAction>
+        <SimMission.InstructorDialogAction InstanceId="{935F9FDB-DEA6-4710-95A9-5D4C010D0EDF}" id="Dialog_MixtureBackToFull">
+            <DelaySeconds>4.000</DelaySeconds>
+            <Text> </Text>
+            <SoundFileName>20-LeanForApproach.wav</SoundFileName>
+        </SimMission.InstructorDialogAction>
+        <SimMission.PropertyTrigger InstanceId="{199395E0-AB4F-46BC-9118-D3A33BB5C990}" id="Prop_Trig_Mixture_BackToFull">
+            <Activated>False</Activated>
+            <ReversePolishCondition>GENERAL ENG MIXTURE LEVER POSITION:1) 98 &gt;</ReversePolishCondition>
+            <Actions>
+                <ObjectReference InstanceId="{5B36A577-BCA0-4F83-9BE0-BB9EF06011B8}" id="InstructorDialogAction"/>
+            </Actions>
+        </SimMission.PropertyTrigger>
+        <SimMission.ObjectActivationAction InstanceId="{699C78FB-61A5-427C-B928-7CF9497B3072}" id="Activate_Prpo_Trig_BackToFull">
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{199395E0-AB4F-46BC-9118-D3A33BB5C990}" id="Prop_Trig_Mixture_BackToFull"/>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.InstructorDialogAction InstanceId="{A34A6084-9C3E-4FF4-A123-67F8FD7D648D}" id="Dialog_ReachedApproach">
+            <DelaySeconds>4.000</DelaySeconds>
+            <Text> </Text>
+            <SoundFileName>19-ReachedPatternAltitude.wav</SoundFileName>
+            <EndActions>
+                <ObjectReference InstanceId="{699C78FB-61A5-427C-B928-7CF9497B3072}" id="Activate_Prpo_Trig_BackToFull"/>
+                <ObjectReference InstanceId="{663129A1-CB0F-4AFF-BF5E-7404CCF84E05}" id="Activate_SGL_ReturnMixture"/>
+                <ObjectReference InstanceId="{935F9FDB-DEA6-4710-95A9-5D4C010D0EDF}" id="Dialog_MixtureBackToFull"/>
+            </EndActions>
+        </SimMission.InstructorDialogAction>
+        <SimMission.InstructorDialogAction InstanceId="{5B36A577-BCA0-4F83-9BE0-BB9EF06011B8}" id="Dialog_ApproachComplete">
+            <Text> </Text>
+            <EndActions>
+                <ObjectReference InstanceId="{C3EB4E95-FC63-4712-8C52-06D11FEAADAF}" id="SubGoalResolutionAction"/>
+                <ObjectReference InstanceId="{E966AAA7-6A23-4EC5-A6A8-0E3DC083F2C0}" id="Complete_SGL_MaintainHeading"/>
+                <ObjectReference InstanceId="{4B4651E7-C8B4-4799-8E23-62FE71B6AE2B}" id="Activate_trig_final"/>
+            </EndActions>
+        </SimMission.InstructorDialogAction>
+        <SimMission.SubGoalResolutionAction InstanceId="{C3EB4E95-FC63-4712-8C52-06D11FEAADAF}" id="Complete_SGL_ReturnMixtureToFull">
+            <SubGoals>
+                <ObjectReference InstanceId="{34E87AC3-CE21-448A-B099-5CB43474339A}" id="SGL_ReturnMixture"/>
+            </SubGoals>
+        </SimMission.SubGoalResolutionAction>
+        <SimMission.SubGoal InstanceId="{1E9EE6DD-9941-4C5A-93E1-A7C00E6D7709}" id="SGL_Heading275">
+            <Activated>False</Activated>
+        </SimMission.SubGoal>
+        <SimMission.SubGoal InstanceId="{43C2BA3D-FE94-4842-A45F-54F68668DB3A}" id="SGL_Descend2200">
+            <Activated>False</Activated>
+        </SimMission.SubGoal>
+        <SimMission.Goal InstanceId="{9173FB4F-91F6-4DD2-A786-5C528B6B708B}" id="GL_Cruise">
+            <Activated>False</Activated>
+        </SimMission.Goal>
+        <SimMission.SubGoal InstanceId="{BC8FF90A-6A29-4BF8-A5A5-A7ACE020792A}" id="SGL_Maintain6000">
+            <Activated>False</Activated>
+        </SimMission.SubGoal>
+        <SimMission.SubGoal InstanceId="{91A61DFF-AF47-450F-83C7-D43665D8CA37}" id="SGL_MaintainHeading">
+            <Activated>False</Activated>
+        </SimMission.SubGoal>
+        <SimMission.ObjectActivationAction InstanceId="{663129A1-CB0F-4AFF-BF5E-7404CCF84E05}" id="Activate_SGL_ReturnMixture">
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{34E87AC3-CE21-448A-B099-5CB43474339A}" id="SGL_ReturnMixture"/>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.SubGoalResolutionAction InstanceId="{E966AAA7-6A23-4EC5-A6A8-0E3DC083F2C0}" id="Complete_SGL_MaintainHeading">
+            <StateChange>none</StateChange>
+            <SubGoals>
+                <ObjectReference InstanceId="{1E9EE6DD-9941-4C5A-93E1-A7C00E6D7709}" id="SGL_Heading275"/>
+            </SubGoals>
+        </SimMission.SubGoalResolutionAction>
+        <SimMission.GoalResolutionAction InstanceId="{F84D81F9-F9C1-4750-A8BB-E8AA6D841F57}" id="Complete_GL_ApprochAndLand">
+            <Goals>
+                <ObjectReference InstanceId="{06A79CF2-17BD-4B87-83D7-8C5E3C6A3052}" id="GL_ApproachAndLand"/>
+            </Goals>
+        </SimMission.GoalResolutionAction>
+        <SimMission.TimerTrigger InstanceId="{4AAEC956-21CF-4B20-8AA9-B6CE44B75647}" id="Timer_Trig_FinalEnding">
+            <StopTime>3.000</StopTime>
+            <Activated>False</Activated>
+            <Actions>
+                <ObjectReference InstanceId="{F84D81F9-F9C1-4750-A8BB-E8AA6D841F57}" id="GoalResolutionAction"/>
+                <ObjectReference InstanceId="{FEF7B9CA-499A-4A30-858A-7075DE463281}" id="Dialog_LessonComplete"/>
+            </Actions>
+        </SimMission.TimerTrigger>
+        <SimMission.ObjectActivationAction InstanceId="{4B4651E7-C8B4-4799-8E23-62FE71B6AE2B}" id="Activate_trig_final">
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{4AAEC956-21CF-4B20-8AA9-B6CE44B75647}" id="Timer_Trig_FinalEnding"/>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.SubGoalResolutionAction InstanceId="{FF1F97A2-C05E-4802-A49C-F9383776B42A}" id="Complete_SGL_Turn275">
+            <StateChange>none</StateChange>
+            <SubGoals>
+                <ObjectReference InstanceId="{1E9EE6DD-9941-4C5A-93E1-A7C00E6D7709}" id="SGL_Heading275"/>
+            </SubGoals>
+        </SimMission.SubGoalResolutionAction>
+        <SimMission.ObjectActivationAction InstanceId="{F6F45C66-2B3E-47F6-886D-1261821B7E3E}" id="Activate_GL_Cruise">
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{9173FB4F-91F6-4DD2-A786-5C528B6B708B}" id="GL_Cruise"/>
+                <ObjectReference InstanceId="{BC8FF90A-6A29-4BF8-A5A5-A7ACE020792A}" id="SGL_Maintain6000"/>
+                <ObjectReference InstanceId="{91A61DFF-AF47-450F-83C7-D43665D8CA37}" id="SGL_MaintainHeading"/>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.GoalResolutionAction InstanceId="{2917773F-58DC-4295-A1D9-8891F7C64AAD}" id="Complete_GL_Cruise">
+            <Goals>
+                <ObjectReference InstanceId="{9173FB4F-91F6-4DD2-A786-5C528B6B708B}" id="GL_Cruise"/>
+                <ObjectReference InstanceId="{BC8FF90A-6A29-4BF8-A5A5-A7ACE020792A}" id="SGL_Maintain6000"/>
+                <ObjectReference InstanceId="{91A61DFF-AF47-450F-83C7-D43665D8CA37}" id="SGL_MaintainHeading"/>
+            </Goals>
+        </SimMission.GoalResolutionAction>
+        <SimMission.InstructorDialogAction InstanceId="{C757A733-127B-44B1-9345-C3BFDD0231B8}" id="Dialog_WhileClimbing2">
+            <DelaySeconds>40.000</DelaySeconds>
+            <SoundFileName>6-WhileClimbing2.wav</SoundFileName>
+        </SimMission.InstructorDialogAction>
+        <SimMission.InstructorDialogAction InstanceId="{FEF7B9CA-499A-4A30-858A-7075DE463281}" id="Dialog_LessonComplete">
+            <DelaySeconds>2.000</DelaySeconds>
+            <SoundFileName>21-LessonComplete.wav</SoundFileName>
+        </SimMission.InstructorDialogAction>
+        <SimMission.InstructorDialogAction InstanceId="{458DF850-97CF-4E7F-8902-C53E8210FD0A}" id="Dialog_AtAltitude">
+            <DelaySeconds>3.000</DelaySeconds>
+            <SoundFileName>8-AtAltitude1.wav</SoundFileName>
+            <EndActions>
+                <ObjectReference InstanceId="{023B54A9-16F7-4BA3-8AC1-8DEB30020793}" id="Dialog_ReduceRPM"/>
+            </EndActions>
+        </SimMission.InstructorDialogAction>
+        <SimMission.InstructorDialogAction InstanceId="{7D96BD47-B024-425F-845D-D1C4D0146697}" id="Dialog_TurnAndDescend">
+            <DelaySeconds>4.000</DelaySeconds>
+            <SoundFileName>17-TurnAndDescend.wav</SoundFileName>
         </SimMission.InstructorDialogAction>
     </WorldBase.Flight>
 </SimBase.Document>

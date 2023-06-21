@@ -16,8 +16,8 @@
 			<Flags>
 				<FSXCompatibility>false</FSXCompatibility>
 			</Flags>
-			<AssetDir>PackageDefinitions\brokeneggs-tutorial-sample\ContentInfo</AssetDir>
-			<OutputDir>ContentInfo\brokeneggs-tutorial-sample</OutputDir>
+			<AssetDir>PackageDefinitions\brokeneggs-tutorial-sample\ContentInfo\</AssetDir>
+			<OutputDir>ContentInfo\brokeneggs-tutorial-sample\</OutputDir>
 		</AssetGroup>
 		<AssetGroup Name="cooltutorial">
 			<Type>Mission</Type>

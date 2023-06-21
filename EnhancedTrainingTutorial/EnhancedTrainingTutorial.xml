@@ -7,6 +7,7 @@
 		<Package>PackageDefinitions\brokeneggs-enhanced-training-one.xml</Package>
 		<Package>PackageDefinitions\brokeneggs-fuel-mixture-intro.xml</Package>
 		<Package>PackageDefinitions\brokeneggs-lowfuellanding.xml</Package>
+		<Package>PackageDefinitions\brokeneggs-random-emergency-c172.xml</Package>
 		<Package>PackageDefinitions\brokeneggs-reference-maneuvers.xml</Package>
 		<Package>PackageDefinitions\brokeneggs-slowspeed-maneuevers.xml</Package>
 	</Packages>

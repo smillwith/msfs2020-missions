@@ -1,13 +1,112 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 
 <SimBase.Document Type="MissionFile" version="1,0">
     <Title>Mission_Template</Title>
     <WorldBase.Flight>
+        <SimMission.OnEndLoadingTrigger InstanceId="{7D2AA4FF-1FF8-4799-A4B4-EB67B29A66E4}">
+            <Descr>Start Flow States</Descr>
+            <FullLoadingActions>
+                <ObjectReference InstanceId="{080D6F47-6EAA-46E4-A70C-E7D3737B4552}" id="Intro Flowstate"/>
+            </FullLoadingActions>
+            <RestartActions>
+                <ObjectReference InstanceId="{080D6F47-6EAA-46E4-A70C-E7D3737B4552}" id="Intro Flowstate"/>
+            </RestartActions>
+        </SimMission.OnEndLoadingTrigger>
         <SimMission.Tutorial InstanceId="{123EA313-8C48-4DFE-98FC-6225DF462B7D}" id="tutorial1">
             <Descr>Tutorial Mission</Descr>
             <SuccessText>Mission Success</SuccessText>
             <FailureText>Mission Failed</FailureText>
             <AbortedText>Mission aborted</AbortedText>
+            <Objectives>
+                <Objective UniqueRefId="{9230DEFF-70C1-4B29-A6EA-DFC5922BCB31}" id="OBJ_FlyToMontego">
+                    <Descr>Fly to Montego Bay</Descr>
+                    <Steps>
+                        <Step UniqueRefId="{1E445D85-AAFF-415D-9345-426267B88661}" id="ST_Maintain220">
+                            <Descr>Maintain Heading 220</Descr>
+                        </Step>
+                        <Step UniqueRefId="{8B92C10F-F403-48D8-A1E6-46DA4932638C}" id="ST_DescendTo2200">
+                            <Descr>Descend to 2,200 feet</Descr>
+                        </Step>
+                    </Steps>
+                </Objective>
+                <Objective UniqueRefId="{854BB577-1889-45B9-BDF5-9F513B6A604A}" id="OBJ_ApproachMontego">
+                    <Descr>Approach Montego Bay</Descr>
+                    <Steps>
+                        <Step UniqueRefId="{2B965084-6895-4186-9E70-7A12F559521B}" id="ST_OverflyAirport">
+                            <Descr>Overfly Airport at 2,200 feet</Descr>
+                        </Step>
+                        <Step UniqueRefId="{E01E10DB-C158-4844-9822-B6651A91C043}" id="ST_EnterLeftDowwind">
+                            <Descr>Enter Left Downwind Heading 070</Descr>
+                        </Step>
+                        <Step UniqueRefId="{FB9F2139-725C-47DF-B63F-E96102C7E5C8}" id="ST_DescendToPattern">
+                            <Descr>Descend to Pattern Altitude 1,100 feet</Descr>
+                        </Step>
+                        <Step UniqueRefId="{E55BB637-F9D2-4B96-A04F-E1DA06D32515}" id="ST_LandRunway25">
+                            <Descr>Land on Runway 25</Descr>
+                        </Step>
+                    </Steps>
+                </Objective>
+            </Objectives>
         </SimMission.Tutorial>
+        <SimMission.SubGoal InstanceId="{1E445D85-AAFF-415D-9345-426267B88661}" id="SGL_Maintain220"/>
+        <SimMission.SubGoal InstanceId="{8B92C10F-F403-48D8-A1E6-46DA4932638C}" id="SGL_Descend2200">
+            <Activated>False</Activated>
+        </SimMission.SubGoal>
+        <SimMission.SubGoal InstanceId="{2B965084-6895-4186-9E70-7A12F559521B}" id="GL_OverflyMontego">
+            <Activated>False</Activated>
+        </SimMission.SubGoal>
+        <SimMission.SubGoal InstanceId="{E01E10DB-C158-4844-9822-B6651A91C043}" id="SGL_EnterDownwind">
+            <Activated>False</Activated>
+        </SimMission.SubGoal>
+        <SimMission.SubGoal InstanceId="{FB9F2139-725C-47DF-B63F-E96102C7E5C8}" id="SGL_DescendToPattern">
+            <Activated>False</Activated>
+        </SimMission.SubGoal>
+        <SimMission.SubGoal InstanceId="{E55BB637-F9D2-4B96-A04F-E1DA06D32515}" id="SGL_LandAtMontego">
+            <Activated>False</Activated>
+        </SimMission.SubGoal>
+        <SimMission.Goal InstanceId="{9230DEFF-70C1-4B29-A6EA-DFC5922BCB31}" id="GL_FlyToMontego"/>
+        <SimMission.Goal InstanceId="{854BB577-1889-45B9-BDF5-9F513B6A604A}" id="GL_ApproachMontego">
+            <Activated>False</Activated>
+        </SimMission.Goal>
+        <SimMission.InstructorDialogAction InstanceId="{4B996597-3EC0-4F79-A62F-5FDA0FFED5BD}" id="Dialog_IntroDialog">
+            <Text>Keep flying on course 220 headed for Montego Bay</Text>
+        </SimMission.InstructorDialogAction>
+        <SimMission.TimerTrigger InstanceId="{E223A5D2-AC3E-4410-B8A9-949B856F9FAE}" id="Trig_Timer_Start_Timer">
+            <StopTime>5.000</StopTime>
+            <Activated>False</Activated>
+            <Actions>
+                <ObjectReference InstanceId="{4B996597-3EC0-4F79-A62F-5FDA0FFED5BD}" id="Dialog_IntroDialog"/>
+            </Actions>
+        </SimMission.TimerTrigger>
+        <SimMission.FlowStateAction InstanceId="{080D6F47-6EAA-46E4-A70C-E7D3737B4552}">
+            <FirstState>True</FirstState>
+            <FromSpawn>True</FromSpawn>
+            <IsFirstStateInTimeline>True</IsFirstStateInTimeline>
+            <Descr>FlowState_Intro</Descr>
+            <FlowStateName>FLIGHT_CRUISE</FlowStateName>
+            <ObjectReference>
+            </ObjectReference>
+            <StartActions>
+                <ObjectReference InstanceId="{CD1DE943-1186-453B-94BE-58593CC89BA4}" id="ObjectActivationAction"/>
+            </StartActions>
+            <TeleportActions>
+                <ObjectReference InstanceId="{43071EAB-D106-41CC-88D6-B113CDAE289B}" id="WiseAFSSet"/>
+            </TeleportActions>
+            <StartFlowEvents>
+                <FlowEvent id="PANEL_OBJECTIVES_FORCE_SHOW"/>
+                <FlowEvent id="PANEL_ATC_HIDE"/>
+                <FlowEvent id="PANEL_CHECKLIST_HIDE"/>
+            </StartFlowEvents>
+        </SimMission.FlowStateAction>
+        <SimMission.ObjectActivationAction InstanceId="{CD1DE943-1186-453B-94BE-58593CC89BA4}" id="Activate_Timer_Trig_Intro">
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{E223A5D2-AC3E-4410-B8A9-949B856F9FAE}" id="Trig_Timer_Start_Timer"/>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.FlowStateWise InstanceId="{43071EAB-D106-41CC-88D6-B113CDAE289B}">
+            <Descr>WiseAFSSet</Descr>
+            <GroupName>ACTIVITIES_FLOW_STATE</GroupName>
+            <ElementName>FREEFLIGHT</ElementName>
+        </SimMission.FlowStateWise>
     </WorldBase.Flight>
 </SimBase.Document>

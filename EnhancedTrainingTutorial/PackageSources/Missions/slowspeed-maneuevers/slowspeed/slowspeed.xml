@@ -86,19 +86,19 @@
                         <Step UniqueRefId="{8A650567-6004-4EE3-A572-398AD1A7FDC5}" id="ST_TurnLeft180">
                             <Descr>Turn Left to Heading 135</Descr>
                         </Step>
-                        <Step UniqueRefId="{GUID1}" id="ST_MaintainAlt_1">
+                        <Step UniqueRefId="{EB1B1340-8207-4EE1-BE5A-7CA86803471E}" id="ST_MaintainAlt_1">
                             <Descr>Maintain 1,500 ft</Descr>
                         </Step>
-                        <Step UniqueRefId="{GUID2}" id="ST_KeepCoord_1">
+                        <Step UniqueRefId="{491922A9-3317-4AB5-ADB9-D865DC9FC23D}" id="ST_KeepCoord_1">
                             <Descr>Keep Coordinated</Descr>
                         </Step>
                         <Step UniqueRefId="{3785CB86-11D1-4F30-BAF3-3972C9C05998}" id="ST_TurnLeftTo315">
                             <Descr>Turn Left to heading 315</Descr>
                         </Step>
-                        <Step UniqueRefId="{GUID3}" id="ST_MaintainAlt_2">
+                        <Step UniqueRefId="{E5727DE5-A190-4E27-8F91-C2B0176CB510}" id="ST_MaintainAlt_2">
                             <Descr>Maintain 1,500 ft</Descr>
                         </Step>
-                        <Step UniqueRefId="{GUID4}" id="ST_KeepCoord_2">
+                        <Step UniqueRefId="{9393EFF4-A8E5-43E9-A00F-E1518DFDD7DC}" id="ST_KeepCoord_2">
                             <Descr>Keep Coordinated</Descr>
                         </Step>
                     </Steps>
@@ -118,22 +118,14 @@
                         <Step UniqueRefId="{AE441DD8-0A55-43EE-8C6E-D831B3A5234F}" id="ST_SlowTo65">
                             <Descr>Slow to 65 kts</Descr>
                         </Step>
-                        <Step UniqueRefId="{GUID5}" id="ST_MaintainAlt_3">
+                        <Step UniqueRefId="{9BBF9D84-0BCD-4E4D-A64B-32245948B438}" id="ST_MaintainAlt_3">
                             <Descr>Maintain 1,500 ft</Descr>
                         </Step>
-                        <Step UniqueRefId="{GUID6}" id="ST_KeepCoord_3">
-                            <Descr>Keep Coordinated</Descr>
+                        <Step id="ST_Maintain_65kts_1" UniqueRefId="{45411891-497A-4BDA-8F3C-34F0434AF21D}">
+                            <Descr>Maintain 65 kts</Descr>
                         </Step>
-                    </Steps>
-                </Objective>
-                <Objective UniqueRefId="{EC38C330-C8BF-42AE-95A2-663D8702A7C0}" id="OBJ_PerformanceCriteria">
-                    <Descr>Performance Criteria</Descr>
-                    <Steps>
-                        <Step UniqueRefId="{491922A9-3317-4AB5-ADB9-D865DC9FC23D}" id="ST_KeepCoordinated">
+                        <Step UniqueRefId="{E711E822-912B-4E38-B9B4-6E812516D725}" id="ST_KeepCoord_3">
                             <Descr>Keep Coordinated</Descr>
-                        </Step>
-                        <Step UniqueRefId="{EB1B1340-8207-4EE1-BE5A-7CA86803471E}" id="ST_Maintain1500">
-                            <Descr>Maintain 1,500 ft</Descr>
                         </Step>
                     </Steps>
                 </Objective>
@@ -143,28 +135,83 @@
                         <Step UniqueRefId="{BC52D02E-6A03-4443-A4E7-73C484D362F9}" id="ST_SetFlaps10">
                             <Descr>Set Flaps to 10</Descr>
                         </Step>
-                        <Step UniqueRefId="{GUID7}" id="ST_MaintainAlt_4">
+                        <Step UniqueRefId="{2DF8730C-4188-46A8-81A7-98E5C7F5B99B}" id="ST_MaintainAlt_4">
                             <Descr>Maintain 1,500 ft</Descr>
                         </Step>
-                        <Step UniqueRefId="{GUID8}" id="ST_KeepCoord_4">
+                        <Step id="ST_Maintain65kts_2" UniqueRefId="{1C299FD9-6948-4410-96CA-A10CB14BF52D}">
+                            <Descr>Maintain 65 kts</Descr>
+                        </Step>
+                        <Step UniqueRefId="{F8FC319F-381C-4B2C-8919-B5FEFEB412FF}" id="ST_KeepCoord_4">
                             <Descr>Keep Coordinated</Descr>
                         </Step>
                         <Step UniqueRefId="{E04BA9CB-AF36-4DE0-AEBC-A1D0AFF64B53}" id="Set Flaps20">
                             <Descr>Set Flaps to 20</Descr>
                         </Step>
-                        <Step UniqueRefId="{GUID9}" id="ST_MaintainAlt_5">
+                        <Step UniqueRefId="{EFACEB6D-121A-4A02-AF2E-E76974681BE2}" id="ST_MaintainAlt_5">
                             <Descr>Maintain 1,500 ft</Descr>
                         </Step>
-                        <Step UniqueRefId="{GUID10}" id="ST_KeepCoord_5">
+                        <Step id="ST_Maintain65kts_3" UniqueRefId="{0EEC1137-6DA3-4E15-9D57-B84B4ED0712A}">
+                            <Descr>Maintain 65 kts</Descr>
+                        </Step>
+                        <Step UniqueRefId="{85C0F1B6-EFD8-4D98-9305-14C4248CAC05}" id="ST_KeepCoord_5">
                             <Descr>Keep Coordinated</Descr>
                         </Step>
                         <Step UniqueRefId="{87704A61-3EB6-45CB-AC65-C2026B6AA03C}" id="ST_RemoveFlaps">
                             <Descr>Set Flaps Back to 0</Descr>
                         </Step>
-                        <Step UniqueRefId="{GUID11}" id="ST_MaintainAlt_6">
+                        <Step UniqueRefId="{FD8AFDFC-7620-4313-9EE1-A3D5D08E2EB9}" id="ST_MaintainAlt_6">
                             <Descr>Maintain 1,500 ft</Descr>
                         </Step>
-                        <Step UniqueRefId="{GUID12}" id="ST_KeepCoord_6">
+                        <Step id="ST_Maintain65kts_4" UniqueRefId="{66455414-37A4-4385-9323-9F70C3A12E15}">
+                            <Descr>Maintain 65 kts</Descr>
+                        </Step>
+                        <Step UniqueRefId="{DBA810C0-6F5D-41AE-80C6-C7FD07F58857}" id="ST_KeepCoord_6">
+                            <Descr>Keep Coordinated</Descr>
+                        </Step>
+                    </Steps>
+                </Objective>
+                <Objective id="OBJ_IncreaseAltitude" UniqueRefId="{88F1CD06-6F9C-4EB8-A0F4-D58FC3C7159D}">
+                    <Descr>Increase altitude to 1,800 ft</Descr>
+                    <Steps>
+                        <Step id="ST_ClimbTo1800" UniqueRefId="{DDE8831C-9745-49FA-81E1-3383CA955B12}">
+                            <Descr>Climb to 1,800 ft</Descr>
+                        </Step>
+                        <Step id="ST_Maintain65kts_5" UniqueRefId="{960130FF-489B-4A6D-B42B-76B5771BCDAC}">
+                            <Descr>Maintain 65 kts</Descr>
+                        </Step>
+                        <Step id="ST_KeepCoord_7" UniqueRefId="{DCE56C41-A4E2-4DF7-9342-1CBE7699F5F3}">
+                            <Descr>Keep Coordinated</Descr>
+                        </Step>
+                        <Step id="ST_Maintain1800" UniqueRefId="{B1C9B52D-A8E6-4100-8AF6-73865BD65659}">
+                            <Descr>Maintain 1,800 ft</Descr>
+                        </Step>
+                        <Step id="ST_Maintain65kts_6" UniqueRefId="{96CD55F1-8F8F-4B7B-937D-BB498F703389}">
+                            <Descr>Maintain 65 kts</Descr>
+                        </Step>
+                        <Step id="ST_KeepCoord_8" UniqueRefId="{52AD5381-41D5-4816-8F0E-F671F1CCBC15}">
+                            <Descr>Keep Coordinated</Descr>
+                        </Step>
+                    </Steps>
+                </Objective>
+                <Objective id="OBJ_DecreaseAltitude" UniqueRefId="{9D3D03D0-5D43-4E70-8A11-88DB6CB5F566}">
+                    <Descr>Decrease altitude to 1,500 ft</Descr>
+                    <Steps>
+                        <Step id="ST_DescendTo1500" UniqueRefId="{5049321B-AE29-42C0-9F39-43FBC7AC2588}">
+                            <Descr>Descend to 1,500 ft</Descr>
+                        </Step>
+                        <Step id="ST_Maintain65kts_7" UniqueRefId="{B44D18E4-32BE-4081-8848-7065F5195039}">
+                            <Descr>Maintain 65 kts</Descr>
+                        </Step>
+                        <Step id="ST_KeepCoord_9" UniqueRefId="{89595A07-4DC9-49A7-BF66-9C6029C19C47}">
+                            <Descr>Keep Coordinated</Descr>
+                        </Step>
+                        <Step id="ST_Maintain1500_7" UniqueRefId="{061ADB1E-BA1D-49CE-A1E6-76294F9244A6}">
+                            <Descr>Maintain 1,500 ft</Descr>
+                        </Step>
+                        <Step id="ST_Maintain65kts_8" UniqueRefId="{16F028F6-AFF1-4A8F-9BA6-CBB000C381AC}">
+                            <Descr>Maintain 65 kts</Descr>
+                        </Step>
+                        <Step id="ST_KeepCoord_10" UniqueRefId="{6B57267E-4F72-4461-844F-B52504FC8F92}">
                             <Descr>Keep Coordinated</Descr>
                         </Step>
                     </Steps>
@@ -200,11 +247,11 @@
             <ReversePolishCondition>(A:HEADING INDICATOR, degrees) 130 &gt;= (A:HEADING INDICATOR, degrees) 140 &lt;= (A:INDICATED ALTITUDE, feet) 1450 &gt;= (A:INDICATED ALTITUDE, feet) 1550 &lt;= and and and</ReversePolishCondition>
             <Activated>False</Activated>
             <ConditionTimer>5.000</ConditionTimer>
-            <SimMission.Actions>
+            <Actions>
                 <ObjectReference InstanceId="{F2B70CD8-6E76-4D8E-9CCE-0168AC3AEE94}" id="Complete_SGL_TurnLeft1"/>
                 <ObjectReference InstanceId="{505A104B-10A1-4A73-BA7E-8E4E002A36AD}" id="Dialog_ClearingTurnsLeftComplete"/>
                 <ObjectReference InstanceId="{8A60ABF4-05BD-48CF-964D-5DA0B04D1965}" id="Deactivate_Prop_Trigs_Turn1"/>
-            </SimMission.Actions>
+            </Actions>
         </SimMission.PropertyTrigger>
         <SimMission.DialogAction InstanceId="{26573BE9-15F5-4C08-8D9A-CFFEE90AE7C8}" id="Dialog_Intro">
             <Immediate>False</Immediate>
@@ -240,13 +287,10 @@
             <Activated>False</Activated>
             <Order>3</Order>
         </SimMission.Goal>
-        <SimMission.Goal InstanceId="{EC38C330-C8BF-42AE-95A2-663D8702A7C0}" id="GL_PerformanceCriteria">
-            <Order>2</Order>
-        </SimMission.Goal>
         <SimMission.SubGoal InstanceId="{8A650567-6004-4EE3-A572-398AD1A7FDC5}" id="SGL_TurnLeft180">
             <Activated>False</Activated>
         </SimMission.SubGoal>
-        <SimMission.SubGoal InstanceId="{EB1B1340-8207-4EE1-BE5A-7CA86803471E}" id="SGL_Maintain1500">
+        <SimMission.SubGoal InstanceId="{EB1B1340-8207-4EE1-BE5A-7CA86803471E}" id="SGL_Maintain1500_1">
             <Activated>False</Activated>
         </SimMission.SubGoal>
         <SimMission.SubGoal InstanceId="{3785CB86-11D1-4F30-BAF3-3972C9C05998}" id="SGL_TurnLeftComplete">
@@ -260,12 +304,13 @@
                 <ObjectReference InstanceId="{77875D32-C962-432F-A798-2429564F2FD6}" id="Activate_SGL_TurnLeft1"/>
                 <ObjectReference InstanceId="{8E7D9FF2-4176-4033-9EA3-CB36CAB21651}" id="Dialog_ClearingTurnsLeft"/>
                 <ObjectReference InstanceId="{D20125BB-CE59-4564-8FF7-1865B766759D}" id="ObjectActivationAction"/>
+                <ObjectReference InstanceId="{55FB5EB1-E6B1-41AE-AECA-51091584B973}" id="Activate_SGL_KeepCoord_1"/>
             </EndActions>
         </SimMission.InstructorDialogAction>
         <SimMission.ObjectActivationAction InstanceId="{8B9C4DCB-FA1C-4D3D-B7C1-2B71CE325230}" id="Activate_Prop_Trig_Heading135">
-            <WorldBase.ObjectReferenceList>
+            <ObjectReferenceList>
                 <ObjectReference InstanceId="{C9257210-264F-424C-856D-ABE0B4BA8356}" id="Prop_Trig_Heading_135"/>
-            </WorldBase.ObjectReferenceList>
+            </ObjectReferenceList>
         </SimMission.ObjectActivationAction>
         <SimMission.GoalResolutionAction InstanceId="{08E062F3-FF5B-417F-B8B8-D40A85E6763C}">
             <Goals>
@@ -283,9 +328,10 @@
             </ObjectReferenceList>
         </SimMission.ObjectActivationAction>
         <SimMission.SubGoalResolutionAction InstanceId="{F2B70CD8-6E76-4D8E-9CCE-0168AC3AEE94}" id="Complete_SGL_TurnLeft1">
-            <StateChange>none</StateChange>
             <SubGoals>
                 <ObjectReference InstanceId="{8A650567-6004-4EE3-A572-398AD1A7FDC5}" id="SGL_TurnLeft180"/>
+                <ObjectReference InstanceId="{EB1B1340-8207-4EE1-BE5A-7CA86803471E}" id="SGL_Maintain1500_1"/>
+                <ObjectReference InstanceId="{491922A9-3317-4AB5-ADB9-D865DC9FC23D}" id="SGL_KeepCoordinated_1"/>
             </SubGoals>
         </SimMission.SubGoalResolutionAction>
         <SimMission.InstructorDialogAction InstanceId="{505A104B-10A1-4A73-BA7E-8E4E002A36AD}" id="Dialog_ClearingTurnsLeftComplete">
@@ -301,16 +347,17 @@
             <StateChange>none</StateChange>
             <SubGoals>
                 <ObjectReference InstanceId="{EB1B1340-8207-4EE1-BE5A-7CA86803471E}" id="SGL_Maintain1500"/>
+                <ObjectReference InstanceId="{E5727DE5-A190-4E27-8F91-C2B0176CB510}" id="SGL_Maintain1500_2"/>
             </SubGoals>
         </SimMission.SubGoalResolutionAction>
         <SimMission.InstructorDialogAction InstanceId="{8E7D9FF2-4176-4033-9EA3-CB36CAB21651}" id="Dialog_ClearingTurnsLeft">
             <DelaySeconds>2.000</DelaySeconds>
             <SoundFileName>Turn180Left.wav</SoundFileName>
-            <SimMission.EndActions>
+            <EndActions>
                 <ObjectReference InstanceId="{8B9C4DCB-FA1C-4D3D-B7C1-2B71CE325230}" id="Activate_Prop_Trig_Heading135"/>
                 <ObjectReference InstanceId="{3590DFBB-2749-4108-928F-E7C1EDA17F7A}" id="Activate_SGL_KeepCoordinated"/>
-                <WorldBase.ObjectReference InstanceId="{CCC62F55-D4C6-4CC3-B687-7E151ACC6D2F}" id="Activate_Trig_Altitude1500"/>
-            </SimMission.EndActions>
+                <ObjectReference InstanceId="{CCC62F55-D4C6-4CC3-B687-7E151ACC6D2F}" id="Activate_Trig_Altitude1500"/>
+            </EndActions>
         </SimMission.InstructorDialogAction>
         <SimMission.ObjectActivationAction InstanceId="{D20125BB-CE59-4564-8FF7-1865B766759D}" id="Activate_SGL_Maintain1500_1">
             <ObjectReferenceList>
@@ -349,6 +396,7 @@
             <StateChange>none</StateChange>
             <SubGoals>
                 <ObjectReference InstanceId="{EB1B1340-8207-4EE1-BE5A-7CA86803471E}" id="SGL_Maintain1500"/>
+                <ObjectReference InstanceId="{E5727DE5-A190-4E27-8F91-C2B0176CB510}" id="SGL_Maintain1500_2"/>
             </SubGoals>
         </SimMission.SubGoalResolutionAction>
         <SimMission.ObjectActivationAction InstanceId="{17303B56-48B4-4585-9654-34431E336540}" id="Activate_SGL_TurnLeft2">
@@ -356,37 +404,33 @@
                 <ObjectReference InstanceId="{3785CB86-11D1-4F30-BAF3-3972C9C05998}" id="SGL_TurnLeftComplete"/>
             </ObjectReferenceList>
         </SimMission.ObjectActivationAction>
-        <SimMission.ObjectActivationAction InstanceId="{8562F784-EF94-4483-90DB-60B371428478}" id="Activate_SGL_MaintainAlt2">
+        <SimMission.ObjectActivationAction InstanceId="{8562F784-EF94-4483-90DB-60B371428478}" id="Activate_SGL_MaintainAltCoord">
             <ObjectReferenceList>
-                <ObjectReference InstanceId="{EB1B1340-8207-4EE1-BE5A-7CA86803471E}" id="SGL_Maintain1500"/>
+                <ObjectReference InstanceId="{E5727DE5-A190-4E27-8F91-C2B0176CB510}" id="SGL_Maintain1500_2"/>
+                <ObjectReference InstanceId="{E5727DE5-A190-4E27-8F91-C2B0176CB510}" id="SGL_Maintain1500_2"/>
+                <ObjectReference InstanceId="{9393EFF4-A8E5-43E9-A00F-E1518DFDD7DC}" id="SGL_KeepCoord_2"/>
             </ObjectReferenceList>
         </SimMission.ObjectActivationAction>
         <SimMission.PropertyTrigger InstanceId="{74C02F3D-13F0-47DF-ABE8-FA52EAD70914}" id="Prop_Trig_Heading_315">
             <ReversePolishCondition>(A:HEADING INDICATOR, degrees) 310 &gt;= (A:HEADING INDICATOR, degrees) 320 &lt;= (A:INDICATED ALTITUDE, feet) 1450 &gt;= (A:INDICATED ALTITUDE, feet) 1550 &lt;= and and and</ReversePolishCondition>
             <Activated>False</Activated>
             <ConditionTimer>5.000</ConditionTimer>
-            <SimMission.Actions>
+            <Actions>
                 <ObjectReference InstanceId="{F2267F82-9233-458C-B406-AE332BB36880}" id="Complete_SGL_Turn315"/>
-                <ObjectReference InstanceId="{43D4997A-B0E1-4C19-87D4-7A937F624F59}" id="Complete_SGL_Maintain_Alt2"/>
                 <ObjectReference InstanceId="{17FA8E6C-C2A5-47E4-A598-DEF4CA986804}" id="Activate_Timer_ReduceSpeed"/>
                 <ObjectReference InstanceId="{17F0E841-D6B0-48DF-9A53-FB1C80521184}" id="GoalResolutionAction"/>
-            </SimMission.Actions>
+            </Actions>
         </SimMission.PropertyTrigger>
         <SimMission.ObjectActivationAction InstanceId="{59420A39-E4D2-45A2-AFF1-D678EBA42B47}" id="Activate_Prop_Trig_Heading315">
-            <WorldBase.ObjectReferenceList>
+            <ObjectReferenceList>
                 <ObjectReference InstanceId="{74C02F3D-13F0-47DF-ABE8-FA52EAD70914}" id="Prop_Trig_Heading_315"/>
-            </WorldBase.ObjectReferenceList>
+            </ObjectReferenceList>
         </SimMission.ObjectActivationAction>
         <SimMission.SubGoalResolutionAction InstanceId="{F2267F82-9233-458C-B406-AE332BB36880}" id="Complete_SGL_Turn315">
-            <StateChange>none</StateChange>
             <SubGoals>
                 <ObjectReference InstanceId="{3785CB86-11D1-4F30-BAF3-3972C9C05998}" id="SGL_TurnLeftComplete"/>
-            </SubGoals>
-        </SimMission.SubGoalResolutionAction>
-        <SimMission.SubGoalResolutionAction InstanceId="{43D4997A-B0E1-4C19-87D4-7A937F624F59}" id="Complete_SGL_Maintain_Alt">
-            <StateChange>none</StateChange>
-            <SubGoals>
-                <ObjectReference InstanceId="{EB1B1340-8207-4EE1-BE5A-7CA86803471E}" id="SGL_Maintain1500"/>
+                <ObjectReference InstanceId="{E5727DE5-A190-4E27-8F91-C2B0176CB510}" id="SGL_Maintain1500_2"/>
+                <ObjectReference InstanceId="{9393EFF4-A8E5-43E9-A00F-E1518DFDD7DC}" id="SGL_KeepCoord_2"/>
             </SubGoals>
         </SimMission.SubGoalResolutionAction>
         <SimMission.Goal InstanceId="{7140BD45-52F6-4D7D-AE94-10723927BB62}" id="GL_ConfigureSlowSpeed">
@@ -425,10 +469,11 @@
                 <ObjectReference InstanceId="{AE441DD8-0A55-43EE-8C6E-D831B3A5234F}" id="ST_ReduceSpeed"/>
             </ObjectReferenceList>
         </SimMission.ObjectActivationAction>
-        <SimMission.ObjectActivationAction InstanceId="{DAC4613C-6CB1-480A-9C63-9142EB86CC99}" id="Activate_SGL_MaintainAltSlow">
+        <SimMission.ObjectActivationAction InstanceId="{DAC4613C-6CB1-480A-9C63-9142EB86CC99}" id="Activate_SGL_MaintainAlt_3">
             <ObjectReferenceList>
-                <ObjectReference InstanceId="{EB1B1340-8207-4EE1-BE5A-7CA86803471E}" id="ST_MaintainAltitude"/>
                 <ObjectReference InstanceId="{480A17D1-7A6E-4FC3-B107-7567E5D54154}" id="Activate_Prop_Trig_Deviated_Alt_Slow"/>
+                <ObjectReference InstanceId="{9BBF9D84-0BCD-4E4D-A64B-32245948B438}" id="SGL_MaintainAlt1500_3"/>
+                <ObjectReference InstanceId="{E711E822-912B-4E38-B9B4-6E812516D725}" id="SGL_KeepCoord_3"/>
             </ObjectReferenceList>
         </SimMission.ObjectActivationAction>
         <SimEdition.CommentNode InstanceId="{3A8A25AE-560C-447C-B8C8-70BB8B4E317C}" id="Comment_ReduceSpeed">
@@ -494,11 +539,12 @@
                 <ObjectReference InstanceId="{7140BD45-52F6-4D7D-AE94-10723927BB62}" id="GL_ConfigureSlowSpeed"/>
             </Goals>
         </SimMission.GoalResolutionAction>
-        <SimMission.TimerTrigger InstanceId="{9251673F-8899-4358-90F5-14887C9F849D}">
+        <SimMission.TimerTrigger InstanceId="{9251673F-8899-4358-90F5-14887C9F849D}" id="Timer_AfterSlowSpeed">
             <StopTime>3.000</StopTime>
             <Activated>False</Activated>
             <Actions>
                 <ObjectReference InstanceId="{DEF44A9A-944A-458C-AF95-5E8C86CC4FA6}" id="Complete_GL_SlowSpeed"/>
+                <ObjectReference InstanceId="{00DC2FFE-9031-4406-9710-9767C6C3540F}" id="Dialog_AddRemoveFlapsIntro"/>
             </Actions>
         </SimMission.TimerTrigger>
         <SimMission.ObjectActivationAction InstanceId="{54397965-BCF0-4B1D-9AB5-BF781B3F641B}" id="Activate_Timer_ResolveGoalSlow">
@@ -551,13 +597,12 @@
                 <ObjectReference InstanceId="{C4ACF4C9-0347-45F7-8A22-502707DE2D27}" id="GL_PerformClearingTurns"/>
             </Goals>
         </SimMission.GoalResolutionAction>
-        <SimEdition.CommentNode InstanceId="{69F12135-4F12-489E-A1F9-EA51EAB7D5F9}" id="Comment_TestItem"/>
-        <SimMission.SubGoal InstanceId="{491922A9-3317-4AB5-ADB9-D865DC9FC23D}" id="SGL_KeepCoordinated">
+        <SimEdition.CommentNode InstanceId="{69F12135-4F12-489E-A1F9-EA51EAB7D5F9}" id="Comment_AddRemoveFlaps"/>
+        <SimMission.SubGoal InstanceId="{491922A9-3317-4AB5-ADB9-D865DC9FC23D}" id="SGL_KeepCoordinated_1">
             <Activated>False</Activated>
         </SimMission.SubGoal>
         <SimMission.ObjectActivationAction InstanceId="{3590DFBB-2749-4108-928F-E7C1EDA17F7A}" id="Enable_Prop_Trig_KeepCoordinated">
             <ObjectReferenceList>
-                <ObjectReference InstanceId="{491922A9-3317-4AB5-ADB9-D865DC9FC23D}" id="SGL_KeepCoordinated"/>
                 <ObjectReference InstanceId="{9C49198E-EE1F-4017-AB93-8246A7F78D29}" id="PropertyTrigger"/>
                 <ObjectReference InstanceId="{3017A67D-1E85-49B3-A299-72E3501259FA}" id="Prop_Trig_CoordinateLost"/>
             </ObjectReferenceList>
@@ -574,6 +619,10 @@
             <StateChange>none</StateChange>
             <SubGoals>
                 <ObjectReference InstanceId="{491922A9-3317-4AB5-ADB9-D865DC9FC23D}" id="SGL_KeepCoordinated"/>
+                <ObjectReference InstanceId="{9393EFF4-A8E5-43E9-A00F-E1518DFDD7DC}" id="SGL_KeepCoord_2"/>
+                <ObjectReference InstanceId="{E711E822-912B-4E38-B9B4-6E812516D725}" id="SGL_KeepCoord_3"/>
+                <ObjectReference InstanceId="{F8FC319F-381C-4B2C-8919-B5FEFEB412FF}" id="SGL_KeepCoord_4"/>
+                <ObjectReference InstanceId="{E711E822-912B-4E38-B9B4-6E812516D725}" id="SGL_KeepCoord_3"/>
             </SubGoals>
         </SimMission.SubGoalResolutionAction>
         <SimMission.PropertyTrigger InstanceId="{3017A67D-1E85-49B3-A299-72E3501259FA}" id="Prop_Trig_CoordinateLost">
@@ -589,6 +638,9 @@
             <StateChange>none</StateChange>
             <SubGoals>
                 <ObjectReference InstanceId="{491922A9-3317-4AB5-ADB9-D865DC9FC23D}" id="SGL_KeepCoordinated"/>
+                <ObjectReference InstanceId="{9393EFF4-A8E5-43E9-A00F-E1518DFDD7DC}" id="SGL_KeepCoord_2"/>
+                <ObjectReference InstanceId="{E711E822-912B-4E38-B9B4-6E812516D725}" id="SGL_KeepCoord_3"/>
+                <ObjectReference InstanceId="{F8FC319F-381C-4B2C-8919-B5FEFEB412FF}" id="SGL_KeepCoord_4"/>
             </SubGoals>
         </SimMission.SubGoalResolutionAction>
         <SimMission.Goal InstanceId="{6FFB2EC9-7DEE-49FA-8EBF-08AEA7DD2E77}" id="GL_AddRemoveFlaps">
@@ -615,5 +667,288 @@
         <SimEdition.CommentNode InstanceId="{CA10D692-194A-4213-A620-EB304749D090}" id="Comment_MaintainAltitude"/>
         <SimEdition.CommentNode InstanceId="{D797E9D6-8F4D-4D70-AA7F-A631302ACD48}" id="Comment_KeepCoordinated"/>
         <SimEdition.CommentNode InstanceId="{30B58701-8946-4910-86DD-00AD28C03D3F}" id="Comment_ClearingTurns"/>
+        <SimMission.ObjectActivationAction InstanceId="{55FB5EB1-E6B1-41AE-AECA-51091584B973}" id="Activate_SGL_KeepCoord_1">
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{491922A9-3317-4AB5-ADB9-D865DC9FC23D}" id="SGL_KeepCoordinated_1"/>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.SubGoal InstanceId="{E5727DE5-A190-4E27-8F91-C2B0176CB510}" id="SGL_Maintain1500_2">
+            <Activated>False</Activated>
+        </SimMission.SubGoal>
+        <SimMission.SubGoal InstanceId="{9393EFF4-A8E5-43E9-A00F-E1518DFDD7DC}" id="SGL_KeepCoord_2">
+            <Activated>False</Activated>
+        </SimMission.SubGoal>
+        <SimMission.SubGoal InstanceId="{9BBF9D84-0BCD-4E4D-A64B-32245948B438}" id="SGL_MaintainAlt1500_3">
+            <Activated>False</Activated>
+        </SimMission.SubGoal>
+        <SimMission.SubGoal InstanceId="{E711E822-912B-4E38-B9B4-6E812516D725}" id="SGL_KeepCoord_3">
+            <Activated>False</Activated>
+        </SimMission.SubGoal>
+        <SimMission.SubGoal InstanceId="{2DF8730C-4188-46A8-81A7-98E5C7F5B99B}" id="SGL_MaintainAlt1500_4">
+            <Activated>False</Activated>
+        </SimMission.SubGoal>
+        <SimMission.SubGoal InstanceId="{F8FC319F-381C-4B2C-8919-B5FEFEB412FF}" id="SGL_KeepCoord_4">
+            <Activated>False</Activated>
+        </SimMission.SubGoal>
+        <SimMission.SubGoal InstanceId="{EFACEB6D-121A-4A02-AF2E-E76974681BE2}" id="SGL_MaintainAlt1500_5">
+            <Activated>False</Activated>
+        </SimMission.SubGoal>
+        <SimMission.SubGoal InstanceId="{85C0F1B6-EFD8-4D98-9305-14C4248CAC05}" id="SGL_KeepCoord_5">
+            <Activated>False</Activated>
+        </SimMission.SubGoal>
+        <SimMission.SubGoal InstanceId="{DBA810C0-6F5D-41AE-80C6-C7FD07F58857}" id="SGL_KeepCoord_6">
+            <Activated>False</Activated>
+        </SimMission.SubGoal>
+        <SimMission.SubGoal InstanceId="{FD8AFDFC-7620-4313-9EE1-A3D5D08E2EB9}" id="SGL_MaintainAlt1500_6">
+            <Activated>False</Activated>
+        </SimMission.SubGoal>
+        <SimMission.InstructorDialogAction InstanceId="{00DC2FFE-9031-4406-9710-9767C6C3540F}" id="Dialog_AddRemoveFlapsIntro">
+            <Text>Now we&apos;ll add flaps and try to maintain altitude.</Text>
+            <EndActions>
+                <ObjectReference InstanceId="{7DE91300-D0BF-4159-8538-C45E01584322}" id="Activate_GL_AddRemoveFlaps"/>
+                <ObjectReference InstanceId="{686E8DE1-11D7-40F2-82B6-6EFEA93AD743}" id="Dialog_SetFlaps10"/>
+                <ObjectReference InstanceId="{527DBD25-E6B1-41CF-BF8D-32707906B23C}" id="Activate_Prop_Trig_Flaps10"/>
+            </EndActions>
+        </SimMission.InstructorDialogAction>
+        <SimMission.ObjectActivationAction InstanceId="{7DE91300-D0BF-4159-8538-C45E01584322}" id="Activate_GL_AddRemoveFlaps">
+            <WorldBase.ObjectReferenceList>
+                <ObjectReference InstanceId="{6FFB2EC9-7DEE-49FA-8EBF-08AEA7DD2E77}" id="GL_AddRemoveFlaps"/>
+                <ObjectReference InstanceId="{BC52D02E-6A03-4443-A4E7-73C484D362F9}" id="SGL_SetFlaps10"/>
+                <WorldBase.ObjectReference InstanceId="{1C299FD9-6948-4410-96CA-A10CB14BF52D}" id="SGL_Maintain_65kts_2"/>
+            </WorldBase.ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.InstructorDialogAction InstanceId="{686E8DE1-11D7-40F2-82B6-6EFEA93AD743}" id="Dialog_SetFlaps10">
+            <DelaySeconds>4.000</DelaySeconds>
+            <Text>Set flapsto 10 degrees and hold this altitude</Text>
+        </SimMission.InstructorDialogAction>
+        <SimMission.PropertyTrigger InstanceId="{A8EE25F0-FFB4-4F7B-B751-56A65210F53F}" id="Prop_Trig_FlapsSetTo10">
+            <Activated>False</Activated>
+            <ReversePolishCondition>(A:FLAPS HANDLE PERCENT, Percent) 20 &gt;= (A:FLAPS HANDLE PERCENT, Percent) 33 &lt; and</ReversePolishCondition>
+            <SimMission.Actions>
+                <ObjectReference InstanceId="{F1D060F2-C87C-4F48-A651-7EBF76EE766B}" id="Dialog_HoldFlaps10"/>
+                <ObjectReference InstanceId="{B73BC687-046F-4BA1-8F9E-A1B2860A6CDD}" id="Activate_Prop_Trig_HoldFlaps10"/>
+            </SimMission.Actions>
+        </SimMission.PropertyTrigger>
+        <SimMission.ObjectActivationAction InstanceId="{527DBD25-E6B1-41CF-BF8D-32707906B23C}" id="Activate_Prop_Trig_Flaps10">
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{A8EE25F0-FFB4-4F7B-B751-56A65210F53F}" id="Prop_Trig_FlapsSetTo10"/>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.PropertyTrigger InstanceId="{994B71F7-29C0-4D29-9F65-955443514BAC}" id="Prop_Trig_HoldFlaps10">
+            <Activated>False</Activated>
+            <ConditionTimer>30.000</ConditionTimer>
+            <ReversePolishCondition>(A:FLAPS HANDLE PERCENT, Percent) 20 &gt;= (A:FLAPS HANDLE PERCENT, Percent) 33 &lt; and</ReversePolishCondition>
+            <SimMission.Actions>
+                <ObjectReference InstanceId="{22CAE0A8-9A1F-4B69-8CA8-8057307EB7EB}" id="InstructorDialogAction"/>
+                <ObjectReference InstanceId="{F00B24CB-D7F9-4F22-AA25-821988A1F88E}" id="Activate_Prop_Trig_SetFlaps20"/>
+                <WorldBase.ObjectReference InstanceId="{DCB2E2B2-0629-468E-94DF-54E4D989DC83}" id="Complete_SGL_AddFlaps10"/>
+            </SimMission.Actions>
+        </SimMission.PropertyTrigger>
+        <SimMission.InstructorDialogAction InstanceId="{F1D060F2-C87C-4F48-A651-7EBF76EE766B}" id="Dialog_HoldFlaps10">
+            <DelaySeconds>3.000</DelaySeconds>
+            <Text>Hold this configuration for 30 seconds</Text>
+        </SimMission.InstructorDialogAction>
+        <SimMission.ObjectActivationAction InstanceId="{B73BC687-046F-4BA1-8F9E-A1B2860A6CDD}" id="Activate_Prop_Trig_HoldFlaps10">
+            <WorldBase.ObjectReferenceList>
+                <ObjectReference InstanceId="{994B71F7-29C0-4D29-9F65-955443514BAC}" id="Prop_Trig_HoldFlaps10"/>
+                <WorldBase.ObjectReference InstanceId="{8270C2AC-FF5B-46D6-A3B1-6AF09C9965F7}" id="Enable_SlowSpeedHeldTrigger"/>
+            </WorldBase.ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.InstructorDialogAction InstanceId="{22CAE0A8-9A1F-4B69-8CA8-8057307EB7EB}" id="Dialog_NowSetTo20">
+            <Text>Good. Now set flaps to 20.</Text>
+            <EndActions>
+                <ObjectReference InstanceId="{D359F199-80BE-4954-A9AC-14177C85FC40}" id="Activate_SGL_Flaps20"/>
+            </EndActions>
+        </SimMission.InstructorDialogAction>
+        <SimMission.GoalResolutionAction InstanceId="{C8A67315-40E7-4567-93EA-F1E67B4E310C}" id="Complete_GL_AddRemoveFlaps">
+            <Goals>
+                <ObjectReference InstanceId="{6FFB2EC9-7DEE-49FA-8EBF-08AEA7DD2E77}" id="GL_AddRemoveFlaps"/>
+            </Goals>
+        </SimMission.GoalResolutionAction>
+        <SimMission.SubGoalResolutionAction InstanceId="{DCB2E2B2-0629-468E-94DF-54E4D989DC83}" id="Complete_SGL_AddFlaps10">
+            <SimMission.SubGoals>
+                <ObjectReference InstanceId="{BC52D02E-6A03-4443-A4E7-73C484D362F9}" id="SGL_SetFlaps10"/>
+                <WorldBase.ObjectReference InstanceId="{1C299FD9-6948-4410-96CA-A10CB14BF52D}" id="SGL_Maintain_65kts_2"/>
+                <WorldBase.ObjectReference InstanceId="{9BBF9D84-0BCD-4E4D-A64B-32245948B438}" id="SGL_MaintainAlt1500_3"/>
+                <WorldBase.ObjectReference InstanceId="{E711E822-912B-4E38-B9B4-6E812516D725}" id="SGL_KeepCoord_3"/>
+            </SimMission.SubGoals>
+        </SimMission.SubGoalResolutionAction>
+        <SimMission.PropertyTrigger InstanceId="{7D04E299-1521-4944-90BC-4C84B0D65988}" id="Prop_Trig_Flaps20">
+            <Activated>False</Activated>
+            <ReversePolishCondition>(A:FLAPS HANDLE PERCENT, Percent) 35 &gt;= (A:FLAPS HANDLE PERCENT, Percent) 66 &lt; and</ReversePolishCondition>
+            <Actions>
+                <ObjectReference InstanceId="{CDF3236A-4A34-4B67-BB5A-663F42A480E2}" id="Dialog_HoldFlaps20"/>
+                <ObjectReference InstanceId="{776537C7-A790-4987-BA44-CF43C0738C4F}" id="Activate_Prop_Trig_HoldFlaps20"/>
+            </Actions>
+        </SimMission.PropertyTrigger>
+        <SimMission.ObjectActivationAction InstanceId="{F00B24CB-D7F9-4F22-AA25-821988A1F88E}" id="Activate_Prop_Trig_SetFlaps20">
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{7D04E299-1521-4944-90BC-4C84B0D65988}" id="Prop_Trig_Flaps20"/>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.InstructorDialogAction InstanceId="{CDF3236A-4A34-4B67-BB5A-663F42A480E2}" id="Dialog_HoldFlaps20">
+            <Text>Hold here for 30 seconds</Text>
+        </SimMission.InstructorDialogAction>
+        <SimMission.ObjectActivationAction InstanceId="{776537C7-A790-4987-BA44-CF43C0738C4F}" id="Activate_Prop_Trig_HoldFlaps20">
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{9FD0F656-6A78-4E49-AFC8-7195D3BDD6B1}" id="Prop_Trig_HoldFlaps20"/>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.PropertyTrigger InstanceId="{9FD0F656-6A78-4E49-AFC8-7195D3BDD6B1}" id="Prop_Trig_HoldFlaps20">
+            <Activated>False</Activated>
+            <ConditionTimer>30.000</ConditionTimer>
+            <Actions>
+                <ObjectReference InstanceId="{197F2367-DA21-4414-8839-CD0D36966D7B}" id="InstructorDialogAction"/>
+                <ObjectReference InstanceId="{E45645F0-64C9-4F09-A764-0236BCFE7CF5}" id="Activate_Prop_Trig_FlapsRemoved"/>
+                <ObjectReference InstanceId="{24135B3B-FDBD-4E2E-A0B6-A1A217AA0D52}" id="Complete_SGL_Setflaps20"/>
+            </Actions>
+        </SimMission.PropertyTrigger>
+        <SimMission.InstructorDialogAction InstanceId="{197F2367-DA21-4414-8839-CD0D36966D7B}" id="Dialog_Flaps20HeldNowRemove">
+            <Text>Nice job. Now we can set flaps back to 0.</Text>
+            <EndActions>
+                <ObjectReference InstanceId="{A80B4251-5F84-4539-A600-F8D4C1AEADD6}" id="ObjectActivationAction"/>
+            </EndActions>
+        </SimMission.InstructorDialogAction>
+        <SimMission.ObjectActivationAction InstanceId="{E45645F0-64C9-4F09-A764-0236BCFE7CF5}" id="Activate_Prop_Trig_FlapsRemoved">
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{26CDF06F-F0B4-4FC8-87CA-FD7464A0AC69}" id="PropertyTrigger"/>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.PropertyTrigger InstanceId="{26CDF06F-F0B4-4FC8-87CA-FD7464A0AC69}">
+            <Activated>False</Activated>
+            <ReversePolishCondition>(A:FLAPS HANDLE PERCENT, Percent) 1 &lt;=</ReversePolishCondition>
+            <Actions>
+                <ObjectReference InstanceId="{5EEF4182-1FF8-4539-9E34-C8C5D2157A48}" id="Activate_Prop_Trig_HoldNoFlaps"/>
+            </Actions>
+        </SimMission.PropertyTrigger>
+        <SimMission.ObjectActivationAction InstanceId="{5EEF4182-1FF8-4539-9E34-C8C5D2157A48}" id="Activate_Prop_Trig_HoldNoFlaps">
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{3FBC4C11-BECC-4B4C-BCE3-33ACEACB844A}" id="Prop_Trig_HoldFlapsNone"/>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.PropertyTrigger InstanceId="{3FBC4C11-BECC-4B4C-BCE3-33ACEACB844A}" id="Prop_Trig_HoldFlapsNone">
+            <Activated>False</Activated>
+            <ConditionTimer>30.000</ConditionTimer>
+            <Actions>
+                <ObjectReference InstanceId="{35308C23-49B2-4AE8-9BC7-1D4E4EB30E71}" id="Dialog_FlapsComplete"/>
+                <ObjectReference InstanceId="{C8A67315-40E7-4567-93EA-F1E67B4E310C}" id="Complete_GL_AddRemoveFlaps"/>
+            </Actions>
+        </SimMission.PropertyTrigger>
+        <SimMission.InstructorDialogAction InstanceId="{35308C23-49B2-4AE8-9BC7-1D4E4EB30E71}" id="Dialog_FlapsComplete">
+            <Text>Nice job. You were able to add and remove flaps and keep altitude</Text>
+        </SimMission.InstructorDialogAction>
+        <SimMission.SubGoalResolutionAction InstanceId="{24135B3B-FDBD-4E2E-A0B6-A1A217AA0D52}" id="Complete_SGL_Setflaps20">
+            <SimMission.SubGoals>
+                <ObjectReference InstanceId="{E04BA9CB-AF36-4DE0-AEBC-A1D0AFF64B53}" id="SGL_SetFlaps20"/>
+                <WorldBase.ObjectReference InstanceId="{0EEC1137-6DA3-4E15-9D57-B84B4ED0712A}" id="SGL_Maintain_65kts_3"/>
+            </SimMission.SubGoals>
+        </SimMission.SubGoalResolutionAction>
+        <SimMission.ObjectActivationAction InstanceId="{A80B4251-5F84-4539-A600-F8D4C1AEADD6}" id="Activate_SGL_RemoveFlaps">
+            <WorldBase.ObjectReferenceList>
+                <ObjectReference InstanceId="{87704A61-3EB6-45CB-AC65-C2026B6AA03C}" id="SGL_RemoveFlaps"/>
+                <WorldBase.ObjectReference InstanceId="{66455414-37A4-4385-9323-9F70C3A12E15}" id="SGL_Maintain_65kts_4"/>
+            </WorldBase.ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.ObjectActivationAction InstanceId="{D359F199-80BE-4954-A9AC-14177C85FC40}" id="Activate_SGL_Flaps20">
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{E04BA9CB-AF36-4DE0-AEBC-A1D0AFF64B53}" id="SGL_SetFlaps20"/>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.Goal InstanceId="{88F1CD06-6F9C-4EB8-A0F4-D58FC3C7159D}" id="GL_IncreaseAltitude">
+            <Activated>False</Activated>
+        </SimMission.Goal>
+        <SimMission.Goal InstanceId="{9D3D03D0-5D43-4E70-8A11-88DB6CB5F566}" id="GL_DecreaseAltitude">
+            <Activated>False</Activated>
+        </SimMission.Goal>
+        <SimMission.SubGoal InstanceId="{45411891-497A-4BDA-8F3C-34F0434AF21D}" id="SGL_Maintain_65kts_1">
+            <Activated>False</Activated>
+        </SimMission.SubGoal>
+        <SimMission.SubGoal InstanceId="{1C299FD9-6948-4410-96CA-A10CB14BF52D}" id="SGL_Maintain_65kts_2">
+            <Activated>False</Activated>
+        </SimMission.SubGoal>
+        <SimMission.SubGoal InstanceId="{0EEC1137-6DA3-4E15-9D57-B84B4ED0712A}" id="SGL_Maintain_65kts_3">
+            <Activated>False</Activated>
+        </SimMission.SubGoal>
+        <SimMission.SubGoal InstanceId="{66455414-37A4-4385-9323-9F70C3A12E15}" id="SGL_Maintain_65kts_4">
+            <Activated>False</Activated>
+        </SimMission.SubGoal>
+        <SimMission.SubGoal InstanceId="{960130FF-489B-4A6D-B42B-76B5771BCDAC}" id="SGL_Maintain_65kts_5">
+            <Activated>False</Activated>
+        </SimMission.SubGoal>
+        <SimMission.SubGoal InstanceId="{96CD55F1-8F8F-4B7B-937D-BB498F703389}" id="SGL_Maintain_65kts_6">
+            <Activated>False</Activated>
+        </SimMission.SubGoal>
+        <SimMission.SubGoal InstanceId="{B44D18E4-32BE-4081-8848-7065F5195039}" id="SGL_Maintain_65kts_7">
+            <Activated>False</Activated>
+        </SimMission.SubGoal>
+        <SimMission.SubGoal InstanceId="{16F028F6-AFF1-4A8F-9BA6-CBB000C381AC}" id="SGL_Maintain_65kts_8">
+            <Activated>False</Activated>
+        </SimMission.SubGoal>
+        <SimMission.SubGoal InstanceId="{DDE8831C-9745-49FA-81E1-3383CA955B12}" id="SGL_IncreaseAltitude1800">
+            <Activated>False</Activated>
+        </SimMission.SubGoal>
+        <SimMission.SubGoal InstanceId="{DCE56C41-A4E2-4DF7-9342-1CBE7699F5F3}" id="SGL_KeepCoord_7">
+            <Activated>False</Activated>
+        </SimMission.SubGoal>
+        <SimMission.SubGoal InstanceId="{52AD5381-41D5-4816-8F0E-F671F1CCBC15}" id="SGL_KeepCoord_8">
+            <Activated>False</Activated>
+        </SimMission.SubGoal>
+        <SimMission.SubGoal InstanceId="{89595A07-4DC9-49A7-BF66-9C6029C19C47}" id="SGL_KeepCoord_9">
+            <Activated>False</Activated>
+        </SimMission.SubGoal>
+        <SimMission.SubGoal InstanceId="{6B57267E-4F72-4461-844F-B52504FC8F92}" id="SGL_KeepCoord_10">
+            <Activated>False</Activated>
+        </SimMission.SubGoal>
+        <SimMission.SubGoal InstanceId="{B1C9B52D-A8E6-4100-8AF6-73865BD65659}" id="SGL_Maintain1800">
+            <Activated>False</Activated>
+        </SimMission.SubGoal>
+        <SimMission.SubGoal InstanceId="{5049321B-AE29-42C0-9F39-43FBC7AC2588}" id="SGL_DescendTo1500">
+            <Activated>False</Activated>
+        </SimMission.SubGoal>
+        <SimMission.SubGoal InstanceId="{061ADB1E-BA1D-49CE-A1E6-76294F9244A6}" id="SGL_MaintainAlt1500_7">
+            <Activated>False</Activated>
+        </SimMission.SubGoal>
+        <SimEdition.CommentNode InstanceId="{FC244544-36AB-4ABF-A7D2-4B7C6BC1EBFE}" id="Comment_Maintain65Kts"/>
+        <SimMission.ObjectActivationAction InstanceId="{8270C2AC-FF5B-46D6-A3B1-6AF09C9965F7}" id="Enable_SlowSpeedHeldTrigger">
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{4AA64ED4-8698-442B-85D4-321423907A75}" id="Prop_Trig_Hold65Knots_Activated"/>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.PropertyTrigger InstanceId="{4AA64ED4-8698-442B-85D4-321423907A75}" id="Prop_Trig_Hold65Knots_Activated">
+            <Activated>False</Activated>
+            <ReversePolishCondition>(A:AIRSPEED INDICATED, knots) 58 &gt;= (A:AIRSPEED INDICATED, knots) 72 &lt;= and</ReversePolishCondition>
+            <Actions>
+                <ObjectReference InstanceId="{533B956D-F5FC-4481-BA10-47D151DD884D}" id="Activate_SGLs_Hold65"/>
+            </Actions>
+        </SimMission.PropertyTrigger>
+        <SimMission.SubGoalResolutionAction InstanceId="{533B956D-F5FC-4481-BA10-47D151DD884D}" id="Activate_SGLs_Hold65">
+            <StateChange>none</StateChange>
+            <SubGoals>
+                <ObjectReference InstanceId="{1C299FD9-6948-4410-96CA-A10CB14BF52D}" id="SGL_Maintain_65kts_2"/>
+                <ObjectReference InstanceId="{0EEC1137-6DA3-4E15-9D57-B84B4ED0712A}" id="SGL_Maintain_65kts_3"/>
+                <ObjectReference InstanceId="{66455414-37A4-4385-9323-9F70C3A12E15}" id="SGL_Maintain_65kts_4"/>
+            </SubGoals>
+        </SimMission.SubGoalResolutionAction>
+        <SimMission.ObjectActivationAction InstanceId="{47F3A948-938C-494D-93A1-C82B9477E7D3}" id="Disable_SlowSpeedTrigger">
+            <NewObjectState>False</NewObjectState>
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{4AA64ED4-8698-442B-85D4-321423907A75}" id="Prop_Trig_Hold65Knots_Activated"/>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.PropertyTrigger InstanceId="{6044CD41-F159-4336-B7F7-94FF4C36BEBE}" id="Prop_Trig_HOld65Knots_Deactivated">
+            <ReversePolishCondition>(A:AIRSPEED INDICATED, knots) 58 &lt; (A:AIRSPEED INDICATED, knots) 72 &gt; and</ReversePolishCondition>
+            <Actions>
+                <ObjectReference InstanceId="{669FD5DF-E1C9-456C-9D48-BACC31FFA245}" id="Deactivate_SGLs_Hold65"/>
+            </Actions>
+        </SimMission.PropertyTrigger>
+        <SimMission.SubGoalResolutionAction InstanceId="{669FD5DF-E1C9-456C-9D48-BACC31FFA245}" id="Deactivate_SGLs_Hold65">
+            <SubGoalResolution>pending</SubGoalResolution>
+            <StateChange>none</StateChange>
+            <SubGoals>
+                <ObjectReference InstanceId="{1C299FD9-6948-4410-96CA-A10CB14BF52D}" id="SGL_Maintain_65kts_2"/>
+                <ObjectReference InstanceId="{0EEC1137-6DA3-4E15-9D57-B84B4ED0712A}" id="SGL_Maintain_65kts_3"/>
+                <ObjectReference InstanceId="{66455414-37A4-4385-9323-9F70C3A12E15}" id="SGL_Maintain_65kts_4"/>
+            </SubGoals>
+        </SimMission.SubGoalResolutionAction>
     </WorldBase.Flight>
 </SimBase.Document>

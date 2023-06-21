@@ -94,8 +94,9 @@
         <SimMission.TimerTrigger InstanceId="{D9D12AEB-0F9B-466A-A90D-C954D32F111D}" id="Timer_Intro">
             <StopTime>3.000</StopTime>
             <Activated>False</Activated>
-            <Actions>
-            </Actions>
+            <SimMission.Actions>
+                <WorldBase.ObjectReference InstanceId="{AE3063E1-BD70-4685-B977-CC9933E6251E}" id="Dialog_Emergency1"/>
+            </SimMission.Actions>
         </SimMission.TimerTrigger>
         <SimEdition.CommentNode InstanceId="{30031D99-9091-48D5-AA48-A4A5D0D4EBE4}" id="Before mission start">
             <NodeColor>194,239,183,255</NodeColor>
@@ -124,5 +125,15 @@
                 <ObjectReference InstanceId="{C3FFC036-7432-4E98-8F22-A7FCB95982E7}" id="GL_EndMission"/>
             </Goals>
         </SimMission.GoalResolutionAction>
+        <SimMission.InstructorDialogAction InstanceId="{AE3063E1-BD70-4685-B977-CC9933E6251E}" id="Dialog_Emergency1">
+            <EndActionsDelaySeconds>4.000</EndActionsDelaySeconds>
+            <SoundFileName>land-asap.wav</SoundFileName>
+            <EndActions>
+                <ObjectReference InstanceId="{FB1C1451-4DAB-4A28-803D-4A4583529F8A}" id="Dialog_Intro2"/>
+            </EndActions>
+        </SimMission.InstructorDialogAction>
+        <SimMission.InstructorDialogAction InstanceId="{FB1C1451-4DAB-4A28-803D-4A4583529F8A}" id="Dialog_Intro2">
+            <SoundFileName>options-intro.wav</SoundFileName>
+        </SimMission.InstructorDialogAction>
     </WorldBase.Flight>
 </SimBase.Document>
