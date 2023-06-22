@@ -313,18 +313,20 @@
         <SimMission.SubGoal InstanceId="{34E87AC3-CE21-448A-B099-5CB43474339A}" id="SGL_ReturnMixture">
             <Activated>False</Activated>
         </SimMission.SubGoal>
-        <SimMission.PropertyTrigger InstanceId="{6764D7F1-FDC7-4F68-83AB-D6480328EF01}" id="Prop_Trig_CHT_Temp">
+        <SimMission.PropertyTrigger InstanceId="{6764D7F1-FDC7-4F68-83AB-D6480328EF01}" id="Prop_Trig_EGT_Temp">
             <Activated>False</Activated>
             <ConditionTimer>5.000</ConditionTimer>
-            <ReversePolishCondition>(A:ENG EXHAUST GAS TEMPERATURE:1, celsius) 715 &gt;= (A:ENG EXHAUST GAS TEMPERATURE:1, celsius) 735 &lt;= and</ReversePolishCondition>
+            <ReversePolishCondition>(A:ENG EXHAUST GAS TEMPERATURE:1, celsius) 630 &gt;= (A:ENG EXHAUST GAS TEMPERATURE:1, celsius) 660 &lt;= and</ReversePolishCondition>
             <Actions>
                 <ObjectReference InstanceId="{4A3D1D05-1D3C-4753-82EE-FF1B0370171E}" id="Dialog_LeanComplete"/>
             </Actions>
         </SimMission.PropertyTrigger>
         <SimMission.SubGoalResolutionAction InstanceId="{623233FB-4E7F-42CB-A1B0-B8AA129C31E3}" id="Complete_SGL_LeanForCruise">
-            <SubGoals>
+            <StateChange>none</StateChange>
+            <SimMission.SubGoals>
                 <ObjectReference InstanceId="{5541F907-BC97-4750-881D-D4CAC1A6EC21}" id="SGL_LeanForCruise"/>
-            </SubGoals>
+                <WorldBase.ObjectReference InstanceId="{E3CD777E-62F4-4302-BEC2-F1969B8FEE4F}" id="SGL_ConfigureMFD"/>
+            </SimMission.SubGoals>
         </SimMission.SubGoalResolutionAction>
         <SimMission.PropertyTrigger InstanceId="{312DA50B-63C3-4BF8-BA81-1C529330726B}" id="Prop_Trigger_RPM_2200">
             <Activated>False</Activated>
@@ -412,7 +414,7 @@
             </EndActions>
         </SimMission.InstructorDialogAction>
         <SimMission.TimerTrigger InstanceId="{59774E25-0ADF-4C37-BB58-ECEA52C672BB}" id="Timer_Start_Cruise">
-            <StopTime>3.000</StopTime>
+            <StopTime>5.000</StopTime>
             <Activated>False</Activated>
             <Actions>
                 <ObjectReference InstanceId="{4E4A4AC1-C457-4B96-8488-9BBF94E4C75A}" id="Dialg_ StartOfCruise"/>
@@ -420,9 +422,10 @@
             </Actions>
         </SimMission.TimerTrigger>
         <SimMission.ObjectActivationAction InstanceId="{B461F31D-1B59-4963-ABC9-B3B461169F50}" id="Activate_Timer_Start_Cruise">
-            <ObjectReferenceList>
+            <WorldBase.ObjectReferenceList>
                 <ObjectReference InstanceId="{59774E25-0ADF-4C37-BB58-ECEA52C672BB}" id="Timer_Start_Cruise"/>
-            </ObjectReferenceList>
+                <WorldBase.ObjectReference InstanceId="{AD4D8EAA-F5DA-43D6-B04F-F5F4348C0FB6}" id="Complete_GL_LeanForCruise"/>
+            </WorldBase.ObjectReferenceList>
         </SimMission.ObjectActivationAction>
         <SimMission.InstructorDialogAction InstanceId="{4E4A4AC1-C457-4B96-8488-9BBF94E4C75A}" id="Dialg_ StartOfCruise">
             <Text> </Text>
@@ -625,5 +628,10 @@
             <DelaySeconds>4.000</DelaySeconds>
             <SoundFileName>17-TurnAndDescend.wav</SoundFileName>
         </SimMission.InstructorDialogAction>
+        <SimMission.GoalResolutionAction InstanceId="{AD4D8EAA-F5DA-43D6-B04F-F5F4348C0FB6}" id="Complete_GL_LeanForCruise">
+            <Goals>
+                <ObjectReference InstanceId="{21A43BA3-FE81-48EE-90AE-B569CFBED780}" id="GL_LeanForCruise"/>
+            </Goals>
+        </SimMission.GoalResolutionAction>
     </WorldBase.Flight>
 </SimBase.Document>

@@ -40,8 +40,8 @@
                 <FlowEvent id="ATC_RESUME"/>
                 <FlowEvent id="UNPAUSE_SIM"/>
                 <FlowEvent id="PANEL_OBJECTIVES_FORCE_SHOW"/>
-                <FlowEvent id="PANEL_ATC_FORCE_HIDE"/>
-                <FlowEvent id="PANEL_CHECKLIST_FORCE_HIDE"/>
+                <FlowEvent id="PANEL_ATC_HIDE"/>
+                <FlowEvent id="PANEL_CHECKLIST_HIDE"/>
             </StartFlowEvents>
             <StartActions>
                 <ObjectReference InstanceId="{5453DE6A-C681-46BB-A988-C7573935BD0D}" id="WWiseRTCState_NON_RTC"/>
@@ -162,6 +162,7 @@
                 <ObjectReference InstanceId="{0A8D268B-C1C5-42E7-9CCE-614CF7ECF1ED}" id="Activate_Engine_Failure"/>
                 <ObjectReference InstanceId="{EA6E9DE2-6655-4E49-B465-14CD4B32C366}" id="Activate_Timer_StartEngineFailureMission"/>
                 <ObjectReference InstanceId="{FC7931F5-D30B-467A-874C-A97418FEA543}" id="Complete_GL_EnjoyFlight"/>
+                <ObjectReference InstanceId="{15CE0071-2035-4C99-A551-A54D94B7A984}" id="Dialog_Engine_Failure"/>
             </Actions>
         </SimMission.TimerTrigger>
         <SimMission.ObjectActivationAction InstanceId="{35F6BCD6-76E2-42F3-AAA6-1AD0C8A9C822}" id="Activate_Trig_EngineFailure">
@@ -220,28 +221,25 @@
             <Actions>
                 <ObjectReference InstanceId="{90EA6A87-DFF9-40A7-895B-FDC5990B4B66}" id="Activate_Vacuum_Failure"/>
                 <ObjectReference InstanceId="{FC7931F5-D30B-467A-874C-A97418FEA543}" id="Complete_GL_EnjoyFlight"/>
+                <ObjectReference InstanceId="{EB43C008-8D44-4582-A9A8-7656D27E3708}" id="Dialog_Vacuum_Failure"/>
+                <ObjectReference InstanceId="{FC7931F5-D30B-467A-874C-A97418FEA543}" id="Complete_GL_EnjoyFlight"/>
             </Actions>
         </SimMission.TimerTrigger>
         <SimMission.ObjectActivationAction InstanceId="{90EA6A87-DFF9-40A7-895B-FDC5990B4B66}" id="Activate_Vacuum_Failure">
             <ObjectReferenceList>
                 <ObjectReference InstanceId="{7BC11567-1995-414B-80DF-104A24377235}" id="FailureAction"/>
-                <ObjectReference InstanceId="{1204065A-F62F-464C-8507-7152A8B29319}" id="ObjectActivationAction2"/>
+                <ObjectReference InstanceId="{C3D99BE6-599C-4185-95DD-806DF99BE136}" id="Timer_Trig_AfterVacFailure"/>
             </ObjectReferenceList>
         </SimMission.ObjectActivationAction>
         <SimMission.FailureAction InstanceId="{7BC11567-1995-414B-80DF-104A24377235}" id="Failure_Vacuum">
             <System>VacuumSystem</System>
         </SimMission.FailureAction>
-        <SimMission.ObjectActivationAction InstanceId="{1204065A-F62F-464C-8507-7152A8B29319}" id="Activate_GL_Land">
-            <ObjectReferenceList>
-                <ObjectReference InstanceId="{3D862F73-79E5-4BF4-BC3C-752F2668AA86}" id="GL_LandSafely"/>
-                <ObjectReference InstanceId="{BB98610D-0963-461E-A234-A9D644699032}" id="SGL_LandAtDiscretion"/>
-            </ObjectReferenceList>
-        </SimMission.ObjectActivationAction>
         <SimMission.FailureAction InstanceId="{A700E43D-BF01-44B1-82F7-297027D8D799}" id="Failure_Pitot">
             <System>Pitot</System>
+            <Behavior>Failing</Behavior>
         </SimMission.FailureAction>
         <SimMission.PropertyTrigger InstanceId="{DC2FD85F-CD21-4AD3-93B2-71CA2CF668D0}" id="Trigger_Landed"/>
-        <SimMission.ObjectActivationAction InstanceId="{E0C5E8C3-9395-4F6E-B350-1AC06027C38B}" id="Activate_VacuumFailure">
+        <SimMission.ObjectActivationAction InstanceId="{E0C5E8C3-9395-4F6E-B350-1AC06027C38B}" id="Activate_PitotFailure">
             <ObjectReferenceList>
                 <ObjectReference InstanceId="{A700E43D-BF01-44B1-82F7-297027D8D799}" id="Failure_Pitot"/>
             </ObjectReferenceList>
@@ -253,6 +251,7 @@
                 <ObjectReference InstanceId="{E0C5E8C3-9395-4F6E-B350-1AC06027C38B}" id="Activate_VacuumFailure"/>
                 <ObjectReference InstanceId="{FC7931F5-D30B-467A-874C-A97418FEA543}" id="Complete_GL_EnjoyFlight"/>
                 <ObjectReference InstanceId="{87506450-86C2-4348-A240-737BD075D319}" id="Activate_Trig_Timer_PitotFailure"/>
+                <ObjectReference InstanceId="{18FD8D0C-365A-4FC3-A506-D06D8177743B}" id="InstructorDialogAction"/>
             </Actions>
         </SimMission.TimerTrigger>
         <SimMission.ObjectActivationAction InstanceId="{980C6839-E30D-432C-80D1-419A357EF57F}" id="Activate_Timer_BeforePitotFailure">
@@ -268,6 +267,22 @@
         </SimMission.ObjectActivationAction>
         <SimMission.TimerTrigger InstanceId="{AAA73D08-7564-4F76-AD55-186BF4F74D2F}" id="Trig_Timer_AfterPitotFailure">
             <StopTime>3.000</StopTime>
+            <Actions>
+                <ObjectReference InstanceId="{29892FFD-F75B-483D-98AC-EF0EDCFB68A7}" id="Activate_GL_Land"/>
+            </Actions>
+        </SimMission.TimerTrigger>
+        <SimMission.InstructorDialogAction InstanceId="{15CE0071-2035-4C99-A551-A54D94B7A984}" id="Dialog_Engine_Failure">
+            <Text>Activating Engine Failure</Text>
+        </SimMission.InstructorDialogAction>
+        <SimMission.InstructorDialogAction InstanceId="{EB43C008-8D44-4582-A9A8-7656D27E3708}" id="Dialog_Vacuum_Failure">
+            <Text>Vacuum failure initialized.</Text>
+        </SimMission.InstructorDialogAction>
+        <SimMission.InstructorDialogAction InstanceId="{18FD8D0C-365A-4FC3-A506-D06D8177743B}" id="Dialog_Pitot_Failure">
+            <Text>Pitot failure initialized</Text>
+        </SimMission.InstructorDialogAction>
+        <SimMission.TimerTrigger InstanceId="{C3D99BE6-599C-4185-95DD-806DF99BE136}" id="Timer_Trig_AfterVacFailure">
+            <StopTime>3.000</StopTime>
+            <Activated>False</Activated>
             <Actions>
                 <ObjectReference InstanceId="{29892FFD-F75B-483D-98AC-EF0EDCFB68A7}" id="Activate_GL_Land"/>
             </Actions>
