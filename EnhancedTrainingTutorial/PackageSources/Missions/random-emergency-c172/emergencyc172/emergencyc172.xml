@@ -93,7 +93,9 @@
                 <ObjectReference InstanceId="{9EFDF1A6-8E6E-42B9-919A-2F439C91E52D}" id="GoalResolutionAction"/>
             </CrashActions>
         </SimMission.Tutorial>
-        <SimMission.Goal InstanceId="{6619808B-9E6F-4464-B9D6-1E926712888E}" id="GL_EndMission"/>
+        <SimMission.Goal InstanceId="{6619808B-9E6F-4464-B9D6-1E926712888E}" id="GL_EndMission">
+            <Activated>False</Activated>
+        </SimMission.Goal>
         <SimMission.ObjectActivationAction InstanceId="{9638E9E3-19D6-4151-B2D3-960C539FAD2E}" id="Activate_Timer-Intro">
             <ObjectReferenceList>
                 <ObjectReference InstanceId="{440547FF-9548-4D21-AC2A-4BD1075439A0}" id="Timer_Intro"/>
@@ -104,6 +106,7 @@
             <Activated>False</Activated>
             <Actions>
                 <ObjectReference InstanceId="{4D91406B-BD33-4A1C-8F1E-3D38EAED8640}" id="Activate_PropTrig-80kts"/>
+                <ObjectReference InstanceId="{AB3581AB-0026-470A-96CE-8D83322F650A}" id="Activate_GL_Takeoff"/>
             </Actions>
         </SimMission.TimerTrigger>
         <SimEdition.CommentNode InstanceId="{7374B52C-3B16-4DF9-9068-FDE68E4C8D9C}" id="Before mission start">
@@ -112,13 +115,15 @@
         <SimEdition.CommentNode InstanceId="{050470C4-99E8-4DD6-848D-997D18FBDC3F}" id="Mission objects">
             <NodeColor>194,183,239,255</NodeColor>
         </SimEdition.CommentNode>
-        <SimMission.SubGoal InstanceId="{F1225E1D-83E8-489E-9688-C498C880F99E}" id="SGL_Takeoff"/>
+        <SimMission.SubGoal InstanceId="{F1225E1D-83E8-489E-9688-C498C880F99E}" id="SGL_Takeoff">
+            <Activated>False</Activated>
+        </SimMission.SubGoal>
         <SimMission.PropertyTrigger InstanceId="{53057723-EE5A-4D84-820C-7E5CC204A5C3}" id="PropTrig_80Kts">
             <ReversePolishCondition>(A:AIRSPEED INDICATED, knots) 80 &gt;=</ReversePolishCondition>
             <Activated>False</Activated>
             <Actions>
                 <ObjectReference InstanceId="{68BD8A5B-4B62-46C8-AB58-32D8D7270560}" id="Activate_Trig_Landed"/>
-                <ObjectReference InstanceId="{686926FA-479C-4C8F-A30E-E479DE2B4DF2}" id="Randomizer_SelectError"/>
+                <ObjectReference InstanceId="{35F6BCD6-76E2-42F3-AAA6-1AD0C8A9C822}" id="Activate_Trig_EngineFailure"/>
             </Actions>
         </SimMission.PropertyTrigger>
         <SimMission.ObjectActivationAction InstanceId="{4D91406B-BD33-4A1C-8F1E-3D38EAED8640}" id="Activate_PropTrig-80kts">
@@ -146,17 +151,9 @@
         <SimMission.SubGoal InstanceId="{BB98610D-0963-461E-A234-A9D644699032}" id="SGL_LandAtDiscretion">
             <Activated>False</Activated>
         </SimMission.SubGoal>
-        <SimMission.AirportLandingTrigger InstanceId="{2E4BECEF-6FCE-49AA-8894-EB5C268AB2FD}" id="Trig_AirportLanding">
-            <Activated>False</Activated>
-            <AirportIdent>KSBP</AirportIdent>
-            <AirportIdent>KPRB</AirportIdent>
-            <Actions>
-                <ObjectReference InstanceId="{FE96AA9D-FB5E-440D-AAEF-1A06802345E4}" id="Resolve_GL_LandSafely"/>
-            </Actions>
-        </SimMission.AirportLandingTrigger>
         <SimMission.FailureAction InstanceId="{5E7BC5E4-5BC2-4410-A638-C9DB8179AF0B}" id="Failure_Engine_Main"/>
         <SimMission.TimerTrigger InstanceId="{52EE7875-026A-4C8B-AC40-B5289BEBF504}" id="Timer_Trig_ActivateFailureMIssion">
-            <StopTime>2.000</StopTime>
+            <StopTime>20.000</StopTime>
             <Activated>False</Activated>
             <Actions>
                 <ObjectReference InstanceId="{0A8D268B-C1C5-42E7-9CCE-614CF7ECF1ED}" id="Activate_Engine_Failure"/>
@@ -177,9 +174,6 @@
         </SimMission.ObjectActivationAction>
         <SimMission.RandomAction InstanceId="{686926FA-479C-4C8F-A30E-E479DE2B4DF2}" id="Randomizer_SelectError">
             <Actions>
-                <ObjectReference InstanceId="{321ECB85-3411-4A6F-A981-69D8F3ECE5D1}" id="ObjectActivationAction"/>
-                <ObjectReference InstanceId="{35F6BCD6-76E2-42F3-AAA6-1AD0C8A9C822}" id="Activate_Trig_EngineFailure"/>
-                <ObjectReference InstanceId="{980C6839-E30D-432C-80D1-419A357EF57F}" id="Activate_Timer_BeforePitotFailure"/>
             </Actions>
         </SimMission.RandomAction>
         <SimMission.ObjectActivationAction InstanceId="{EA6E9DE2-6655-4E49-B465-14CD4B32C366}" id="Activate_Timer_StartEngineFailureMission">
@@ -207,7 +201,7 @@
         </SimMission.GoalResolutionAction>
         <SimMission.ObjectActivationAction InstanceId="{68BD8A5B-4B62-46C8-AB58-32D8D7270560}" id="Activate_Trig_Landed">
             <ObjectReferenceList>
-                <ObjectReference InstanceId="{2E4BECEF-6FCE-49AA-8894-EB5C268AB2FD}" id="Trig_AirportLanding"/>
+                <ObjectReference InstanceId="{DC2FD85F-CD21-4AD3-93B2-71CA2CF668D0}" id="Trigger_Landed"/>
             </ObjectReferenceList>
         </SimMission.ObjectActivationAction>
         <SimMission.ObjectActivationAction InstanceId="{321ECB85-3411-4A6F-A981-69D8F3ECE5D1}" id="Activate_Trig_VacFailure">
@@ -238,7 +232,14 @@
             <System>Pitot</System>
             <Behavior>Failing</Behavior>
         </SimMission.FailureAction>
-        <SimMission.PropertyTrigger InstanceId="{DC2FD85F-CD21-4AD3-93B2-71CA2CF668D0}" id="Trigger_Landed"/>
+        <SimMission.PropertyTrigger InstanceId="{DC2FD85F-CD21-4AD3-93B2-71CA2CF668D0}" id="Trigger_Landed">
+            <Activated>False</Activated>
+            <ConditionTimer>5.000</ConditionTimer>
+            <ReversePolishCondition>(A:SIM ON GROUND, Boolean) 0 &amp;gt; (A:GROUND VELOCITY, Knots) 5 &amp;lt; and</ReversePolishCondition>
+            <Actions>
+                <ObjectReference InstanceId="{FE96AA9D-FB5E-440D-AAEF-1A06802345E4}" id="Resolve_GL_LandSafely"/>
+            </Actions>
+        </SimMission.PropertyTrigger>
         <SimMission.ObjectActivationAction InstanceId="{E0C5E8C3-9395-4F6E-B350-1AC06027C38B}" id="Activate_PitotFailure">
             <ObjectReferenceList>
                 <ObjectReference InstanceId="{A700E43D-BF01-44B1-82F7-297027D8D799}" id="Failure_Pitot"/>
@@ -287,5 +288,11 @@
                 <ObjectReference InstanceId="{29892FFD-F75B-483D-98AC-EF0EDCFB68A7}" id="Activate_GL_Land"/>
             </Actions>
         </SimMission.TimerTrigger>
+        <SimMission.ObjectActivationAction InstanceId="{AB3581AB-0026-470A-96CE-8D83322F650A}" id="Activate_GL_Takeoff">
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{6619808B-9E6F-4464-B9D6-1E926712888E}" id="GL_EndMission"/>
+                <ObjectReference InstanceId="{F1225E1D-83E8-489E-9688-C498C880F99E}" id="SGL_Takeoff"/>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
     </WorldBase.Flight>
 </SimBase.Document>

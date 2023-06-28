@@ -717,7 +717,6 @@
             <SoundFileName>prop-lever-set-for-cruise-complete.wav</SoundFileName>
             <EndActions>
                 <ObjectReference InstanceId="{B33EFFF8-4562-4BA0-8092-15E5734A308A}" id="Activate_Timer_Cruise_Complete"/>
-                <ObjectReference InstanceId="{B3EC3E27-9E4D-4117-BEE4-0AB4A7B89200}" id="InstructorDialogAction"/>
             </EndActions>
         </SimMission.InstructorDialogAction>
         <SimMission.ObjectActivationAction InstanceId="{CC3881D7-9DA5-4DE9-A7D9-66ECE0BF4242}" id="Activate_Trig_LowAltitude2">
@@ -730,6 +729,7 @@
             <Activated>False</Activated>
             <Actions>
                 <ObjectReference InstanceId="{7E47FA75-117A-4203-9708-B903D37CDC90}" id="GoalResolutionAction"/>
+                <ObjectReference InstanceId="{EA3F06B7-ED43-4389-9484-86A3BF8E9845}" id="Dialog_Test1"/>
             </Actions>
         </SimMission.TimerTrigger>
         <SimMission.ObjectActivationAction InstanceId="{D451115B-7D37-45E0-8EFA-80D02AA228A4}" id="Activate_Timer_End_Mission">
@@ -805,7 +805,6 @@
             <AirportIdent>KLPC</AirportIdent>
             <Actions>
                 <ObjectReference InstanceId="{D451115B-7D37-45E0-8EFA-80D02AA228A4}" id="Activate_Timer_End_Mission"/>
-                <ObjectReference InstanceId="{EA3F06B7-ED43-4389-9484-86A3BF8E9845}" id="Dialog_Test1"/>
             </Actions>
         </SimMission.AirportLandingTrigger>
         <SimEdition.CommentNode InstanceId="{417786FA-5CC8-4720-9019-A7586D1AFDC4}" id="Mission_End">

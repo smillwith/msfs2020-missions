@@ -28,6 +28,29 @@
                             <Descr>Descend to 2,200 feet</Descr>
                         </Step>
                     </Steps>
+                    <Score>
+                        <ScoreName>ScoreName1</ScoreName>
+                        <ScoreParamReference>
+                            <ScoreParam
+                                    UniqueRefId="{245D130A-F074-4B95-8AEA-9243BDE66884}"
+                                    id="SCP_Score1"
+                                    Displayed="True"/>
+                        </ScoreParamReference>
+                        <ScoreParamMinScore>
+                            <ScoreParam id="SCP_MinScor_Score1"/>
+                        </ScoreParamMinScore>
+                        <ScoreParamMaxScore>
+                            <ScoreParam FixedValue="10.000" id="SCP_MaxScore_Score1"/>
+                        </ScoreParamMaxScore>
+                        <ScoreParamScore>
+                            <ScoreParam>
+                                <ScoreParamDetailList>
+                                    <ScoreParamDetail>
+                                    </ScoreParamDetail>
+                                </ScoreParamDetailList>
+                            </ScoreParam>
+                        </ScoreParamScore>
+                    </Score>
                 </Objective>
                 <Objective UniqueRefId="{854BB577-1889-45B9-BDF5-9F513B6A604A}" id="OBJ_ApproachMontego">
                     <Descr>Approach Montego Bay</Descr>
@@ -47,6 +70,8 @@
                     </Steps>
                 </Objective>
             </Objectives>
+            <SimMission.Score>
+            </SimMission.Score>
         </SimMission.Tutorial>
         <SimMission.SubGoal InstanceId="{1E445D85-AAFF-415D-9345-426267B88661}" id="SGL_Maintain220"/>
         <SimMission.SubGoal InstanceId="{8B92C10F-F403-48D8-A1E6-46DA4932638C}" id="SGL_Descend2200">
@@ -70,6 +95,10 @@
         </SimMission.Goal>
         <SimMission.InstructorDialogAction InstanceId="{4B996597-3EC0-4F79-A62F-5FDA0FFED5BD}" id="Dialog_IntroDialog">
             <Text>Keep flying on course 220 headed for Montego Bay</Text>
+            <EndActions>
+                <ObjectReference InstanceId="{858E39D4-2876-4AE9-BC44-AB48F17927A1}" id="ObjectActivationAction"/>
+                <ObjectReference InstanceId="{81072563-8D81-4041-A6AE-1D2E5A4E044E}" id="Activate_Timer_End"/>
+            </EndActions>
         </SimMission.InstructorDialogAction>
         <SimMission.TimerTrigger InstanceId="{E223A5D2-AC3E-4410-B8A9-949B856F9FAE}" id="Trig_Timer_Start_Timer">
             <StopTime>5.000</StopTime>
@@ -116,5 +145,41 @@
             <ElementName>FREEFLIGHT</ElementName>
         </SimMission.FlowStateWise>
         <SimEdition.CommentNode InstanceId="{5C9C08AE-06FC-4FD4-A426-5B616452230B}"/>
+        <SimMission.Calculator
+                InstanceId="{245D130A-F074-4B95-8AEA-9243BDE66884}"
+                StartValue="10.000"
+                id="Calculator_Score1">
+            <CalculatorFormula>(X:Score1)</CalculatorFormula>
+            <CalculatorParameterList>
+                <ReferenceParameter NameInFormula="Score1"/>
+            </CalculatorParameterList>
+        </SimMission.Calculator>
+        <SimMission.Calculator InstanceId="{3F7A416A-AA08-412F-97B3-5125375D5C65}" id="Calculator_Score1_DeductScore">
+            <Activated>False</Activated>
+            <CalculatorFormula>(X:Score1) -- (&gt;X:Score1)</CalculatorFormula>
+        </SimMission.Calculator>
+        <SimMission.ObjectActivationAction InstanceId="{858E39D4-2876-4AE9-BC44-AB48F17927A1}" id="Activate_Calculator_DeductScore1">
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{3F7A416A-AA08-412F-97B3-5125375D5C65}" id="Calculator_Score1_DeductScore"/>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
+        <SimMission.TimerTrigger InstanceId="{429E606B-FD46-4619-8308-FAC6B0FB7231}" id="Timer_End_Mission">
+            <StopTime>3.000</StopTime>
+            <Activated>False</Activated>
+            <Actions>
+                <ObjectReference InstanceId="{191C208A-4A36-4233-9725-0254749B3DC5}" id="Complete_All_Goals"/>
+            </Actions>
+        </SimMission.TimerTrigger>
+        <SimMission.GoalResolutionAction InstanceId="{191C208A-4A36-4233-9725-0254749B3DC5}" id="Complete_All_Goals">
+            <Goals>
+                <ObjectReference InstanceId="{9230DEFF-70C1-4B29-A6EA-DFC5922BCB31}" id="GL_FlyToMontego"/>
+                <ObjectReference InstanceId="{854BB577-1889-45B9-BDF5-9F513B6A604A}" id="GL_ApproachMontego"/>
+            </Goals>
+        </SimMission.GoalResolutionAction>
+        <SimMission.ObjectActivationAction InstanceId="{81072563-8D81-4041-A6AE-1D2E5A4E044E}" id="Activate_Timer_End">
+            <ObjectReferenceList>
+                <ObjectReference InstanceId="{429E606B-FD46-4619-8308-FAC6B0FB7231}" id="Timer_End_Mission"/>
+            </ObjectReferenceList>
+        </SimMission.ObjectActivationAction>
     </WorldBase.Flight>
 </SimBase.Document>

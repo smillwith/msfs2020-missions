@@ -108,6 +108,15 @@ Frequency=1240000
 NumberofAircraft=1
 SecLastMessage=1032.0409729075247469
 
+;EngineSystem
+[SystemFailure0.0]
+ID=D8E878B03ED5314E80CD7F7C8E88914D
+SubIndex=0
+Health=1
+Armed=True
+;ArmedFailureFromTime=30
+;ArmedFailureToTime=180
+
 [ATC_AgentManager]
 NumberofAgents=1
 
